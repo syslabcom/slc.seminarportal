@@ -18,11 +18,6 @@ long_description = (
     + '\n' +
     read('docs/HISTORY.txt')
     + '\n' +
-    'Detailed Documentation\n'
-    '**********************\n'
-    + '\n' +
-    read('slc', 'seminarportal', 'README.txt')
-    + '\n' +
     'Contributors\n'
     '************\n'
     + '\n' +
