@@ -1,0 +1,12 @@
+
+<configure
+    xmlns="http://namespaces.zope.org/zope">
+
+    <subscriber
+        for="slc.seminarportal.interfaces.ISeminar
+             Products.Archetypes.interfaces.IObjectInitializedEvent"
+        handler=".seminar.event_subscriber"/>
+
+</configure>
+        
+        
