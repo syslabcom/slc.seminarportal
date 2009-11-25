@@ -29,7 +29,7 @@ tests_require=['zope.testing']
 
 setup(name='slc.seminarportal',
       version=version,
-      description="Seminar Portal product",
+      description="A Seminar and Conference websites built on Plone",
       long_description=long_description,
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
@@ -51,7 +51,6 @@ setup(name='slc.seminarportal',
       install_requires=[
           'setuptools',    
           'Products.Relations',
-          # -*- Extra requirements: -*-
       ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
