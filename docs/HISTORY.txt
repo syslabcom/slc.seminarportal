@@ -13,6 +13,9 @@ slc.seminarportal Changelog
 - Show the relatedItems widget on seminars and speakers [jcbrand]
 - Updated the test-framework and added tests [jcbrand] 
 - Removed the custom roles [jcbrand]
+- Let SPSpeechVenue subclass BaseFolder instead, to give us a description
+  field. [jcbrand]
+- Fixed seminar_textarea.pt template for chromium [jcbrand]
 
 1.2.3 (2009-11-09)
 ------------------
