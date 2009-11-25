@@ -1,0 +1,45 @@
+slc.seminarportal Changelog
+===========================
+
+1.2.4 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
+1.2.3 (2009-11-09)
+------------------
+
+- Event-handler fix: We must not publish the speakers and speech-venues folder on event
+  creation, as the user might not have that permission. Rather, register a separate
+  event handler that mirrors workflow changes (thomasw)
+- Autoinclude seminarportal (jcbrand)
+- Removed references to OSHA (jcbrand)
+- Code cleanup regarding imports (jcbrand)
+
+
+1.2.2 (2009-11-03)
+------------------
+
+- small fix in speech-add-helper-page (thomasw)
+
+
+1.2.1 (2009-10-25)
+------------------
+
+- fixed minor css bug preventing validation (pilz)
+
+slc.seminarportal 1.2 (2009-06-17)
+----------------------------------
+
+- Added testlayer (gerken)
+
+slc.seminarportal 1.1 (2009-05-12)
+----------------------------------
+
+- Packaged egg (pilz)
+
+slc.seminarportal 1.0 (2008-03-31)
+----------------------------------
+
+- Created [JC Brand]
