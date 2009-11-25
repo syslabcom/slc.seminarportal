@@ -1,8 +1,10 @@
 slc.seminarportal Changelog
 ===========================
 
-1.2.5 (Unreleased)
+1.2.5 (2009-11-09)
 ------------------
+
+- Previous release was a dud, due to svn 1.6.5 and setuptools 0.6c9 [jcbrand]
 
 1.2.4 (2009-11-09)
 ------------------
