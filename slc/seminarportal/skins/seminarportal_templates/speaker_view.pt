@@ -1,0 +1,210 @@
+<html metal:use-macro="here/main_template/macros/master"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="plone" >
+
+<head>
+    <metal:fill fill-slot="header">
+        <div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+        </div>
+        <h1>
+            <tal:block replace="structure python:getattr(here, here.getIcon(1))"/>
+            <span tal:replace="here/Title"/>
+        </h1>
+    </metal:fill>
+</head>
+
+<body>
+<div metal:fill-slot="main">
+    <a  href=""
+        class="link-parent"
+        tal:define="parent_url python:here.navigationParent(here.aq_parent, template.getId())"
+        tal:condition="parent_url"
+        tal:attributes="href parent_url">
+        <span i18n:translate="label_seminar_link">View the seminar:</span>
+        <tal:text replace="string:${here/seminar_title}"/>
+    </a>
+    <fieldset id="Speaker">
+        <legend>Speaker</legend>
+            <div id="archetypes-field-title">
+                <metal:field use-macro="python:here.widget('title', mode='view')">
+                    Title
+                </metal:field>
+            </div>
+            <div id="archetypes-field-image">
+                <div>
+                    <metal:field use-macro="python:here.widget('image', mode='view')">Image</metal:field>
+                </div>
+            </div>
+            <div style="float:left; width:90%">
+            <div id="archetypes-field-SocialPartnerGroup" class="left-column">
+                <label class="eventbox-label">Social Partner Group</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('socialPartnerGroup', mode='view')">
+                        Social Partner Group
+                    </metal:field>
+                    <tal:if condition="not:here/getSocialPartnerGroup">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div id="archetypes-field-Expertise" class="right-column">
+                <label class="eventbox-label">Expertise</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('expertise', mode='view')">
+                        Expertise
+                    </metal:field>
+                    <tal:if condition="not:here/getExpertise">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div class="visualClear"></div>
+            <div id="archetypes-field-employer" class="left-column">
+                <label class="eventbox-label">Employer</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('employer',mode='view')">
+                        Employer
+                    </metal:field>
+                    <tal:if condition="not:here/getEmployer">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div id="archetypes-field-nationality" class="right-column">
+                <label class="eventbox-label">Nationality</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('nationality',mode='view')">
+                        Nationality
+                    </metal:field>
+                    <tal:if condition="not:here/getNationality">
+                        --
+                    </tal:if>
+                </div>        
+            </div>
+            <div class="visualClear"></div>
+            <div id="archetypes-field-suffix" class="left-column">
+                <label class="eventbox-label">Suffix</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('suffix', mode='view')">
+                        suffix
+                    </metal:field>
+                    <tal:if condition="not:here/getSuffix">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div id="archetypes-field-jobTitles" class="right-column">
+                <label class="eventbox-label">Jobtitles</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('jobTitles', mode='view')">
+                        Jobtitles
+                    </metal:field>
+                    <tal:if condition="not:here/getJobTitles">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div class="visualClear"></div>
+            <div id="archetypes-field-email" class="left-column">
+                <label class="eventbox-label">email</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('email', mode='view')">
+                        Email
+                    </metal:field>
+                    <tal:if condition="not:here/getEmail">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div id="archetypes-field-officePhone" class="right-column">
+                <label class="eventbox-label">Phone</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('officePhone', mode='view')">
+                        Phone
+                    </metal:field>
+                    <tal:if condition="not:here/getOfficePhone">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div class="visualClear"></div>
+            <div id="archetypes-field-officeAddress" class="left-column">
+                <label class="eventbox-label">Address</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('officeAddress', mode='view')">
+                        Address
+                    </metal:field>
+                    <tal:if condition="not:here/getOfficeAddress">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div id="archetypes-field-officePostalCode" class="right-column">
+                <label class="eventbox-label">Postal Code</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('officePostalCode', mode='view')">
+                        Postal Code
+                    </metal:field>
+                    <tal:if condition="not:here/getOfficePostalCode">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div class="visualClear"></div>
+            <div id="archetypes-field-officeCity" class="left-column">
+                <label class="eventbox-label">City</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('officeCity', mode='view')">
+                    City
+                    </metal:field>
+                    <tal:if condition="not:here/getOfficeCity">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div id="archetypes-field-officeState" class="right-column">
+                <label class="eventbox-label">State</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('officeState', mode='view')">
+                        State
+                    </metal:field>
+                    <tal:if condition="not:here/getOfficeState">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div class="visualClear"></div>
+            <div id="archetypes-field-education" class="left-column">
+                <label class="eventbox-label">Education</label>
+                <div class="eventbox-value">
+                    <metal:field use-macro="python:here.widget('education', mode='view')">
+                        Education
+                    </metal:field>
+                    <tal:if condition="not:here/getEducation">
+                        --
+                    </tal:if>
+                </div>
+            </div>
+            <div class="visualClear"></div>
+            <br clear="all"/>
+            <div id="archetypes-field-speakers" class="spfield">
+                <label class="eventbox-label">Speeches</label>
+                <br clear="all"/>
+                <div class="eventbox-value-left-align no_bullets">
+                    <metal:field use-macro="python:here.widget('speeches', mode='view')">
+                        Speeches
+                    </metal:field>
+                </div>
+            </div>
+            <br/>
+            <br clear="all"/>
+            <label class="eventbox-label">Biography</label>
+            <br/>
+            <metal:field use-macro="python:here.widget('biography', mode='view')">
+                Biography
+            </metal:field>
+    </fieldset>
+</div>
+</body>
+</html>
