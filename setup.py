@@ -51,6 +51,7 @@ setup(name='slc.seminarportal',
       install_requires=[
           'setuptools',    
           'Products.Relations',
+          'Products.ATReferenceBrowserWidget',
 
       ],
       tests_require=tests_require,
