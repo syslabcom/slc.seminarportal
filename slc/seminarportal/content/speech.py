@@ -11,7 +11,6 @@ from Products.Relations.field import RelationField
 from slc.seminarportal import seminarportalMessageFactory as _
 from slc.seminarportal.config import PROJECTNAME
 from slc.seminarportal.interfaces import ISpeech
-from slc.seminarportal.permissions import ASSIGN_SPEECHES_TO_SPEAKERS
 
 SpeechSchema = atapi.OrderedBaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Schema((
     RelationField(
@@ -25,9 +24,8 @@ SpeechSchema = atapi.OrderedBaseFolderSchema.copy() + ATEventSchema.copy() + ata
             allow_search=1,
             show_results_without_query=1,            
             image_portal_types=('SPSpeaker',),
-            image_method='user.gif',
+            image_method='image_small',
         ),
-        write_permission=ASSIGN_SPEECHES_TO_SPEAKERS,
         allowed_types=('SPSpeaker',),
         multiValued=1,
         relationship='speech_speakers',
