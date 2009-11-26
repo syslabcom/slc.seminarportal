@@ -27,21 +27,30 @@
             <h2>
                 <tal:block content="python:view.get_datetime(date).strftime('%a %d %B %Y')"/> 
             </h2>
+            <br/>
             <div class="event" tal:repeat="event_list python:sorted(summary[date])">
-                <tal:def define="event python:event_list[2];
+                <tal:def define="speech python:event_list[2];
                                  time python:event_list[0]">
                     <div class="event_details">
                         <abbr class="dtstart" 
-                            tal:attributes="title python:event.start.strftime('%a %d %B %Y')" 
+                            tal:attributes="title python:speech.start.strftime('%a %d %B %Y')" 
                             i18n:translate="start_date">
-                                <tal:block content="event/start/TimeMinutes"/>
+                                <tal:block content="speech/start/TimeMinutes"/>
                         </abbr>
                     </div>
                     <div class="event_body">
-                        <a class="summary event_title" tal:content="event/Title"
-                            tal:attributes="href event/get_path" />
-                        <div class="location" tal:content="event/location | default">Location</div>
-                        <div class="description" tal:condition="event/description" tal:content="event/description"/>
+                        <a class="summary event_title" 
+                           tal:content="speech/Title"
+                           tal:attributes="href speech/getURL" />
+                        <div class="location" tal:content="speech/location | default">Location</div>
+                        <div class="formHelp" tal:condition="speech/Description" tal:content="speech/Description"/>
+                        <br/>
+                        <strong>Speaker(s):</strong>
+                        <div class="speechsummary-speaker-right-align no_bullets">
+                            <metal:field use-macro="python:speech.getObject().widget('speakers', mode='view')">
+                                speaker
+                            </metal:field>
+                        </div>
                     </div>
                 </tal:def>
             </div>
