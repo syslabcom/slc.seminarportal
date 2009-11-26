@@ -73,7 +73,7 @@
             <ul>
                 <li tal:repeat="speaker speakers">
                     <tal:if condition="python:speaker.getObject().getImage()">
-                        <img tal:attributes="src string:${speaker/getPath}/image_thumb" src=""/>
+                        <img tal:attributes="src string:${speaker/getPath}/image_small" src=""/>
                     </tal:if>
                     <strong>
                         <a tal:attributes="href speaker/getPath" tal:content="speaker/pretty_title_or_id"/>
