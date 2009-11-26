@@ -1,3 +1,5 @@
+from DateTime import DateTime
+
 from zope.interface import implements
 
 from Products.ATContentTypes.content.event import ATEvent
@@ -40,7 +42,9 @@ SpeechSchema['text'].widget.label = \
 SpeechSchema['location'].widget.label = \
     _(u'label_event_location', default=u'Location')
 SpeechSchema['startDate'].widget.format = '%A %d %B %Y %H:%M'
+SpeechSchema['startDate'].default_method = 'get_start_date'
 SpeechSchema['endDate'].widget.format = '%A %d %B %Y %H:%M'
+SpeechSchema['endDate'].default_method = 'get_end_date'
 
 class SPSpeech(atapi.BaseFolder, ATEvent):
     """ Represents a Speech held during a seminar. 
@@ -54,6 +58,26 @@ class SPSpeech(atapi.BaseFolder, ATEvent):
 
     def get_path(self):
         return '/'.join(self.getPhysicalPath()) 
+
+    def get_start_date(self):
+        """ Returns the default start date for this speech.
+            The default date is the date of the seminar.
+        """
+        # Use Acquisition to get the seminar's date.
+        try:
+            return self.get_seminar_start_date()
+        except AttributeError:
+            return DateTime()
+
+    def get_end_date(self):
+        """ Returns the default end date for this speech.
+            The default date is the date of the seminar.
+        """ 
+        try:
+            return self.get_seminar_end_date()
+        except AttributeError:
+            return DateTime()
+
 
 atapi.registerType(SPSpeech, PROJECTNAME)
 

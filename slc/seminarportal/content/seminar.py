@@ -105,6 +105,12 @@ class SPSeminar(atapi.OrderedBaseFolder, ATEvent):
 
     def get_path(self):
         return '/'.join(self.getPhysicalPath()) 
+
+    def get_seminar_start_date(self):
+        return self.startDate
+
+    def get_seminar_end_date(self):
+        return self.endDate
          
 atapi.registerType(SPSeminar, PROJECTNAME)
 
