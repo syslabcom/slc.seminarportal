@@ -1,13 +1,22 @@
 slc.seminarportal Changelog
 ===========================
 
-1.2.6 (2009-11-09)
+1.2.7 (2009-11-26)
+------------------
+
+- Bugfix, also show ATBlobs in the 'Resources' table. [jcbrand]
+- Show speakers in the speeches summary and fix a bug that prevented the
+  description from showing. [jcbrand]
+- Restrіct the addable types in speech and speaker. [jcbrand]
+- Show thumbnails for speakers more often. [jcbrand]
+
+1.2.6 (2009-11-25)
 ------------------
 
 - Ditto :-/ [jcbrand]
 
 
-1.2.5 (2009-11-09)
+1.2.5 (2009-11-25)
 ------------------
 
 - Previous release was a dud, due to svn 1.6.5 and setuptools 0.6c9 [jcbrand]
