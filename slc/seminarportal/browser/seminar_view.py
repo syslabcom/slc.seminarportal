@@ -94,10 +94,15 @@ class SeminarView(BrowserView):
         """ Return a list of files and images in current context
         """
         context = aq_inner(self.context)
-        objs = context.objectValues(['ATFile', 'ATImage'])
-        attachment =  context.Schema().get('attachment', None)
-        if attachment:
-            objs += [attachment]
+        objs = context.objectValues(['ATFile', 'ATBlob', 'ATImage'])
+        objs = [(o.pretty_title_or_id(), o) for o in objs]
+
+        # See if the object is schema-extended with an 'attachment' field.
+        # Pretty Unique and particular use-case, but necessary for us.
+        attachment_field = context.Schema().get('attachment', None)
+        attachment = attachment_field.get(context)
+        if attachment.size:
+            objs += [(attachment.filename, attachment)]
         return objs
 
 

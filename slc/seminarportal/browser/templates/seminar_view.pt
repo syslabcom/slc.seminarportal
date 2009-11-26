@@ -86,13 +86,13 @@
             <tr tal:define="num python:len(resources);"
                 tal:repeat="row python:range(0, num/2+num%2)">
                 <td style="width:50%">
-                    <a tal:attributes="href python:resources[row*2].absolute_url()"
-                        tal:content="python:resources[row*2].pretty_title_or_id()"></a>
+                    <a tal:attributes="href python:resources[row*2][1].absolute_url()"
+                        tal:content="python:resources[row*2][0]"></a>
                 </td>
                 <td>
                     <tal:if condition="python:num>row*2+1">
-                        <a tal:attributes="href python:resources[row*2+1].absolute_url()"
-                        tal:content="python:resources[row*2+1].pretty_title_or_id()"></a>
+                        <a tal:attributes="href python:resources[row*2+1][1].absolute_url()"
+                        tal:content="python:resources[row*2+1][0]"></a>
                     </tal:if>
                 </td>
             </tr>
