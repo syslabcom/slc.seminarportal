@@ -28,8 +28,7 @@
         <legend>Speaker</legend>
             <div id="archetypes-field-image">
                 <div>
-                    <metal:field use-macro="python:here.widget('image',
-                    mode='view', tags={'height':'100', 'width': 100})">Image</metal:field>
+                    <metal:field use-macro="python:here.widget('image', mode='view')">Image</metal:field>
                 </div>
             </div>
             <tal:if condition="here/getSocialPartnerGroup">
@@ -176,7 +175,9 @@
                 <br clear="all"/>
             </tal:if>
             <br clear="all"/>
-            <div id="archetypes-field-speakers" class="spfield">
+            <div id="archetypes-field-speakers" 
+                 class="spfield"
+                 tal:condition="here/getSpeeches">
                 <label class="eventbox-label">Speeches</label>
                 <br clear="all"/>
                 <div class="eventbox-value-left-align no_bullets">
