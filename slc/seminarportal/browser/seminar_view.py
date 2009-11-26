@@ -93,7 +93,12 @@ class SeminarView(BrowserView):
     def get_files_and_images(self):
         """ Return a list of files and images in current context
         """
-        return self.context.objectValues(['ATFile', 'ATImage'])
+        context = aq_inner(self.context)
+        objs = context.objectValues(['ATFile', 'ATImage'])
+        attachment =  context.Schema().get('attachment', None)
+        if attachment:
+            objs += [attachment]
+        return objs
 
 
     def get_speechvenues(self):
