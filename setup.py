@@ -51,6 +51,7 @@ setup(name='slc.seminarportal',
       install_requires=[
           'setuptools',    
           'Products.Relations',
+
       ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
