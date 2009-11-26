@@ -14,6 +14,11 @@
   float:right;
   text-align: left;
 }
+
+.speechsummary-speaker-right-align {
+  float:right;
+  text-align: right;
+}
 .no_bullets ul {
     list-style-type:none; 
     list-style-image:none;
@@ -133,6 +138,7 @@
 
 .eventlist .event .event_title {
 	display: block;
+    text-decoration: none;
 }
 
 .eventlist .event .description {
