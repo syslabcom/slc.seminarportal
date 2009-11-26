@@ -72,6 +72,9 @@
             <div metal:use-macro="here/batch_macros/macros/navigation" />
             <ul>
                 <li tal:repeat="speaker speakers">
+                    <tal:if condition="python:speaker.getObject().getImage()">
+                        <img tal:attributes="src string:${speaker/getPath}/image_thumb" src=""/>
+                    </tal:if>
                     <strong>
                         <a tal:attributes="href speaker/getPath" tal:content="speaker/pretty_title_or_id"/>
                     </strong>
