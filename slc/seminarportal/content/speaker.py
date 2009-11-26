@@ -147,6 +147,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
             label_msgid='slc.seminarportal_label_image',
             i18n_domain='slc.seminarportal',
             default_content_type='image/gif',
+            macro="seminarportal_image",
         ),
         original_size=(100, 125),
         sizes={'small': (50,50), 'thumb': (75, 75), 'normal': (200, 250)},
