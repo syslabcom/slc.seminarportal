@@ -23,16 +23,22 @@ the rooms (venues) and the speeches held in those rooms. The roster is a
 table with the rooms as the columns and the times of the speeches as the
 rows.
 
+To show a column with the speech times on the roster, make sure to check the
+box on the bottom of the seminar edit page.
+
+
 The following content types are available: 
 
 * Seminar
     The Seminar is globally addable and contains all the seminar-related 
     subobjets.
 
+
 * Speakers Folder
     The Speakers folder is automatically created whenever a seminar has been 
     created. This folder's allowed content types are restricted to speakers 
     only.
+
 
 * Speaker
     Every conference and seminar has people holding talks, making presentations 
@@ -40,15 +46,18 @@ The following content types are available:
     You can add references to speeches (i.e the speeches held by this speaker). 
     These references are two-way, so the speeches now also have references to this 
     speaker. 
+    
 
 * Speech Venues Folder
     The Speech Venues folder is also automatically created when a seminar is 
     created. This folder's allowed content types are restricted to speech venues 
     only.
 
+
 * Speech Venue
     A speech venue refers to the room or conference hall in which speeches are held. 
     This folder's allowed content types are restricted to speeches only.
+
 
 * Speech
     A speech is a talk or presentation held at the conference and in one of the 

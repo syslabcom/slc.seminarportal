@@ -1,6 +1,13 @@
 slc.seminarportal Changelog
 ===========================
 
+1.2.8 (2009-11-28)
+------------------
+
+- Changed the speaker portlet to be able to show multiple speakers [jcbrand]
+- Add unit tests for the speakers portlet. [jcbrand]
+- Made showing the 'Hour' column on the seminar roster configurable [jcbrand]
+
 1.2.7 (2009-11-26)
 ------------------
 
