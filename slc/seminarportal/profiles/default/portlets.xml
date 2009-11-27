@@ -6,8 +6,8 @@
 <portlets>
   <portlet
       addview="slc.SpeakerPortlet"
-      title="Featured Speaker"
-      description="Shows either a chosen or a random seminar speaker." />    
+      title="Featured Speakers"
+      description="Shows either chosen or random seminar speakers." />    
 
   <portlet
       addview="slc.SpeechesPortlet"

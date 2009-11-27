@@ -16,7 +16,11 @@ class SpeakerVocabulary(object):
         catalog = getToolByName(site, 'portal_catalog')
         items = {}
         for speaker in catalog(portal_type='SPSpeaker'):
-            items[speaker.getPath()] = SimpleTerm(speaker.getPath(), speaker.getPath(), speaker.Title)
+            items[speaker.getPath()] = SimpleTerm(
+                                            speaker.getPath(), 
+                                            speaker.getPath(), 
+                                            speaker.Title
+                                            )
 
         return SimpleVocabulary(items.values())
 
