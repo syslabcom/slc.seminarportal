@@ -60,6 +60,14 @@ SeminarSchema = atapi.OrderedBaseFolderSchema.copy() + ATEventSchema.copy() + at
         searchable=True,
         validators=('isTidyHtmlWithCleanup',),
     ),
+    atapi.BooleanField(
+        name='showRosterHour',
+        widget=atapi.BooleanWidget(
+            label=u"Show the hour column in the speech roster?",
+            label_msgid='slc.seminar_label_show_hour_column',
+            i18n_domain='slc.seminar',
+        ),
+    ),
 ))
 
 del SeminarSchema['text']

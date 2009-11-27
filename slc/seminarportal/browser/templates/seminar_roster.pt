@@ -11,7 +11,7 @@
                 class="listing" 
                 summary="Content listing">
                 <tr>
-                    <th style="text-align:left">
+                    <th tal:condition="here/getShowRosterHour" style="text-align:left">
                         Hour
                     </th>
                     <th style="text-align:left" 
@@ -31,7 +31,7 @@
                     <tr tal:repeat="time python:day_times[date]"
                         tal:attributes="class python:repeat['time'].odd() and 'content odd' or 'content even'">
 
-                        <td style="text-align:left">
+                        <td tal:condition="here/getShowRosterHour" style="text-align:left">
                             <tal:slot replace="string:${time/TimeMinutes}"/>
                         </td>
                         <td style="text-align:left; padding:2px;" 
