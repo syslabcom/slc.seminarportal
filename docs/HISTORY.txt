@@ -14,7 +14,7 @@ slc.seminarportal Changelog
 - Bugfix, also show ATBlobs in the 'Resources' table. [jcbrand]
 - Show speakers in the speeches summary and fix a bug that prevented the
   description from showing. [jcbrand]
-- Restrіct the addable types in speech and speaker. [jcbrand]
+- Restrict the addable types in speech and speaker. [jcbrand]
 - Show thumbnails for speakers more often. [jcbrand]
 
 1.2.6 (2009-11-25)
