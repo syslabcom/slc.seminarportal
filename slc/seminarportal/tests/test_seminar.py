@@ -17,7 +17,6 @@ class TestSeminar(SeminarPortalTestCase):
         """
         self.loginAsPortalOwner()
         portal = self.portal
-        qi = portal.portal_quickinstaller
         portal.invokeFactory('SPSeminar', 'plone-conference', title="Seminar")
         seminar = getattr(portal, 'plone-conference')
         seminar._renameAfterCreation(check_auto_id=True)

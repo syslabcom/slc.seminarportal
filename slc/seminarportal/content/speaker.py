@@ -293,6 +293,7 @@ class SPSpeaker(I18NOrderedBaseFolder ):
     def get_path(self):
         return '/'.join(self.getPhysicalPath()) 
 
+
 atapi.registerType(SPSpeaker, PROJECTNAME)
 
 
