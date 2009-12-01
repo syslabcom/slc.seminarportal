@@ -1,6 +1,13 @@
 slc.seminarportal Changelog
 ===========================
 
+1.2.9 (2009-12-01)
+------------------
+
+- Added unit tests for the speeches portlet [jcbrand]
+- In chrome et al., don't ѕhow an ugly icon on the speaker portlet if no image
+  has been uploaded [jcbrand]
+
 1.2.8 (2009-11-28)
 ------------------
 
