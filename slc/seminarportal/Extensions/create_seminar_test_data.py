@@ -14,6 +14,9 @@ from slc.seminarportal.config import short_desc
 from slc.seminarportal.config import desc
 from slc.seminarportal.config import conclusions
 
+from slc.seminarportal.utils import create_speaker
+from slc.seminarportal.utils import create_speech
+
 log = logging.getLogger('create_seminar_test_data.py')
 
 def run(self):
@@ -29,8 +32,12 @@ def run(self):
         speakers_folder = getattr(seminar, 'speakers')
         log.info('Creating Speakers')
         for surname, firstname in names:
-            speaker_id = self.generateUniqueId('SPSpeaker')
-            speaker = create_speaker(self, speakers_folder, speaker_id, surname, firstname)
+            speaker = create_speaker(
+                                speakers_folder, 
+                                speaker_id, 
+                                surname, 
+                                firstname
+                                )
 
         speakers = speakers_folder.objectValues()
         num_of_speakers = len(speakers)
@@ -39,18 +46,31 @@ def run(self):
         for i in ['A', 'B']:
             log.info('Creating venue: %s' % i)
             speech_folder_id = 'speech_venue_%s' % i.lower()
-            speech_venues_folder.invokeFactory('SPSpeechVenue', speech_folder_id, title='Speech Venue %s' % i, description=short_desc)
+            speech_venues_folder.invokeFactory(
+                                        'SPSpeechVenue', 
+                                        speech_folder_id, 
+                                        title='Speech Venue %s' % i, 
+                                        description=short_desc
+                                        )
+
             speech_folder = getattr(speech_venues_folder, speech_folder_id)
             wftool.doActionFor(speech_folder, 'publish')
             for days in [0,1,2]:
                 for title in titles:
                     speech_title = 'Speech: %s' % title
-                    sid = self.generateUniqueId('SPSpeech')
                     start_hour = random.randint(6, 20)
                     end_hour = start_hour + random.randint(0,3)
                     start_date = DateTime('%s %s:%s ' % ((seminar_day+days).Date(), start_hour, random.randint(0,30)))
                     end_date = DateTime('%s %s:%s' % ((seminar_day+days).Date(), end_hour, random.randint(30,59)))
-                    speech = create_speech(self, speech_folder, sid, speech_title, desc, start_date, end_date)
+
+                    speech = create_speech(
+                                        speech_folder, 
+                                        speech_title, 
+                                        desc, 
+                                        start_date, 
+                                        end_date
+                                        )
+
                     speech_speakers = []
                     for i in range(0,2):
                         rand_index = random.randint(0, num_of_speakers-1)
@@ -96,30 +116,5 @@ def create_seminar(self, parent, seminar_id, title, desc, conclusions):
         wftool.doActionFor(s, 'publish')
         return s
     
-def create_speech(self, parent, speech_id, title, desc, start_date, end_date):
-    if not hasattr(parent, 'speech_id'):
-        parent.invokeFactory('SPSpeech', 
-                             speech_id, 
-                             title=title, 
-                             description=desc, 
-                             startDate=start_date,
-                             endDate=end_date)
-        s = getattr(parent, speech_id)
-        s._renameAfterCreation(check_auto_id=True)
-        wftool = getToolByName(self, 'portal_workflow')
-        wftool.doActionFor(s, 'publish')
-        return s
-
-def create_speaker(self, parent, speaker_id, surname, firstname):
-    if not hasattr(parent, 'speaker_id'):
-        parent.invokeFactory('SPSpeaker', 
-                             speaker_id,)
-        s = getattr(parent, speaker_id)
-        s._renameAfterCreation(check_auto_id=True)
-        s.setLastName(surname)
-        s.setFirstName(firstname)
-        wftool = getToolByName(self, 'portal_workflow')
-        wftool.doActionFor(s, 'publish')
-        return s
 
     
