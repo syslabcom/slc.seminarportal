@@ -5,8 +5,7 @@ from zope.i18nmessageid import MessageFactory
 from slc.seminarportal import config
 
 from Products.Archetypes import atapi
-from Products.CMFCore import utils
-from Products.CMFCore.permissions import setDefaultRoles
+from Products.CMFCore.utils import ContentInit
 from Products.CMFCore import DirectoryView
 
 from config import product_globals
@@ -48,7 +47,7 @@ def initialize(context):
     # in the GenericSetup profile.
 
     for atype, constructor in zip(content_types, constructors):
-        utils.ContentInit('%s: %s' % (config.PROJECTNAME, atype.portal_type),
+        ContentInit('%s: %s' % (config.PROJECTNAME, atype.portal_type),
             content_types      = (atype,),
             permission         = config.ADD_PERMISSIONS[atype.portal_type],
             extra_constructors = (constructor,),
