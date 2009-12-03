@@ -6,10 +6,6 @@
   text-align: left;
   width: 60%;
 }
-.eventbox-label {
-  float:left;
-  text-align: left;
-}
 .eventbox-value-left-align {
   float:right;
   text-align: left;
@@ -19,22 +15,24 @@
   float:right;
   text-align: right;
 }
+
 .no_bullets ul {
     list-style-type:none; 
     list-style-image:none;
 }
-.eventbox-label-short {
+
+.seminar-field {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.eventbox-label {
   float:left;
   text-align:left;
   max-width: 15%;
   width: 15%;
 }
-.eventbox-label {
-  float:left;
-  text-align:left;
-  max-width: 40%;
-  width: 40%;
-}
+
 .eventbox-value {
   float:right;
   text-align: left;

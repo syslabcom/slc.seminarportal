@@ -101,7 +101,7 @@
     </tal:get>
 
     <div id="add_to_calendar">
-        <label class="eventbox-label-short">Add to calendar:</label>
+        <label class="eventbox-label">Add to calendar:</label>
         <div>
             <a href="#"
                 tal:attributes="href string:$here_url/vcs_view"
@@ -121,74 +121,66 @@
     <br clear="all"/>
     <span id="seminar-details">
         <tal:if condition="here/contact_name">
-            <div id="archetypes-field-organiser" class="left-column">
+            <div id="archetypes-field-organiser" class="seminar-field">
                 <label class="eventbox-label">Organiser</label>
-                <div class="eventbox-value">
-                    <metal:field use-macro="python:here.widget('contactName', mode='view')">
-                        Organiser
-                    </metal:field>
-                </div>
+                <metal:field use-macro="python:here.widget('contactName', mode='view')">
+                    Organiser
+                </metal:field>
             </div>
         </tal:if>
         <tal:if condition="here/getLocation">
-            <div id="archetypes-field-location" class="right-column">
+            <div id="archetypes-field-location" class="seminar-field">
                 <label class="eventbox-label">Location</label>
-                <div class="eventbox-value">
-                    <metal:field use-macro="python:here.widget('location', mode='view')">
-                        Location
-                    </metal:field>
-                </div>
+                <metal:field use-macro="python:here.widget('location', mode='view')">
+                    Location
+                </metal:field>
             </div>
         </tal:if>
         <tal:if condition="here/contact_email">
-            <div id="archetypes-field-organiserContact" class="left-column">
+            <div id="archetypes-field-organiserContact" class="seminar-field">
                 <label class="eventbox-label">Email</label>
-                <div class="eventbox-value">
-                    <metal:field use-macro="python:here.widget('contactEmail', mode='view')">
-                        organiserContact
-                    </metal:field>
-                </div>
+                <metal:field use-macro="python:here.widget('contactEmail', mode='view')">
+                    organiserContact
+                </metal:field>
             </div>
         </tal:if>
         <tal:if condition="here/contact_phone">
-            <div id="archetypes-field-contactPhone" class="right-column">
+            <div id="archetypes-field-contactPhone" class="seminar-field">
                 <label class="eventbox-label">Phone</label>
-                <div class="eventbox-value">
-                    <metal:field use-macro="python:here.widget('contactPhone',mode='view')"
-                        >organiserPhone
-                    </metal:field>
-                </div>
+                <metal:field use-macro="python:here.widget('contactPhone',mode='view')"
+                    >organiserPhone
+                </metal:field>
             </div>
         </tal:if>
         <tal:if condition="here/event_url">
-            <div id="archetypes-field-organiserWebsites" class="left-column">
+            <div id="archetypes-field-organiserWebsites" class="seminar-field">
                 <label class="eventbox-label">Website</label>
-                <div class="eventbox-value">
-                    <metal:field use-macro="python:here.widget('eventUrl',mode='view')">
-                        OrganiserWebsites
-                    </metal:field>
-                </div>        
+                <metal:field use-macro="python:here.widget('eventUrl',mode='view')">
+                    OrganiserWebsites
+                </metal:field>
             </div>
         </tal:if>
         <div class="visualClear"></div>
-        <div id="archetypes-field-startDate" class="left-column">
+        <div id="archetypes-field-startDate" class="seminar-field">
             <label class="eventbox-label">Start Date</label>
-            <div class="eventbox-value">
-                <metal:field use-macro="python:here.widget('startDate', mode='view')">
-                    startDate
-                </metal:field>
-            </div> 
+            <metal:field use-macro="python:here.widget('startDate', mode='view')">
+                startDate
+            </metal:field>
         </div>
-        <div id="archetypes-field-endDate" class="right-column">
+        <div id="archetypes-field-endDate" class="seminar-field">
             <label class="eventbox-label">End Date</label>
-            <div class="eventbox-value">
-                <metal:field use-macro="python:here.widget('endDate', mode='view')">
-                    End Date
-                </metal:field>
-            </div>
+            <metal:field use-macro="python:here.widget('endDate', mode='view')">
+                End Date
+            </metal:field>
+        </div>
+        <div id="archetypes-field-attendees" class="seminar-field">
+            <label class="eventbox-label">Attendees</label>
+            <br clear="all"/>
+            <metal:field use-macro="python:here.widget('attendees', mode='view')">
+                End Date
+            </metal:field>
         </div>
         
-        <br clear="all"/>
         <br clear="all"/>
 
         <tal:if condition="here/getSummary">
