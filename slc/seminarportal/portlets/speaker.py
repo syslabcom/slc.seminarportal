@@ -50,7 +50,6 @@ class Assignment(base.Assignment):
 
 class Renderer(base.Renderer):
     _template = ViewPageTemplateFile('speaker.pt')
-    available = True
 
     def __init__(self, *args):
         base.Renderer.__init__(self, *args)
