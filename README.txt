@@ -76,14 +76,14 @@ Credits
 Copyright European Agency for Health and Safety at Work and Syslab.com
 GmbH.
 
-syslab.osha.smartprintng development was funded by the European Agency
+slc.seminarportal development was funded by the European Agency
 for Health and Safety at Work.
 
 
 License
 =======
 
-syslab.osha.smartprintng is licensed under the GNU Lesser Generic
+slc.seminarportal is licensed under the GNU Lesser Generic
 Public License, version 2 or later and EUPL version 1.1 only. The
 complete license texts can be found in docs/LICENSE.GPL and
 docs/LICENSE.EUPL.
