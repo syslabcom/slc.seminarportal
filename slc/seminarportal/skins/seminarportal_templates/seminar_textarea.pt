@@ -19,30 +19,29 @@
             <metal:slot define-slot="inside" 
                   tal:define="text python:accessor();
                               short python:'%s </p>' % text[:200];">
-                <span tal:attributes="id string:${fieldName}-short"
+                <div tal:attributes="id string:${fieldName}-short"
                       tal:condition="short">
-                    <tal:short replace="structure short"/>...
                     <a style="cursor:pointer" 
                        tal:attributes="
-                            onclick string:jq('span#${fieldName}-short').hide();; 
-                                           jq('span#${fieldName}-long').fadeIn(100);;">
-                            More
+                            onclick string:jq('div#${fieldName}-short').hide();; 
+                                           jq('div#${fieldName}-long').show(400);;">
+                            Click here to show the summary
                     </a>
                     <br/>
                     <br/>
-                </span>
-                <span style="display:None"
+                </div>
+                <div style="display:None"
                       tal:attributes="id string:${fieldName}-long">
                     <tal:text replace="structure text"/>
                     <a style="cursor:pointer" 
                        tal:attributes="
-                            onclick string:jq('span#${fieldName}-long').hide();; 
-                                           jq('span#${fieldName}-short').show();;">
-                            Less
+                            onclick string:jq('div#${fieldName}-long').hide(400);; 
+                                           jq('div#${fieldName}-short').show(500);;">
+                            Click here to hide the summary
                     </a>
                     <br/>
                     <br/>
-                </span>
+                </div>
             </metal:slot>
         </span>
     </metal:view_macro>
