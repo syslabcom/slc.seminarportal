@@ -34,7 +34,6 @@ def run(self):
         for surname, firstname in names:
             speaker = create_speaker(
                                 speakers_folder, 
-                                speaker_id, 
                                 surname, 
                                 firstname
                                 )

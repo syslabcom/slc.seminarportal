@@ -18,7 +18,7 @@ def create_speech(parent, title, desc, start_date, end_date):
         return s
 
 
-def create_speaker(parent, speaker_id, surname, firstname):
+def create_speaker(parent, surname, firstname):
     speaker_id = parent.generateUniqueId('SPSpeaker')
     if not hasattr(parent, 'speaker_id'):
         parent.invokeFactory('SPSpeaker', 
