@@ -90,17 +90,43 @@
 
         <tal:if condition="here/getText"
                 define="field python:schema['text']">
-            <div>
-                <label class="eventbox-label" tal:content="field/widget/label">Start Date</label>
-                <div class="eventbox-value-left-align">
-                    <metal:field use-macro="python:here.widget(field.getName(), mode='view')">
-                        start date 
-                    </metal:field>
-                </div>
-            </div>
-            <div class="visualClear"></div>	
+            <label class="eventbox-label" tal:content="field/widget/label">Start Date</label>
             <br/>
+            <metal:field use-macro="python:here.widget(field.getName(), mode='view')">
+                start date 
+            </metal:field>
+            <div class="visualClear"></div>	
         </tal:if>
+
+        <tal:get define="resources view/get_files_and_images">
+            <table 
+                tal:condition="resources"
+                id="sortable" 
+                class="listing" 
+                summary="Content listing"
+                style="width:100%">
+                <thead>
+                <tr>
+                    <th colspan="2">Resources and Attachments</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr tal:define="num python:len(resources);"
+                    tal:repeat="row python:range(0, num/2+num%2)">
+                    <td style="width:50%">
+                        <a tal:attributes="href python:resources[row*2][1].absolute_url()"
+                            tal:content="python:resources[row*2][0]"></a>
+                    </td>
+                    <td>
+                        <tal:if condition="python:num>row*2+1">
+                            <a tal:attributes="href python:resources[row*2+1][1].absolute_url()"
+                            tal:content="python:resources[row*2+1][0]"></a>
+                        </tal:if>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </tal:get>
 
         <tal:if condition="here/getRelatedItems">
             <div class="visualClear"></div>

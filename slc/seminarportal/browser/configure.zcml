@@ -13,7 +13,7 @@
         class=".seminarfolder_view.SeminarFolderView"
         permission="zope.Public"
         layer="slc.seminarportal.interfaces.IThemeLayer"
-    />
+        />
 
     <browser:page
         for="*"
@@ -22,7 +22,7 @@
         class=".search.Search"
         permission="zope.Public"
         layer="slc.seminarportal.interfaces.IThemeLayer"
-    />
+        />
 
     <browser:page
         for="*"
@@ -55,6 +55,14 @@
         name="seminar-roster"
         class=".seminar_view.SeminarView"
         template="templates/seminar_roster.pt"
+        permission="zope.Public"
+        />
+
+    <browser:page
+        for="slc.seminarportal.interfaces.ISpeech"
+        name="speech-view"
+        class=".seminar_view.SeminarView"
+        template="templates/speech_view.pt"
         permission="zope.Public"
         />
 
