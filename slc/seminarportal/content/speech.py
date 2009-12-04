@@ -38,6 +38,7 @@ SpeechSchema['description'].widget.description = \
     'A short abstract, introduction or description of the speech'
 SpeechSchema['text'].widget.label = \
     _(u'label_event_announcement', default=u'Conclusions')
+SpeechSchema['text'].widget.macro = 'seminar_textarea'
 SpeechSchema['location'].widget.label = \
     _(u'label_event_location', default=u'Location')
 SpeechSchema['startDate'].widget.format = '%A %d %B %Y %H:%M'

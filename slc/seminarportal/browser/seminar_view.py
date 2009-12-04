@@ -127,3 +127,4 @@ class SeminarView(BrowserView):
         return batch
 
 
+
