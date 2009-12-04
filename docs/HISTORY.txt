@@ -1,6 +1,14 @@
 slc.seminarportal Changelog
 ===========================
 
+1.2.10 (2009-12-04)
+-------------------
+
+- Show files and images uploaded inside speeches as attachments [jcbrand]
+- Moved the speech_view skins template to a browser view [jcbrand]
+- Added license information [goibhniu]
+
+
 1.2.9 (2009-12-01)
 ------------------
 
