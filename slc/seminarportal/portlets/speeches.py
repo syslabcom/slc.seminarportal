@@ -63,9 +63,12 @@ class Renderer(base.Renderer):
             count = self.data.count
         except AttributeError:
             count = 5
-        return catalog(portal_type='SPSpeech', 
-                       sort_limit=count, 
-                       sort_on='modified', 
-                       sort_order='reverse')[:count]
+        if count > 0:
+            return catalog(portal_type='SPSpeech', 
+                        sort_limit=count, 
+                        sort_on='modified', 
+                        sort_order='reverse')[:count]
+        else:
+            return []
 
 
