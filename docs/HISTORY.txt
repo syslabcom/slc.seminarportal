@@ -1,7 +1,7 @@
 slc.seminarportal Changelog
 ===========================
 
-1.2.10 (2009-12-04)
+1.2.10 (2009-12-07)
 -------------------
 
 - Show files and images uploaded inside speeches as attachments [jcbrand]
