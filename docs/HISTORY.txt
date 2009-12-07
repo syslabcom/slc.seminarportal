@@ -13,7 +13,7 @@ slc.seminarportal Changelog
 ------------------
 
 - Added unit tests for the speeches portlet [jcbrand]
-- In chrome et al., don't ѕhow an ugly icon on the speaker portlet if no image
+- In chrome et al., don't show an ugly icon on the speaker portlet if no image
   has been uploaded [jcbrand]
 
 1.2.8 (2009-11-28)
