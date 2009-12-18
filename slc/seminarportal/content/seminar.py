@@ -132,6 +132,8 @@ class SPSeminar(I18NBaseFolder, ATEvent):
         """ For some crazy reason, setLanguage failed with an
             AlreadyTranslated error.
             
+            This bug occurs in LinguaPlone 2.2, and is fixed in 2.3
+            
             The code that fails is Products/LinguaPlone/I18NBaseObject.py:332
 
             Here is a pdb trace showing the problem:
