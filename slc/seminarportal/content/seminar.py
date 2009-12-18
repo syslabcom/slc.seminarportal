@@ -1,14 +1,20 @@
+from Acquisition import aq_base
+from AccessControl import ClassSecurityInfo
+
 from zope.interface import implements
 
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import schemata
 from Products.ATContentTypes.content.event import ATEvent
 from Products.ATContentTypes.content.event import ATEventSchema
+from Products.LinguaPlone.I18NBaseObject import AlreadyTranslated
+from Products.LinguaPlone.I18NBaseFolder import I18NBaseFolder
+from Products.LinguaPlone import permissions
 
 from slc.seminarportal.interfaces import ISeminar
 from slc.seminarportal.config import PROJECTNAME, ALLOWABLE_TEXT_TYPES
 
-SeminarSchema = atapi.OrderedBaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Schema((
+SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Schema((
     atapi.ImageField(
         name='logo',
         widget=atapi.ImageWidget(
@@ -100,8 +106,9 @@ SeminarSchema.moveField('location', after='description')
 SeminarSchema['startDate'].widget.format = '%A %d %B %Y %H:%M'
 SeminarSchema['endDate'].widget.format = '%A %d %B %Y %H:%M'
 
-class SPSeminar(atapi.OrderedBaseFolder, ATEvent):
+class SPSeminar(I18NBaseFolder, ATEvent):
     """Description of the Example Type"""
+    security = ClassSecurityInfo()
     implements(ISeminar)
     meta_type = portal_type = "SPSeminar"
     schema = SeminarSchema
@@ -119,6 +126,48 @@ class SPSeminar(atapi.OrderedBaseFolder, ATEvent):
 
     def get_seminar_end_date(self):
         return self.endDate
+
+    security.declareProtected(permissions.ModifyPortalContent, 'setLanguage')
+    def setLanguage(self, value, **kwargs):
+        """ For some crazy reason, setLanguage failed with an
+            AlreadyTranslated error.
+            
+            The code that fails is Products/LinguaPlone/I18NBaseObject.py:332
+
+            Here is a pdb trace showing the problem:
+            (Pdb) p self
+                <SPSeminar at /osha/Members/admin/test-seminar-nl>
+            (Pdb) p self
+                <SPSeminar at /osha/Members/admin/test-seminar-nl>
+            (Pdb) p translation
+                <SPSeminar at /osha/Members/admin/test-seminar-nl>
+            (Pdb) self.UID()
+                '2000b779359475adf1cd599ab3d5f96f'
+            (Pdb) translation.UID()
+                '2000b779359475adf1cd599ab3d5f96f'
+            (Pdb) self ==  translation
+                False
+            (Pdb) type(self)
+                <type 'ImplicitAcquirerWrapper'>
+            (Pdb) type(translation)
+                <type 'ImplicitAcquirerWrapper'>
+            (Pdb) aq_inner(self) == aq_inner(translation)
+                False
+            (Pdb) aq_base(self) == aq_base(translation)
+                True
+
+            We override the if statement here and use aq_base to fix the
+            problem and if necessary then call the original setLanguage 
+            method.
+        """
+        translation = self.getTranslation(value)
+        if self.hasTranslation(value):
+            if aq_base(translation) == aq_base(self):
+                return
+            else:
+                raise AlreadyTranslated, translation.absolute_url()
+
+        super(SPSeminar, self).setLanguage(self)
          
 atapi.registerType(SPSeminar, PROJECTNAME)
 
