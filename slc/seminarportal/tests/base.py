@@ -20,9 +20,14 @@ from slc.seminarportal.utils import create_speech
 log = logging.getLogger('tests/base.py')
 
 ztc.installProduct('Relations')
+ztc.installProduct('LinguaPlone')
 ztc.installProduct('slc.seminarportal')
 
-PRODUCTS = ['Relations', 'slc.seminarportal']
+PRODUCTS = [
+        'Relations', 
+        'LinguaPlone', 
+        'slc.seminarportal'
+        ]
 ptc.setupPloneSite(products=PRODUCTS)
 class SeminarPortalTestCase(ptc.PloneTestCase):
     """Base class used for test cases
