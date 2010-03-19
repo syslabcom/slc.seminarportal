@@ -13,13 +13,7 @@ version = '1.2.12dev'
 long_description = (
     read('README.txt')
     + '\n' +
-    'Change history\n'
-    '**************\n'
-    + '\n' +
     read('docs/HISTORY.txt')
-    + '\n' +
-    'Contributors\n'
-    '************\n'
     + '\n' +
     read('CONTRIBUTORS.txt')
     + '\n' 
@@ -51,10 +45,11 @@ setup(name='slc.seminarportal',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools',    
-          'Products.Relations',
-          'Products.ATReferenceBrowserWidget',
-
+            'setuptools',    
+            'Products.Relations',
+            'Products.ATReferenceBrowserWidget',
+            'Products.LinguaPlone',
+            'collective.orderedmultiselectwidget',
       ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),

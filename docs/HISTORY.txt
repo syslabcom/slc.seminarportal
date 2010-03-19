@@ -1,5 +1,5 @@
-slc.seminarportal Changelog
-===========================
+Changelog
+*********
 
 1.2.12 (unreleased)
 -------------------
@@ -83,17 +83,17 @@ slc.seminarportal Changelog
 - fixed minor css bug preventing validation [pilz]
 
 1.2 (2009-06-17)
-----------------------------------
+----------------
 
 - Added testlayer [gerken]
 
 1.1 (2009-05-12)
-----------------------------------
+----------------
 
 - Packaged egg [pilz]
 
 1.0 (2008-03-31)
-----------------------------------
+----------------
 
 - Created [jcbrand]
 

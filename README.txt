@@ -1,7 +1,5 @@
 .. contents::
 
-
-
 .. Note!
    -----
    
@@ -26,6 +24,8 @@ rows.
 To show a column with the speech times on the roster, make sure to check the
 box on the bottom of the seminar edit page.
 
+Content Types:
+--------------
 
 The following content types are available: 
 
@@ -70,8 +70,30 @@ You can add a 'layout' property on the folder containing your seminars.
 Give the value of '@@seminarfolder-view' and you will have now a special
 view for your seminars with simple and advanced search options.
 
+Dummy Data:
+-----------
+
+If you want to get an impression of the structure, views and content types provided by
+slc.seminarportal, then you can create some dummy seminars, speakers and
+speeches with a provided external method.
+
+In the Zope management interface, create a new external method by choosing it
+from the dropdown box.
+
+Then give the following values:
+    - id: create_seminar_test_data (or whatever you prefer)
+    - Title: (whatever you prefer)
+    - Module Name: slc.seminarportal.create_seminar_test_data
+    - Function Name: run
+
+After saving, click on the 'test' tab and wait for the external method to
+finish executing. 
+
+You should now have a 'Seminars' folder with dummy data in your Plone root.
+
+
 Credits
-=======
+-------
 
 Copyright European Agency for Health and Safety at Work and Syslab.com
 GmbH.
@@ -81,9 +103,11 @@ for Health and Safety at Work.
 
 
 License
-=======
+-------
 
 slc.seminarportal is licensed under the GNU Lesser Generic
 Public License, version 2 or later and EUPL version 1.1 only. The
 complete license texts can be found in docs/LICENSE.GPL and
 docs/LICENSE.EUPL.
+
+
