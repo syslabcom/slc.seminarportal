@@ -18,9 +18,9 @@ from interfaces import ISpeakerPortlet
 
 log = logging.getLogger('slc.seminarportal/portlets/speaker.py')
 
+
 class AddForm(base.AddForm):
     form_fields = form.Fields(ISpeakerPortlet)
-    
     label = _(u"Add a Speaker Portlet")
 
     def create(self, data):
