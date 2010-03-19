@@ -1,10 +1,11 @@
 Changelog
 *********
 
-1.2.12 (unreleased)
+1.2.12 (2010-03-19)
 -------------------
 
-- Nothing changed yet.
+- Fixed the bug which prevented you from creating 'speakers' porlets inside
+  seminars. [jcbrand]
 
 
 1.2.11 (2009-12-07)
