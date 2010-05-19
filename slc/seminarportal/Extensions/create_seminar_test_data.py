@@ -7,6 +7,7 @@ from DateTime import DateTime
 
 from Products.Archetypes.event import ObjectInitializedEvent
 from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.WorkflowCore import WorkflowException
 
 from slc.seminarportal.config import names
 from slc.seminarportal.config import titles
@@ -97,7 +98,11 @@ def create_seminar_folder(self):
 
     seminar_folder = getattr(parent, 'seminars')
     wftool = getToolByName(self, 'portal_workflow')
-    wftool.doActionFor(seminar_folder, 'publish')
+    try:
+        wftool.doActionFor(seminar_folder, 'publish')
+    except WorkflowException:
+        log.error("Could not publish the 'Seminars' folder")
+
     return seminar_folder
 
 def create_seminar(self, parent, seminar_id, title, desc, conclusions):
