@@ -4,8 +4,8 @@ Changelog
 1.2.13 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- Fixed a bug in the speakers portlet, for the case when less speakers were
+  found in the catalog than the maximun set number [thomasw]
 
 1.2.12 (2010-03-19)
 -------------------

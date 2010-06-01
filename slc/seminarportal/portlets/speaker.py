@@ -78,7 +78,8 @@ class Renderer(base.Renderer):
         if data.random:
             catalog = getToolByName(self.context, 'portal_catalog')
             brains =  catalog(portal_type='SPSpeaker')
-            random_indexes = random.sample(range(0, len(brains)), data.count)
+            random_indexes = random.sample(range(0, len(brains)),
+               (len(brains) >= data.count and data.count or len(brains))) 
             return [brains[i].getObject() for i in random_indexes]
 
         elif len(data.speakers) > data.count:
