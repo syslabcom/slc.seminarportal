@@ -6,6 +6,8 @@ Changelog
 
 - Fixed a bug in the speakers portlet, for the case when less speakers were
   found in the catalog than the maximun set number [thomasw]
+- Fixed a bug in the seminar view: Mustn't show the border to anonymous
+  users [thomasw]
 
 1.2.12 (2010-03-19)
 -------------------

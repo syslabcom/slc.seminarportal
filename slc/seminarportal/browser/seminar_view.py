@@ -126,5 +126,7 @@ class SeminarView(BrowserView):
         batch = Batch(speeches, b_size, int(b_start), orphan=0)
         return batch
 
-
-
+    def isAnonymous(self):
+        """ """
+        anonymous = getToolByName(self, 'portal_membership').isAnonymousUser()
+        return anonymous
