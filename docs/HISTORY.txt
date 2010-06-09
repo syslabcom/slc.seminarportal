@@ -1,7 +1,7 @@
 Changelog
 *********
 
-1.2.13 (unreleased)
+1.2.13 (2010-06-09)
 -------------------
 
 - Fixed a bug in the speakers portlet, for the case when less speakers were
