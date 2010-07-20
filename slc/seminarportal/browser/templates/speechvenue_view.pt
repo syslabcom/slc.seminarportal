@@ -9,7 +9,9 @@
 
 <head>
     <metal:border fill-slot="top_slot">
-        <tal:border define="dummy python:request.set('enable_border',1)" />
+        <span tal:condition="not:view/isAnonymous">
+            <tal:border define="dummy python:request.set('enable_border',1)" />
+        </span>
     </metal:border>
 
     <metal:block fill-slot="javascript_head_slot">
