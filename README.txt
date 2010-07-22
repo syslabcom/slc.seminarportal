@@ -9,6 +9,12 @@
 - Questions and comments to info (at) syslab (dot) com
 - Report bugs at http://products.syslab.com/products/slc.seminarportal/issues
 
+IMPORTANT
+*********
+
+You need to have at least Products.Archetypes 1.5.15 or later. If you are running 
+Plone 3.3.4, this is not the case. You can then simply pin Archetypes to 1.5.15 
+and it should work.
 
 Detailed Documentation
 **********************
