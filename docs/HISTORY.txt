@@ -4,8 +4,18 @@ Changelog
 1.2.15 (unreleased)
 -------------------
 
-- Nothing changed yet.
-
+- In "Featured speakers" portlet, I replaced field name "speakers" with 
+  "featured_speakers". Reason: in a seminar, we also have a folder called
+  "speakers". The code in zope.app.form.browser.itemswidget.OrderedMultiSelectWidget
+  in selected() tries to get all values for the field by checking if self.context
+  .context has an attr named like the field -> the SPSpeakers folder is found,
+  and mayhem follows (= cannot add the portlet inside a seminar) [thomasw]
+- add path to _render_cachekey of speakers portlet; make it possible to have more
+  than one in the site [thomasw]
+- Hide "Add new XXX" buttons for anonymous on speeches, speakers and speech-
+  venues folders [thomasw]
+- corrected a typo in the GS for Speech FTI, wrong view name [thomasw]
+ 
 
 1.2.14 (2010-07-22)
 -------------------
