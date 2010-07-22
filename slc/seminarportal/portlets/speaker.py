@@ -61,7 +61,8 @@ class Renderer(base.Renderer):
     def _render_cachekey(method, self):
         portal_languages = getToolByName(self.context, 'portal_languages')
         preflang = portal_languages.getPreferredLanguage()
-        return (preflang)
+        path = "/".join(self.context.getPhysicalPath())
+        return (preflang, path)
         
     @ram.cache(_render_cachekey)
     def render(self):
