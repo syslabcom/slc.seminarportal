@@ -24,7 +24,7 @@ class AddForm(base.AddForm):
     label = _(u"Add a Speaker Portlet")
 
     def create(self, data):
-        return Assignment(speakers=data.get('speakers'),
+        return Assignment(featured_speakers=data.get('featured_speakers'),
                           count=data.get('count'),
                           random=data.get('random'),
                           )
@@ -38,8 +38,8 @@ class EditForm(base.EditForm):
 class Assignment(base.Assignment):
     implements(ISpeakerPortlet)
 
-    def __init__(self, speakers=None, count=5, random=True):
-        self.speakers = speakers
+    def __init__(self, featured_speakers=None, count=5, random=True):
+        self.featured_speakers = featured_speakers
         self.count = count
         self.random = random 
 
@@ -82,24 +82,24 @@ class Renderer(base.Renderer):
                (len(brains) >= data.count and data.count or len(brains))) 
             return [brains[i].getObject() for i in random_indexes]
 
-        elif len(data.speakers) > data.count:
-            speakers = []
-            for i in random.sample(range(0, len(data.speakers), data.count)):
+        elif len(data.featured_speakers) > data.count:
+            featured_speakers = []
+            for i in random.sample(range(0, len(data.featured_speakers), data.count)):
                 try:
-                    speakers.append(self.portal.unrestrictedTraverse(data.speaker[i]))
+                    featured_speakers.append(self.portal.unrestrictedTraverse(data.speaker[i]))
                 except AttributeError:
                     log.warn('Could not find speaker: %s' % data.speaker[i])
-                    self.data.speakers.remove(data.speaker[i])
+                    self.data.featured_speakers.remove(data.speaker[i])
 
-        elif data.speakers:
-            speakers = []
-            for speaker in data.speakers:
+        elif data.featured_speakers:
+            featured_speakers = []
+            for speaker in data.featured_speakers:
                 try:
-                    speakers.append(self.portal.unrestrictedTraverse(speaker))
+                    featured_speakers.append(self.portal.unrestrictedTraverse(speaker))
                 except AttributeError:
                     log.warn('Could not find speaker: %s' % speaker)
-                    self.data.speakers.remove(speaker)
-            return speakers
+                    self.data.featured_speakers.remove(speaker)
+            return featured_speakers
 
         return []
 

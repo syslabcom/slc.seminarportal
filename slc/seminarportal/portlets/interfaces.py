@@ -8,7 +8,7 @@ from Products.CMFPlone import PloneMessageFactory as _
 class ISpeakerPortlet(IPortletDataProvider):
     """Interface for portlet to display seminar speakers
     """
-    speakers = schema.List(
+    featured_speakers = schema.List(
                     title=_(u"Choose a speaker"),
                     description= \
                             u'This field is not required if you choose to '
