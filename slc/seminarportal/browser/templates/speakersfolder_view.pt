@@ -51,6 +51,7 @@
     <tal:get define="speakers python:view.query_items('SPSpeaker');
                     batch speakers;">
         <tal:if_not condition="not: speakers">
+          <span tal:condition="not:view/isAnonymous">
             <h3>Add a new Speaker</h3>
             This folder does not contain any speakers at the moment,
             click the button below to add one.
@@ -58,9 +59,11 @@
                 <input type="hidden" name="type_name" value="SPSpeaker"/>
                 <input class="context" type="submit" value="Add a Speaker"/>
             </form>
+          </span>
         </tal:if_not>
 
         <tal:if condition="speakers">
+          <span tal:condition="not:view/isAnonymous">
             <div id="add-speaker">
                 <strong>Add another Speaker</strong>
                 <p>
@@ -70,6 +73,7 @@
                 </form>
                 </p>
             </div>
+          </span>
             <br clear="all"/>
             <div metal:use-macro="here/batch_macros/macros/navigation" />
             <ul>

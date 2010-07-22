@@ -51,6 +51,7 @@
     <tal:get define="speeches python:view.query_items('SPSpeech');
                     batch speeches;">
         <tal:if_not condition="not: speeches">
+          <span tal:condition="not:view/isAnonymous">
             <h3>Add a new Speech</h3>
             This folder does not contain any speeches at the moment,
             click the button below to add one.
@@ -58,14 +59,17 @@
                 <input type="hidden" name="type_name" value="SPSpeech"/>
                 <input class="context" type="submit" value="Add a Speech"/>
             </form>
+          </span>
         </tal:if_not>
 
         <tal:if condition="speeches">
+          <span tal:condition="not:view/isAnonymous">
             <h3>Add another Speech</h3>
             <form tal:attributes="action string:${here/absolute_url}/createObject">
                 <input type="hidden" name="type_name" value="SPSpeech"/>
                 <input class="context" type="submit" value="Add a Speech"/>
             </form>
+          </span>
             <br clear="all"/>
             <h3>Speeches</h3>
             The following Speeches are contained inside this folder.
