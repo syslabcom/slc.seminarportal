@@ -1,7 +1,7 @@
 Changelog
 *********
 
-1.2.15 (unreleased)
+1.2.15 (2010-08-25)
 -------------------
 
 - In "Featured speakers" portlet, I replaced field name "speakers" with 
