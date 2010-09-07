@@ -10,8 +10,6 @@
   <!-- -*- extra stuff goes here -*- -->
   <object name="SPSpeechVenueFolder"
     meta_type="Factory-based Type Information with dynamic views" />
-  <object name="mytype"
-    meta_type="Factory-based Type Information with dynamic views" />
   <object name="SPSpeakersFolder"
     meta_type="Factory-based Type Information with dynamic views" />
   <object name="SPSpeech"
