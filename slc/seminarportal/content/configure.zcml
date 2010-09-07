@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="slc.seminarportal">
 
     <!-- configure your content components here -->
@@ -44,6 +45,9 @@
             permission="cmf.ModifyPortalContent"
             set_schema="..interfaces.ISeminar"
             />
+        <implements 
+            zcml:condition="installed Products.PloneFlashUpload"
+            interface="Products.PloneFlashUpload.interfaces.IUploadingCapable" />
     </class>
     <class class=".speakersfolder.SPSpeakersFolder">
         <require
