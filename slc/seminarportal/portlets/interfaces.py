@@ -22,7 +22,7 @@ class ISpeakerPortlet(IPortletDataProvider):
                     title=_(u"How many speakers should be displayed?"),
                     description= \
                             u"If you chose more speakers then will be "
-                            u"displayed, the shown ѕpeakers will be chosen "
+                            u"displayed, the shown speakers will be chosen "
                             u"randomly from your specified list.",
                     required=True,
                     default=5
