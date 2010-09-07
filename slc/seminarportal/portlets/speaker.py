@@ -1,5 +1,6 @@
 import logging
 import random
+import Acquisition
 
 from zope.component import getMultiAdapter
 from zope.formlib import form
@@ -8,6 +9,7 @@ from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from Products.CMFPlone.Portal import PloneSite
 
 from plone.app.portlets.portlets import base
 
@@ -27,6 +29,7 @@ class AddForm(base.AddForm):
         return Assignment(featured_speakers=data.get('featured_speakers'),
                           count=data.get('count'),
                           random=data.get('random'),
+                          local=data.get('local')
                           )
 
 
@@ -38,10 +41,12 @@ class EditForm(base.EditForm):
 class Assignment(base.Assignment):
     implements(ISpeakerPortlet)
 
-    def __init__(self, featured_speakers=None, count=5, random=True):
+    def __init__(self, featured_speakers=None, count=5, random=True,
+        local=False):
         self.featured_speakers = featured_speakers
         self.count = count
-        self.random = random 
+        self.random = random
+        self.local = local
 
     @property
     def title(self):
@@ -76,7 +81,17 @@ class Renderer(base.Renderer):
         """ Return the speaker objects as configured by the portlet.
         """
         data = self.data
-        if data.random:
+        if data.local:
+            seminar = self.get_current_seminar()
+            if seminar:
+                catalog = getToolByName(self.context, 'portal_catalog')
+                brains = catalog(portal_type='SPSpeaker',
+                    path="/".join(seminar.getPhysicalPath()))
+                random_indexes = random.sample(range(0, len(brains)),
+                   (len(brains) >= data.count and data.count or len(brains))) 
+                return [brains[i].getObject() for i in random_indexes]
+
+        elif data.random:
             catalog = getToolByName(self.context, 'portal_catalog')
             brains =  catalog(portal_type='SPSpeaker')
             random_indexes = random.sample(range(0, len(brains)),
@@ -105,5 +120,12 @@ class Renderer(base.Renderer):
 
         return []
 
-
-
+    def get_current_seminar(self):
+        """ Return the object of a particular type which is
+        the parent of the current object."""
+        obj = Acquisition.aq_inner(self.context)
+        while not isinstance(obj, PloneSite):
+            if obj.meta_type == 'SPSeminar':
+                return obj
+            obj = Acquisition.aq_parent(obj)
+        return None
