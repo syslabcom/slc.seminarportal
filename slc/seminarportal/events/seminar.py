@@ -34,6 +34,7 @@ class SeminarEvents:
             folder.setConstrainTypesMode(1)
             folder.setImmediatelyAddableTypes([subtype])
             folder.setLocallyAllowedTypes([subtype])
+            folder.setExcludeFromNav(1)
 
 
 event_subscriber = SeminarEvents()
