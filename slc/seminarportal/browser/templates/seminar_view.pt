@@ -38,7 +38,7 @@
 
 <body>
 
-<div metal:fill-slot="main">
+<div metal:fill-slot="main" id="seminar-content">
     <a  href=""
         class="link-parent"
         i18n:translate="label_more_seminars_link"
