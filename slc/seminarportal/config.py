@@ -37,10 +37,11 @@ names = (
 ('Loidl', 'Alois'),
 ('Oschkinat', 'Hartmut'),
 ('Steinhoff', 'Heinz-Jürgen'),
-('Thiele', 'Christina'),
+('Стоичков', 'Христо'),
 ('Ulrich', 'Anne S.'),
-('Zimmermann', 'Gottfried'),
+('Kotłowski', 'Tadeusz'),
 )
+
 
 titles = [
 "Maecenas metus dui, porta sed.",

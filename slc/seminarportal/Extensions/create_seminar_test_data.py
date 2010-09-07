@@ -20,11 +20,13 @@ from slc.seminarportal.utils import create_speech
 
 log = logging.getLogger('create_seminar_test_data.py')
 
+FOLDER_ID = 'seminars-test'
+
 def run(self):
     wftool = getToolByName(self, 'portal_workflow')
     sf = create_seminar_folder(self)
     parent = getParent(self)
-    sf = getattr(parent, 'seminars')
+    sf = getattr(parent, FOLDER_ID)
     for i in range(0,5):
         seminar_day = DateTime() + 10
         t = titles[i]
@@ -90,13 +92,13 @@ def getParent(self):
 
 def create_seminar_folder(self):
     parent = getParent(self)
-    if not hasattr(parent, 'seminars'):
+    if not hasattr(parent, FOLDER_ID):
         parent.invokeFactory('Folder', 
-                             'seminars', 
-                             title='Seminars', 
+                             FOLDER_ID, 
+                             title='Seminars TEST', 
                              description='Folder containing a collection of Seminars')
 
-    seminar_folder = getattr(parent, 'seminars')
+    seminar_folder = getattr(parent, FOLDER_ID)
     wftool = getToolByName(self, 'portal_workflow')
     try:
         wftool.doActionFor(seminar_folder, 'publish')
