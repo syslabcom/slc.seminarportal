@@ -95,6 +95,11 @@ class SeminarView(BrowserView):
         """
         context = aq_inner(self.context)
         objs = context.objectValues(['ATFile', 'ATBlob', 'ATImage'])
+        # If there are no attachments and the object is a translation,
+        # look on the canonical
+        if len(objs) == 0 and not context.isCanonical():
+            canonical = context.getCanonical()
+            objs = canonical.objectValues(['ATFile', 'ATBlob', 'ATImage'])
         objs = [(o.pretty_title_or_id(), o) for o in objs]
 
         # See if the object is schema-extended with an 'attachment' field.
