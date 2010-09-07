@@ -15,6 +15,9 @@
             permission="cmf.ModifyPortalContent"
             set_schema="..interfaces.ISpeech"
             />
+        <implements 
+            zcml:condition="installed Products.PloneFlashUpload"
+            interface="Products.PloneFlashUpload.interfaces.IUploadingCapable" />
     </class>
     <class class=".speechvenue.SPSpeechVenue">
         <require
