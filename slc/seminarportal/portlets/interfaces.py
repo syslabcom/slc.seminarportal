@@ -40,7 +40,7 @@ class ISpeakerPortlet(IPortletDataProvider):
                         u'from the current Seminar.'),
                     description=_(u'This option will only take effect if the '
                         u'portlet is displayed inside a Seminar. Selecting '
-                        u'this option takes precedence over the "radom" '
+                        u'this option takes precedence over the "random" '
                         u'selection above.'),
                     required=False,
                     default=False,
