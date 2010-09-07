@@ -85,12 +85,13 @@ class Renderer(base.Renderer):
 
         elif len(data.featured_speakers) > data.count:
             featured_speakers = []
-            for i in random.sample(range(0, len(data.featured_speakers), data.count)):
+            for i in random.sample(range(0, len(data.featured_speakers)), data.count):
                 try:
-                    featured_speakers.append(self.portal.unrestrictedTraverse(data.speaker[i]))
+                    featured_speakers.append(self.portal.unrestrictedTraverse(data.featured_speakers[i]))
                 except AttributeError:
-                    log.warn('Could not find speaker: %s' % data.speaker[i])
-                    self.data.featured_speakers.remove(data.speaker[i])
+                    log.warn('Could not find speaker: %s' % data.featured_speakers[i])
+                    self.data.featured_speakers.remove(data.featured_speakers[i])
+            return featured_speakers
 
         elif data.featured_speakers:
             featured_speakers = []
