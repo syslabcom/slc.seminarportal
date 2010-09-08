@@ -102,13 +102,6 @@ class SeminarView(BrowserView):
             objs = canonical.objectValues(['ATFile', 'ATBlob', 'ATImage'])
         objs = [(o.pretty_title_or_id(), o) for o in objs]
 
-        # See if the object is schema-extended with an 'attachment' field.
-        # Pretty Unique and particular use-case, but necessary for us.
-        attachment_field = context.Schema().get('attachment', None)
-        if attachment_field:
-            attachment = attachment_field.get(context)
-            if attachment.size:
-                objs += [(attachment.filename, attachment)]
         return objs
 
 
