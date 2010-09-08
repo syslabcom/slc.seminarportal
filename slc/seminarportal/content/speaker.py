@@ -5,7 +5,8 @@ from AccessControl import ClassSecurityInfo
 from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
 from Products.Archetypes import atapi
 from Products.CMFCore import permissions
-from Products.LinguaPlone.I18NOrderedBaseFolder import I18NOrderedBaseFolder
+from Products.Archetypes.atapi import OrderedBaseFolder
+# from Products.LinguaPlone.I18NOrderedBaseFolder import I18NOrderedBaseFolder
 from Products.Relations.field import RelationField
 
 from slc.seminarportal.config import PROJECTNAME
@@ -248,7 +249,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
 SpeakerSchema['title'].widget.label = 'Full Name' 
 SpeakerSchema['title'].widget.visible = {'edit': 'invisible', 'view': 'visible'}
 
-class SPSpeaker(I18NOrderedBaseFolder ):
+class SPSpeaker(OrderedBaseFolder):
     """ Speakers are people who hold speeches at seminars
     """
     implements(ISpeaker)
