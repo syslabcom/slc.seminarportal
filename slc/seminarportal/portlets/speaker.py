@@ -85,11 +85,16 @@ class Renderer(base.Renderer):
             seminar = self.get_current_seminar()
             if seminar:
                 catalog = getToolByName(self.context, 'portal_catalog')
-                brains = catalog(portal_type='SPSpeaker',
+                brains = catalog(portal_type='SPSpeech', Language='all',
                     path="/".join(seminar.getPhysicalPath()))
-                random_indexes = random.sample(range(0, len(brains)),
-                   (len(brains) >= data.count and data.count or len(brains))) 
-                return [brains[i].getObject() for i in random_indexes]
+                speeches = [x.getObject() for x in brains]
+                speakers = set()
+                for speech in speeches:
+                    speakers.update(speech.getSpeakers())
+                speakers = list(speakers)
+                random_indexes = random.sample(range(0, len(speakers)),
+                   (len(speakers) >= data.count and data.count or len(speakers)))
+                return [speakers[i] for i in random_indexes]
 
         elif data.random:
             catalog = getToolByName(self.context, 'portal_catalog')
