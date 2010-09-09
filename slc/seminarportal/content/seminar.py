@@ -22,6 +22,7 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
             label_msgid='slc.seminar_label_logo',
             i18n_domain='slc.seminar',
         ),
+        languageIndependent=True,
         original_size=(200,200),
         sizes={'thumb': (100, 125), 'normal': (200, 200)},
         default_output_type='image/jpeg',
@@ -73,6 +74,7 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
             label_msgid='slc.seminar_label_show_hour_column',
             i18n_domain='slc.seminar',
         ),
+        languageIndependent=True,
     ),
 ))
 
