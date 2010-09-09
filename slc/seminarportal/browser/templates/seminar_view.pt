@@ -48,7 +48,7 @@
         View more seminars
     </a>
 
-    <fieldset>
+    <div id="fieldset">
     <br clear="all"/>
     <div>
         <img border="0" style="padding:0 10px 0 0;" align="left" 
@@ -228,7 +228,7 @@
             </div>
         </tal:if>
     </span>
-    </fieldset>
+    </div>
     <br clear="all"/>
 
     <div style="float:right"><a tal:attributes="href string:${here/absolute_url}/@@speech-summary">Click here to see a summary of all the Speeches</a></div>
