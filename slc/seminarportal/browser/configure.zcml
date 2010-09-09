@@ -67,6 +67,14 @@
         />
 
     <browser:page
+        for="slc.seminarportal.interfaces.ISpeaker"
+        name="speaker-view"
+        class=".seminar_view.SeminarView"
+        template="templates/speaker_view.pt"
+        permission="zope.Public"
+        />
+
+    <browser:page
         for="slc.seminarportal.interfaces.ISpeechVenue"
         name="speechvenue-view"
         template="templates/speechvenue_view.pt"
