@@ -1,13 +1,16 @@
 from DateTime import DateTime
-
+from AccessControl import ClassSecurityInfo
 from zope.interface import implements
+from Acquisition import aq_base
 
 from Products.ATContentTypes.content.event import ATEvent
 from Products.ATContentTypes.content.event import ATEventSchema
 from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
 from Products.Archetypes import atapi
+from Products.LinguaPlone.I18NBaseObject import AlreadyTranslated
 from Products.LinguaPlone.I18NBaseFolder import I18NBaseFolder
 from Products.Relations.field import RelationField
+from Products.LinguaPlone import permissions
 
 from slc.seminarportal import seminarportalMessageFactory as _
 from slc.seminarportal.config import PROJECTNAME
@@ -28,6 +31,7 @@ SpeechSchema = atapi.OrderedBaseFolderSchema.copy() + ATEventSchema.copy() + ata
             image_method='image_icon',
             macro='seminarportal_referencebrowser',
         ),
+        languageIndependent=True,
         allowed_types=('SPSpeaker',),
         multiValued=1,
         relationship='speech_speakers',
@@ -51,6 +55,7 @@ class SPSpeech(I18NBaseFolder, ATEvent):
     """ Represents a Speech held during a seminar. 
     """ 
     implements(ISpeech)
+    security = ClassSecurityInfo()
 
     meta_type = portal_type = "SPSpeech"
     schema = SpeechSchema
@@ -78,6 +83,26 @@ class SPSpeech(I18NBaseFolder, ATEvent):
             return self.get_seminar_end_date()
         except AttributeError:
             return DateTime()
+
+    security.declareProtected(permissions.ModifyPortalContent, 'setLanguage')
+    def setLanguage(self, value, **kwargs):
+        """ For some crazy reason, setLanguage failed with an
+            AlreadyTranslated error.
+            
+            For explanation see setLanguage() of SPSeminar.
+
+            We override the if statement here and use aq_base to fix the
+            problem and if necessary then call the original setLanguage 
+            method.
+        """
+        translation = self.getTranslation(value)
+        if self.hasTranslation(value):
+            if aq_base(translation) == aq_base(self):
+                return
+            else:
+                raise AlreadyTranslated, translation.absolute_url()
+
+        super(SPSpeech, self).setLanguage(value)
 
 
 atapi.registerType(SPSpeech, PROJECTNAME)
