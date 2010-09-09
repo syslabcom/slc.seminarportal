@@ -171,7 +171,7 @@ class SPSeminar(I18NBaseFolder, ATEvent):
             else:
                 raise AlreadyTranslated, translation.absolute_url()
 
-        super(SPSeminar, self).setLanguage(self)
+        super(SPSeminar, self).setLanguage(value)
          
 atapi.registerType(SPSeminar, PROJECTNAME)
 
