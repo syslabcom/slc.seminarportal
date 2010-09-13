@@ -16,7 +16,7 @@ from interfaces import ISpeechesPortlet
 class AddForm(base.AddForm):
     form_fields = form.Fields(ISpeechesPortlet)
     
-    label = _(u"Add a Speeches Portlet")
+    label = u"Add a Speeches Portlet"
 
     def create(self, data):
         return Assignment(count=data.get('count'),)
@@ -24,7 +24,7 @@ class AddForm(base.AddForm):
 
 class EditForm(base.EditForm):
     form_fields = form.Fields(ISpeechesPortlet)
-    label = _(u"Edit the Speeches Portlet")
+    label = u"Edit the Speeches Portlet"
 
 
 class Assignment(base.Assignment):
@@ -35,7 +35,7 @@ class Assignment(base.Assignment):
 
     @property
     def title(self):
-        return _(u"Featured Speeches")
+        return u"Featured Speeches"
 
 
 class Renderer(base.Renderer):

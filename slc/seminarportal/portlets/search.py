@@ -26,7 +26,7 @@ class Assignment(base.Assignment):
 
     @property
     def title(self):
-        return _(u"Search for Seminars, Speakers of Speeches")
+        return u"Search for Seminars, Speakers of Speeches"
 
 
 class Renderer(base.Renderer):

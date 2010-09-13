@@ -9,7 +9,7 @@ class ISpeakerPortlet(IPortletDataProvider):
     """Interface for portlet to display seminar speakers
     """
     featured_speakers = schema.List(
-                    title=_(u"Choose a speaker"),
+                    title=u"Choose a speaker",
                     description= \
                             u'This field is not required if you choose to '
                             u'randomly display speakers or show only speakers '
@@ -20,7 +20,7 @@ class ISpeakerPortlet(IPortletDataProvider):
                     )
                         
     count = schema.Int( 
-                    title=_(u"How many speakers should be displayed?"),
+                    title=u"How many speakers should be displayed?",
                     description= \
                             u"If you choose more speakers than should be "
                             u"displayed, the shown speakers will be chosen "
@@ -30,18 +30,18 @@ class ISpeakerPortlet(IPortletDataProvider):
                     )
                          
     random = schema.Bool(
-                    title=_(u'Option: Click here to display random speakers'),
+                    title=u'Option: Click here to display random speakers',
                     required=False,
                     default=True,
                     )
 
     local = schema.Bool(
-                    title=_(u'Option: Click here to display only speakers '
-                        u'from the current Seminar.'),
-                    description=_(u'This option will only take effect if the '
+                    title=u'Option: Click here to display only speakers '
+                        u'from the current Seminar.',
+                    description=u'This option will only take effect if the '
                         u'portlet is displayed inside a Seminar. Selecting '
                         u'this option takes precedence over the "random" '
-                        u'selection above.'),
+                        u'selection above.',
                     required=False,
                     default=False,
                     )
@@ -53,7 +53,7 @@ class ISpeechesPortlet(IPortletDataProvider):
     """Interface for portlet to display seminar speeches 
     """
     count = schema.Int( 
-                    title=_(u'How many speeches should be displayed?'),
+                    title=u'How many speeches should be displayed?',
                     required=True,
                     default=5
                     )
