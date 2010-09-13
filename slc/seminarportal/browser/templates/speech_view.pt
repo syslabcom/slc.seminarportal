@@ -64,7 +64,7 @@
         <div class="visualClear"></div>	
         <br/>
         <div class="spfield">
-            <label class="eventbox-label">Speaker(s)</label>
+            <label class="eventbox-label" i18n:translate="label_speech_speakers">Speaker(s)</label>
             <div class="eventbox-value-left-align no_bullets">
                 <metal:field use-macro="python:here.widget('speakers', mode='view')">
                     speaker

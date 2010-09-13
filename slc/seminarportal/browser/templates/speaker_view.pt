@@ -25,7 +25,7 @@
         <tal:text replace="string:${here/seminar_title}"/>
     </a>
     <fieldset id="Speaker">
-        <legend>Speaker</legend>
+        <legend i18n:translate="title_speaker">Speaker</legend>
             <div id="archetypes-field-image">
                 <div>
                     <metal:field use-macro="python:here.widget('image', mode='view')">Image</metal:field>
@@ -33,7 +33,7 @@
             </div>
             <tal:if condition="here/getSocialPartnerGroup">
                 <div id="archetypes-field-SocialPartnerGroup" >
-                    <label class="eventbox-label">Social Partner Group</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_social_partner_group">Social Partner Group</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('socialPartnerGroup', mode='view')">
                             Social Partner Group
@@ -44,7 +44,7 @@
             </tal:if>
             <tal:if condition="here/getExpertise">
                 <div id="archetypes-field-Expertise" >
-                    <label class="eventbox-label">Expertise</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_expertise">Expertise</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('expertise', mode='view')">
                             Expertise
@@ -55,7 +55,7 @@
             </tal:if>
             <tal:if condition="here/getEmployer">
                 <div id="archetypes-field-employer" >
-                    <label class="eventbox-label">Employer</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_employer">Employer</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('employer',mode='view')">
                             Employer
@@ -66,7 +66,7 @@
             </tal:if>
             <tal:if condition="here/getNationality">
                 <div id="archetypes-field-nationality" >
-                    <label class="eventbox-label">Nationality</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_nationality">Nationality</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('nationality',mode='view')">
                             Nationality
@@ -77,7 +77,7 @@
             </tal:if>
             <tal:if condition="here/getSuffix">
                 <div id="archetypes-field-suffix" >
-                    <label class="eventbox-label">Suffix</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_suffix">Suffix</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('suffix', mode='view')">
                             suffix
@@ -88,7 +88,7 @@
             </tal:if>
             <tal:if condition="here/getJobTitles">
                 <div id="archetypes-field-jobTitles" >
-                    <label class="eventbox-label">Jobtitles</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_job_titles">Job titles</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('jobTitles', mode='view')">
                             Jobtitles
@@ -99,7 +99,7 @@
             </tal:if>
             <tal:if condition="here/getEmail">
                 <div id="archetypes-field-email" >
-                    <label class="eventbox-label">email</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_email">Email</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('email', mode='view')">
                             Email
@@ -110,7 +110,7 @@
             </tal:if>
             <tal:if condition="here/getOfficePhone">
                 <div id="archetypes-field-officePhone" >
-                    <label class="eventbox-label">Phone</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_office_phone">Office phone</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('officePhone', mode='view')">
                             Phone
@@ -121,7 +121,7 @@
             </tal:if>
             <tal:if condition="here/getOfficeAddress">
                 <div id="archetypes-field-officeAddress" >
-                    <label class="eventbox-label">Address</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_office_address">Address</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('officeAddress', mode='view')">
                             Address
@@ -132,7 +132,7 @@
             </tal:if>
             <tal:if condition="here/getOfficePostalCode">
                 <div id="archetypes-field-officePostalCode" >
-                    <label class="eventbox-label">Postal Code</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_office_postal_code">Office postal Code</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('officePostalCode', mode='view')">
                             Postal Code
@@ -143,7 +143,7 @@
             </tal:if>
             <tal:if condition="here/getOfficeCity">
                 <div id="archetypes-field-officeCity" >
-                    <label class="eventbox-label">City</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_office_city">Office city</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('officeCity', mode='view')">
                         City
@@ -154,7 +154,7 @@
             </tal:if>
             <tal:if condition="here/getOfficeState">
                 <div id="archetypes-field-officeState" >
-                    <label class="eventbox-label">State</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_office_state">Office state</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('officeState', mode='view')">
                             State
@@ -165,7 +165,7 @@
             </tal:if>
             <tal:if condition="here/getEducation">
                 <div id="archetypes-field-education" >
-                    <label class="eventbox-label">Education</label>
+                    <label class="eventbox-label" i18n:translate="label_speaker_education">Education</label>
                     <div class="eventbox-value">
                         <metal:field use-macro="python:here.widget('education', mode='view')">
                             Education
@@ -178,7 +178,7 @@
             <div id="archetypes-field-speakers" 
                  class="spfield"
                  tal:condition="here/getSpeeches">
-                <label class="eventbox-label">Speeches</label>
+                <label class="eventbox-label" i18n:translate="label_speaker_speeches">Speeches</label>
                 <br clear="all"/>
                 <div class="eventbox-value-left-align no_bullets">
                     <metal:field use-macro="python:here.widget('speeches', mode='view')">
@@ -189,7 +189,7 @@
             <br/>
             <br clear="all"/>
             <tal:if condition="here/getBiography">
-                <label class="eventbox-label">Biography</label>
+                <label class="eventbox-label" i18n:translate="label_speaker_biography">Biography</label>
                 <br/>
                 <metal:field use-macro="python:here.widget('biography', mode='view')">
                     Biography

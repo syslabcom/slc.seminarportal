@@ -58,7 +58,7 @@
              tal:replace="here/Description"/>
         <div tal:condition="python:here.portal_membership.checkPermission('Add portal content', here)"
              style="float:right; border:1px;">
-            <h3> Add Content </h3>
+            <h3 i18n:translate="label_add_content">Add Content</h3>
             <form tal:attributes="action string:${here/absolute_url}/speakers/createObject">
                 <input type="hidden" name="type_name" value="SPSpeaker"/>
                 <input class="context" type="submit" value="Add a Speaker" name="http://www.google.com"/>
@@ -81,7 +81,7 @@
             style="width:100%">
             <thead>
             <tr>
-                <th colspan="2">Resources and Attachments</th>
+                <th colspan="2" i18n:translate="label_resources_attachments">Resources and Attachments</th>
             </tr>
             </thead>
             <tbody>
@@ -103,7 +103,7 @@
     </tal:get>
 
     <div id="add_to_calendar">
-        <label class="eventbox-label">Add to calendar:</label>
+        <label class="eventbox-label" i18n:translate="label_add_to_calendar">Add to calendar:</label>
         <div>
             <a href="#"
                 tal:attributes="href string:$here_url/vcs_view"
@@ -124,7 +124,7 @@
     <span id="seminar-details">
         <tal:if condition="here/contact_name">
             <div id="archetypes-field-organiser" class="seminar-field">
-                <label class="eventbox-label">Organiser</label>
+                <label class="eventbox-label" i18n:translate="label_seminar_organiser">Organiser</label>
                 <metal:field use-macro="python:here.widget('contactName', mode='view')">
                     Organiser
                 </metal:field>
@@ -132,7 +132,7 @@
         </tal:if>
         <tal:if condition="here/getLocation">
             <div id="archetypes-field-location" class="seminar-field">
-                <label class="eventbox-label">Location</label>
+                <label class="eventbox-label" i18n:translate="label_seminar_location">Location</label>
                 <metal:field use-macro="python:here.widget('location', mode='view')">
                     Location
                 </metal:field>
@@ -140,7 +140,7 @@
         </tal:if>
         <tal:if condition="here/contact_email">
             <div id="archetypes-field-organiserContact" class="seminar-field">
-                <label class="eventbox-label">Email</label>
+                <label class="eventbox-label" i18n:translate="label_speaker_email">Email</label>
                 <metal:field use-macro="python:here.widget('contactEmail', mode='view')">
                     organiserContact
                 </metal:field>
@@ -148,7 +148,7 @@
         </tal:if>
         <tal:if condition="here/contact_phone">
             <div id="archetypes-field-contactPhone" class="seminar-field">
-                <label class="eventbox-label">Phone</label>
+                <label class="eventbox-label" i18n:translate="label_seminar_phone">Phone</label>
                 <metal:field use-macro="python:here.widget('contactPhone',mode='view')"
                     >organiserPhone
                 </metal:field>
@@ -156,7 +156,7 @@
         </tal:if>
         <tal:if condition="here/event_url">
             <div id="archetypes-field-organiserWebsites" class="seminar-field">
-                <label class="eventbox-label">Website</label>
+                <label class="eventbox-label" i18n:translate="label_seminar_website">Website</label>
                 <metal:field use-macro="python:here.widget('eventUrl',mode='view')">
                     OrganiserWebsites
                 </metal:field>
@@ -164,19 +164,19 @@
         </tal:if>
         <div class="visualClear"></div>
         <div id="archetypes-field-startDate" class="seminar-field">
-            <label class="eventbox-label">Start Date</label>
+            <label class="eventbox-label" i18n:translate="label_seminar_start_date">Start Date</label>
             <metal:field use-macro="python:here.widget('startDate', mode='view')">
                 startDate
             </metal:field>
         </div>
         <div id="archetypes-field-endDate" class="seminar-field">
-            <label class="eventbox-label">End Date</label>
+            <label class="eventbox-label" i18n:translate="label_seminar_end_date">End Date</label>
             <metal:field use-macro="python:here.widget('endDate', mode='view')">
                 End Date
             </metal:field>
         </div>
         <div id="archetypes-field-attendees" class="seminar-field">
-            <label class="eventbox-label">Attendees</label>
+            <label class="eventbox-label" i18n:translate="label_seminar_attendees">Attendees</label>
             <br clear="all"/>
             <metal:field use-macro="python:here.widget('attendees', mode='view')">
                 End Date
@@ -187,7 +187,7 @@
 
         <tal:if condition="here/getSummary">
             <div id="archetypes-field-summary">
-                <label class="eventbox-label">Summary</label>
+                <label class="eventbox-label" i18n:translate="label_seminar_summary">Summary</label>
                 <br clear="all"/>
                 <metal:field use-macro="python:here.widget('summary', mode='view')">
                     Summary
@@ -198,7 +198,7 @@
         <tal:if condition="here/getConclusions">
             <div class="visualClear"></div>
             <div id="archetypes-field-conclusions">
-                <label class="eventbox-label">Conclusions</label>
+                <label class="eventbox-label" i18n:translate="label_seminar_conclusions">Conclusions</label>
                 <br clear="all"/>
                 <metal:field use-macro="python:here.widget('conclusions', mode='view')">
                     Conclusions 
@@ -220,7 +220,7 @@
         <tal:if condition="here/getRelatedItems">
             <div class="visualClear"></div>
             <div id="archetypes-field-relatedItems">
-                <label class="eventbox-label">Related Items</label>
+                <label class="eventbox-label" i18n:translate="label_seminar_further_actions">Related Items</label>
                 <br clear="all"/>
                 <metal:field use-macro="python:here.widget('relatedItems', mode='view')">
                     Related Items
@@ -231,7 +231,8 @@
     </div>
     <br clear="all"/>
 
-    <div style="float:right"><a tal:attributes="href string:${here/absolute_url}/@@speech-summary">Click here to see a summary of all the Speeches</a></div>
+    <div style="float:right"><a tal:attributes="href string:${here/absolute_url}/@@speech-summary"
+        i18n:translate="label_click_to_see_speeches_summary">Click here to see a summary of all the Speeches</a></div>
     <div metal:use-macro="context/@@seminar-roster/macros/view" />
 </div>
 </body>

@@ -99,7 +99,7 @@
         </div>
         <!-- Navigation -->
         <div metal:use-macro="here/batch_macros/macros/navigation" /> 
-        <div tal:condition="python:not batch">
+        <div tal:condition="python:not batch" i18n:translate="label_no_seminars_found">
             No seminars matching your criteria were found
         </div>
     </div>
