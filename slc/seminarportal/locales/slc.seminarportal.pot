@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Mon Sep 13 22:49:22 2010\n"
+"POT-Creation-Date: Mon Sep 13 22:54:45 2010\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
@@ -321,8 +321,13 @@ msgstr ""
 msgid "box_speeches"
 msgstr ""
 
-#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
-#. Default: "Click here to show the full text"
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:24
+#. Default: "Click here to hide the full text"
 msgid "label_click_to_show_full_text"
+msgstr ""
+
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
+#. Default: "Click here to hide the full text"
+msgid "label_click_to_hide_full_text"
 msgstr ""
 
