@@ -1,5 +1,5 @@
 <html metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone" >
+      i18n:domain="slc.seminarportal" >
 
 <head>
     <metal:fill fill-slot="header">

@@ -5,7 +5,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="slc.seminarportal">
 
 <head>
     <metal:border fill-slot="top_slot">
@@ -107,14 +107,14 @@
         <div>
             <a href="#"
                 tal:attributes="href string:$here_url/vcs_view"
-                title="Download this event in vCal format"
+                title="Add this item to your vCal calendar"
                 i18n:attributes="title title_add_to_vcal;">
                 <img tal:replace="structure here/icon_export_vcal.png" src="" alt="" />
                 <span i18n:translate="label_add_to_vcal">vCal</span></a>
 
             <a href="#"
                 tal:attributes="href string:$here_url/ics_view"
-                title="Download this event in iCal format"
+                title="Add this item to your iCal calendar"
                 i18n:attributes="title title_add_to_ical;">
                 <img tal:replace="structure here/icon_export_ical.png" src="" alt="" />
                 <span i18n:translate="label_add_to_ical">iCal</span></a>

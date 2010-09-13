@@ -1,5 +1,5 @@
 <dl class="portlet portletSpeeches"
-    i18n:domain="plone">
+    i18n:domain="slc.seminarportal">
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
         <span class="tile" 

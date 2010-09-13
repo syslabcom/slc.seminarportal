@@ -1,10 +1,10 @@
 <dl class="portlet portletSearch"
-    i18n:domain="plone">
+    i18n:domain="slc.seminarportal">
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
         <span class="tile" 
-              i18n:translate="box_speaker">
+              i18n:translate="box_search_seminars">
                 Search the seminars
         </span>
     </dt>

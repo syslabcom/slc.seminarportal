@@ -1,5 +1,5 @@
 <dl class="portlet portletSpeaker"
-    i18n:domain="plone">
+    i18n:domain="slc.seminarportal">
 
     <tal:speaker tal:define="speakers view/get_speakers"
                  tal:condition="speakers">
