@@ -46,7 +46,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         name='suffix',
         widget=atapi.StringWidget(
             label=_(u"label_speaker_suffix", default=u"Suffix"),
-            description=_(u="description_speaker_suffix", default=u"Academic, professional, honorary, and social suffixes."),
+            description=_(u"description_speaker_suffix", default=u"Academic, professional, honorary, and social suffixes."),
         ),
         schemata="default",
         searchable=True
