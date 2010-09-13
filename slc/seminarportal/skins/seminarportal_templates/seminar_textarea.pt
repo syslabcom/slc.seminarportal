@@ -25,7 +25,7 @@
                        tal:attributes="
                             onclick string:jq('div#${fieldName}-short').hide();; 
                                            jq('div#${fieldName}-long').show(400);;">
-                           Click here to hide the full text
+                           Click here to show the full text
                     </a>
                     <br/>
                     <br/>
