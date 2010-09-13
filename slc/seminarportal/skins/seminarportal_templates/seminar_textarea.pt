@@ -2,7 +2,7 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      i18n:domain="plone">
+      i18n:domain="slc.seminarportal">
 
   <head><title></title></head>
 
@@ -33,11 +33,11 @@
                 <div style="display:None"
                       tal:attributes="id string:${fieldName}-long">
                     <tal:text replace="structure text"/>
-                    <a style="cursor:pointer" 
+                    <a style="cursor:pointer" i18n:translate="label_click_to_show_full_text"
                        tal:attributes="
                             onclick string:jq('div#${fieldName}-long').hide(400);; 
                                            jq('div#${fieldName}-short').show(500);;">
-                            Click here to hide the summary
+                            Click here to show the full text
                     </a>
                     <br/>
                     <br/>
