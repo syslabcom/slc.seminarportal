@@ -12,14 +12,13 @@ from Products.Relations.field import RelationField
 from slc.seminarportal.config import PROJECTNAME
 from slc.seminarportal.interfaces import ISpeaker
 from slc.seminarportal.permissions import ASSIGN_SPEAKERS_TO_SPEECHES
+from Products.CMFPlone import PloneMessageFactory as _
 
 SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='firstName',
         widget=atapi.StringWidget(
-            label=u"First Name",
-            label_msgid='slc.seminarportal_label_firstName',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_spaker_first_name", default=u"First Name"),
         ),
         required=True,
         schemata="default",
@@ -28,9 +27,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='middleName',
         widget=atapi.StringWidget(
-            label=u"Middle Name",
-            label_msgid='slc.seminarportal_label_middleName',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_middle_name", default=u"Middle Name"),
         ),
         required=False,
         schemata="default",
@@ -39,9 +36,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='lastName',
         widget=atapi.StringWidget(
-            label=u"Last Name",
-            label_msgid='slc.seminarportal_label_lastName',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_last_name", default=u"Last Name"),
         ),
         required=True,
         schemata="default",
@@ -50,11 +45,8 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='suffix',
         widget=atapi.StringWidget(
-            label=u"Suffix",
-            description="Academic, professional, honorary, and social suffixes.",
-            label_msgid='slc.seminarportal_label_suffix',
-            description_msgid='slc.seminarportal_description_suffix',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_suffix", default=u"Suffix"),
+            description=_(u="description_speaker_suffix", default=u"Academic, professional, honorary, and social suffixes."),
         ),
         schemata="default",
         searchable=True
@@ -63,9 +55,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         name='email',
         user_property=True,
         widget=atapi.StringWidget(
-            label=u'Email',
-            label_msgid='slc.seminarportal_label_email',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_email", default=u'Email'),
         ),
         schemata="default",
         searchable=True,
@@ -75,11 +65,8 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.LinesField(
         name='jobTitles',
         widget=atapi.LinesField._properties['widget'](
-            label=u"Job Titles",
-            description="One per line",
-            label_msgid='slc.seminarportal_label_jobTitles',
-            description_msgid='slc.seminarportal_description_jobTitles',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_job_titles", default=u"Job Titles"),
+            description=_(u"description_speaker_job_titles", default=u"One entry per line"),
         ),
         schemata="default",
         searchable=True
@@ -88,9 +75,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeAddress',
         widget=atapi.TextAreaWidget(
-            label=u"Office Street Address",
-            label_msgid='slc.seminarportal_label_officeAddress',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_office_address", default=u"Office Street Address"),
         ),
         schemata="default",
         searchable=True
@@ -99,9 +84,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeCity',
         widget=atapi.StringWidget(
-            label=u"Office City",
-            label_msgid='slc.seminarportal_label_officeCity',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_office_city", default=u"Office City"),
         ),
         schemata="default",
         searchable=True
@@ -110,9 +93,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeState',
         widget=atapi.StringWidget(
-            label=u"Office State",
-            label_msgid='slc.seminarportal_label_officeState',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_office_state", default=u"Office State"),
         ),
         schemata="default"
     ),
@@ -120,9 +101,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officePostalCode',
         widget=atapi.StringWidget(
-            label=u"Office Postal Code",
-            label_msgid='slc.seminarportal_label_officePostalCode',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_office_postal_code", default=u"Office Postal Code"),
         ),
         schemata="default"
     ),
@@ -130,11 +109,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officePhone',
         widget=atapi.StringWidget(
-            label=u"Office Phone",
-            description="",
-            label_msgid='slc.seminarportal_label_officePhone',
-            description_msgid='slc.seminarportal_description_officePhone',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_office_phone", default=u"Office Phone"),
         ),
         schemata="default",
         searchable=True,
@@ -144,9 +119,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         name='image',
         schemata="default",
         widget=atapi.ImageWidget(
-            label=u'Image',
-            label_msgid='slc.seminarportal_label_image',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_image", default=u'Image'),
             default_content_type='image/gif',
             macro="seminarportal_image",
         ),
@@ -159,9 +132,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.TextField(
         name='biography',
         widget=atapi.RichWidget(
-            label=u'Biography',
-            label_msgid='slc.seminarportal_label_biography',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_biography", default=u'Biography'),
         ),
         schemata="default",
         searchable=True,
@@ -173,9 +144,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.LinesField(
         name='education',
         widget=atapi.LinesField._properties['widget'](
-            label=u'Education',
-            label_msgid='slc.seminarportal_label_education',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_education", default=u'Education'),
         ),
         schemata="default",
         searchable=True
@@ -183,23 +152,18 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='website',
         widget=atapi.LinesField._properties['widget'](
-            label=u"Web Sites",
-            label_msgid='slc.seminarportal_label_websites',
-            description_msgid='slc.seminarportal_description_websites',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_web_sites", default=u"Web sites"),
         ),
         schemata="default",
     ),
     RelationField(
         name='speeches',
         widget=ReferenceBrowserWidget(
-            label=u'Speeches',
-            description=u'Any speeches that this person \
-            held or contributed to, can be added here. Please note that \
-            speeches have to be created separately and for the seminar \
-            at which they were held.',
-            label_msgid='slc.seminarportal_label_speeches',
-            i18n_domain='slc.seminarportal',
+            label=_(u"label_speaker_speeches", default=u'Speeches'),
+            description=_(u"description_speaker_speeches", default=u'Any speeches that this person '\
+            'held or contributed to, can be added here. Please note that ' \
+            'speeches have to be created separately and for the seminar '\
+            'at which they were held.'),
             base_query={'portal_type': 'SPSpeech', 'sort_on': 'sortable_title'},
             allow_browse=1,
             allow_search=1,
@@ -215,33 +179,25 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='nationality',
         widget=atapi.StringWidget(
-            label=u"Nationality",
-            label_msgid='slc.seminar_label_speaker_nationality',
-            i18n_domain='slc.seminar',
+            label=_(u"label_speaker_nationality", default=u"Nationality"),
         ),
     ),
     atapi.StringField(
         name='employer',
         widget=atapi.StringWidget(
-            label=u"Employer",
-            label_msgid='slc.seminar_label_speaker_employer',
-            i18n_domain='slc.seminar',
+            label=_(u"label_speaker_employer", default=u"Employer"),
         ),
     ),
     atapi.StringField(
         name='socialPartnerGroup',
         widget=atapi.StringWidget(
-            name=u"Social Partner Group",
-            label_msgid='slc.seminar_label_speaker_social_partner_group',
-            i18n_domain='slc.seminar',
+            name=_(u"label_speaker_social_partner_group", default=u"Social Partner Group"),
         ),
     ),
     atapi.TextField(
         name='expertise',
         widget=atapi.TextAreaWidget(
-            name=u"Expertise",
-            label_msgid='slc.seminar_label_speaker_expertise',
-            i18n_domain='slc.seminar',
+            name=_(u"label_speaker_expertise", default=u"Expertise"),
         ),
     ),
 ))

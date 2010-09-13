@@ -13,14 +13,13 @@ from Products.LinguaPlone import permissions
 
 from slc.seminarportal.interfaces import ISeminar
 from slc.seminarportal.config import PROJECTNAME, ALLOWABLE_TEXT_TYPES
+from Products.CMFPlone import PloneMessageFactory as _
 
 SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Schema((
     atapi.ImageField(
         name='logo',
         widget=atapi.ImageWidget(
-            label=u"Graphic or Logo for the event",
-            label_msgid='slc.seminar_label_logo',
-            i18n_domain='slc.seminar',
+            label=_(u"label_seminar_logo", default=u"Graphic or Logo for the event"),
         ),
         languageIndependent=True,
         original_size=(200,200),
@@ -32,9 +31,7 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
         name='summary',
         allowable_content_types=ALLOWABLE_TEXT_TYPES,
         widget=atapi.RichWidget(
-            label=u"General Description/Summary of the event",
-            label_msgid='slc.seminar_label_summary',
-            i18n_domain='slc.seminar',
+            label=_(u"label_seminar_summary", default=u"General Description/Summary of the event"),
             macro='seminar_textarea',
         ),
         default_output_type="text/x-html-safe",
@@ -45,9 +42,7 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
         name='conclusions',
         allowable_content_types=ALLOWABLE_TEXT_TYPES,
         widget=atapi.RichWidget(
-            label=u"General Conclusions",
-            label_msgid='slc.seminar_label_conclusions',
-            i18n_domain='slc.seminar',
+            label=_(u"label_seminar_conclusions", default=u"General Conclusions"),
             macro='seminar_textarea',
         ),
         default_output_type="text/x-html-safe",
@@ -58,9 +53,7 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
         name='furtherActions',
         allowable_content_types=ALLOWABLE_TEXT_TYPES,
         widget=atapi.RichWidget(
-            label=u"Further Actions",
-            label_msgid='slc.seminar_label_further_actions',
-            i18n_domain='slc.seminar',
+            label=_(u"label_seminar_further_actions", default=u"Further Actions"),
             macro='seminar_textarea',
         ),
         default_output_type="text/x-html-safe",
@@ -70,9 +63,7 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
     atapi.BooleanField(
         name='showRosterHour',
         widget=atapi.BooleanWidget(
-            label=u"Show the hour column in the speech roster?",
-            label_msgid='slc.seminar_label_show_hour_column',
-            i18n_domain='slc.seminar',
+            label=_(u"label_seminar_show_hour_column", default=u"Show the hour column in the speech roster?"),
         ),
         languageIndependent=True,
     ),
