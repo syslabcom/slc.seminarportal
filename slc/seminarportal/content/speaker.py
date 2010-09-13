@@ -65,7 +65,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.LinesField(
         name='jobTitles',
         widget=atapi.LinesField._properties['widget'](
-            label=_(u"label_speaker_job_titles", default=u"Job Titles"),
+            label=_(u"label_speaker_job_titles", default=u"Job titles"),
             description=_(u"description_speaker_job_titles", default=u"One entry per line"),
         ),
         schemata="default",
@@ -75,7 +75,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeAddress',
         widget=atapi.TextAreaWidget(
-            label=_(u"label_speaker_office_address", default=u"Office Street Address"),
+            label=_(u"label_speaker_office_address", default=u"Office address"),
         ),
         schemata="default",
         searchable=True
@@ -84,7 +84,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeCity',
         widget=atapi.StringWidget(
-            label=_(u"label_speaker_office_city", default=u"Office City"),
+            label=_(u"label_speaker_office_city", default=u"Office city"),
         ),
         schemata="default",
         searchable=True
@@ -93,7 +93,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeState',
         widget=atapi.StringWidget(
-            label=_(u"label_speaker_office_state", default=u"Office State"),
+            label=_(u"label_speaker_office_state", default=u"Office state"),
         ),
         schemata="default"
     ),
@@ -101,7 +101,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officePostalCode',
         widget=atapi.StringWidget(
-            label=_(u"label_speaker_office_postal_code", default=u"Office Postal Code"),
+            label=_(u"label_speaker_office_postal_code", default=u"Office postal code"),
         ),
         schemata="default"
     ),
@@ -109,7 +109,7 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officePhone',
         widget=atapi.StringWidget(
-            label=_(u"label_speaker_office_phone", default=u"Office Phone"),
+            label=_(u"label_speaker_office_phone", default=u"Office phone"),
         ),
         schemata="default",
         searchable=True,

@@ -20,7 +20,7 @@ SpeechSchema = atapi.OrderedBaseFolderSchema.copy() + ATEventSchema.copy() + ata
     RelationField(
         name='speakers',
         widget=ReferenceBrowserWidget(
-            label=_(u"label_speech_speakers", default=u'Speakers'),
+            label=_(u"label_speech_speakers", default=u'Speaker(s)'),
             base_query={'portal_type':'SPSpeaker', 'sort_on':'getSortableName'},
             allow_browse=1,
             allow_search=1,
