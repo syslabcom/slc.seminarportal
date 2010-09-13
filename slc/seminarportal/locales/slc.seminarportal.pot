@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Mon Sep 13 22:30:22 2010\n"
+"POT-Creation-Date: Mon Sep 13 22:49:22 2010\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
@@ -22,6 +22,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: zope/app/locales/extract.py\n"
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:106
+#. Default: "Add to calendar:"
+msgid "label_add_to_calendar"
+msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_view.pt:108
 #: slc.seminarportal:/browser/templates/speech_view.pt:50
@@ -47,9 +52,64 @@ msgstr ""
 msgid "label_add_to_ical"
 msgstr ""
 
+#: slc.seminarportal:/browser/templates/seminar_view.pt:127
+#. Default: "Organiser"
+msgid "label_seminar_organiser"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:135
+#. Default: "Location"
+msgid "label_seminar_location"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:151
+#. Default: "Phone"
+msgid "label_seminar_phone"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:159
+#. Default: "Website"
+msgid "label_seminar_website"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:167
+#. Default: "Start Date"
+msgid "label_seminar_start_date"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:173
+#. Default: "End Date"
+msgid "label_seminar_end_date"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:179
+#. Default: "Attendees"
+msgid "label_seminar_attendees"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:234
+#. Default: "Click here to see a summary of all the Speeches"
+msgid "label_click_to_see_speeches_summary"
+msgstr ""
+
 #: slc.seminarportal:/browser/templates/seminar_view.pt:42
 #. Default: "View more seminars"
 msgid "label_more_seminars_link"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:61
+#. Default: "Add Content"
+msgid "label_add_content"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminar_view.pt:84
+#. Default: "Resources and Attachments"
+msgid "label_resources_attachments"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:102
+#. Default: "No seminars matching your criteria were found"
+msgid "label_no_seminars_found"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/speaker_view.pt:24
@@ -59,6 +119,11 @@ msgstr ""
 #: slc.seminarportal:/browser/templates/speechvenuesfolder_view.pt:44
 #. Default: "View the seminar:"
 msgid "label_seminar_link"
+msgstr ""
+
+#: slc.seminarportal:/browser/templates/speaker_view.pt:28
+#. Default: "Speaker"
+msgid "title_speaker"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/speech_view.pt:47
@@ -72,16 +137,19 @@ msgid "label_seminar_logo"
 msgstr ""
 
 #: slc.seminarportal:/content/seminar.py:34
+#: slc.seminarportal:/browser/templates/seminar_view.pt:190
 #. Default: "General Description/Summary of the event"
 msgid "label_seminar_summary"
 msgstr ""
 
 #: slc.seminarportal:/content/seminar.py:45
+#: slc.seminarportal:/browser/templates/seminar_view.pt:201
 #. Default: "General Conclusions"
 msgid "label_seminar_conclusions"
 msgstr ""
 
 #: slc.seminarportal:/content/seminar.py:56
+#: slc.seminarportal:/browser/templates/seminar_view.pt:223
 #. Default: "Further Actions"
 msgid "label_seminar_further_actions"
 msgstr ""
@@ -92,12 +160,14 @@ msgid "label_seminar_show_hour_column"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:104
-#. Default: "Office Postal Code"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:135
+#. Default: "Office postal code"
 msgid "label_speaker_office_postal_code"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:112
-#. Default: "Office Phone"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:113
+#. Default: "Office phone"
 msgid "label_speaker_office_phone"
 msgstr ""
 
@@ -107,11 +177,13 @@ msgid "label_speaker_image"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:135
+#: slc.seminarportal:/browser/templates/speaker_view.pt:192
 #. Default: "Biography"
 msgid "label_speaker_biography"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:147
+#: slc.seminarportal:/browser/templates/speaker_view.pt:168
 #. Default: "Education"
 msgid "label_speaker_education"
 msgstr ""
@@ -122,6 +194,7 @@ msgid "label_speaker_web_sites"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:162
+#: slc.seminarportal:/browser/templates/speaker_view.pt:181
 #. Default: "Speeches"
 msgid "label_speaker_speeches"
 msgstr ""
@@ -132,21 +205,25 @@ msgid "description_speaker_speeches"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:182
+#: slc.seminarportal:/browser/templates/speaker_view.pt:69
 #. Default: "Nationality"
 msgid "label_speaker_nationality"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:188
+#: slc.seminarportal:/browser/templates/speaker_view.pt:58
 #. Default: "Employer"
 msgid "label_speaker_employer"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:194
+#: slc.seminarportal:/browser/templates/speaker_view.pt:36
 #. Default: "Social Partner Group"
 msgid "label_speaker_social_partner_group"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:200
+#: slc.seminarportal:/browser/templates/speaker_view.pt:47
 #. Default: "Expertise"
 msgid "label_speaker_expertise"
 msgstr ""
@@ -167,6 +244,7 @@ msgid "label_speaker_last_name"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:48
+#: slc.seminarportal:/browser/templates/speaker_view.pt:80
 #. Default: "Suffix"
 msgid "label_speaker_suffix"
 msgstr ""
@@ -177,12 +255,15 @@ msgid "description_speaker_suffix"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:58
+#: slc.seminarportal:/browser/templates/seminar_view.pt:143
+#: slc.seminarportal:/browser/templates/speaker_view.pt:102
 #. Default: "Email"
 msgid "label_speaker_email"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:68
-#. Default: "Job Titles"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:91
+#. Default: "Job titles"
 msgid "label_speaker_job_titles"
 msgstr ""
 
@@ -192,22 +273,26 @@ msgid "description_speaker_job_titles"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:78
-#. Default: "Office Street Address"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:124
+#. Default: "Office address"
 msgid "label_speaker_office_address"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:87
-#. Default: "Office City"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:146
+#. Default: "Office city"
 msgid "label_speaker_office_city"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:96
-#. Default: "Office State"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:157
+#. Default: "Office state"
 msgid "label_speaker_office_state"
 msgstr ""
 
 #: slc.seminarportal:/content/speech.py:23
-#. Default: "Speakers"
+#: slc.seminarportal:/browser/templates/speech_view.pt:67
+#. Default: "Speaker(s)"
 msgid "label_speech_speakers"
 msgstr ""
 
