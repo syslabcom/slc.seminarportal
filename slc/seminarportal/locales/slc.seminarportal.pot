@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Mon Sep 13 21:54:21 2010\n"
+"POT-Creation-Date: Mon Sep 13 22:30:22 2010\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
@@ -66,12 +66,157 @@ msgstr ""
 msgid "heading_add_to_calendar"
 msgstr ""
 
-#: slc.seminarportal:/content/speech.py:45
+#: slc.seminarportal:/content/seminar.py:22
+#. Default: "Graphic or Logo for the event"
+msgid "label_seminar_logo"
+msgstr ""
+
+#: slc.seminarportal:/content/seminar.py:34
+#. Default: "General Description/Summary of the event"
+msgid "label_seminar_summary"
+msgstr ""
+
+#: slc.seminarportal:/content/seminar.py:45
+#. Default: "General Conclusions"
+msgid "label_seminar_conclusions"
+msgstr ""
+
+#: slc.seminarportal:/content/seminar.py:56
+#. Default: "Further Actions"
+msgid "label_seminar_further_actions"
+msgstr ""
+
+#: slc.seminarportal:/content/seminar.py:66
+#. Default: "Show the hour column in the speech roster?"
+msgid "label_seminar_show_hour_column"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:104
+#. Default: "Office Postal Code"
+msgid "label_speaker_office_postal_code"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:112
+#. Default: "Office Phone"
+msgid "label_speaker_office_phone"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:122
+#. Default: "Image"
+msgid "label_speaker_image"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:135
+#. Default: "Biography"
+msgid "label_speaker_biography"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:147
+#. Default: "Education"
+msgid "label_speaker_education"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:155
+#. Default: "Web sites"
+msgid "label_speaker_web_sites"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:162
+#. Default: "Speeches"
+msgid "label_speaker_speeches"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:163
+#. Default: "Any speeches that this person held or contributed to, can be added here. Please note that speeches have to be created separately and for the seminar at which they were held."
+msgid "description_speaker_speeches"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:182
+#. Default: "Nationality"
+msgid "label_speaker_nationality"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:188
+#. Default: "Employer"
+msgid "label_speaker_employer"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:194
+#. Default: "Social Partner Group"
+msgid "label_speaker_social_partner_group"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:200
+#. Default: "Expertise"
+msgid "label_speaker_expertise"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:21
+#. Default: "First Name"
+msgid "label_spaker_first_name"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:30
+#. Default: "Middle Name"
+msgid "label_speaker_middle_name"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:39
+#. Default: "Last Name"
+msgid "label_speaker_last_name"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:48
+#. Default: "Suffix"
+msgid "label_speaker_suffix"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:49
+#. Default: "Academic, professional, honorary, and social suffixes."
+msgid "description_speaker_suffix"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:58
+#. Default: "Email"
+msgid "label_speaker_email"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:68
+#. Default: "Job Titles"
+msgid "label_speaker_job_titles"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:69
+#. Default: "One entry per line"
+msgid "description_speaker_job_titles"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:78
+#. Default: "Office Street Address"
+msgid "label_speaker_office_address"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:87
+#. Default: "Office City"
+msgid "label_speaker_office_city"
+msgstr ""
+
+#: slc.seminarportal:/content/speaker.py:96
+#. Default: "Office State"
+msgid "label_speaker_office_state"
+msgstr ""
+
+#: slc.seminarportal:/content/speech.py:23
+#. Default: "Speakers"
+msgid "label_speech_speakers"
+msgstr ""
+
+#: slc.seminarportal:/content/speech.py:43
 #. Default: "Conclusions"
 msgid "label_event_announcement"
 msgstr ""
 
-#: slc.seminarportal:/content/speech.py:48
+#: slc.seminarportal:/content/speech.py:46
 #. Default: "Location"
 msgid "label_event_location"
 msgstr ""
@@ -89,5 +234,10 @@ msgstr ""
 #: slc.seminarportal:/portlets/speeches.pt:5
 #. Default: "Featured Speeches"
 msgid "box_speeches"
+msgstr ""
+
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
+#. Default: "Click here to show the full text"
+msgid "label_click_to_show_full_text"
 msgstr ""
 
