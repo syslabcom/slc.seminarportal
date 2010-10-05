@@ -6,7 +6,6 @@ Changelog
 
 - Added lots of i18n stuff, added a locales dir and pot file [thomasw]
 
-
 1.3.0b1 (2010-09-12)
 --------------------
 
@@ -24,8 +23,7 @@ WARNING: This release will probably break existing installations!
 - Speech: added custom setLanguage() to prevent AlreadyTrnaslated error from LP 2.2
 - Featured Speakers portlet: added an option to display only Speakers from the
   current Seminar.
-  WARNING: This will break all existing portlet instances, you'll have to re-create them
-[thomasw]
+  WARNING: This will break all existing portlet instances, you'll have to re-create them [thomasw]
 
 
 1.2.15 (2010-08-25)
