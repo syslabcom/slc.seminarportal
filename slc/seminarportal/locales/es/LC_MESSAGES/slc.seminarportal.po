@@ -1,4 +1,4 @@
-##############################################################################
+# #############################################################################
 #
 # Copyright (c) 2003-2004 Zope Corporation and Contributors.
 # All Rights Reserved.
@@ -10,7 +10,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+# #############################################################################
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -23,12 +23,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: zope/app/locales/extract.py\n"
 
-#. Default: "Agregar evento al calendario:"
+#. Default: "Add to calendar:"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:106
 msgid "label_add_to_calendar"
 msgstr "Agregar evento al calendario:"
 
-#. Default: "Agregar este punto a su calendario vCal"
+#. Default: "Add this item to your vCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:108
 #: slc.seminarportal:/browser/templates/speech_view.pt:50
 msgid "title_add_to_vcal"
@@ -40,7 +40,7 @@ msgstr "Agregar este punto a su calendario vCal"
 msgid "label_add_to_vcal"
 msgstr "vCal"
 
-#. Default: "Agregar este punto a su calendario iCal"
+#. Default: "Add this item to your iCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:115
 #: slc.seminarportal:/browser/templates/speech_view.pt:56
 msgid "title_add_to_ical"
@@ -52,67 +52,67 @@ msgstr "Agregar este punto a su calendario iCal"
 msgid "label_add_to_ical"
 msgstr "iCal"
 
-#. Default: "Organizador"
+#. Default: "Organiser"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:127
 msgid "label_seminar_organiser"
 msgstr "Organizador"
 
-#. Default: "Lugar"
+#. Default: "Location"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:135
 msgid "label_seminar_location"
 msgstr "Lugar"
 
-#. Default: "Teléfono"
+#. Default: "Phone"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:151
 msgid "label_seminar_phone"
 msgstr "Teléfono"
 
-#. Default: "Sitio web"
+#. Default: "Website"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:159
 msgid "label_seminar_website"
 msgstr "Sitio web"
 
-#. Default: "Fecha de inicio"
+#. Default: "Start Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:167
 msgid "label_seminar_start_date"
 msgstr "Fecha de inicio"
 
-#. Default: "Fecha de finalización"
+#. Default: "End Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:173
 msgid "label_seminar_end_date"
 msgstr "Fecha de finalización"
 
-#. Default: "Participantes"
+#. Default: "Attendees"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:179
 msgid "label_seminar_attendees"
 msgstr "Participantes"
 
-#. Default: "Pulse aquí para ver un resumen de todas las intervenciones"
+#. Default: "Click here to see a summary of all the Speeches"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:234
 msgid "label_click_to_see_speeches_summary"
 msgstr "Pulse aquí para ver un resumen de todas las intervenciones"
 
-#. Default: "Ver más seminarios"
+#. Default: "View more seminars"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:42
 msgid "label_more_seminars_link"
 msgstr "Ver más seminarios"
 
-#. Default: "Agregar contenido"
+#. Default: "Add Content"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:61
 msgid "label_add_content"
 msgstr "Agregar contenido"
 
-#. Default: "Recursos y anexos"
+#. Default: "Resources and Attachments"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:84
 msgid "label_resources_attachments"
 msgstr "Recursos y anexos"
 
-#. Default: "No se encontró ningún seminario con los criterios de su búsqueda"
+#. Default: "No seminars matching your criteria were found"
 #: slc.seminarportal:/browser/templates/seminarfolder_view.pt:102
 msgid "label_no_seminars_found"
 msgstr "No se encontró ningún seminario con los criterios de su búsqueda"
 
-#. Default: "Ver el seminario:"
+#. Default: "View the seminar:"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:24
 #: slc.seminarportal:/browser/templates/speakersfolder_view.pt:44
 #: slc.seminarportal:/browser/templates/speech_view.pt:23
@@ -121,215 +121,215 @@ msgstr "No se encontró ningún seminario con los criterios de su búsqueda"
 msgid "label_seminar_link"
 msgstr "Ver el seminario:"
 
-#. Default: "Orador"
+#. Default: "Speaker"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:28
 msgid "title_speaker"
 msgstr "Orador"
 
-#. Default: "Agregar evento al calendario"
+#. Default: "Add event to calendar"
 #: slc.seminarportal:/browser/templates/speech_view.pt:47
 msgid "heading_add_to_calendar"
 msgstr "Agregar evento al calendario"
 
-#. Default: "Gráfico o logotipo del evento"
+#. Default: "Graphic or Logo for the event"
 #: slc.seminarportal:/content/seminar.py:22
 msgid "label_seminar_logo"
 msgstr "Gráfico o logotipo del evento"
 
-#. Default: "Descripción general/Resumen del evento"
+#. Default: "General Description/Summary of the event"
 #: slc.seminarportal:/content/seminar.py:34
 #: slc.seminarportal:/browser/templates/seminar_view.pt:190
 msgid "label_seminar_summary"
 msgstr "Descripción general/Resumen del evento"
 
-#. Default: "Conclusiones generales"
+#. Default: "General Conclusions"
 #: slc.seminarportal:/content/seminar.py:45
 #: slc.seminarportal:/browser/templates/seminar_view.pt:201
 msgid "label_seminar_conclusions"
 msgstr "Conclusiones generales"
 
-#. Default: "Otras acciones"
+#. Default: "Further Actions"
 #: slc.seminarportal:/content/seminar.py:56
 #: slc.seminarportal:/browser/templates/seminar_view.pt:223
 msgid "label_seminar_further_actions"
 msgstr "Otras acciones"
 
-#. Default: "Mostrar la columna de las horas en la lista de intervenciones"
+#. Default: "Show the hour column in the speech roster?"
 #: slc.seminarportal:/content/seminar.py:66
 msgid "label_seminar_show_hour_column"
 msgstr "Mostrar la columna de las horas en la lista de intervenciones"
 
-#. Default: "Código postal de la oficina"
+#. Default: "Office postal code"
 #: slc.seminarportal:/content/speaker.py:104
 #: slc.seminarportal:/browser/templates/speaker_view.pt:135
 msgid "label_speaker_office_postal_code"
 msgstr "Código postal de la oficina"
 
-#. Default: "Teléfono de la oficina"
+#. Default: "Office phone"
 #: slc.seminarportal:/content/speaker.py:112
 #: slc.seminarportal:/browser/templates/speaker_view.pt:113
 msgid "label_speaker_office_phone"
 msgstr "Teléfono de la oficina"
 
-#. Default: "Imagen"
+#. Default: "Image"
 #: slc.seminarportal:/content/speaker.py:122
 msgid "label_speaker_image"
 msgstr "Imagen"
 
-#. Default: "Biografía"
+#. Default: "Biography"
 #: slc.seminarportal:/content/speaker.py:135
 #: slc.seminarportal:/browser/templates/speaker_view.pt:192
 msgid "label_speaker_biography"
 msgstr "Biografía"
 
-#. Default: "Formación"
+#. Default: "Education"
 #: slc.seminarportal:/content/speaker.py:147
 #: slc.seminarportal:/browser/templates/speaker_view.pt:168
 msgid "label_speaker_education"
 msgstr "Formación"
 
-#. Default: "Sitios web"
+#. Default: "Web sites"
 #: slc.seminarportal:/content/speaker.py:155
 msgid "label_speaker_web_sites"
 msgstr "Sitios web"
 
-#. Default: "Intervenciones"
+#. Default: "Speeches"
 #: slc.seminarportal:/content/speaker.py:162
 #: slc.seminarportal:/browser/templates/speaker_view.pt:181
 msgid "label_speaker_speeches"
 msgstr "Intervenciones"
 
-#. Default: "Todas las intervenciones realizadas por esta persona o las
-#. intervenciones en las que haya contribuido pueden agregarse aquí. Atención:
-#. las intervenciones tienen que crearse individualmente y para el seminario
-#. en que tuvieron lugar."
+#. Default: "Any speeches that this person held or contributed to, can be added here. Please note that speeches have to be created separately and for the seminar at which they were held."
 #: slc.seminarportal:/content/speaker.py:163
 msgid "description_speaker_speeches"
-msgstr "Todas las intervenciones realizadas por esta persona o las intervenciones en las que haya contribuido pueden agregarse aquí. Atención: las intervenciones tienen que crearse individualmente y para el seminario en que tuvieron lugar."
+msgstr ""
+"Todas las intervenciones realizadas por esta persona o las intervenciones en "
+"las que haya contribuido pueden agregarse aquí. Atención: las intervenciones "
+"tienen que crearse individualmente y para el seminario en que tuvieron lugar."
 
-#. Default: "Nacionalidad"
+#. Default: "Nationality"
 #: slc.seminarportal:/content/speaker.py:182
 #: slc.seminarportal:/browser/templates/speaker_view.pt:69
 msgid "label_speaker_nationality"
 msgstr "Nacionalidad"
 
-#. Default: "Empresa"
+#. Default: "Employer"
 #: slc.seminarportal:/content/speaker.py:188
 #: slc.seminarportal:/browser/templates/speaker_view.pt:58
 msgid "label_speaker_employer"
 msgstr "Empresa"
 
-#. Default: "Grupo de los agentes sociales"
+#. Default: "Social Partner Group"
 #: slc.seminarportal:/content/speaker.py:194
 #: slc.seminarportal:/browser/templates/speaker_view.pt:36
 msgid "label_speaker_social_partner_group"
 msgstr "Grupo de los agentes sociales"
 
-#. Default: "Conocimientos especializados"
+#. Default: "Expertise"
 #: slc.seminarportal:/content/speaker.py:200
 #: slc.seminarportal:/browser/templates/speaker_view.pt:47
 msgid "label_speaker_expertise"
 msgstr "Conocimientos especializados"
 
-#. Default: "Nombre"
+#. Default: "First Name"
 #: slc.seminarportal:/content/speaker.py:21
 msgid "label_spaker_first_name"
 msgstr "Nombre"
 
-#. Default: "Segundo nombre"
+#. Default: "Middle Name"
 #: slc.seminarportal:/content/speaker.py:30
 msgid "label_speaker_middle_name"
 msgstr "Segundo nombre"
 
-#. Default: "Apellido"
+#. Default: "Last Name"
 #: slc.seminarportal:/content/speaker.py:39
 msgid "label_speaker_last_name"
 msgstr "Apellido"
 
-#. Default: "Título"
+#. Default: "Suffix"
 #: slc.seminarportal:/content/speaker.py:48
 #: slc.seminarportal:/browser/templates/speaker_view.pt:80
 msgid "label_speaker_suffix"
 msgstr "Título"
 
-#. Default: "Títulos académicos, profesionales, honorarios y sociales."
+#. Default: "Academic, professional, honorary, and social suffixes."
 #: slc.seminarportal:/content/speaker.py:49
 msgid "description_speaker_suffix"
 msgstr "Títulos académicos, profesionales, honorarios y sociales."
 
-#. Default: "Correo electrónico"
+#. Default: "Email"
 #: slc.seminarportal:/content/speaker.py:58
 #: slc.seminarportal:/browser/templates/seminar_view.pt:143
 #: slc.seminarportal:/browser/templates/speaker_view.pt:102
 msgid "label_speaker_email"
 msgstr "Correo electrónico"
 
-#. Default: "Cargos"
+#. Default: "Job titles"
 #: slc.seminarportal:/content/speaker.py:68
 #: slc.seminarportal:/browser/templates/speaker_view.pt:91
 msgid "label_speaker_job_titles"
 msgstr "Cargos"
 
-#. Default: "Una entrada por línea"
+#. Default: "One entry per line"
 #: slc.seminarportal:/content/speaker.py:69
 msgid "description_speaker_job_titles"
 msgstr "Una entrada por línea"
 
-#. Default: "Dirección de la oficina"
+#. Default: "Office address"
 #: slc.seminarportal:/content/speaker.py:78
 #: slc.seminarportal:/browser/templates/speaker_view.pt:124
 msgid "label_speaker_office_address"
 msgstr "Dirección de la oficina"
 
-#. Default: "Ciudad de la oficina"
+#. Default: "Office city"
 #: slc.seminarportal:/content/speaker.py:87
 #: slc.seminarportal:/browser/templates/speaker_view.pt:146
 msgid "label_speaker_office_city"
 msgstr "Ciudad de la oficina"
 
-#. Default: "País de la oficina"
+#. Default: "Office state"
 #: slc.seminarportal:/content/speaker.py:96
 #: slc.seminarportal:/browser/templates/speaker_view.pt:157
 msgid "label_speaker_office_state"
 msgstr "País de la oficina"
 
-#. Default: "Orador(es)"
+#. Default: "Speaker(s)"
 #: slc.seminarportal:/content/speech.py:23
 #: slc.seminarportal:/browser/templates/speech_view.pt:67
 msgid "label_speech_speakers"
 msgstr "Orador(es)"
 
-#. Default: "Conclusiones"
+#. Default: "Conclusions"
 #: slc.seminarportal:/content/speech.py:43
 msgid "label_event_announcement"
 msgstr "Conclusiones"
 
-#. Default: "Lugar"
+#. Default: "Location"
 #: slc.seminarportal:/content/speech.py:46
 msgid "label_event_location"
 msgstr "Lugar"
 
-#. Default: "Buscar seminarios"
+#. Default: "Search the seminars"
 #: slc.seminarportal:/portlets/search.pt:6
 msgid "box_search_seminars"
 msgstr "Buscar seminarios"
 
-#. Default: "Oradores invitados"
+#. Default: "Featured Speakers"
 #: slc.seminarportal:/portlets/speaker.pt:8
 msgid "box_speaker"
 msgstr "Oradores invitados"
 
-#. Default: "Intervenciones programadas"
+#. Default: "Featured Speeches"
 #: slc.seminarportal:/portlets/speeches.pt:5
 msgid "box_speeches"
 msgstr "Intervenciones programadas"
 
-#. Default: "Pulse aquí para ver el texto completo"
+#. Default: "Click here to show the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:24
 msgid "label_click_to_show_full_text"
 msgstr "Pulse aquí para ver el texto completo"
 
-#. Default: "Pulse aquí para ocultar el texto completo"
+#. Default: "Click here to hide the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Pulse aquí para ocultar el texto completo"

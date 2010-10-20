@@ -1,4 +1,4 @@
-##############################################################################
+# #############################################################################
 #
 # Copyright (c) 2003-2004 Zope Corporation and Contributors.
 # All Rights Reserved.
@@ -10,7 +10,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+# #############################################################################
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -23,12 +23,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: zope/app/locales/extract.py\n"
 
-#. Default: "Přidat do kalendáře:"
+#. Default: "Add to calendar:"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:106
 msgid "label_add_to_calendar"
 msgstr "Přidat do kalendáře:"
 
-#. Default: "Přidat tuto položku do vaseho kalendáře vCal"
+#. Default: "Add this item to your vCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:108
 #: slc.seminarportal:/browser/templates/speech_view.pt:50
 msgid "title_add_to_vcal"
@@ -40,7 +40,7 @@ msgstr "Přidat tuto položku do vaseho kalendáře vCal"
 msgid "label_add_to_vcal"
 msgstr "vCal"
 
-#. Default: "Přidat tuto položku do vaseho kalendáře iCal"
+#. Default: "Add this item to your iCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:115
 #: slc.seminarportal:/browser/templates/speech_view.pt:56
 msgid "title_add_to_ical"
@@ -52,17 +52,17 @@ msgstr "Přidat tuto položku do vaseho kalendáře iCal"
 msgid "label_add_to_ical"
 msgstr "iCal"
 
-#. Default: "Organizátor"
+#. Default: "Organiser"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:127
 msgid "label_seminar_organiser"
 msgstr "Organizátor"
 
-#. Default: "Místo konání"
+#. Default: "Location"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:135
 msgid "label_seminar_location"
 msgstr "Místo konání"
 
-#. Default: "Telefonní číslo"
+#. Default: "Phone"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:151
 msgid "label_seminar_phone"
 msgstr "Telefonní číslo"
@@ -72,48 +72,47 @@ msgstr "Telefonní číslo"
 msgid "label_seminar_website"
 msgstr "Website"
 
-#. Default: "Datum zahájení"
+#. Default: "Start Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:167
 msgid "label_seminar_start_date"
 msgstr "Datum zahájení"
 
-#. Default: "Datum ukončení"
+#. Default: "End Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:173
 msgid "label_seminar_end_date"
 msgstr "Datum ukončení"
 
-#. Default: "Účastníci"
+#. Default: "Attendees"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:179
 msgid "label_seminar_attendees"
 msgstr "Účastníci"
 
-#. Default: "Kliknutím zde získáte shrnutí vsech projevů"
+#. Default: "Click here to see a summary of all the Speeches"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:234
 msgid "label_click_to_see_speeches_summary"
 msgstr "Kliknutím zde získáte shrnutí vsech projevů"
 
-#. Default: "Zobrazit více seminářů"
+#. Default: "View more seminars"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:42
 msgid "label_more_seminars_link"
 msgstr "Zobrazit více seminářů"
 
-#. Default: "Přidat obsah"
+#. Default: "Add Content"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:61
 msgid "label_add_content"
 msgstr "Přidat obsah"
 
-#. Default: "Zdroje a přílohy"
+#. Default: "Resources and Attachments"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:84
 msgid "label_resources_attachments"
 msgstr "Zdroje a přílohy"
 
-#. Default: "Podle vasich vyhledávacích kritérií nebyly nalezeny žádné
-#. semináře"
+#. Default: "No seminars matching your criteria were found"
 #: slc.seminarportal:/browser/templates/seminarfolder_view.pt:102
 msgid "label_no_seminars_found"
 msgstr "Podle vasich vyhledávacích kritérií nebyly nalezeny žádné semináře"
 
-#. Default: "Zobrazit seminář"
+#. Default: "View the seminar:"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:24
 #: slc.seminarportal:/browser/templates/speakersfolder_view.pt:44
 #: slc.seminarportal:/browser/templates/speech_view.pt:23
@@ -122,215 +121,216 @@ msgstr "Podle vasich vyhledávacích kritérií nebyly nalezeny žádné seminá
 msgid "label_seminar_link"
 msgstr "Zobrazit seminář"
 
-#. Default: "Přednásející"
+#. Default: "Speaker"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:28
 msgid "title_speaker"
 msgstr "Přednásející"
 
-#. Default: "Přidat akci do kalendáře"
+#. Default: "Add event to calendar"
 #: slc.seminarportal:/browser/templates/speech_view.pt:47
 msgid "heading_add_to_calendar"
 msgstr "Přidat akci do kalendáře"
 
-#. Default: "Grafické materiály či logo k akci"
+#. Default: "Graphic or Logo for the event"
 #: slc.seminarportal:/content/seminar.py:22
 msgid "label_seminar_logo"
 msgstr "Grafické materiály či logo k akci"
 
-#. Default: "Obecný popis / Shrnutí akce"
+#. Default: "General Description/Summary of the event"
 #: slc.seminarportal:/content/seminar.py:34
 #: slc.seminarportal:/browser/templates/seminar_view.pt:190
 msgid "label_seminar_summary"
 msgstr "Obecný popis / Shrnutí akce"
 
-#. Default: "Obecné závěry"
+#. Default: "General Conclusions"
 #: slc.seminarportal:/content/seminar.py:45
 #: slc.seminarportal:/browser/templates/seminar_view.pt:201
 msgid "label_seminar_conclusions"
 msgstr "Obecné závěry"
 
-#. Default: "Dalsí akce"
+#. Default: "Further Actions"
 #: slc.seminarportal:/content/seminar.py:56
 #: slc.seminarportal:/browser/templates/seminar_view.pt:223
 msgid "label_seminar_further_actions"
 msgstr "Dalsí akce"
 
-#. Default: "Zobrazit v plánu projevů sloupec uvádějící hodinu?"
+#. Default: "Show the hour column in the speech roster?"
 #: slc.seminarportal:/content/seminar.py:66
 msgid "label_seminar_show_hour_column"
 msgstr "Zobrazit v plánu projevů sloupec uvádějící hodinu?"
 
-#. Default: "PSČ sídla kanceláře"
+#. Default: "Office postal code"
 #: slc.seminarportal:/content/speaker.py:104
 #: slc.seminarportal:/browser/templates/speaker_view.pt:135
 msgid "label_speaker_office_postal_code"
 msgstr "PSČ sídla kanceláře"
 
-#. Default: "Telefonické spojení do kanceláře"
+#. Default: "Office phone"
 #: slc.seminarportal:/content/speaker.py:112
 #: slc.seminarportal:/browser/templates/speaker_view.pt:113
 msgid "label_speaker_office_phone"
 msgstr "Telefonické spojení do kanceláře"
 
-#. Default: "Fotografie"
+#. Default: "Image"
 #: slc.seminarportal:/content/speaker.py:122
 msgid "label_speaker_image"
 msgstr "Fotografie"
 
-#. Default: "Životopis"
+#. Default: "Biography"
 #: slc.seminarportal:/content/speaker.py:135
 #: slc.seminarportal:/browser/templates/speaker_view.pt:192
 msgid "label_speaker_biography"
 msgstr "Životopis"
 
-#. Default: "Vzdělání"
+#. Default: "Education"
 #: slc.seminarportal:/content/speaker.py:147
 #: slc.seminarportal:/browser/templates/speaker_view.pt:168
 msgid "label_speaker_education"
 msgstr "Vzdělání"
 
-#. Default: "Webové stránky"
+#. Default: "Web sites"
 #: slc.seminarportal:/content/speaker.py:155
 msgid "label_speaker_web_sites"
 msgstr "Webové stránky"
 
-#. Default: "Projevy"
+#. Default: "Speeches"
 #: slc.seminarportal:/content/speaker.py:162
 #: slc.seminarportal:/browser/templates/speaker_view.pt:181
 msgid "label_speaker_speeches"
 msgstr "Projevy"
 
-#. Default: "Na tomto místě je možné připojit seznam jakýchkoli projevů, které
-#. tento řečník přednesl či na nichž se podílel. Upozorňujeme, že jednotlivé
-#. projevy je třeba přidávat samostatně a zvlásť pro každý seminář, na kterém
-#. byly předneseny."
+#. Default: "Any speeches that this person held or contributed to, can be added here. Please note that speeches have to be created separately and for the seminar at which they were held."
 #: slc.seminarportal:/content/speaker.py:163
 msgid "description_speaker_speeches"
-msgstr "Na tomto místě je možné připojit seznam jakýchkoli projevů, které tento řečník přednesl či na nichž se podílel. Upozorňujeme, že jednotlivé projevy je třeba přidávat samostatně a zvlásť pro každý seminář, na kterém byly předneseny."
+msgstr ""
+"Na tomto místě je možné připojit seznam jakýchkoli projevů, které tento "
+"řečník přednesl či na nichž se podílel. Upozorňujeme, že jednotlivé projevy "
+"je třeba přidávat samostatně a zvlásť pro každý seminář, na kterém byly "
+"předneseny."
 
-#. Default: "Národnost"
+#. Default: "Nationality"
 #: slc.seminarportal:/content/speaker.py:182
 #: slc.seminarportal:/browser/templates/speaker_view.pt:69
 msgid "label_speaker_nationality"
 msgstr "Národnost"
 
-#. Default: "Zaměstnavatel"
+#. Default: "Employer"
 #: slc.seminarportal:/content/speaker.py:188
 #: slc.seminarportal:/browser/templates/speaker_view.pt:58
 msgid "label_speaker_employer"
 msgstr "Zaměstnavatel"
 
-#. Default: "Skupina sociálních partnerů"
+#. Default: "Social Partner Group"
 #: slc.seminarportal:/content/speaker.py:194
 #: slc.seminarportal:/browser/templates/speaker_view.pt:36
 msgid "label_speaker_social_partner_group"
 msgstr "Skupina sociálních partnerů"
 
-#. Default: "Odbornost"
+#. Default: "Expertise"
 #: slc.seminarportal:/content/speaker.py:200
 #: slc.seminarportal:/browser/templates/speaker_view.pt:47
 msgid "label_speaker_expertise"
 msgstr "Odbornost"
 
-#. Default: "Křestní jméno"
+#. Default: "First Name"
 #: slc.seminarportal:/content/speaker.py:21
 msgid "label_spaker_first_name"
 msgstr "Křestní jméno"
 
-#. Default: "Prostřední jméno"
+#. Default: "Middle Name"
 #: slc.seminarportal:/content/speaker.py:30
 msgid "label_speaker_middle_name"
 msgstr "Prostřední jméno"
 
-#. Default: "Příjmení"
+#. Default: "Last Name"
 #: slc.seminarportal:/content/speaker.py:39
 msgid "label_speaker_last_name"
 msgstr "Příjmení"
 
-#. Default: "Titul"
+#. Default: "Suffix"
 #: slc.seminarportal:/content/speaker.py:48
 #: slc.seminarportal:/browser/templates/speaker_view.pt:80
 msgid "label_speaker_suffix"
 msgstr "Titul"
 
-#. Default: "Akademické, odborné, čestné a společenské tituly."
+#. Default: "Academic, professional, honorary, and social suffixes."
 #: slc.seminarportal:/content/speaker.py:49
 msgid "description_speaker_suffix"
 msgstr "Akademické, odborné, čestné a společenské tituly."
 
-#. Default: "E-mail"
+#. Default: "Email"
 #: slc.seminarportal:/content/speaker.py:58
 #: slc.seminarportal:/browser/templates/seminar_view.pt:143
 #: slc.seminarportal:/browser/templates/speaker_view.pt:102
 msgid "label_speaker_email"
 msgstr "E-mail"
 
-#. Default: "Název pracovních pozic"
+#. Default: "Job titles"
 #: slc.seminarportal:/content/speaker.py:68
 #: slc.seminarportal:/browser/templates/speaker_view.pt:91
 msgid "label_speaker_job_titles"
 msgstr "Název pracovních pozic"
 
-#. Default: "Jeden záznam na řádek"
+#. Default: "One entry per line"
 #: slc.seminarportal:/content/speaker.py:69
 msgid "description_speaker_job_titles"
 msgstr "Jeden záznam na řádek"
 
-#. Default: "Adresa sídla kanceláře"
+#. Default: "Office address"
 #: slc.seminarportal:/content/speaker.py:78
 #: slc.seminarportal:/browser/templates/speaker_view.pt:124
 msgid "label_speaker_office_address"
 msgstr "Adresa sídla kanceláře"
 
-#. Default: "Město sídla kanceláře"
+#. Default: "Office city"
 #: slc.seminarportal:/content/speaker.py:87
 #: slc.seminarportal:/browser/templates/speaker_view.pt:146
 msgid "label_speaker_office_city"
 msgstr "Město sídla kanceláře"
 
-#. Default: "Země sídla kanceláře"
+#. Default: "Office state"
 #: slc.seminarportal:/content/speaker.py:96
 #: slc.seminarportal:/browser/templates/speaker_view.pt:157
 msgid "label_speaker_office_state"
 msgstr "Země sídla kanceláře"
 
-#. Default: "Přednásející"
+#. Default: "Speaker(s)"
 #: slc.seminarportal:/content/speech.py:23
 #: slc.seminarportal:/browser/templates/speech_view.pt:67
 msgid "label_speech_speakers"
 msgstr "Přednásející"
 
-#. Default: "Závěry"
+#. Default: "Conclusions"
 #: slc.seminarportal:/content/speech.py:43
 msgid "label_event_announcement"
 msgstr "Závěry"
 
-#. Default: "Místo konání"
+#. Default: "Location"
 #: slc.seminarportal:/content/speech.py:46
 msgid "label_event_location"
 msgstr "Místo konání"
 
-#. Default: "Vyhledávat v seminářích"
+#. Default: "Search the seminars"
 #: slc.seminarportal:/portlets/search.pt:6
 msgid "box_search_seminars"
 msgstr "Vyhledávat v seminářích"
 
-#. Default: "Vystupující přednásející"
+#. Default: "Featured Speakers"
 #: slc.seminarportal:/portlets/speaker.pt:8
 msgid "box_speaker"
 msgstr "Vystupující přednásející"
 
-#. Default: "Přednesené projevy"
+#. Default: "Featured Speeches"
 #: slc.seminarportal:/portlets/speeches.pt:5
 msgid "box_speeches"
 msgstr "Přednesené projevy"
 
-#. Default: "Kliknutím zde se zobrazí úplné znění textu"
+#. Default: "Click here to show the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:24
 msgid "label_click_to_show_full_text"
 msgstr "Kliknutím zde se zobrazí úplné znění textu"
 
-#. Default: "Kliknutím zde se skryje úplné znění textu"
+#. Default: "Click here to hide the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Kliknutím zde se skryje úplné znění textu"

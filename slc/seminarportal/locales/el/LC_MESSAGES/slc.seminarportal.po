@@ -1,4 +1,4 @@
-##############################################################################
+# #############################################################################
 #
 # Copyright (c) 2003-2004 Zope Corporation and Contributors.
 # All Rights Reserved.
@@ -10,7 +10,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+# #############################################################################
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -23,24 +23,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: zope/app/locales/extract.py\n"
 
-#. Default: Προσθήκη στο ημερολόγιο
+#. Default: "Add to calendar:"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:106
 msgid "label_add_to_calendar"
 msgstr "Προσθήκη στο ημερολόγιο"
 
-#. Default: Προσθέστε το στοιχείο αυτό στο ημερολόγιό σας vCal
+#. Default: "Add this item to your vCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:108
 #: slc.seminarportal:/browser/templates/speech_view.pt:50
 msgid "title_add_to_vcal"
 msgstr "Προσθέστε το στοιχείο αυτό στο ημερολόγιό σας vCal"
 
-#. Default: vCal
+#. Default: "vCal"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:113
 #: slc.seminarportal:/browser/templates/speech_view.pt:55
 msgid "label_add_to_vcal"
 msgstr "vCal"
 
-#. Default: "Προσθέστε το στοιχείο αυτό στο ημερολόγιό σας iCal"
+#. Default: "Add this item to your iCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:115
 #: slc.seminarportal:/browser/templates/speech_view.pt:56
 msgid "title_add_to_ical"
@@ -52,69 +52,68 @@ msgstr "Προσθέστε το στοιχείο αυτό στο ημερολό�
 msgid "label_add_to_ical"
 msgstr "iCal"
 
-#. Default: "Διοργανωτής"
+#. Default: "Organiser"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:127
 msgid "label_seminar_organiser"
 msgstr "Διοργανωτής"
 
-#. Default: "Τόπος διεξαγωγής"
+#. Default: "Location"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:135
 msgid "label_seminar_location"
 msgstr "Τόπος διεξαγωγής"
 
-#. Default: "Τηλέφωνο"
+#. Default: "Phone"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:151
 msgid "label_seminar_phone"
 msgstr "Τηλέφωνο"
 
-#. Default: "Δικτυακός τόπος"
+#. Default: "Website"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:159
 msgid "label_seminar_website"
 msgstr "Δικτυακός τόπος"
 
-#. Default: "Ημερομηνία έναρξης"
+#. Default: "Start Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:167
 msgid "label_seminar_start_date"
 msgstr "Ημερομηνία έναρξης"
 
-#. Default: "Ημερομηνία λήξης"
+#. Default: "End Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:173
 msgid "label_seminar_end_date"
 msgstr "Ημερομηνία λήξης"
 
-#. Default: "Συμμετέχοντες"
+#. Default: "Attendees"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:179
 msgid "label_seminar_attendees"
 msgstr "Συμμετέχοντες"
 
-#. Default: "Κάνετε κλικ εδώ για να παρακολουθήσετε την περίληψη όλων των
-#. ομιλιών"
+#. Default: "Click here to see a summary of all the Speeches"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:234
 msgid "label_click_to_see_speeches_summary"
 msgstr "Κάνετε κλικ εδώ για να παρακολουθήσετε την περίληψη όλων των ομιλιών"
 
-#. Default: "Παρακολουθήστε περισσότερα σεμινάρια"
+#. Default: "View more seminars"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:42
 msgid "label_more_seminars_link"
 msgstr "Παρακολουθήστε περισσότερα σεμινάρια"
 
-#. Default: "Προσθήκη περιεχομένου"
+#. Default: "Add Content"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:61
 msgid "label_add_content"
 msgstr "Προσθήκη περιεχομένου"
 
-#. Default: "Πηγές και Επισυνάψεις"
+#. Default: "Resources and Attachments"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:84
 msgid "label_resources_attachments"
 msgstr "Πηγές και Επισυνάψεις"
 
-#. Default: "Δεν βρέθηκαν σεμινάρια που να ανταποκρίνονται στα κριτήρια τα
-#. οποία θέσατε"
+#. Default: "No seminars matching your criteria were found"
 #: slc.seminarportal:/browser/templates/seminarfolder_view.pt:102
 msgid "label_no_seminars_found"
-msgstr "Δεν βρέθηκαν σεμινάρια που να ανταποκρίνονται στα κριτήρια τα οποία θέσατε"
+msgstr ""
+"Δεν βρέθηκαν σεμινάρια που να ανταποκρίνονται στα κριτήρια τα οποία θέσατε"
 
-#. Default: "Παρακολουθήστε το σεμινάριο"
+#. Default: "View the seminar:"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:24
 #: slc.seminarportal:/browser/templates/speakersfolder_view.pt:44
 #: slc.seminarportal:/browser/templates/speech_view.pt:23
@@ -123,217 +122,217 @@ msgstr "Δεν βρέθηκαν σεμινάρια που να ανταποκρ�
 msgid "label_seminar_link"
 msgstr "Παρακολουθήστε το σεμινάριο"
 
-#. Default: "Ομιλητής"
+#. Default: "Speaker"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:28
 msgid "title_speaker"
 msgstr "Ομιλητής"
 
-#. Default: "Προσθήκη εκδήλωσης στο ημερολόγιο"
+#. Default: "Add event to calendar"
 #: slc.seminarportal:/browser/templates/speech_view.pt:47
 msgid "heading_add_to_calendar"
 msgstr "Προσθήκη εκδήλωσης στο ημερολόγιο"
 
-#. Default: "Γραφικό ή λογότυπο της εκδήλωσης"
+#. Default: "Graphic or Logo for the event"
 #: slc.seminarportal:/content/seminar.py:22
 msgid "label_seminar_logo"
 msgstr "Γραφικό ή λογότυπο της εκδήλωσης"
 
-#. Default: "Γενική Περιγραφή/ Περίληψη της εκδήλωσης"
+#. Default: "General Description/Summary of the event"
 #: slc.seminarportal:/content/seminar.py:34
 #: slc.seminarportal:/browser/templates/seminar_view.pt:190
 msgid "label_seminar_summary"
 msgstr "Γενική Περιγραφή/ Περίληψη της εκδήλωσης"
 
-#. Default: "Γενικά Συμπεράσματα"
+#. Default: "General Conclusions"
 #: slc.seminarportal:/content/seminar.py:45
 #: slc.seminarportal:/browser/templates/seminar_view.pt:201
 msgid "label_seminar_conclusions"
 msgstr "Γενικά Συμπεράσματα"
 
-#. Default: "Άλλες Δράσεις"
+#. Default: "Further Actions"
 #: slc.seminarportal:/content/seminar.py:56
 #: slc.seminarportal:/browser/templates/seminar_view.pt:223
 msgid "label_seminar_further_actions"
 msgstr "Άλλες Δράσεις"
 
-#. Default: "Εμφανίζεται η στήλη όπου αναγράφονται οι ώρες στον κατάλογο των
-#. ομιλιών;"
+#. Default: "Show the hour column in the speech roster?"
 #: slc.seminarportal:/content/seminar.py:66
 msgid "label_seminar_show_hour_column"
-msgstr "Εμφανίζεται η στήλη όπου αναγράφονται οι ώρες στον κατάλογο των ομιλιών;"
+msgstr ""
+"Εμφανίζεται η στήλη όπου αναγράφονται οι ώρες στον κατάλογο των ομιλιών;"
 
-#. Default: "Ταχυδρομικός κωδικός του γραφείου"
+#. Default: "Office postal code"
 #: slc.seminarportal:/content/speaker.py:104
 #: slc.seminarportal:/browser/templates/speaker_view.pt:135
 msgid "label_speaker_office_postal_code"
 msgstr "Ταχυδρομικός κωδικός του γραφείου"
 
-#. Default: "Τηλέφωνο γραφείου"
+#. Default: "Office phone"
 #: slc.seminarportal:/content/speaker.py:112
 #: slc.seminarportal:/browser/templates/speaker_view.pt:113
 msgid "label_speaker_office_phone"
 msgstr "Τηλέφωνο γραφείου"
 
-#. Default: "Εικόνα"
+#. Default: "Image"
 #: slc.seminarportal:/content/speaker.py:122
 msgid "label_speaker_image"
 msgstr "Εικόνα"
 
-#. Default: "Βιογραφία"
+#. Default: "Biography"
 #: slc.seminarportal:/content/speaker.py:135
 #: slc.seminarportal:/browser/templates/speaker_view.pt:192
 msgid "label_speaker_biography"
 msgstr "Βιογραφία"
 
-#. Default: "Εκπαίδευση"
+#. Default: "Education"
 #: slc.seminarportal:/content/speaker.py:147
 #: slc.seminarportal:/browser/templates/speaker_view.pt:168
 msgid "label_speaker_education"
 msgstr "Εκπαίδευση"
 
-#. Default: "Ιστότοποι"
+#. Default: "Web sites"
 #: slc.seminarportal:/content/speaker.py:155
 msgid "label_speaker_web_sites"
 msgstr "Ιστότοποι"
 
-#. Default: "Ομιλίες"
+#. Default: "Speeches"
 #: slc.seminarportal:/content/speaker.py:162
 #: slc.seminarportal:/browser/templates/speaker_view.pt:181
 msgid "label_speaker_speeches"
 msgstr "Ομιλίες"
 
-#. Default: "Στο σημείο αυτό μπορούν να προστεθούν όλες οι ομιλίες που το
-#. άτομο αυτό πραγματοποίησε ή συνέβαλε στην πραγματοποίησή τους. Σημειώστε
-#. ότι οι ομιλίες πρέπει να τοποθετούνται ξεχωριστά και σε σχέση με το
-#. σεμινάριο στο πλαίσιο του οποίου πραγματοποιήθηκαν."
+#. Default: "Any speeches that this person held or contributed to, can be added here. Please note that speeches have to be created separately and for the seminar at which they were held."
 #: slc.seminarportal:/content/speaker.py:163
 msgid "description_speaker_speeches"
-msgstr "Στο σημείο αυτό μπορούν να προστεθούν όλες οι ομιλίες που το άτομο αυτό πραγματοποίησε ή συνέβαλε στην πραγματοποίησή τους. Σημειώστε ότι οι ομιλίες πρέπει να τοποθετούνται ξεχωριστά και σε σχέση με το σεμινάριο στο πλαίσιο του οποίου πραγματοποιήθηκαν."
+msgstr ""
+"Στο σημείο αυτό μπορούν να προστεθούν όλες οι ομιλίες που το άτομο αυτό "
+"πραγματοποίησε ή συνέβαλε στην πραγματοποίησή τους. Σημειώστε ότι οι ομιλίες "
+"πρέπει να τοποθετούνται ξεχωριστά και σε σχέση με το σεμινάριο στο πλαίσιο "
+"του οποίου πραγματοποιήθηκαν."
 
-#. Default: "Εθνικότητα"
+#. Default: "Nationality"
 #: slc.seminarportal:/content/speaker.py:182
 #: slc.seminarportal:/browser/templates/speaker_view.pt:69
 msgid "label_speaker_nationality"
 msgstr "Εθνικότητα"
 
-#. Default: "Εργοδότης"
+#. Default: "Employer"
 #: slc.seminarportal:/content/speaker.py:188
 #: slc.seminarportal:/browser/templates/speaker_view.pt:58
 msgid "label_speaker_employer"
 msgstr "Εργοδότης"
 
-#. Default: "Ομάδα Κοινωνικών Εταίρων"
+#. Default: "Social Partner Group"
 #: slc.seminarportal:/content/speaker.py:194
 #: slc.seminarportal:/browser/templates/speaker_view.pt:36
 msgid "label_speaker_social_partner_group"
 msgstr "Ομάδα Κοινωνικών Εταίρων"
 
-#. Default: "Εμπειρογνωμοσύνη"
+#. Default: "Expertise"
 #: slc.seminarportal:/content/speaker.py:200
 #: slc.seminarportal:/browser/templates/speaker_view.pt:47
 msgid "label_speaker_expertise"
 msgstr "Εμπειρογνωμοσύνη"
 
-#. Default: "Όνομα"
+#. Default: "First Name"
 #: slc.seminarportal:/content/speaker.py:21
 msgid "label_spaker_first_name"
 msgstr "Όνομα"
 
-#. Default: "Δεύτερο Επώνυμο"
+#. Default: "Middle Name"
 #: slc.seminarportal:/content/speaker.py:30
 msgid "label_speaker_middle_name"
 msgstr "Δεύτερο Επώνυμο"
 
-#. Default: "Αρχικό Επώνυμο"
+#. Default: "Last Name"
 #: slc.seminarportal:/content/speaker.py:39
 msgid "label_speaker_last_name"
 msgstr "Αρχικό Επώνυμο"
 
-#. Default: "Επίθημα"
+#. Default: "Suffix"
 #: slc.seminarportal:/content/speaker.py:48
 #: slc.seminarportal:/browser/templates/speaker_view.pt:80
 msgid "label_speaker_suffix"
 msgstr "Επίθημα"
 
-#. Default: "Ακαδημαϊκά, επαγγελματικά, τιμητικά και κοινωνικά επιθήματα."
+#. Default: "Academic, professional, honorary, and social suffixes."
 #: slc.seminarportal:/content/speaker.py:49
 msgid "description_speaker_suffix"
 msgstr "Ακαδημαϊκά, επαγγελματικά, τιμητικά και κοινωνικά επιθήματα."
 
-#. Default: "Ηλεκτρ. ταχυδρ."
+#. Default: "Email"
 #: slc.seminarportal:/content/speaker.py:58
 #: slc.seminarportal:/browser/templates/seminar_view.pt:143
 #: slc.seminarportal:/browser/templates/speaker_view.pt:102
 msgid "label_speaker_email"
 msgstr "Ηλεκτρ. ταχυδρ."
 
-#. Default: "Τίτλοι θέσεων εργασίας"
+#. Default: "Job titles"
 #: slc.seminarportal:/content/speaker.py:68
 #: slc.seminarportal:/browser/templates/speaker_view.pt:91
 msgid "label_speaker_job_titles"
 msgstr "Τίτλοι θέσεων εργασίας"
 
-#. Default: "Μία καταχώριση ανά γραμμή"
+#. Default: "One entry per line"
 #: slc.seminarportal:/content/speaker.py:69
 msgid "description_speaker_job_titles"
 msgstr "Μία καταχώριση ανά γραμμή"
 
-#. Default: "Διεύθυνση γραφείου"
+#. Default: "Office address"
 #: slc.seminarportal:/content/speaker.py:78
 #: slc.seminarportal:/browser/templates/speaker_view.pt:124
 msgid "label_speaker_office_address"
 msgstr "Διεύθυνση γραφείου"
 
-#. Default: "Πόλη"
+#. Default: "Office city"
 #: slc.seminarportal:/content/speaker.py:87
 #: slc.seminarportal:/browser/templates/speaker_view.pt:146
 msgid "label_speaker_office_city"
 msgstr "Πόλη"
 
-#. Default: "Χώρα"
+#. Default: "Office state"
 #: slc.seminarportal:/content/speaker.py:96
 #: slc.seminarportal:/browser/templates/speaker_view.pt:157
 msgid "label_speaker_office_state"
 msgstr "Χώρα"
 
-#. Default: "Ομιλητής(ές)"
+#. Default: "Speaker(s)"
 #: slc.seminarportal:/content/speech.py:23
 #: slc.seminarportal:/browser/templates/speech_view.pt:67
 msgid "label_speech_speakers"
 msgstr "Ομιλητής(ές)"
 
-#. Default: "Συμπεράσματα"
+#. Default: "Conclusions"
 #: slc.seminarportal:/content/speech.py:43
 msgid "label_event_announcement"
 msgstr "Συμπεράσματα"
 
-#. Default: "Τόπος διεξαγωγής"
+#. Default: "Location"
 #: slc.seminarportal:/content/speech.py:46
 msgid "label_event_location"
 msgstr "Τόπος διεξαγωγής"
 
-#. Default: "Αναζήτηση σεμιναρίων"
+#. Default: "Search the seminars"
 #: slc.seminarportal:/portlets/search.pt:6
 msgid "box_search_seminars"
 msgstr "Αναζήτηση σεμιναρίων"
 
-#. Default: "Προσκεκλημένοι Ομιλητές"
+#. Default: "Featured Speakers"
 #: slc.seminarportal:/portlets/speaker.pt:8
 msgid "box_speaker"
 msgstr "Προσκεκλημένοι Ομιλητές"
 
-#. Default: "Προγραμματισμένες ομιλίες"
+#. Default: "Featured Speeches"
 #: slc.seminarportal:/portlets/speeches.pt:5
 msgid "box_speeches"
 msgstr "Προγραμματισμένες ομιλίες"
 
-#. Default: "Κάνετε κλικ εδώ για να προβάλλετε το πλήρες κείμενο"
+#. Default: "Click here to show the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:24
 msgid "label_click_to_show_full_text"
 msgstr "Κάνετε κλικ εδώ για να προβάλλετε το πλήρες κείμενο"
 
-#. Default: "Κάνετε κλικ εδώ για να αποκρύψετε το πλήρες κείμενο"
+#. Default: "Click here to hide the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Κάνετε κλικ εδώ για να αποκρύψετε το πλήρες κείμενο"
-

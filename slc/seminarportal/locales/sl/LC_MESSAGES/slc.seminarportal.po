@@ -1,4 +1,4 @@
-##############################################################################
+# #############################################################################
 #
 # Copyright (c) 2003-2004 Zope Corporation and Contributors.
 # All Rights Reserved.
@@ -10,7 +10,7 @@
 # WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
 # FOR A PARTICULAR PURPOSE.
 #
-##############################################################################
+# #############################################################################
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -23,96 +23,96 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: zope/app/locales/extract.py\n"
 
-#. Default:  "Dodaj v koledar:"
+#. Default: "Add to calendar:"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:106
 msgid "label_add_to_calendar"
 msgstr "Dodaj v koledar:"
 
-#. Default:  "Dodaj ta predmet v koledar vCal"
+#. Default: "Add this item to your vCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:108
 #: slc.seminarportal:/browser/templates/speech_view.pt:50
 msgid "title_add_to_vcal"
 msgstr "Dodaj ta predmet v koledar vCal"
 
-#. Default:  "vCal"
+#. Default: "vCal"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:113
 #: slc.seminarportal:/browser/templates/speech_view.pt:55
 msgid "label_add_to_vcal"
 msgstr "vCal"
 
-#. Default:  "Dodaj ta predmet v koledar iCal"
+#. Default: "Add this item to your iCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:115
 #: slc.seminarportal:/browser/templates/speech_view.pt:56
 msgid "title_add_to_ical"
 msgstr "Dodaj ta predmet v koledar iCal"
 
-#. Default:  "iCal"
+#. Default: "iCal"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:120
 #: slc.seminarportal:/browser/templates/speech_view.pt:61
 msgid "label_add_to_ical"
 msgstr "iCal"
 
-#. Default:  "Planer"
+#. Default: "Organiser"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:127
 msgid "label_seminar_organiser"
 msgstr "Planer"
 
-#. Default:  "Lokacija"
+#. Default: "Location"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:135
 msgid "label_seminar_location"
 msgstr "Lokacija"
 
-#. Default:  "Telefon"
+#. Default: "Phone"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:151
 msgid "label_seminar_phone"
 msgstr "Telefon"
 
-#. Default:  "Spletna stran"
+#. Default: "Website"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:159
 msgid "label_seminar_website"
 msgstr "Spletna stran"
 
-#. Default:  "Datum začetka"
+#. Default: "Start Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:167
 msgid "label_seminar_start_date"
 msgstr "Datum začetka"
 
-#. Default:  "Datum zaključka"
+#. Default: "End Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:173
 msgid "label_seminar_end_date"
 msgstr "Datum zaključka"
 
-#. Default:  "Udeleženci"
+#. Default: "Attendees"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:179
 msgid "label_seminar_attendees"
 msgstr "Udeleženci"
 
-#. Default:  "Klikni tukaj za ogled povzetka vseh govorov"
+#. Default: "Click here to see a summary of all the Speeches"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:234
 msgid "label_click_to_see_speeches_summary"
 msgstr "Klikni tukaj za ogled povzetka vseh govorov"
 
-#. Default:  "Oglej si več seminarjev"
+#. Default: "View more seminars"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:42
 msgid "label_more_seminars_link"
 msgstr "Oglej si več seminarjev"
 
-#. Default:  "Dodaj vsebino"
+#. Default: "Add Content"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:61
 msgid "label_add_content"
 msgstr "Dodaj vsebino"
 
-#. Default:  "Viri in priloge"
+#. Default: "Resources and Attachments"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:84
 msgid "label_resources_attachments"
 msgstr "Viri in priloge"
 
-#. Default:  "Najden ni bil noben seminar, ki bi ustrezal vasim merilom"
+#. Default: "No seminars matching your criteria were found"
 #: slc.seminarportal:/browser/templates/seminarfolder_view.pt:102
 msgid "label_no_seminars_found"
 msgstr "Najden ni bil noben seminar, ki bi ustrezal vasim merilom"
 
-#. Default:  "Oglej si seminar"
+#. Default: "View the seminar:"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:24
 #: slc.seminarportal:/browser/templates/speakersfolder_view.pt:44
 #: slc.seminarportal:/browser/templates/speech_view.pt:23
@@ -121,214 +121,215 @@ msgstr "Najden ni bil noben seminar, ki bi ustrezal vasim merilom"
 msgid "label_seminar_link"
 msgstr "Oglej si seminar"
 
-#. Default:  "Govornik"
+#. Default: "Speaker"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:28
 msgid "title_speaker"
 msgstr "Govornik"
 
-#. Default:  "Dodaj dogodek v koledar"
+#. Default: "Add event to calendar"
 #: slc.seminarportal:/browser/templates/speech_view.pt:47
 msgid "heading_add_to_calendar"
 msgstr "Dodaj dogodek v koledar"
 
-#. Default:  "Grafični simbol ali logotip dogodka"
+#. Default: "Graphic or Logo for the event"
 #: slc.seminarportal:/content/seminar.py:22
 msgid "label_seminar_logo"
 msgstr "Grafični simbol ali logotip dogodka"
 
-#. Default:  "Splosen opis/povzetek dogodka"
+#. Default: "General Description/Summary of the event"
 #: slc.seminarportal:/content/seminar.py:34
 #: slc.seminarportal:/browser/templates/seminar_view.pt:190
 msgid "label_seminar_summary"
 msgstr "Splosen opis/povzetek dogodka"
 
-#. Default:  "Splosni zaključki"
+#. Default: "General Conclusions"
 #: slc.seminarportal:/content/seminar.py:45
 #: slc.seminarportal:/browser/templates/seminar_view.pt:201
 msgid "label_seminar_conclusions"
 msgstr "Splosni zaključki"
 
-#. Default:  "Nadaljnji ukrepi"
+#. Default: "Further Actions"
 #: slc.seminarportal:/content/seminar.py:56
 #: slc.seminarportal:/browser/templates/seminar_view.pt:223
 msgid "label_seminar_further_actions"
 msgstr "Nadaljnji ukrepi"
 
-#. Default:  "Prikaži na seznamu govorov stolpec z urnikom?"
+#. Default: "Show the hour column in the speech roster?"
 #: slc.seminarportal:/content/seminar.py:66
 msgid "label_seminar_show_hour_column"
 msgstr "Prikaži na seznamu govorov stolpec z urnikom?"
 
-#. Default:  "Postna stevilka pisarne"
+#. Default: "Office postal code"
 #: slc.seminarportal:/content/speaker.py:104
 #: slc.seminarportal:/browser/templates/speaker_view.pt:135
 msgid "label_speaker_office_postal_code"
 msgstr "Postna stevilka pisarne"
 
-#. Default:  "Telefonska stevilka pisarne"
+#. Default: "Office phone"
 #: slc.seminarportal:/content/speaker.py:112
 #: slc.seminarportal:/browser/templates/speaker_view.pt:113
 msgid "label_speaker_office_phone"
 msgstr "Telefonska stevilka pisarne"
 
-#. Default:  "Slika"
+#. Default: "Image"
 #: slc.seminarportal:/content/speaker.py:122
 msgid "label_speaker_image"
 msgstr "Slika"
 
-#. Default:  "Biografija"
+#. Default: "Biography"
 #: slc.seminarportal:/content/speaker.py:135
 #: slc.seminarportal:/browser/templates/speaker_view.pt:192
 msgid "label_speaker_biography"
 msgstr "Biografija"
 
-#. Default:  "Izobrazba"
+#. Default: "Education"
 #: slc.seminarportal:/content/speaker.py:147
 #: slc.seminarportal:/browser/templates/speaker_view.pt:168
 msgid "label_speaker_education"
 msgstr "Izobrazba"
 
-#. Default:  "Spletna stran"
+#. Default: "Web sites"
 #: slc.seminarportal:/content/speaker.py:155
 msgid "label_speaker_web_sites"
 msgstr "Spletna stran"
 
-#. Default:  "Govori"
+#. Default: "Speeches"
 #: slc.seminarportal:/content/speaker.py:162
 #: slc.seminarportal:/browser/templates/speaker_view.pt:181
 msgid "label_speaker_speeches"
 msgstr "Govori"
 
-#. Default:  "Tukaj lahko dodate vse govore, ki jih je zadevna oseba imela ali
-#. pri katerih je sodelovala. Upostevajte, da je treba govore dodati ločeno in
-#. za seminar, na katerih so se odvijali."
+#. Default: "Any speeches that this person held or contributed to, can be added here. Please note that speeches have to be created separately and for the seminar at which they were held."
 #: slc.seminarportal:/content/speaker.py:163
 msgid "description_speaker_speeches"
-msgstr "Tukaj lahko dodate vse govore, ki jih je zadevna oseba imela ali pri katerih je sodelovala. Upostevajte, da je treba govore dodati ločeno in za seminar, na katerih so se odvijali."
+msgstr ""
+"Tukaj lahko dodate vse govore, ki jih je zadevna oseba imela ali pri katerih "
+"je sodelovala. Upostevajte, da je treba govore dodati ločeno in za seminar, "
+"na katerih so se odvijali."
 
-#. Default:  "Državljanstvo"
+#. Default: "Nationality"
 #: slc.seminarportal:/content/speaker.py:182
 #: slc.seminarportal:/browser/templates/speaker_view.pt:69
 msgid "label_speaker_nationality"
 msgstr "Državljanstvo"
 
-#. Default:  "Delodajalec"
+#. Default: "Employer"
 #: slc.seminarportal:/content/speaker.py:188
 #: slc.seminarportal:/browser/templates/speaker_view.pt:58
 msgid "label_speaker_employer"
 msgstr "Delodajalec"
 
-#. Default:  "Skupina socialnih partnerjev"
+#. Default: "Social Partner Group"
 #: slc.seminarportal:/content/speaker.py:194
 #: slc.seminarportal:/browser/templates/speaker_view.pt:36
 msgid "label_speaker_social_partner_group"
 msgstr "Skupina socialnih partnerjev"
 
-#. Default:  "Strokovno znanje"
+#. Default: "Expertise"
 #: slc.seminarportal:/content/speaker.py:200
 #: slc.seminarportal:/browser/templates/speaker_view.pt:47
 msgid "label_speaker_expertise"
 msgstr "Strokovno znanje"
 
-#. Default:  "Ime"
+#. Default: "First Name"
 #: slc.seminarportal:/content/speaker.py:21
 msgid "label_spaker_first_name"
 msgstr "Ime"
 
-#. Default:  "Drugo ime"
+#. Default: "Middle Name"
 #: slc.seminarportal:/content/speaker.py:30
 msgid "label_speaker_middle_name"
 msgstr "Drugo ime"
 
-#. Default:  "Priimek"
+#. Default: "Last Name"
 #: slc.seminarportal:/content/speaker.py:39
 msgid "label_speaker_last_name"
 msgstr "Priimek"
 
-#. Default:  "Naziv"
+#. Default: "Suffix"
 #: slc.seminarportal:/content/speaker.py:48
 #: slc.seminarportal:/browser/templates/speaker_view.pt:80
 msgid "label_speaker_suffix"
 msgstr "Naziv"
 
-#. Default:  "Akademski, strokovni, častni in socialni nazivi."
+#. Default: "Academic, professional, honorary, and social suffixes."
 #: slc.seminarportal:/content/speaker.py:49
 msgid "description_speaker_suffix"
 msgstr "Akademski, strokovni, častni in socialni nazivi."
 
-#. Default:  "Elektronski naslov"
+#. Default: "Email"
 #: slc.seminarportal:/content/speaker.py:58
 #: slc.seminarportal:/browser/templates/seminar_view.pt:143
 #: slc.seminarportal:/browser/templates/speaker_view.pt:102
 msgid "label_speaker_email"
 msgstr "Elektronski naslov"
 
-#. Default:  "Nazivi delovnih mest"
+#. Default: "Job titles"
 #: slc.seminarportal:/content/speaker.py:68
 #: slc.seminarportal:/browser/templates/speaker_view.pt:91
 msgid "label_speaker_job_titles"
 msgstr "Nazivi delovnih mest"
 
-#. Default:  "En vnos na vrstico"
+#. Default: "One entry per line"
 #: slc.seminarportal:/content/speaker.py:69
 msgid "description_speaker_job_titles"
 msgstr "En vnos na vrstico"
 
-#. Default:  "Službeni naslov"
+#. Default: "Office address"
 #: slc.seminarportal:/content/speaker.py:78
 #: slc.seminarportal:/browser/templates/speaker_view.pt:124
 msgid "label_speaker_office_address"
 msgstr "Službeni naslov"
 
-#. Default:  "Kraj službovanja"
+#. Default: "Office city"
 #: slc.seminarportal:/content/speaker.py:87
 #: slc.seminarportal:/browser/templates/speaker_view.pt:146
 msgid "label_speaker_office_city"
 msgstr "Kraj službovanja"
 
-#. Default:  "Država službovanja"
+#. Default: "Office state"
 #: slc.seminarportal:/content/speaker.py:96
 #: slc.seminarportal:/browser/templates/speaker_view.pt:157
 msgid "label_speaker_office_state"
 msgstr "Država službovanja"
 
-#. Default:  "Govornik(-i)"
+#. Default: "Speaker(s)"
 #: slc.seminarportal:/content/speech.py:23
 #: slc.seminarportal:/browser/templates/speech_view.pt:67
 msgid "label_speech_speakers"
 msgstr "Govornik(-i)"
 
-#. Default:  "Sklepi"
+#. Default: "Conclusions"
 #: slc.seminarportal:/content/speech.py:43
 msgid "label_event_announcement"
 msgstr "Sklepi"
 
-#. Default:  "Lokacija"
+#. Default: "Location"
 #: slc.seminarportal:/content/speech.py:46
 msgid "label_event_location"
 msgstr "Lokacija"
 
-#. Default:  "Isči po seminarjih"
+#. Default: "Search the seminars"
 #: slc.seminarportal:/portlets/search.pt:6
 msgid "box_search_seminars"
 msgstr "Isči po seminarjih"
 
-#. Default:  "Sodelujoči govorniki"
+#. Default: "Featured Speakers"
 #: slc.seminarportal:/portlets/speaker.pt:8
 msgid "box_speaker"
 msgstr "Sodelujoči govorniki"
 
-#. Default:  "Zadevni govori"
+#. Default: "Featured Speeches"
 #: slc.seminarportal:/portlets/speeches.pt:5
 msgid "box_speeches"
 msgstr "Zadevni govori"
 
-#. Default:  "Klikni tukaj za prikaz celotnega besedila"
+#. Default: "Click here to show the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:24
 msgid "label_click_to_show_full_text"
 msgstr "Klikni tukaj za prikaz celotnega besedila"
 
-#. Default:  "Klikni tukaj, da skrijete celotno besedilo"
+#. Default: "Click here to hide the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Klikni tukaj, da skrijete celotno besedilo"

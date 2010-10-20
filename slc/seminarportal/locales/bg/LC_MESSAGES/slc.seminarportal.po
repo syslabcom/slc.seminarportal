@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Mon Sep 13 21:54:21 2010\n"
+"POT-Creation-Date: Mon Sep 13 23:01:10 2010\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
@@ -23,12 +23,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: zope/app/locales/extract.py\n"
 
-#. Default: "Добавяне към календара:"
+#. Default: "Add to calendar:"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:106
 msgid "label_add_to_calendar"
 msgstr "Добавяне към календара:"
 
-#. Default: "Добавяне на точката към вашия vCal календар"
+#. Default: "Add this item to your vCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:108
 #: slc.seminarportal:/browser/templates/speech_view.pt:50
 msgid "title_add_to_vcal"
@@ -40,7 +40,7 @@ msgstr "Добавяне на точката към вашия vCal календ
 msgid "label_add_to_vcal"
 msgstr "vCal"
 
-#. Default: "Добавяне на точката към вашия iCal календар"
+#. Default: "Add this item to your iCal calendar"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:115
 #: slc.seminarportal:/browser/templates/speech_view.pt:56
 msgid "title_add_to_ical"
@@ -52,67 +52,67 @@ msgstr "Добавяне на точката към вашия iCal календ
 msgid "label_add_to_ical"
 msgstr "iCal"
 
-#. Default: "Организатор"
+#. Default: "Organiser"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:127
 msgid "label_seminar_organiser"
 msgstr "Организатор"
 
-#. Default: "Местонахождение"
+#. Default: "Location"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:135
 msgid "label_seminar_location"
 msgstr "Местонахождение"
 
-#. Default: "Телефон"
+#. Default: "Phone"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:151
 msgid "label_seminar_phone"
 msgstr "Телефон"
 
-#. Default: "Уебсайт"
+#. Default: "Website"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:159
 msgid "label_seminar_website"
 msgstr "Уебсайт"
 
-#. Default: "Начална дата"
+#. Default: "Start Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:167
 msgid "label_seminar_start_date"
 msgstr "Начална дата"
 
-#. Default: "Крайна дата"
+#. Default: "End Date"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:173
 msgid "label_seminar_end_date"
 msgstr "Крайна дата"
 
-#. Default: "Участници"
+#. Default: "Attendees"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:179
 msgid "label_seminar_attendees"
 msgstr "Участници"
 
-#. Default: "Щракнете тук за резюме на всички изказвания"
+#. Default: "Click here to see a summary of all the Speeches"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:234
 msgid "label_click_to_see_speeches_summary"
 msgstr "Щракнете тук за резюме на всички изказвания"
 
-#. Default: "Преглед на други семинари"
+#. Default: "View more seminars"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:42
 msgid "label_more_seminars_link"
 msgstr "Преглед на други семинари"
 
-#. Default: "Добавяне на съдържание"
+#. Default: "Add Content"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:61
 msgid "label_add_content"
 msgstr "Добавяне на съдържание"
 
-#. Default: "Ресурси и прикачени файлове"
+#. Default: "Resources and Attachments"
 #: slc.seminarportal:/browser/templates/seminar_view.pt:84
 msgid "label_resources_attachments"
 msgstr "Ресурси и прикачени файлове"
 
-#. Default: "Не са намерени семинари, отговарящи на зададените критерии"
+#. Default: "No seminars matching your criteria were found"
 #: slc.seminarportal:/browser/templates/seminarfolder_view.pt:102
 msgid "label_no_seminars_found"
 msgstr "Не са намерени семинари, отговарящи на зададените критерии"
 
-#. Default: "Преглед на семинара:"
+#. Default: "View the seminar:"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:24
 #: slc.seminarportal:/browser/templates/speakersfolder_view.pt:44
 #: slc.seminarportal:/browser/templates/speech_view.pt:23
@@ -121,215 +121,215 @@ msgstr "Не са намерени семинари, отговарящи на �
 msgid "label_seminar_link"
 msgstr "Преглед на семинара:"
 
-#. Default: "Оратор"
+#. Default: "Speaker"
 #: slc.seminarportal:/browser/templates/speaker_view.pt:28
 msgid "title_speaker"
 msgstr "Оратор"
 
-#. Default: "Добавяне на събитие към календара"
+#. Default: "Add event to calendar"
 #: slc.seminarportal:/browser/templates/speech_view.pt:47
 msgid "heading_add_to_calendar"
 msgstr "Добавяне на събитие към календара"
 
-#. Default: "Графика или лого на събитието"
+#. Default: "Graphic or Logo for the event"
 #: slc.seminarportal:/content/seminar.py:22
 msgid "label_seminar_logo"
 msgstr "Графика или лого на събитието"
 
-#. Default: "Общо описание/Резюме на събитието"
+#. Default: "General Description/Summary of the event"
 #: slc.seminarportal:/content/seminar.py:34
 #: slc.seminarportal:/browser/templates/seminar_view.pt:190
 msgid "label_seminar_summary"
 msgstr "Общо описание/Резюме на събитието"
 
-#. Default: "Общи заключения"
+#. Default: "General Conclusions"
 #: slc.seminarportal:/content/seminar.py:45
 #: slc.seminarportal:/browser/templates/seminar_view.pt:201
 msgid "label_seminar_conclusions"
 msgstr "Общи заключения"
 
-#. Default: "Последващи действия"
+#. Default: "Further Actions"
 #: slc.seminarportal:/content/seminar.py:56
 #: slc.seminarportal:/browser/templates/seminar_view.pt:223
 msgid "label_seminar_further_actions"
 msgstr "Последващи действия"
 
-#. Default: "Показване на часовото разпределение в списъка с изказванията?"
+#. Default: "Show the hour column in the speech roster?"
 #: slc.seminarportal:/content/seminar.py:66
 msgid "label_seminar_show_hour_column"
 msgstr "Показване на часовото разпределение в списъка с изказванията?"
 
-#. Default: "Служебен пощенски код"
+#. Default: "Office postal code"
 #: slc.seminarportal:/content/speaker.py:104
 #: slc.seminarportal:/browser/templates/speaker_view.pt:135
 msgid "label_speaker_office_postal_code"
 msgstr "Служебен пощенски код"
 
-#. Default: "Служебен телефон"
+#. Default: "Office phone"
 #: slc.seminarportal:/content/speaker.py:112
 #: slc.seminarportal:/browser/templates/speaker_view.pt:113
 msgid "label_speaker_office_phone"
 msgstr "Служебен телефон"
 
-#. Default: "Изображение"
+#. Default: "Image"
 #: slc.seminarportal:/content/speaker.py:122
 msgid "label_speaker_image"
 msgstr "Изображение"
 
-#. Default: "Биография"
+#. Default: "Biography"
 #: slc.seminarportal:/content/speaker.py:135
 #: slc.seminarportal:/browser/templates/speaker_view.pt:192
 msgid "label_speaker_biography"
 msgstr "Биография"
 
-#. Default: "Образование"
+#. Default: "Education"
 #: slc.seminarportal:/content/speaker.py:147
 #: slc.seminarportal:/browser/templates/speaker_view.pt:168
 msgid "label_speaker_education"
 msgstr "Образование"
 
-#. Default: "Уеб сайтове"
+#. Default: "Web sites"
 #: slc.seminarportal:/content/speaker.py:155
 msgid "label_speaker_web_sites"
 msgstr "Уеб сайтове"
 
-#. Default: "Изказвания"
+#. Default: "Speeches"
 #: slc.seminarportal:/content/speaker.py:162
 #: slc.seminarportal:/browser/templates/speaker_view.pt:181
 msgid "label_speaker_speeches"
 msgstr "Изказвания"
 
-#. Default: "Всички изказвания, направени от това лице или с неговото
-#. съдействие могат да бъдат добавени тук. Следва да обърнете внимание, че
-#. изказванията се създават отделно и за семинара, на който са били
-#. произнесени."
+#. Default: "Any speeches that this person held or contributed to, can be added here. Please note that speeches have to be created separately and for the seminar at which they were held."
 #: slc.seminarportal:/content/speaker.py:163
 msgid "description_speaker_speeches"
-msgstr "Всички изказвания, направени от това лице или с неговото съдействие могат да бъдат добавени тук. Следва да обърнете внимание, че изказванията се създават отделно и за семинара, на който са били произнесени."
+msgstr ""
+"Всички изказвания, направени от това лице или с неговото съдействие могат да "
+"бъдат добавени тук. Следва да обърнете внимание, че изказванията се създават "
+"отделно и за семинара, на който са били произнесени."
 
-#. Default: "Гражданство"
+#. Default: "Nationality"
 #: slc.seminarportal:/content/speaker.py:182
 #: slc.seminarportal:/browser/templates/speaker_view.pt:69
 msgid "label_speaker_nationality"
 msgstr "Гражданство"
 
-#. Default: "Работодател"
+#. Default: "Employer"
 #: slc.seminarportal:/content/speaker.py:188
 #: slc.seminarportal:/browser/templates/speaker_view.pt:58
 msgid "label_speaker_employer"
 msgstr "Работодател"
 
-#. Default: "Група от социално партньори"
+#. Default: "Social Partner Group"
 #: slc.seminarportal:/content/speaker.py:194
 #: slc.seminarportal:/browser/templates/speaker_view.pt:36
 msgid "label_speaker_social_partner_group"
 msgstr "Група от социално партньори"
 
-#. Default: "Експертен опит"
+#. Default: "Expertise"
 #: slc.seminarportal:/content/speaker.py:200
 #: slc.seminarportal:/browser/templates/speaker_view.pt:47
 msgid "label_speaker_expertise"
 msgstr "Експертен опит"
 
-#. Default: "Собствено име"
+#. Default: "First Name"
 #: slc.seminarportal:/content/speaker.py:21
 msgid "label_spaker_first_name"
 msgstr "Собствено име"
 
-#. Default: "Бащино име"
+#. Default: "Middle Name"
 #: slc.seminarportal:/content/speaker.py:30
 msgid "label_speaker_middle_name"
 msgstr "Бащино име"
 
-#. Default: "Фамилия"
+#. Default: "Last Name"
 #: slc.seminarportal:/content/speaker.py:39
 msgid "label_speaker_last_name"
 msgstr "Фамилия"
 
-#. Default: "Звание"
+#. Default: "Suffix"
 #: slc.seminarportal:/content/speaker.py:48
 #: slc.seminarportal:/browser/templates/speaker_view.pt:80
 msgid "label_speaker_suffix"
 msgstr "Звание"
 
-#. Default: "Академични, професионални, почетни и обществени звания."
+#. Default: "Academic, professional, honorary, and social suffixes."
 #: slc.seminarportal:/content/speaker.py:49
 msgid "description_speaker_suffix"
 msgstr "Академични, професионални, почетни и обществени звания."
 
-#. Default: "Електронна поща"
+#. Default: "Email"
 #: slc.seminarportal:/content/speaker.py:58
 #: slc.seminarportal:/browser/templates/seminar_view.pt:143
 #: slc.seminarportal:/browser/templates/speaker_view.pt:102
 msgid "label_speaker_email"
 msgstr "Електронна поща"
 
-#. Default: "Длъжности"
+#. Default: "Job titles"
 #: slc.seminarportal:/content/speaker.py:68
 #: slc.seminarportal:/browser/templates/speaker_view.pt:91
 msgid "label_speaker_job_titles"
 msgstr "Длъжности"
 
-#. Default: "Един запис на ред"
+#. Default: "One entry per line"
 #: slc.seminarportal:/content/speaker.py:69
 msgid "description_speaker_job_titles"
 msgstr "Един запис на ред"
 
-#. Default: "Служебен адрес"
+#. Default: "Office address"
 #: slc.seminarportal:/content/speaker.py:78
 #: slc.seminarportal:/browser/templates/speaker_view.pt:124
 msgid "label_speaker_office_address"
 msgstr "Служебен адрес"
 
-#. Default: "Град"
+#. Default: "Office city"
 #: slc.seminarportal:/content/speaker.py:87
 #: slc.seminarportal:/browser/templates/speaker_view.pt:146
 msgid "label_speaker_office_city"
 msgstr "Град"
 
-#. Default: "Държава"
+#. Default: "Office state"
 #: slc.seminarportal:/content/speaker.py:96
 #: slc.seminarportal:/browser/templates/speaker_view.pt:157
 msgid "label_speaker_office_state"
 msgstr "Държава"
 
-#. Default: "Оратор(и)"
+#. Default: "Speaker(s)"
 #: slc.seminarportal:/content/speech.py:23
 #: slc.seminarportal:/browser/templates/speech_view.pt:67
 msgid "label_speech_speakers"
 msgstr "Оратор(и)"
 
-#. Default: "Заключения"
+#. Default: "Conclusions"
 #: slc.seminarportal:/content/speech.py:43
 msgid "label_event_announcement"
 msgstr "Заключения"
 
-#. Default: "Местонахождение"
+#. Default: "Location"
 #: slc.seminarportal:/content/speech.py:46
 msgid "label_event_location"
 msgstr "Местонахождение"
 
-#. Default: "Търсене на семинари"
+#. Default: "Search the seminars"
 #: slc.seminarportal:/portlets/search.pt:6
 msgid "box_search_seminars"
 msgstr "Търсене на семинари"
 
-#. Default: "Гости оратори"
+#. Default: "Featured Speakers"
 #: slc.seminarportal:/portlets/speaker.pt:8
 msgid "box_speaker"
 msgstr "Гости оратори"
 
-#. Default: "Планирани изказвания"
+#. Default: "Featured Speeches"
 #: slc.seminarportal:/portlets/speeches.pt:5
 msgid "box_speeches"
 msgstr "Планирани изказвания"
 
-#. Default: "Щракнете тук за показване на пълен текст"
+#. Default: "Click here to show the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:24
 msgid "label_click_to_show_full_text"
 msgstr "Щракнете тук за показване на пълен текст"
 
-#. Default: "Щракнете тук за скриване на пълен текст"
+#. Default: "Click here to hide the full text"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Щракнете тук за скриване на пълен текст"
