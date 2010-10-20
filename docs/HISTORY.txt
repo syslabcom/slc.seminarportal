@@ -4,8 +4,8 @@ Changelog
 1.3.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Added translations in 21 European languages, provided by EU-OSHA
+  [thomasw]
 
 1.3.0 (2010-10-05)
 ------------------
