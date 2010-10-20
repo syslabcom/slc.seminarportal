@@ -1,0 +1,335 @@
+##############################################################################
+#
+# Copyright (c) 2003-2004 Zope Corporation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: Mon Sep 13 23:01:10 2010\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: zope/app/locales/extract.py\n"
+
+#. Default: "Įrasyti į kalendorių:"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:106
+msgid "label_add_to_calendar"
+msgstr "Įrasyti į kalendorių:"
+
+#. Default: "Įrasyti sį renginį į savo kalendorių vCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:108
+#: slc.seminarportal:/browser/templates/speech_view.pt:50
+msgid "title_add_to_vcal"
+msgstr "Įrasyti sį renginį į savo kalendorių vCal"
+
+#. Default: "vCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:113
+#: slc.seminarportal:/browser/templates/speech_view.pt:55
+msgid "label_add_to_vcal"
+msgstr "vCal"
+
+#. Default: "Įrasyti sį renginį į savo kalendorių iCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:115
+#: slc.seminarportal:/browser/templates/speech_view.pt:56
+msgid "title_add_to_ical"
+msgstr "Įrasyti sį renginį į savo kalendorių iCal"
+
+#. Default: "iCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:120
+#: slc.seminarportal:/browser/templates/speech_view.pt:61
+msgid "label_add_to_ical"
+msgstr "iCal"
+
+#. Default: "Rengėjas"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:127
+msgid "label_seminar_organiser"
+msgstr "Rengėjas"
+
+#. Default: "Vieta"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:135
+msgid "label_seminar_location"
+msgstr "Vieta"
+
+#. Default: "Telefonas"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:151
+msgid "label_seminar_phone"
+msgstr "Telefonas"
+
+#. Default: "Tinklavietė"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:159
+msgid "label_seminar_website"
+msgstr "Tinklavietė"
+
+#. Default: "Renginio pradžia"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:167
+msgid "label_seminar_start_date"
+msgstr "Renginio pradžia"
+
+#. Default: "Renginio pabaiga"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:173
+msgid "label_seminar_end_date"
+msgstr "Renginio pabaiga"
+
+#. Default: "Dalyviai"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:179
+msgid "label_seminar_attendees"
+msgstr "Dalyviai"
+
+#. Default: "Spustelėkite čia, kad pamatytumėte visų pranesimų santrauką"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:234
+msgid "label_click_to_see_speeches_summary"
+msgstr "Spustelėkite čia, kad pamatytumėte visų pranesimų santrauką"
+
+#. Default: "Rasti daugiau seminarų"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:42
+msgid "label_more_seminars_link"
+msgstr "Rasti daugiau seminarų"
+
+#. Default: "Papildyti turinį"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:61
+msgid "label_add_content"
+msgstr "Papildyti turinį"
+
+#. Default: "Informacinė medžiaga ir priedai"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:84
+msgid "label_resources_attachments"
+msgstr "Informacinė medžiaga ir priedai"
+
+#. Default: "Jūsų paieskos kriterijus atitinkančių seminarų nerasta"
+#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:102
+msgid "label_no_seminars_found"
+msgstr "Jūsų paieskos kriterijus atitinkančių seminarų nerasta"
+
+#. Default: "Peržiūrėti informaciją apie seminarą:"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:24
+#: slc.seminarportal:/browser/templates/speakersfolder_view.pt:44
+#: slc.seminarportal:/browser/templates/speech_view.pt:23
+#: slc.seminarportal:/browser/templates/speechvenue_view.pt:44
+#: slc.seminarportal:/browser/templates/speechvenuesfolder_view.pt:44
+msgid "label_seminar_link"
+msgstr "Peržiūrėti informaciją apie seminarą:"
+
+#. Default: "Pranesėjas"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:28
+msgid "title_speaker"
+msgstr "Pranesėjas"
+
+#. Default: "Įrasyti renginį į kalendorių"
+#: slc.seminarportal:/browser/templates/speech_view.pt:47
+msgid "heading_add_to_calendar"
+msgstr "Įrasyti renginį į kalendorių"
+
+#. Default: "Renginio grafinis ženklas arba logotipas"
+#: slc.seminarportal:/content/seminar.py:22
+msgid "label_seminar_logo"
+msgstr "Renginio grafinis ženklas arba logotipas"
+
+#. Default: "Bendras renginio apra.ymas / santrauka"
+#: slc.seminarportal:/content/seminar.py:34
+#: slc.seminarportal:/browser/templates/seminar_view.pt:190
+msgid "label_seminar_summary"
+msgstr "Bendras renginio apra.ymas / santrauka"
+
+#. Default: "Bendros i.vados"
+#: slc.seminarportal:/content/seminar.py:45
+#: slc.seminarportal:/browser/templates/seminar_view.pt:201
+msgid "label_seminar_conclusions"
+msgstr "Bendros i.vados"
+
+#. Default: "Tolesni veiksmai"
+#: slc.seminarportal:/content/seminar.py:56
+#: slc.seminarportal:/browser/templates/seminar_view.pt:223
+msgid "label_seminar_further_actions"
+msgstr "Tolesni veiksmai"
+
+#. Default: "Parodyti pranesimų tvarkarasčio valandų stulpelį?"
+#: slc.seminarportal:/content/seminar.py:66
+msgid "label_seminar_show_hour_column"
+msgstr "Parodyti pranesimų tvarkarasčio valandų stulpelį?"
+
+#. Default: "Biuro pa.to kodas"
+#: slc.seminarportal:/content/speaker.py:104
+#: slc.seminarportal:/browser/templates/speaker_view.pt:135
+msgid "label_speaker_office_postal_code"
+msgstr "Biuro pa.to kodas"
+
+#. Default: "Biuro telefonas"
+#: slc.seminarportal:/content/speaker.py:112
+#: slc.seminarportal:/browser/templates/speaker_view.pt:113
+msgid "label_speaker_office_phone"
+msgstr "Biuro telefonas"
+
+#. Default: "Nuotrauka"
+#: slc.seminarportal:/content/speaker.py:122
+msgid "label_speaker_image"
+msgstr "Nuotrauka"
+
+#. Default: "Biografija"
+#: slc.seminarportal:/content/speaker.py:135
+#: slc.seminarportal:/browser/templates/speaker_view.pt:192
+msgid "label_speaker_biography"
+msgstr "Biografija"
+
+#. Default: "I.silavinimas"
+#: slc.seminarportal:/content/speaker.py:147
+#: slc.seminarportal:/browser/templates/speaker_view.pt:168
+msgid "label_speaker_education"
+msgstr "I.silavinimas"
+
+#. Default: "Tinklavietės"
+#: slc.seminarportal:/content/speaker.py:155
+msgid "label_speaker_web_sites"
+msgstr "Tinklavietės"
+
+#. Default: "Pranesimai"
+#: slc.seminarportal:/content/speaker.py:162
+#: slc.seminarportal:/browser/templates/speaker_view.pt:181
+msgid "label_speaker_speeches"
+msgstr "Pranesimai"
+
+#. Default: "Visus sio asmens skaitytus arba pateiktus pranesimus galima
+#. pateikti čia. Atminkite, kad pranesimo rinkmeną reikia sukurti atskirai ir
+#. priskirti seminarui, kuriame jis skaitytas."
+#: slc.seminarportal:/content/speaker.py:163
+msgid "description_speaker_speeches"
+msgstr "Visus sio asmens skaitytus arba pateiktus pranesimus galima pateikti čia. Atminkite, kad pranesimo rinkmeną reikia sukurti atskirai ir priskirti seminarui, kuriame jis skaitytas."
+
+#. Default: "Pilietybė"
+#: slc.seminarportal:/content/speaker.py:182
+#: slc.seminarportal:/browser/templates/speaker_view.pt:69
+msgid "label_speaker_nationality"
+msgstr "Pilietybė"
+
+#. Default: "Darbovietė"
+#: slc.seminarportal:/content/speaker.py:188
+#: slc.seminarportal:/browser/templates/speaker_view.pt:58
+msgid "label_speaker_employer"
+msgstr "Darbovietė"
+
+#. Default: "Socialinių partnerių grupė"
+#: slc.seminarportal:/content/speaker.py:194
+#: slc.seminarportal:/browser/templates/speaker_view.pt:36
+msgid "label_speaker_social_partner_group"
+msgstr "Socialinių partnerių grupė"
+
+#. Default: "Profesinė sritis"
+#: slc.seminarportal:/content/speaker.py:200
+#: slc.seminarportal:/browser/templates/speaker_view.pt:47
+msgid "label_speaker_expertise"
+msgstr "Profesinė sritis"
+
+#. Default: "Vardas"
+#: slc.seminarportal:/content/speaker.py:21
+msgid "label_spaker_first_name"
+msgstr "Vardas"
+
+#. Default: "Antras vardas"
+#: slc.seminarportal:/content/speaker.py:30
+msgid "label_speaker_middle_name"
+msgstr "Antras vardas"
+
+#. Default: "Pavardė"
+#: slc.seminarportal:/content/speaker.py:39
+msgid "label_speaker_last_name"
+msgstr "Pavardė"
+
+#. Default: "Priedėlis"
+#: slc.seminarportal:/content/speaker.py:48
+#: slc.seminarportal:/browser/templates/speaker_view.pt:80
+msgid "label_speaker_suffix"
+msgstr "Priedėlis"
+
+#. Default: "Akademinio, profesinio ar garbės laipsnio arba socialinis
+#. priedėlis."
+#: slc.seminarportal:/content/speaker.py:49
+msgid "description_speaker_suffix"
+msgstr "Akademinio, profesinio ar garbės laipsnio arba socialinis priedėlis."
+
+#. Default: "El. pastas"
+#: slc.seminarportal:/content/speaker.py:58
+#: slc.seminarportal:/browser/templates/seminar_view.pt:143
+#: slc.seminarportal:/browser/templates/speaker_view.pt:102
+msgid "label_speaker_email"
+msgstr "El. pastas"
+
+#. Default: "Pareigos"
+#: slc.seminarportal:/content/speaker.py:68
+#: slc.seminarportal:/browser/templates/speaker_view.pt:91
+msgid "label_speaker_job_titles"
+msgstr "Pareigos"
+
+#. Default: "Tik po vieną įrasą vienoje eilutėje"
+#: slc.seminarportal:/content/speaker.py:69
+msgid "description_speaker_job_titles"
+msgstr "Tik po vieną įrasą vienoje eilutėje"
+
+#. Default: "Biuro adresas"
+#: slc.seminarportal:/content/speaker.py:78
+#: slc.seminarportal:/browser/templates/speaker_view.pt:124
+msgid "label_speaker_office_address"
+msgstr "Biuro adresas"
+
+#. Default: "Biuro miestas"
+#: slc.seminarportal:/content/speaker.py:87
+#: slc.seminarportal:/browser/templates/speaker_view.pt:146
+msgid "label_speaker_office_city"
+msgstr "Biuro miestas"
+
+#. Default: "Biuro valstybė"
+#: slc.seminarportal:/content/speaker.py:96
+#: slc.seminarportal:/browser/templates/speaker_view.pt:157
+msgid "label_speaker_office_state"
+msgstr "Biuro valstybė"
+
+#. Default: "Pranesėjas (pranesėjai)"
+#: slc.seminarportal:/content/speech.py:23
+#: slc.seminarportal:/browser/templates/speech_view.pt:67
+msgid "label_speech_speakers"
+msgstr "Pranesėjas (pranesėjai)"
+
+#. Default: "Isvados"
+#: slc.seminarportal:/content/speech.py:43
+msgid "label_event_announcement"
+msgstr "Isvados"
+
+#. Default: "Vieta"
+#: slc.seminarportal:/content/speech.py:46
+msgid "label_event_location"
+msgstr "Vieta"
+
+#. Default: "Ieskoti seminarų"
+#: slc.seminarportal:/portlets/search.pt:6
+msgid "box_search_seminars"
+msgstr "Ieskoti seminarų"
+
+#. Default: "Pagrindiniai pranesėjai"
+#: slc.seminarportal:/portlets/speaker.pt:8
+msgid "box_speaker"
+msgstr "Pagrindiniai pranesėjai"
+
+#. Default: "Pagrindiniai pranesimai"
+#: slc.seminarportal:/portlets/speeches.pt:5
+msgid "box_speeches"
+msgstr "Pagrindiniai pranesimai"
+
+#. Default: "Spustelėkite čia, kad pamatytumėt visą tekstą"
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:24
+msgid "label_click_to_show_full_text"
+msgstr "Spustelėkite čia, kad pamatytumėt visą tekstą"
+
+#. Default: "Spustelėkite čia, kad tekstas nebūtų rodomas"
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
+msgid "label_click_to_hide_full_text"
+msgstr "Spustelėkite čia, kad tekstas nebūtų rodomas"

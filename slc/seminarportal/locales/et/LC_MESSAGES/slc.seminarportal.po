@@ -1,0 +1,333 @@
+##############################################################################
+#
+# Copyright (c) 2003-2004 Zope Corporation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: Mon Sep 13 23:01:10 2010\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: zope/app/locales/extract.py\n"
+
+#. Default: "Lisa kalendrisse:"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:106
+msgid "label_add_to_calendar"
+msgstr "Lisa kalendrisse:"
+
+#. Default: "Lisa vCal-kalendrisse"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:108
+#: slc.seminarportal:/browser/templates/speech_view.pt:50
+msgid "title_add_to_vcal"
+msgstr "Lisa vCal-kalendrisse"
+
+#. Default: "vCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:113
+#: slc.seminarportal:/browser/templates/speech_view.pt:55
+msgid "label_add_to_vcal"
+msgstr "vCal"
+
+#. Default: "Lisa iCal-kalendrisse"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:115
+#: slc.seminarportal:/browser/templates/speech_view.pt:56
+msgid "title_add_to_ical"
+msgstr "Lisa iCal-kalendrisse"
+
+#. Default: "iCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:120
+#: slc.seminarportal:/browser/templates/speech_view.pt:61
+msgid "label_add_to_ical"
+msgstr "iCal"
+
+#. Default: "Kalendermärkmik"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:127
+msgid "label_seminar_organiser"
+msgstr "Kalendermärkmik"
+
+#. Default: "Asukoht"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:135
+msgid "label_seminar_location"
+msgstr "Asukoht"
+
+#. Default: "Telefon"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:151
+msgid "label_seminar_phone"
+msgstr "Telefon"
+
+#. Default: "Veebileht"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:159
+msgid "label_seminar_website"
+msgstr "Veebileht"
+
+#. Default: "Alguskuupäev"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:167
+msgid "label_seminar_start_date"
+msgstr "Alguskuupäev"
+
+#. Default: "Lõppkuupäev"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:173
+msgid "label_seminar_end_date"
+msgstr "Lõppkuupäev"
+
+#. Default: "Osavõtjad"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:179
+msgid "label_seminar_attendees"
+msgstr "Osavõtjad"
+
+#. Default: "Kõigi ettekannete kokkuvõtted"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:234
+msgid "label_click_to_see_speeches_summary"
+msgstr "Kõigi ettekannete kokkuvõtted"
+
+#. Default: "Veel seminare"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:42
+msgid "label_more_seminars_link"
+msgstr "Veel seminare"
+
+#. Default: "Lisa sisu"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:61
+msgid "label_add_content"
+msgstr "Lisa sisu"
+
+#. Default: "Vahendid ja manused"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:84
+msgid "label_resources_attachments"
+msgstr "Vahendid ja manused"
+
+#. Default: "Ei leitud ühtegi kriteeriumidele vastavat seminari"
+#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:102
+msgid "label_no_seminars_found"
+msgstr "Ei leitud ühtegi kriteeriumidele vastavat seminari"
+
+#. Default: "Vaata seminari:"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:24
+#: slc.seminarportal:/browser/templates/speakersfolder_view.pt:44
+#: slc.seminarportal:/browser/templates/speech_view.pt:23
+#: slc.seminarportal:/browser/templates/speechvenue_view.pt:44
+#: slc.seminarportal:/browser/templates/speechvenuesfolder_view.pt:44
+msgid "label_seminar_link"
+msgstr "Vaata seminari:"
+
+#. Default: "Ettekandja"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:28
+msgid "title_speaker"
+msgstr "Ettekandja"
+
+#. Default: "Lisa üritus kalendrisse"
+#: slc.seminarportal:/browser/templates/speech_view.pt:47
+msgid "heading_add_to_calendar"
+msgstr "Lisa üritus kalendrisse"
+
+#. Default: "Ürituse graafiline element või logo"
+#: slc.seminarportal:/content/seminar.py:22
+msgid "label_seminar_logo"
+msgstr "Ürituse graafiline element või logo"
+
+#. Default: "Ürituse üldkirjeldus/kokkuvõte"
+#: slc.seminarportal:/content/seminar.py:34
+#: slc.seminarportal:/browser/templates/seminar_view.pt:190
+msgid "label_seminar_summary"
+msgstr "Ürituse üldkirjeldus/kokkuvõte"
+
+#. Default: "Üldkokkuvõte"
+#: slc.seminarportal:/content/seminar.py:45
+#: slc.seminarportal:/browser/templates/seminar_view.pt:201
+msgid "label_seminar_conclusions"
+msgstr "Üldkokkuvõte"
+
+#. Default: "Edasised meetmed"
+#: slc.seminarportal:/content/seminar.py:56
+#: slc.seminarportal:/browser/templates/seminar_view.pt:223
+msgid "label_seminar_further_actions"
+msgstr "Edasised meetmed"
+
+#. Default: "Kas näidata ettekannete tabelis kellaaegade veergu?"
+#: slc.seminarportal:/content/seminar.py:66
+msgid "label_seminar_show_hour_column"
+msgstr "Kas näidata ettekannete tabelis kellaaegade veergu?"
+
+#. Default: "Töökoha sihtnumber"
+#: slc.seminarportal:/content/speaker.py:104
+#: slc.seminarportal:/browser/templates/speaker_view.pt:135
+msgid "label_speaker_office_postal_code"
+msgstr "Töökoha sihtnumber"
+
+#. Default: "Töökoha telefon"
+#: slc.seminarportal:/content/speaker.py:112
+#: slc.seminarportal:/browser/templates/speaker_view.pt:113
+msgid "label_speaker_office_phone"
+msgstr "Töökoha telefon"
+
+#. Default: "Pilt"
+#: slc.seminarportal:/content/speaker.py:122
+msgid "label_speaker_image"
+msgstr "Pilt"
+
+#. Default: "Elulugu"
+#: slc.seminarportal:/content/speaker.py:135
+#: slc.seminarportal:/browser/templates/speaker_view.pt:192
+msgid "label_speaker_biography"
+msgstr "Elulugu"
+
+#. Default: "Haridus"
+#: slc.seminarportal:/content/speaker.py:147
+#: slc.seminarportal:/browser/templates/speaker_view.pt:168
+msgid "label_speaker_education"
+msgstr "Haridus"
+
+#. Default: "Veebilehed"
+#: slc.seminarportal:/content/speaker.py:155
+msgid "label_speaker_web_sites"
+msgstr "Veebilehed"
+
+#. Default: "Ettekanded"
+#: slc.seminarportal:/content/speaker.py:162
+#: slc.seminarportal:/browser/templates/speaker_view.pt:181
+msgid "label_speaker_speeches"
+msgstr "Ettekanded"
+
+#. Default: "Selle isiku kõik ettekanded või sõnavõtud võib lisada siia. NB!
+#. Ettekanne tuleb luua eraldi ja lisada seminarile, kus see peeti."
+#: slc.seminarportal:/content/speaker.py:163
+msgid "description_speaker_speeches"
+msgstr "Selle isiku kõik ettekanded või sõnavõtud võib lisada siia. NB! Ettekanne tuleb luua eraldi ja lisada seminarile, kus see peeti."
+
+#. Default: "Kodakondsus"
+#: slc.seminarportal:/content/speaker.py:182
+#: slc.seminarportal:/browser/templates/speaker_view.pt:69
+msgid "label_speaker_nationality"
+msgstr "Kodakondsus"
+
+#. Default: "Tööandja"
+#: slc.seminarportal:/content/speaker.py:188
+#: slc.seminarportal:/browser/templates/speaker_view.pt:58
+msgid "label_speaker_employer"
+msgstr "Tööandja"
+
+#. Default: "Sotsiaalpartnerite rühm"
+#: slc.seminarportal:/content/speaker.py:194
+#: slc.seminarportal:/browser/templates/speaker_view.pt:36
+msgid "label_speaker_social_partner_group"
+msgstr "Sotsiaalpartnerite rühm"
+
+#. Default: "Valdkond"
+#: slc.seminarportal:/content/speaker.py:200
+#: slc.seminarportal:/browser/templates/speaker_view.pt:47
+msgid "label_speaker_expertise"
+msgstr "Valdkond"
+
+#. Default: "Eesnimi"
+#: slc.seminarportal:/content/speaker.py:21
+msgid "label_spaker_first_name"
+msgstr "Eesnimi"
+
+#. Default: "Teine eesnimi"
+#: slc.seminarportal:/content/speaker.py:30
+msgid "label_speaker_middle_name"
+msgstr "Teine eesnimi"
+
+#. Default: "Perekonnanimi"
+#: slc.seminarportal:/content/speaker.py:39
+msgid "label_speaker_last_name"
+msgstr "Perekonnanimi"
+
+#. Default: "Tiitel"
+#: slc.seminarportal:/content/speaker.py:48
+#: slc.seminarportal:/browser/templates/speaker_view.pt:80
+msgid "label_speaker_suffix"
+msgstr "Tiitel"
+
+#. Default: "Akadeemiline tiitel, ametitiitel, aunimetus, viisakusvorm"
+#: slc.seminarportal:/content/speaker.py:49
+msgid "description_speaker_suffix"
+msgstr "Akadeemiline tiitel, ametitiitel, aunimetus, viisakusvorm"
+
+#. Default: "E-post"
+#: slc.seminarportal:/content/speaker.py:58
+#: slc.seminarportal:/browser/templates/seminar_view.pt:143
+#: slc.seminarportal:/browser/templates/speaker_view.pt:102
+msgid "label_speaker_email"
+msgstr "E-post"
+
+#. Default: "Ametinimetus"
+#: slc.seminarportal:/content/speaker.py:68
+#: slc.seminarportal:/browser/templates/speaker_view.pt:91
+msgid "label_speaker_job_titles"
+msgstr "Ametinimetus"
+
+#. Default: "Üks kirje rea kohta"
+#: slc.seminarportal:/content/speaker.py:69
+msgid "description_speaker_job_titles"
+msgstr "Üks kirje rea kohta"
+
+#. Default: "Töökoha aadress"
+#: slc.seminarportal:/content/speaker.py:78
+#: slc.seminarportal:/browser/templates/speaker_view.pt:124
+msgid "label_speaker_office_address"
+msgstr "Töökoha aadress"
+
+#. Default: "Töökoha asula"
+#: slc.seminarportal:/content/speaker.py:87
+#: slc.seminarportal:/browser/templates/speaker_view.pt:146
+msgid "label_speaker_office_city"
+msgstr "Töökoha asula"
+
+#. Default: "Töökoha riik"
+#: slc.seminarportal:/content/speaker.py:96
+#: slc.seminarportal:/browser/templates/speaker_view.pt:157
+msgid "label_speaker_office_state"
+msgstr "Töökoha riik"
+
+#. Default: "Esineja(d)"
+#: slc.seminarportal:/content/speech.py:23
+#: slc.seminarportal:/browser/templates/speech_view.pt:67
+msgid "label_speech_speakers"
+msgstr "Esineja(d)"
+
+#. Default: "Kokkuvõtted"
+#: slc.seminarportal:/content/speech.py:43
+msgid "label_event_announcement"
+msgstr "Kokkuvõtted"
+
+#. Default: "Asukoht"
+#: slc.seminarportal:/content/speech.py:46
+msgid "label_event_location"
+msgstr "Asukoht"
+
+#. Default: "Otsi seminaridest"
+#: slc.seminarportal:/portlets/search.pt:6
+msgid "box_search_seminars"
+msgstr "Otsi seminaridest"
+
+#. Default: "Põhiesinejad"
+#: slc.seminarportal:/portlets/speaker.pt:8
+msgid "box_speaker"
+msgstr "Põhiesinejad"
+
+#. Default: "Põhiettekanded"
+#: slc.seminarportal:/portlets/speeches.pt:5
+msgid "box_speeches"
+msgstr "Põhiettekanded"
+
+#. Default: "Täisteksti kuvamine"
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:24
+msgid "label_click_to_show_full_text"
+msgstr "Täisteksti kuvamine"
+
+#. Default: "Täisteksti peitmine"
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
+msgid "label_click_to_hide_full_text"
+msgstr "Täisteksti peitmine"

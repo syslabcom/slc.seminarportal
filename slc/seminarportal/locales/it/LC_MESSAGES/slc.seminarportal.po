@@ -1,0 +1,336 @@
+##############################################################################
+#
+# Copyright (c) 2003-2004 Zope Corporation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: Mon Sep 13 23:01:10 2010\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: zope/app/locales/extract.py\n"
+
+#. Default: "Aggiungi al calendario:"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:106
+msgid "label_add_to_calendar"
+msgstr "Aggiungi al calendario:"
+
+#. Default: "Aggiungi questa voce al calendario vCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:108
+#: slc.seminarportal:/browser/templates/speech_view.pt:50
+msgid "title_add_to_vcal"
+msgstr "Aggiungi questa voce al calendario vCal"
+
+#. Default: "vCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:113
+#: slc.seminarportal:/browser/templates/speech_view.pt:55
+msgid "label_add_to_vcal"
+msgstr "vCal"
+
+#. Default: "Aggiungi questa voce al calendario iCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:115
+#: slc.seminarportal:/browser/templates/speech_view.pt:56
+msgid "title_add_to_ical"
+msgstr "Aggiungi questa voce al calendario iCal"
+
+#. Default: "iCal"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:120
+#: slc.seminarportal:/browser/templates/speech_view.pt:61
+msgid "label_add_to_ical"
+msgstr "iCal"
+
+#. Default: "Organizzatore"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:127
+msgid "label_seminar_organiser"
+msgstr "Organizzatore"
+
+#. Default: "Luogo"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:135
+msgid "label_seminar_location"
+msgstr "Luogo"
+
+#. Default: "Telefono"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:151
+msgid "label_seminar_phone"
+msgstr "Telefono"
+
+#. Default: "Sito web"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:159
+msgid "label_seminar_website"
+msgstr "Sito web"
+
+#. Default: "Data di inizio"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:167
+msgid "label_seminar_start_date"
+msgstr "Data di inizio"
+
+#. Default: "Data di conclusione"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:173
+msgid "label_seminar_end_date"
+msgstr "Data di conclusione"
+
+#. Default: "Partecipanti"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:179
+msgid "label_seminar_attendees"
+msgstr "Partecipanti"
+
+#. Default: "Clicca qui per vedere una sintesi di tutti i discorsi"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:234
+msgid "label_click_to_see_speeches_summary"
+msgstr "Clicca qui per vedere una sintesi di tutti i discorsi"
+
+#. Default: "Visualizza altri seminari"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:42
+msgid "label_more_seminars_link"
+msgstr "Visualizza altri seminari"
+
+#. Default: "Aggiungi contenuto"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:61
+msgid "label_add_content"
+msgstr "Aggiungi contenuto"
+
+#. Default: "Risorse e allegati"
+#: slc.seminarportal:/browser/templates/seminar_view.pt:84
+msgid "label_resources_attachments"
+msgstr "Risorse e allegati"
+
+#. Default: "Non sono stati trovati seminari corrispondenti ai criteri
+#. specificati"
+#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:102
+msgid "label_no_seminars_found"
+msgstr "Non sono stati trovati seminari corrispondenti ai criteri specificati"
+
+#. Default: "Visualizza il seminario:"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:24
+#: slc.seminarportal:/browser/templates/speakersfolder_view.pt:44
+#: slc.seminarportal:/browser/templates/speech_view.pt:23
+#: slc.seminarportal:/browser/templates/speechvenue_view.pt:44
+#: slc.seminarportal:/browser/templates/speechvenuesfolder_view.pt:44
+msgid "label_seminar_link"
+msgstr "Visualizza il seminario:"
+
+#. Default: "Relatore"
+#: slc.seminarportal:/browser/templates/speaker_view.pt:28
+msgid "title_speaker"
+msgstr "Relatore"
+
+#. Default: "Aggiungi l'evento al calendario"
+#: slc.seminarportal:/browser/templates/speech_view.pt:47
+msgid "heading_add_to_calendar"
+msgstr "Aggiungi l'evento al calendario"
+
+#. Default: "Grafica o logo dell'evento"
+#: slc.seminarportal:/content/seminar.py:22
+msgid "label_seminar_logo"
+msgstr "Grafica o logo dell'evento"
+
+#. Default: "Descrizione generale/Sintesi dell'evento"
+#: slc.seminarportal:/content/seminar.py:34
+#: slc.seminarportal:/browser/templates/seminar_view.pt:190
+msgid "label_seminar_summary"
+msgstr "Descrizione generale/Sintesi dell'evento"
+
+#. Default: "Conclusioni generali"
+#: slc.seminarportal:/content/seminar.py:45
+#: slc.seminarportal:/browser/templates/seminar_view.pt:201
+msgid "label_seminar_conclusions"
+msgstr "Conclusioni generali"
+
+#. Default: "Azioni ulteriori"
+#: slc.seminarportal:/content/seminar.py:56
+#: slc.seminarportal:/browser/templates/seminar_view.pt:223
+msgid "label_seminar_further_actions"
+msgstr "Azioni ulteriori"
+
+#. Default: "Mostra la colonna dell'orario nell'elenco dei discorsi?"
+#: slc.seminarportal:/content/seminar.py:66
+msgid "label_seminar_show_hour_column"
+msgstr "Mostra la colonna dell'orario nell'elenco dei discorsi?"
+
+#. Default: "Codice postale dell'ufficio"
+#: slc.seminarportal:/content/speaker.py:104
+#: slc.seminarportal:/browser/templates/speaker_view.pt:135
+msgid "label_speaker_office_postal_code"
+msgstr "Codice postale dell'ufficio"
+
+#. Default: "Telefono dell'ufficio"
+#: slc.seminarportal:/content/speaker.py:112
+#: slc.seminarportal:/browser/templates/speaker_view.pt:113
+msgid "label_speaker_office_phone"
+msgstr "Telefono dell'ufficio"
+
+#. Default: "Immagine"
+#: slc.seminarportal:/content/speaker.py:122
+msgid "label_speaker_image"
+msgstr "Immagine"
+
+#. Default: "Biografia"
+#: slc.seminarportal:/content/speaker.py:135
+#: slc.seminarportal:/browser/templates/speaker_view.pt:192
+msgid "label_speaker_biography"
+msgstr "Biografia"
+
+#. Default: "Istruzione"
+#: slc.seminarportal:/content/speaker.py:147
+#: slc.seminarportal:/browser/templates/speaker_view.pt:168
+msgid "label_speaker_education"
+msgstr "Istruzione"
+
+#. Default: "Siti web"
+#: slc.seminarportal:/content/speaker.py:155
+msgid "label_speaker_web_sites"
+msgstr "Siti web"
+
+#. Default: "Discorsi"
+#: slc.seminarportal:/content/speaker.py:162
+#: slc.seminarportal:/browser/templates/speaker_view.pt:181
+msgid "label_speaker_speeches"
+msgstr "Discorsi"
+
+#. Default: "Gli eventuali discorsi che questa persona ha pronunciato o ai
+#. quali ha contribuito possono essere aggiunti qui. Si noti che i discorsi
+#. devono essere creati separatamente e per il seminario nel cui ambito sono
+#. stati tenuti."
+#: slc.seminarportal:/content/speaker.py:163
+msgid "description_speaker_speeches"
+msgstr "Gli eventuali discorsi che questa persona ha pronunciato o ai quali ha contribuito possono essere aggiunti qui. Si noti che i discorsi devono essere creati separatamente e per il seminario nel cui ambito sono stati tenuti."
+
+#. Default: "Nazionalità"
+#: slc.seminarportal:/content/speaker.py:182
+#: slc.seminarportal:/browser/templates/speaker_view.pt:69
+msgid "label_speaker_nationality"
+msgstr "Nazionalità"
+
+#. Default: "Datore di lavoro"
+#: slc.seminarportal:/content/speaker.py:188
+#: slc.seminarportal:/browser/templates/speaker_view.pt:58
+msgid "label_speaker_employer"
+msgstr "Datore di lavoro"
+
+#. Default: "Gruppo di parti sociali"
+#: slc.seminarportal:/content/speaker.py:194
+#: slc.seminarportal:/browser/templates/speaker_view.pt:36
+msgid "label_speaker_social_partner_group"
+msgstr "Gruppo di parti sociali"
+
+#. Default: "Competenze"
+#: slc.seminarportal:/content/speaker.py:200
+#: slc.seminarportal:/browser/templates/speaker_view.pt:47
+msgid "label_speaker_expertise"
+msgstr "Competenze"
+
+#. Default: "Nome"
+#: slc.seminarportal:/content/speaker.py:21
+msgid "label_spaker_first_name"
+msgstr "Nome"
+
+#. Default: "Secondo nome"
+#: slc.seminarportal:/content/speaker.py:30
+msgid "label_speaker_middle_name"
+msgstr "Secondo nome"
+
+#. Default: "Cognome"
+#: slc.seminarportal:/content/speaker.py:39
+msgid "label_speaker_last_name"
+msgstr "Cognome"
+
+#. Default: "Suffisso"
+#: slc.seminarportal:/content/speaker.py:48
+#: slc.seminarportal:/browser/templates/speaker_view.pt:80
+msgid "label_speaker_suffix"
+msgstr "Suffisso"
+
+#. Default: "Suffissi accademico, professionale, onorario e sociale."
+#: slc.seminarportal:/content/speaker.py:49
+msgid "description_speaker_suffix"
+msgstr "Suffissi accademico, professionale, onorario e sociale."
+
+#. Default: "E-mail"
+#: slc.seminarportal:/content/speaker.py:58
+#: slc.seminarportal:/browser/templates/seminar_view.pt:143
+#: slc.seminarportal:/browser/templates/speaker_view.pt:102
+msgid "label_speaker_email"
+msgstr "E-mail"
+
+#. Default: "Qualifiche professionali"
+#: slc.seminarportal:/content/speaker.py:68
+#: slc.seminarportal:/browser/templates/speaker_view.pt:91
+msgid "label_speaker_job_titles"
+msgstr "Qualifiche professionali"
+
+#. Default: "Una voce per linea"
+#: slc.seminarportal:/content/speaker.py:69
+msgid "description_speaker_job_titles"
+msgstr "Una voce per linea"
+
+#. Default: "Indirizzo dell'ufficio"
+#: slc.seminarportal:/content/speaker.py:78
+#: slc.seminarportal:/browser/templates/speaker_view.pt:124
+msgid "label_speaker_office_address"
+msgstr "Indirizzo dell'ufficio"
+
+#. Default: "Città dell'ufficio"
+#: slc.seminarportal:/content/speaker.py:87
+#: slc.seminarportal:/browser/templates/speaker_view.pt:146
+msgid "label_speaker_office_city"
+msgstr "Città dell'ufficio"
+
+#. Default: "Stato dell'ufficio"
+#: slc.seminarportal:/content/speaker.py:96
+#: slc.seminarportal:/browser/templates/speaker_view.pt:157
+msgid "label_speaker_office_state"
+msgstr "Stato dell'ufficio"
+
+#. Default: "Relatore/i"
+#: slc.seminarportal:/content/speech.py:23
+#: slc.seminarportal:/browser/templates/speech_view.pt:67
+msgid "label_speech_speakers"
+msgstr "Relatore/i"
+
+#. Default: "Conclusioni"
+#: slc.seminarportal:/content/speech.py:43
+msgid "label_event_announcement"
+msgstr "Conclusioni"
+
+#. Default: "Luogo"
+#: slc.seminarportal:/content/speech.py:46
+msgid "label_event_location"
+msgstr "Luogo"
+
+#. Default: "Cerca i seminari"
+#: slc.seminarportal:/portlets/search.pt:6
+msgid "box_search_seminars"
+msgstr "Cerca i seminari"
+
+#. Default: "Relatori partecipanti"
+#: slc.seminarportal:/portlets/speaker.pt:8
+msgid "box_speaker"
+msgstr "Relatori partecipanti"
+
+#. Default: "Discorsi in programma"
+#: slc.seminarportal:/portlets/speeches.pt:5
+msgid "box_speeches"
+msgstr "Discorsi in programma"
+
+#. Default: "Clicca qui per visualizzare il testo integrale"
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:24
+msgid "label_click_to_show_full_text"
+msgstr "Clicca qui per visualizzare il testo integrale"
+
+#. Default: "Clicca qui per nascondere il testo integrale"
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
+msgid "label_click_to_hide_full_text"
+msgstr "Clicca qui per nascondere il testo integrale"
