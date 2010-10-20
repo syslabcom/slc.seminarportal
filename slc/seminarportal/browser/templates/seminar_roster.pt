@@ -1,5 +1,5 @@
 <metal:macro define-macro="view" i18n:domain="plone">
-    <h2> Seminar Schedule </h2>
+    <h2 i18n:translate="heading_seminar_schedule" i18n:domain="slc.seminarportal">Seminar Schedule</h2>
     <tal:get define="venues view/get_venues;
                      venue_ids python:[v.id for v in venues];
                      roster python:view.get_roster(venues);

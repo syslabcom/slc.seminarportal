@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Mon Sep 13 23:01:10 2010\n"
+"POT-Creation-Date: Wed Oct 20 11:50:15 2010\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
@@ -22,6 +22,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: zope/app/locales/extract.py\n"
+
+#: slc.seminarportal:/browser/templates/seminar_roster.pt:2
+#. Default: "Seminar Schedule"
+msgid "heading_seminar_schedule"
+msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_view.pt:106
 #. Default: "Add to calendar:"
