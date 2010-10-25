@@ -1,5 +1,5 @@
 <metal:macro define-macro="simple-search">
-<h1 tal:content="view/simple_search_headline|string:Search"> Search </h1>
+<h1 i18n:translate="Search" i18n:domain="plone">Search</h1>
 <div tal:define="
     here_url here_url|view/here_url|portal_url;
     template_id view/template_id">
@@ -31,7 +31,8 @@
     <input class="searchButton"
             type="submit"
             value="Search"
-            i18n:attributes="value label_search;" />
+            i18n:domain="plone"
+            i18n:attributes="value Search;" />
 
     <div tal:condition="livesearch" 
          class="LSResult" 
