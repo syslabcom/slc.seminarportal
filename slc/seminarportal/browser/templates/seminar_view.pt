@@ -209,7 +209,7 @@
         <tal:if condition="here/getFurtherActions">
             <div class="visualClear"></div>
             <div id="archetypes-field-furtherActions">
-                <label class="eventbox-label">Further Actions</label>
+                <label class="eventbox-label" i18n:translate="label_seminar_further_actions">Further Actions</label>
                 <br clear="all"/>
                 <metal:field use-macro="python:here.widget('furtherActions', mode='view')">
                     furtherActions
