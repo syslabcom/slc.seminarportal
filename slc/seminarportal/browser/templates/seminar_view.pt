@@ -165,15 +165,17 @@
         <div class="visualClear"></div>
         <div id="archetypes-field-startDate" class="seminar-field">
             <label class="eventbox-label" i18n:translate="label_seminar_start_date">Start Date</label>
-            <metal:field use-macro="python:here.widget('startDate', mode='view')">
+            <span tal:replace="python:toLocalizedTime(here.start(), long_format=1)" /><br />
+            <!-- <metal:field use-macro="python:here.widget('startDate', mode='view')">
                 startDate
-            </metal:field>
+            </metal:field> -->
         </div>
         <div id="archetypes-field-endDate" class="seminar-field">
             <label class="eventbox-label" i18n:translate="label_seminar_end_date">End Date</label>
-            <metal:field use-macro="python:here.widget('endDate', mode='view')">
+            <span tal:replace="python:toLocalizedTime(here.end(), long_format=1)" />
+            <!-- <metal:field use-macro="python:here.widget('endDate', mode='view')">
                 End Date
-            </metal:field>
+            </metal:field> -->
         </div>
         <div id="archetypes-field-attendees" class="seminar-field">
             <label class="eventbox-label" i18n:translate="label_seminar_attendees">Attendees</label>

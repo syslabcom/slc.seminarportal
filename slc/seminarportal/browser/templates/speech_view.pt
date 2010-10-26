@@ -23,9 +23,9 @@
         <span i18n:translate="label_seminar_link">View the seminar:</span>
         <tal:text replace="string:${here/seminar_title}"/>
     </a>
-    <fieldset id="Speech" 
+    <div id="Speech" 
         tal:define="schema here/Schema">
-        <legend>Speech</legend>
+        <br clear="all"/>
         <div class="spfield" tal:define="field python:schema['title']">
             <label class="eventbox-label" i18n:translate="" i18n:domain="plone">Title</label>
             <div class="eventbox-value-left-align">
@@ -34,7 +34,20 @@
                 </metal:field>
             </div>
         </div>
-        <tal:loop repeat="fn python:['startDate', 'endDate', 'location', 
+        <div class="visualClear"></div>
+        <div id="archetypes-field-startDate" class="spfield">
+            <label class="eventbox-label" i18n:translate="label_seminar_start_date">Start Date</label>
+            <div class="eventbox-value-left-align">
+                <span tal:replace="python:toLocalizedTime(here.start(), long_format=1)" />
+            </div>
+        </div>
+        <div id="archetypes-field-endDate" class="spfield">
+            <label class="eventbox-label" i18n:translate="label_seminar_end_date">End Date</label>
+            <div class="eventbox-value-left-align">
+                <span tal:replace="python:toLocalizedTime(here.end(), long_format=1)" />
+            </div>
+        </div>
+        <tal:loop repeat="fn python:['location', 
                                      'contactName', 'contactEmail', 'contactPhone', 
                                      'eventUrl', 'eventType', 'attendees']">
         <tal:if define="field python:schema[fn]"
@@ -148,7 +161,7 @@
                 </metal:field>
             </div>
         </tal:if>
-    </fieldset>
+    </div>
 </div>
 </body>
 </html>
