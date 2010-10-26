@@ -336,3 +336,37 @@ msgstr ""
 msgid "label_click_to_hide_full_text"
 msgstr ""
 
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
+#. Default: "Monday"
+msgid "Monday"
+msgstr ""
+
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
+#. Default: "Tuesday"
+msgid "Tuesday"
+msgstr ""
+
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
+#. Default: "Wednesday"
+msgid "Wednesday"
+msgstr ""
+
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
+#. Default: "Thursday"
+msgid "Thursday"
+msgstr ""
+
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
+#. Default: "Friday"
+msgid "Friday"
+msgstr ""
+
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
+#. Default: "Saturday"
+msgid "Saturday"
+msgstr ""
+
+#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
+#. Default: "Sunday"
+msgid "Sunday"
+msgstr ""
