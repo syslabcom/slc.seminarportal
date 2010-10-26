@@ -5,7 +5,7 @@
                      roster python:view.get_roster(venues);
                      day_times python:view.get_day_times(roster)">
         <tal:loop repeat="date python:sorted(roster.keys())">
-            <h3 tal:define="dt python:view.get_datetime(date)"><span tal:content="dt/Day" i18n:translate="" />
+            <h3 tal:define="dt python:view.get_datetime(date)"><span tal:content="dt/Day" i18n:translate="" i18n:domain="slc.seminarportal" />
             <span tal:content="python:toLocalizedTime(dt, long_format=0)"/></h3>
             <table 
                 id="seminarportal-roster-table" 
