@@ -72,12 +72,14 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
 del SeminarSchema['text']
 
 # Change labels and descriptions
-SeminarSchema['description'].widget.label = 'Abstract'
+SeminarSchema['description'].widget.label = \
+    _(u'label_abstract', default=u'Abstract')
 SeminarSchema['description'].widget.description = \
     'A short abstract, introduction or description of the event'
 
 SeminarSchema['contactName'].schemata = 'Organiser'
-SeminarSchema['contactName'].widget.label= 'Event Organiser'
+SeminarSchema['contactName'].widget.label= \
+    _(u'label_seminar_organiser', default='Organiser')
 SeminarSchema['contactName'].widget.description = \
         "Please provide the name of the event organiser."
 
@@ -85,7 +87,8 @@ SeminarSchema['contactEmail'].schemata = 'Organiser'
 SeminarSchema['contactPhone'].schemata = 'Organiser'
 
 SeminarSchema['eventUrl'].schemata = 'Organiser'
-SeminarSchema['eventUrl'].widget.label = 'Organiser/Event Website'
+SeminarSchema['eventUrl'].widget.label = \
+    _(u'label_seminar_website', default='Website')
 SeminarSchema.moveField('eventUrl', after='contactName')
 
 SeminarSchema['location'].widget = atapi.TextAreaWidget(label='Location')
