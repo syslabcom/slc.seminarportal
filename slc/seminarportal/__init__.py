@@ -18,6 +18,17 @@ DirectoryView.registerDirectory('skins', product_globals)
 
 seminarportalMessageFactory = MessageFactory('slc.seminarportal')
 
+_ = seminarportalMessageFactory
+
+# adding the days of the week here so that i18n extract will pick them up
+monday = _(u'Monday', default=u'Monday')
+tuesday = _(u'Tuesday', default=u'Tuesday')
+wednesday = _(u'Wednesday', default=u'Wednesday')
+thursday = _(u'Thursday', default=u'Thursday')
+friday = _(u'Friday', default=u'Friday')
+saturday = _(u'Saturday', default=u'Saturday')
+sunday = _(u'Sunday', default=u'Sunday')
+
 def initialize(context):
     """Initializer called when used as a Zope 2 product.
 
