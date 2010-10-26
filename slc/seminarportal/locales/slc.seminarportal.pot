@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Wed Oct 20 11:50:15 2010\n"
+"POT-Creation-Date: Tue Oct 26 13:22:12 2010\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
@@ -22,6 +22,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: zope/app/locales/extract.py\n"
+
+#: slc.seminarportal:/__init__.py:24
+#. Default: "Monday"
+msgid "Monday"
+msgstr ""
+
+#: slc.seminarportal:/__init__.py:25
+#. Default: "Tuesday"
+msgid "Tuesday"
+msgstr ""
+
+#: slc.seminarportal:/__init__.py:26
+#. Default: "Wednesday"
+msgid "Wednesday"
+msgstr ""
+
+#: slc.seminarportal:/__init__.py:27
+#. Default: "Thursday"
+msgid "Thursday"
+msgstr ""
+
+#: slc.seminarportal:/__init__.py:28
+#. Default: "Friday"
+msgid "Friday"
+msgstr ""
+
+#: slc.seminarportal:/__init__.py:29
+#. Default: "Saturday"
+msgid "Saturday"
+msgstr ""
+
+#: slc.seminarportal:/__init__.py:30
+#. Default: "Sunday"
+msgid "Sunday"
+msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_roster.pt:2
 #. Default: "Seminar Schedule"
@@ -34,32 +69,27 @@ msgid "label_add_to_calendar"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_view.pt:108
-#: slc.seminarportal:/browser/templates/speech_view.pt:50
+#: slc.seminarportal:/browser/templates/speech_view.pt:72
 #. Default: "Add this item to your vCal calendar"
 msgid "title_add_to_vcal"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_view.pt:113
-#: slc.seminarportal:/browser/templates/speech_view.pt:55
+#: slc.seminarportal:/browser/templates/speech_view.pt:77
 #. Default: "vCal"
 msgid "label_add_to_vcal"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_view.pt:115
-#: slc.seminarportal:/browser/templates/speech_view.pt:56
+#: slc.seminarportal:/browser/templates/speech_view.pt:78
 #. Default: "Add this item to your iCal calendar"
 msgid "title_add_to_ical"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_view.pt:120
-#: slc.seminarportal:/browser/templates/speech_view.pt:61
+#: slc.seminarportal:/browser/templates/speech_view.pt:83
 #. Default: "iCal"
 msgid "label_add_to_ical"
-msgstr ""
-
-#: slc.seminarportal:/browser/templates/seminar_view.pt:127
-#. Default: "Organiser"
-msgid "label_seminar_organiser"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_view.pt:135
@@ -72,27 +102,24 @@ msgstr ""
 msgid "label_seminar_phone"
 msgstr ""
 
-#: slc.seminarportal:/browser/templates/seminar_view.pt:159
-#. Default: "Website"
-msgid "label_seminar_website"
-msgstr ""
-
 #: slc.seminarportal:/browser/templates/seminar_view.pt:167
+#: slc.seminarportal:/browser/templates/speech_view.pt:39
 #. Default: "Start Date"
 msgid "label_seminar_start_date"
 msgstr ""
 
-#: slc.seminarportal:/browser/templates/seminar_view.pt:173
+#: slc.seminarportal:/browser/templates/seminar_view.pt:174
+#: slc.seminarportal:/browser/templates/speech_view.pt:45
 #. Default: "End Date"
 msgid "label_seminar_end_date"
 msgstr ""
 
-#: slc.seminarportal:/browser/templates/seminar_view.pt:179
+#: slc.seminarportal:/browser/templates/seminar_view.pt:181
 #. Default: "Attendees"
 msgid "label_seminar_attendees"
 msgstr ""
 
-#: slc.seminarportal:/browser/templates/seminar_view.pt:234
+#: slc.seminarportal:/browser/templates/seminar_view.pt:236
 #. Default: "Click here to see a summary of all the Speeches"
 msgid "label_click_to_see_speeches_summary"
 msgstr ""
@@ -108,6 +135,7 @@ msgid "label_add_content"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_view.pt:84
+#: slc.seminarportal:/browser/templates/speech_view.pt:132
 #. Default: "Resources and Attachments"
 msgid "label_resources_attachments"
 msgstr ""
@@ -131,7 +159,7 @@ msgstr ""
 msgid "title_speaker"
 msgstr ""
 
-#: slc.seminarportal:/browser/templates/speech_view.pt:47
+#: slc.seminarportal:/browser/templates/speech_view.pt:69
 #. Default: "Add event to calendar"
 msgid "heading_add_to_calendar"
 msgstr ""
@@ -142,19 +170,19 @@ msgid "label_seminar_logo"
 msgstr ""
 
 #: slc.seminarportal:/content/seminar.py:34
-#: slc.seminarportal:/browser/templates/seminar_view.pt:190
+#: slc.seminarportal:/browser/templates/seminar_view.pt:192
 #. Default: "General Description/Summary of the event"
 msgid "label_seminar_summary"
 msgstr ""
 
 #: slc.seminarportal:/content/seminar.py:45
-#: slc.seminarportal:/browser/templates/seminar_view.pt:201
+#: slc.seminarportal:/browser/templates/seminar_view.pt:203
 #. Default: "General Conclusions"
 msgid "label_seminar_conclusions"
 msgstr ""
 
 #: slc.seminarportal:/content/seminar.py:56
-#: slc.seminarportal:/browser/templates/seminar_view.pt:223
+#: slc.seminarportal:/browser/templates/seminar_view.pt:214
 #. Default: "Further Actions"
 msgid "label_seminar_further_actions"
 msgstr ""
@@ -162,6 +190,25 @@ msgstr ""
 #: slc.seminarportal:/content/seminar.py:66
 #. Default: "Show the hour column in the speech roster?"
 msgid "label_seminar_show_hour_column"
+msgstr ""
+
+#: slc.seminarportal:/content/seminar.py:76
+#: slc.seminarportal:/content/speech.py:40
+#. Default: "Abstract"
+msgid "label_abstract"
+msgstr ""
+
+#: slc.seminarportal:/content/seminar.py:82
+#: slc.seminarportal:/browser/templates/seminar_view.pt:127
+#. Default: "Organiser"
+msgid "label_seminar_organiser"
+msgstr ""
+
+#: slc.seminarportal:/content/seminar.py:91
+#: slc.seminarportal:/content/speech.py:47
+#: slc.seminarportal:/browser/templates/seminar_view.pt:159
+#. Default: "Website"
+msgid "label_seminar_website"
 msgstr ""
 
 #: slc.seminarportal:/content/speaker.py:104
@@ -296,17 +343,17 @@ msgid "label_speaker_office_state"
 msgstr ""
 
 #: slc.seminarportal:/content/speech.py:23
-#: slc.seminarportal:/browser/templates/speech_view.pt:67
+#: slc.seminarportal:/browser/templates/speech_view.pt:89
 #. Default: "Speaker(s)"
 msgid "label_speech_speakers"
 msgstr ""
 
-#: slc.seminarportal:/content/speech.py:43
+#: slc.seminarportal:/content/speech.py:44
 #. Default: "Conclusions"
 msgid "label_event_announcement"
 msgstr ""
 
-#: slc.seminarportal:/content/speech.py:46
+#: slc.seminarportal:/content/speech.py:49
 #. Default: "Location"
 msgid "label_event_location"
 msgstr ""
@@ -336,37 +383,3 @@ msgstr ""
 msgid "label_click_to_hide_full_text"
 msgstr ""
 
-#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
-#. Default: "Monday"
-msgid "Monday"
-msgstr ""
-
-#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
-#. Default: "Tuesday"
-msgid "Tuesday"
-msgstr ""
-
-#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
-#. Default: "Wednesday"
-msgid "Wednesday"
-msgstr ""
-
-#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
-#. Default: "Thursday"
-msgid "Thursday"
-msgstr ""
-
-#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
-#. Default: "Friday"
-msgid "Friday"
-msgstr ""
-
-#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
-#. Default: "Saturday"
-msgid "Saturday"
-msgstr ""
-
-#: slc.seminarportal:/skins/seminarportal_templates/seminar_roster.pt:8
-#. Default: "Sunday"
-msgid "Sunday"
-msgstr ""
