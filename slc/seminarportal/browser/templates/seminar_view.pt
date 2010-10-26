@@ -222,7 +222,7 @@
         <tal:if condition="here/getRelatedItems">
             <div class="visualClear"></div>
             <div id="archetypes-field-relatedItems">
-                <label class="eventbox-label" i18n:translate="label_seminar_further_actions">Related Items</label>
+                <label class="eventbox-label" i18n:translate="label_related_items" i18n:domain="plone">Related Items</label>
                 <br clear="all"/>
                 <metal:field use-macro="python:here.widget('relatedItems', mode='view')">
                     Related Items
