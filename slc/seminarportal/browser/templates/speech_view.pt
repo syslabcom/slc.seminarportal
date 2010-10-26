@@ -41,7 +41,8 @@
                 condition="python:here[field.accessor]()">
         <div class="spfield">
             <label tal:condition="python:fn=='contactEmail'" class="eventbox-label" i18n:translate="label_email_address" i18n:domain="plone">Email</label>
-            <label tal:condition="python:fn not in ('contactEmail')" class="eventbox-label" tal:content="field/widget/label">Start Date</label>
+            <label tal:condition="python:fn=='eventUrl'" class="eventbox-label" i18n:translate="label_seminar_website">URL</label>
+            <label tal:condition="python:fn not in ('contactEmail', 'eventUrl')" class="eventbox-label" tal:content="field/widget/label">Start Date</label>
             <div class="eventbox-value-left-align">
                 <metal:field use-macro="python:here.widget(field.getName(), mode='view')">
                     start date 
