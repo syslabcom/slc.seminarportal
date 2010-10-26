@@ -12,7 +12,7 @@ from Products.Relations.field import RelationField
 from slc.seminarportal.config import PROJECTNAME
 from slc.seminarportal.interfaces import ISpeaker
 from slc.seminarportal.permissions import ASSIGN_SPEAKERS_TO_SPEECHES
-from Products.CMFPlone import PloneMessageFactory as _
+from slc.seminarportal import seminarportalMessageFactory as _
 
 SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(

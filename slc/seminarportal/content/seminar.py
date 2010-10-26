@@ -13,7 +13,7 @@ from Products.LinguaPlone import permissions
 
 from slc.seminarportal.interfaces import ISeminar
 from slc.seminarportal.config import PROJECTNAME, ALLOWABLE_TEXT_TYPES
-from Products.CMFPlone import PloneMessageFactory as _
+from slc.seminarportal import seminarportalMessageFactory as _
 
 SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Schema((
     atapi.ImageField(
