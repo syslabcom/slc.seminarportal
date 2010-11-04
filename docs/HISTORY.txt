@@ -4,10 +4,9 @@ Changelog
 1.3.2 (2010-11-04)
 ------------------
 
-- Added several missing i18n / translation statements
-- Added new msgids
-- Show dates in localised format
-[thomasw]
+- Added several missing i18n / translation statements [thomasw]
+- Added new msgids [thomasw]
+- Show dates in localised format [thomasw]
 
 1.3.1 (2010-10-21)
 ------------------
