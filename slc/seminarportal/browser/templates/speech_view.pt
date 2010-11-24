@@ -83,7 +83,7 @@
                 <span i18n:translate="label_add_to_ical">iCal</span></a>
             </div>
         </div>
-        <div class="visualClear"></div>	
+        <div class="visualClear"></div>
         <br/>
         <div class="spfield">
             <label class="eventbox-label" i18n:translate="label_speech_speakers">Speaker(s)</label>
@@ -93,11 +93,11 @@
                 </metal:field>
             </div>
         </div>
-        <div class="visualClear"></div>	
         <br/>
 
         <tal:if condition="here/Description"
                 define="field python:schema['description']">
+                <div class="visualClear"></div>
             <div>
                 <label class="eventbox-label" tal:content="field/widget/label">Start Date</label>
                 <div class="eventbox-value-left-align">
@@ -106,18 +106,20 @@
                     </metal:field>
                 </div>
             </div>
-            <div class="visualClear"></div>	
+            <div class="visualClear"></div>
             <br/>
         </tal:if>
 
         <tal:if condition="here/getText"
-                define="field python:schema['text']">
-            <label class="eventbox-label" tal:content="field/widget/label">Start Date</label>
-            <br/>
-            <metal:field use-macro="python:here.widget(field.getName(), mode='view')">
-                start date 
-            </metal:field>
-            <div class="visualClear"></div>	
+            define="field python:schema['text']">
+            <div class="visualClear"></div>
+            <div id="archetypes-field-conclusions">
+                <label class="eventbox-label" tal:content="field/widget/label">Conclusions</label>
+                <br clear="all"/>
+                <metal:field use-macro="python:here.widget('text', mode='view')">
+                    Conclusions 
+                </metal:field>
+            </div>
         </tal:if>
 
         <tal:get define="resources view/get_files_and_images">
