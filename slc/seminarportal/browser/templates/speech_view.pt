@@ -65,7 +65,7 @@
         <br/>
         </tal:if>
         </tal:loop>
-        <div class="spfield">
+        <div class="spfield" id="add_to_calendar">
             <label class="eventbox-label"
                    i18n:translate="heading_add_to_calendar">Add event to calendar</label>
             <div class="eventbox-value-left-align">
