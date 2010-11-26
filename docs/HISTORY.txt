@@ -1,10 +1,10 @@
 Changelog
 *********
 
-1.3.4 (unreleased)
+1.3.4 (2010-11-26)
 ------------------
 
-- Nothing changed yet.
+- Bugfix in the speech_view for the print view [thomasw]
 
 
 1.3.3 (2010-11-24)
