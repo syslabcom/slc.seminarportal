@@ -336,3 +336,40 @@ msgstr "Κάνετε κλικ εδώ για να προβάλλετε το πλ�
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Κάνετε κλικ εδώ για να αποκρύψετε το πλήρες κείμενο"
+
+#: slc.seminarportal:/__init__.py:24
+msgid "Monday"
+msgstr "Δευτέρα"
+
+#: slc.seminarportal:/__init__.py:25"
+msgid "Tuesday"
+msgstr "Τρίτη"
+
+#: slc.seminarportal:/__init__.py:26
+msgid "Wednesday"
+msgstr "Τετάρτη"
+
+#: slc.seminarportal:/__init__.py:27
+msgid "Thursday"
+msgstr "Πέμπτη"
+
+#: slc.seminarportal:/__init__.py:28
+msgid "Friday"
+msgstr "Παρασκευή"
+
+#: slc.seminarportal:/__init__.py:29
+msgid "Saturday"
+msgstr "Σάββατο"
+
+#: slc.seminarportal:/__init__.py:30
+msgid "Sunday"
+msgstr "Κυριακή"
+
+#: slc.seminarportal:/browser/templates/seminar_roster.pt:2
+msgid "heading_seminar_schedule"
+msgstr "Πρόγραμμα σεμιναρίου"
+
+#: slc.seminarportal:/content/seminar.py:76
+#: slc.seminarportal:/content/speech.py:40
+msgid "label_abstract"
+msgstr "Περίληψη"

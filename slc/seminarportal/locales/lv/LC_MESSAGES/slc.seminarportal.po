@@ -333,3 +333,40 @@ msgstr "Uzkliksķiniet seit, lai atvērtu pilnu tekstu"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Uzkliksķiniet seit, lai aizvērtu pilnu tekstu"
+
+#: slc.seminarportal:/__init__.py:24
+msgid "Monday"
+msgstr "Pirmdiena"
+
+#: slc.seminarportal:/__init__.py:25"
+msgid "Tuesday"
+msgstr "Otrdiena"
+
+#: slc.seminarportal:/__init__.py:26
+msgid "Wednesday"
+msgstr "Trešdiena"
+
+#: slc.seminarportal:/__init__.py:27
+msgid "Thursday"
+msgstr "Ceturtdiena"
+
+#: slc.seminarportal:/__init__.py:28
+msgid "Friday"
+msgstr "Piektdiena"
+
+#: slc.seminarportal:/__init__.py:29
+msgid "Saturday"
+msgstr "Sestdiena"
+
+#: slc.seminarportal:/__init__.py:30
+msgid "Sunday"
+msgstr "Svētdiena"
+
+#: slc.seminarportal:/browser/templates/seminar_roster.pt:2
+msgid "heading_seminar_schedule"
+msgstr "Semināra grafiks"
+
+#: slc.seminarportal:/content/seminar.py:76
+#: slc.seminarportal:/content/speech.py:40
+msgid "label_abstract"
+msgstr "Kopsavilkums"

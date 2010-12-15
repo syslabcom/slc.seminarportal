@@ -332,3 +332,41 @@ msgstr "Täisteksti kuvamine"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Täisteksti peitmine"
+
+#: slc.seminarportal:/__init__.py:24
+msgid "Monday"
+msgstr "Esmaspäev"
+
+#: slc.seminarportal:/__init__.py:25"
+msgid "Tuesday"
+msgstr "Teisipäev"
+
+#: slc.seminarportal:/__init__.py:26
+msgid "Wednesday"
+msgstr "Kolmapäev"
+
+#: slc.seminarportal:/__init__.py:27
+msgid "Thursday"
+msgstr "Neljapäev"
+
+#: slc.seminarportal:/__init__.py:28
+msgid "Friday"
+msgstr "Reede"
+
+#: slc.seminarportal:/__init__.py:29
+msgid "Saturday"
+msgstr "Laupäev"
+
+#: slc.seminarportal:/__init__.py:30
+msgid "Sunday"
+msgstr "Pühapäev"
+
+#: slc.seminarportal:/browser/templates/seminar_roster.pt:2
+msgid "heading_seminar_schedule"
+msgstr "Seminari kava"
+
+#: slc.seminarportal:/content/seminar.py:76
+#: slc.seminarportal:/content/speech.py:40
+msgid "label_abstract"
+msgstr "Kokkuvõte"
+

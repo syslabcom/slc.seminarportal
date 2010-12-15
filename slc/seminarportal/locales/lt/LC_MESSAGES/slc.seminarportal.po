@@ -333,3 +333,40 @@ msgstr "Spustelėkite čia, kad pamatytumėt visą tekstą"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Spustelėkite čia, kad tekstas nebūtų rodomas"
+
+#: slc.seminarportal:/__init__.py:24
+msgid "Monday"
+msgstr "Pirmadienis"
+
+#: slc.seminarportal:/__init__.py:25"
+msgid "Tuesday"
+msgstr "Antradienis"
+
+#: slc.seminarportal:/__init__.py:26
+msgid "Wednesday"
+msgstr "Trečiadienis"
+
+#: slc.seminarportal:/__init__.py:27
+msgid "Thursday"
+msgstr "Ketvirtadienis"
+
+#: slc.seminarportal:/__init__.py:28
+msgid "Friday"
+msgstr "Penktadienis"
+
+#: slc.seminarportal:/__init__.py:29
+msgid "Saturday"
+msgstr "Šeštadienis"
+
+#: slc.seminarportal:/__init__.py:30
+msgid "Sunday"
+msgstr "Sekmadienis"
+
+#: slc.seminarportal:/browser/templates/seminar_roster.pt:2
+msgid "heading_seminar_schedule"
+msgstr "Seminaro tvarkaraštis"
+
+#: slc.seminarportal:/content/seminar.py:76
+#: slc.seminarportal:/content/speech.py:40
+msgid "label_abstract"
+msgstr "Santrauka"

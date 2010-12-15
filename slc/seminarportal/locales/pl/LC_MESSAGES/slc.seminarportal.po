@@ -335,3 +335,40 @@ msgstr "Kliknij tutaj, aby zobaczyć pełny tekst"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Kliknij tutaj, aby schować pełny tekst"
+
+#: slc.seminarportal:/__init__.py:24
+msgid "Monday"
+msgstr "Poniedziałek"
+
+#: slc.seminarportal:/__init__.py:25"
+msgid "Tuesday"
+msgstr "Wtorek"
+
+#: slc.seminarportal:/__init__.py:26
+msgid "Wednesday"
+msgstr "Środa"
+
+#: slc.seminarportal:/__init__.py:27
+msgid "Thursday"
+msgstr "Czwartek"
+
+#: slc.seminarportal:/__init__.py:28
+msgid "Friday"
+msgstr "Piątek"
+
+#: slc.seminarportal:/__init__.py:29
+msgid "Saturday"
+msgstr "Sobota"
+
+#: slc.seminarportal:/__init__.py:30
+msgid "Sunday"
+msgstr "Niedziela"
+
+#: slc.seminarportal:/browser/templates/seminar_roster.pt:2
+msgid "heading_seminar_schedule"
+msgstr "Harmonogram seminarium"
+
+#: slc.seminarportal:/content/seminar.py:76
+#: slc.seminarportal:/content/speech.py:40
+msgid "label_abstract"
+msgstr "Streszczenie"

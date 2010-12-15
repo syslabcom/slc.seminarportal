@@ -333,3 +333,41 @@ msgstr "Klik her for at få vist den fulde tekst"
 #: slc.seminarportal:/skins/seminarportal_templates/seminar_textarea.pt:36
 msgid "label_click_to_hide_full_text"
 msgstr "Klik her for at skjule den fulde tekst"
+
+
+#: slc.seminarportal:/__init__.py:24
+msgid "Monday"
+msgstr "Mandag"
+
+#: slc.seminarportal:/__init__.py:25"
+msgid "Tuesday"
+msgstr "Tirsdag"
+
+#: slc.seminarportal:/__init__.py:26
+msgid "Wednesday"
+msgstr "Onsdag"
+
+#: slc.seminarportal:/__init__.py:27
+msgid "Thursday"
+msgstr "Torsdag"
+
+#: slc.seminarportal:/__init__.py:28
+msgid "Friday"
+msgstr "Fredag"
+
+#: slc.seminarportal:/__init__.py:29
+msgid "Saturday"
+msgstr "Lørdag"
+
+#: slc.seminarportal:/__init__.py:30
+msgid "Sunday"
+msgstr "Søndag"
+
+#: slc.seminarportal:/browser/templates/seminar_roster.pt:2
+msgid "heading_seminar_schedule"
+msgstr "Seminarplan"
+
+#: slc.seminarportal:/content/seminar.py:76
+#: slc.seminarportal:/content/speech.py:40
+msgid "label_abstract"
+msgstr "Resumé"
