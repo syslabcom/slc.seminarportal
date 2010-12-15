@@ -1,11 +1,11 @@
 Changelog
 *********
 
-1.3.5 (unreleased)
+1.3.5 (2010-12-15)
 ------------------
 
-- Nothing changed yet.
-
+- Added translations for days of week and 2 headings, provided by EU-OSHA
+  refs #1557, #2048 [thomasw]
 
 1.3.4 (2010-11-26)
 ------------------
