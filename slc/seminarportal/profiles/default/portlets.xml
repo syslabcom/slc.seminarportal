@@ -15,6 +15,11 @@
       description="Shows random seminar speeches." />    
 
   <portlet
+      addview="slc.SeminarsPortlet"
+      title="Seminars"
+      description="Shows seminars filtered according to some category." />    
+
+  <portlet
       addview="slc.SeminarSearchPortlet"
       title="Seminar Search"
       description="Search for seminars, speakers or speeches." />    
