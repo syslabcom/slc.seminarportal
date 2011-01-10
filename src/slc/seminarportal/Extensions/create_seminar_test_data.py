@@ -23,11 +23,15 @@ log = logging.getLogger('create_seminar_test_data.py')
 FOLDER_ID = 'seminars-test'
 
 def run(self):
+    create_test_seminars(self, 5)
+
+
+def create_test_seminars(self, count):
     wftool = getToolByName(self, 'portal_workflow')
     sf = create_seminar_folder(self)
     parent = getParent(self)
     sf = getattr(parent, FOLDER_ID)
-    for i in range(0,5):
+    for i in range(0, count):
         seminar_day = DateTime() + 10
         t = titles[i]
         sid = self.generateUniqueId('SPSeminar')
@@ -109,13 +113,21 @@ def create_seminar_folder(self):
 
 def create_seminar(self, parent, seminar_id, title, desc, conclusions):
     if not hasattr(parent, seminar_id):
+        subject = random.sample(['cat1', 'cat2', 'cat3'], 1)[0]
+        start_date = DateTime() + random.randint(1,10)
+        end_date = start_date + random.randint(1,4)
         parent.invokeFactory('SPSeminar', 
                              seminar_id, 
                              title=title, 
                              description=desc, 
-                             conclusions=conclusions)
+                             conclusions=conclusions,
+                             )
         s = getattr(parent, seminar_id)
         s._renameAfterCreation(check_auto_id=True)
+        s.setStartDate(start_date)
+        s.setEndDate(end_date)
+        s.setSubject(subject)
+        s.reindexObject()
         event.notify(ObjectInitializedEvent(s))
 
         wftool = getToolByName(self, 'portal_workflow')
