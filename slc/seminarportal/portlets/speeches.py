@@ -1,17 +1,11 @@
 from zope.component import getMultiAdapter
 from zope.formlib import form
 from zope.interface import implements
-
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone import PloneMessageFactory as _
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
-from plone.memoize import ram
-from plone.memoize.compress import xhtml_compress
-
 from plone.app.portlets.portlets import base
-
 from interfaces import ISpeechesPortlet
+from slc.seminarportal.portlets.base import BaseRenderer
 
 class AddForm(base.AddForm):
     form_fields = form.Fields(ISpeechesPortlet)
@@ -38,24 +32,8 @@ class Assignment(base.Assignment):
         return u"Featured Speeches"
 
 
-class Renderer(base.Renderer):
+class Renderer(BaseRenderer):
     _template = ViewPageTemplateFile('speeches.pt')
-
-    def _render_cachekey(method, self):
-        portal_languages = getToolByName(self.context, 'portal_languages')
-        preflang = portal_languages.getPreferredLanguage()
-        return (preflang)
-        
-    @ram.cache(_render_cachekey)
-    def render(self):
-        return xhtml_compress(self._template())
-
-    def __init__(self, *args):
-        base.Renderer.__init__(self, *args)
-        portal_state = getMultiAdapter((self.context, self.request), 
-                                       name=u'plone_portal_state'
-                                       )
-        self.portal = portal_state.portal()
 
     def results(self):
         catalog = getToolByName(self.context, 'portal_catalog')

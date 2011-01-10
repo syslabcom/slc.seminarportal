@@ -1,22 +1,14 @@
 import logging
 import random
 import Acquisition
-
-from zope.component import getMultiAdapter
 from zope.formlib import form
 from zope.interface import implements
-
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone import PloneMessageFactory as _
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone.Portal import PloneSite
-
 from plone.app.portlets.portlets import base
-
-from plone.memoize import ram
-from plone.memoize.compress import xhtml_compress
-
 from interfaces import ISpeakerPortlet
+from slc.seminarportal.portlets.base import BaseRenderer
 
 log = logging.getLogger('slc.seminarportal/portlets/speaker.py')
 
@@ -53,25 +45,8 @@ class Assignment(base.Assignment):
         return u"Featured Speakers"
 
 
-class Renderer(base.Renderer):
+class Renderer(BaseRenderer):
     _template = ViewPageTemplateFile('speaker.pt')
-
-    def __init__(self, *args):
-        base.Renderer.__init__(self, *args)
-        portal_state = getMultiAdapter((self.context, self.request), 
-                                       name=u'plone_portal_state'
-                                       )
-        self.portal = portal_state.portal()
-
-    def _render_cachekey(method, self):
-        portal_languages = getToolByName(self.context, 'portal_languages')
-        preflang = portal_languages.getPreferredLanguage()
-        path = "/".join(self.context.getPhysicalPath())
-        return (preflang, path)
-        
-    @ram.cache(_render_cachekey)
-    def render(self):
-        return xhtml_compress(self._template())
 
     @property
     def available(self):
@@ -134,3 +109,4 @@ class Renderer(base.Renderer):
                 return obj
             obj = Acquisition.aq_parent(obj)
         return None
+
