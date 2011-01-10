@@ -109,9 +109,9 @@ class TestRenderer(SeminarPortalTestCase):
         speakers_urls = ['/'.join(s.getPhysicalPath()) for s in speakers]
 
         # Test random:
-        for count in random.sample(range(0, 10), 5):
+        for count in range(0, 10):
             assignment = speaker_portlet.Assignment(
-                                                speakers=[],
+                                                featured_speakers=[],
                                                 count=count,
                                                 random=1,
                                                 )
@@ -122,8 +122,8 @@ class TestRenderer(SeminarPortalTestCase):
                         )
 
             speakers = r.get_speakers()
-
             self.assertEquals(len(speakers), count)
+
             for speaker in speakers:
                 self.assertEquals(speaker.portal_type, 'SPSpeaker')
 
@@ -134,7 +134,7 @@ class TestRenderer(SeminarPortalTestCase):
         # Test with specified:
         count = 5
         assignment = speaker_portlet.Assignment(
-                                            speakers=speakers_urls[:5],
+                                            featured_speakers=speakers_urls[:5],
                                             count=count,
                                             random=0,
                                             )
