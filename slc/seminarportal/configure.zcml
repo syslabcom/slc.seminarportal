@@ -31,4 +31,10 @@
         name="slc.seminarportal.vocabularies.speakers"
         /> 
 
+    <utility
+        component=".vocabulary.CategoriesVocabularyFactory"
+        name="slc.seminarportal.vocabularies.categories"
+        />
+
+
 </configure>
