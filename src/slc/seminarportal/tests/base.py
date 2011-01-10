@@ -21,7 +21,6 @@ log = logging.getLogger('tests/base.py')
 
 ztc.installProduct('Relations')
 ztc.installProduct('LinguaPlone')
-ztc.installProduct('slc.seminarportal')
 
 PRODUCTS = [
         'Relations', 
@@ -29,6 +28,7 @@ PRODUCTS = [
         'slc.seminarportal'
         ]
 ptc.setupPloneSite(products=PRODUCTS)
+
 class SeminarPortalTestCase(ptc.PloneTestCase):
     """Base class used for test cases
     """
@@ -39,11 +39,7 @@ class SeminarPortalTestCase(ptc.PloneTestCase):
             import slc.seminarportal
             zcml.load_config('configure.zcml', slc.seminarportal)
             fiveconfigure.debug_mode = False
-            ztc.installProduct('Relations')
             ztc.installPackage('slc.seminarportal');
-
-
-    # Some helper methods
 
     def create_speakers(self, seminar):
         """ Create test speakers
