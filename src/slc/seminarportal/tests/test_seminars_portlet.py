@@ -1,7 +1,5 @@
 import logging
-import random
 
-from zope import event
 from zope import component
 
 from plone.portlets.interfaces import IPortletAssignment
@@ -12,12 +10,12 @@ from plone.portlets.interfaces import IPortletRenderer
 
 from plone.app.portlets.storage import PortletAssignmentMapping
 
-from Products.Archetypes.event import ObjectInitializedEvent
-
 from slc.seminarportal.tests.base import SeminarPortalTestCase
-from slc.seminarportal.portlets import seminar as seminar_portlet
+from slc.seminarportal.portlets import seminars as seminars_portlet
+from slc.seminarportal.Extensions.create_seminar_test_data import  \
+                                                    create_test_seminars
 
-log = logging.getLogger('test_seminar_portlet.py')
+log = logging.getLogger('test_seminars_portlet.py')
 
 class TestPortlet(SeminarPortalTestCase):
 
@@ -25,33 +23,42 @@ class TestPortlet(SeminarPortalTestCase):
         self.loginAsPortalOwner()
 
     def test_portlet_registered(self):
-        portlet = component.getUtility(IPortletType, name="slc.SeminarPortlet")
-        self.assertEquals(portlet.addview, "slc.SeminarPortlet")
+        portlet = component.getUtility(IPortletType, name="slc.SeminarsPortlet")
+        self.assertEquals(portlet.addview, "slc.SeminarsPortlet")
 
     def test_portlet_interfaces(self):
-        portlet = seminar_portlet.Assignment()
+        portlet = seminars_portlet.Assignment()
         self.failUnless(IPortletAssignment.providedBy(portlet))
         self.failUnless(IPortletDataProvider.providedBy(portlet.data))
 
     def test_invoke_addview(self):
-        portlet = component.getUtility(IPortletType, name='slc.SeminarPortlet')
+        portlet = component.getUtility(IPortletType, name='slc.SeminarsPortlet')
         mapping = self.portal.restrictedTraverse('++contextportlets++plone.leftcolumn')
         for m in mapping.keys():
             del mapping[m]
         addview = mapping.restrictedTraverse('+/' + portlet.addview)
 
-        addview.createAndAdd(data={})
-
+        addview.createAndAdd(data={
+                                'count':5, 
+                                'state':('published', ), 
+                                'subject':('category1', 'category2'), 
+                                'header':'Testing Seminars Portlet',
+                                })
         self.assertEquals(len(mapping), 1)
-        self.failUnless(isinstance(mapping.values()[0], seminar_portlet.Assignment))
+        self.failUnless(isinstance(mapping.values()[0], seminars_portlet.Assignment))
+        assignment = mapping.values()[0]
+        self.assertEquals(assignment.count, 5)
+        self.assertEquals(assignment.state, ('published',))
+        self.assertEquals(assignment.subject, ('category1', 'category2'))
+        self.assertEquals(assignment.header, 'Testing Seminars Portlet')
 
     def test_invoke_edit_view(self):
         mapping = PortletAssignmentMapping()
         request = self.folder.REQUEST
 
-        mapping['foo'] = seminar_portlet.Assignment()
+        mapping['foo'] = seminars_portlet.Assignment()
         editview = component.getMultiAdapter((mapping['foo'], request), name='edit')
-        self.failUnless(isinstance(editview, seminar_portlet.EditForm))
+        self.failUnless(isinstance(editview, seminars_portlet.EditForm))
 
     def test_renderer(self):
         context = self.folder
@@ -64,14 +71,14 @@ class TestPortlet(SeminarPortalTestCase):
                                 context=self.portal
                                 )
 
-        assignment = seminar_portlet.Assignment()
+        assignment = seminars_portlet.Assignment()
 
         renderer = component.getMultiAdapter(
                                 (context, request, view, manager, assignment), 
                                 IPortletRenderer
                                 )
 
-        self.failUnless(isinstance(renderer, seminar_portlet.Renderer))
+        self.failUnless(isinstance(renderer, seminars_portlet.Renderer))
 
 
 class TestRenderer(SeminarPortalTestCase):
@@ -81,77 +88,96 @@ class TestRenderer(SeminarPortalTestCase):
             auto-creation of the sub-objects ('speakers', 'speech venues').
         """
         self.loginAsPortalOwner()
-        portal = self.portal
-        qi = portal.portal_quickinstaller
-        portal.invokeFactory('SPSeminar', 'plone-conference', title="Seminar")
-        seminar = getattr(portal, 'plone-conference')
-        seminar._renameAfterCreation(check_auto_id=True)
-        event.notify(ObjectInitializedEvent(seminar))
-        self.create_speakers(seminar)
-        self.seminar = seminar
-
 
     def renderer(self, context=None, request=None, view=None, manager=None, assignment=None):
+        """ """
         context = context or self.folder
         request = request or self.folder.REQUEST
         view = view or self.folder.restrictedTraverse('@@plone')
         manager = manager or component.getUtility(IPortletManager, 
                                         name='plone.rightcolumn', 
                                         context=self.portal)
-        assignment = assignment or seminar_portlet.Assignment()
-        return component.getMultiAdapter((context, request, view, manager, assignment), 
-                               IPortletRenderer)
+        assignment = assignment or seminars_portlet.Assignment()
+        return component.getMultiAdapter(
+                                (context, request, view, manager, assignment), 
+                                IPortletRenderer)
 
-
-    def test_get_speakers(self):
+    def test_portlet(self):
         """ """
-        speakers = self.seminar.speakers.objectValues()
-        speakers_urls = ['/'.join(s.getPhysicalPath()) for s in speakers]
+        total_seminars = 5
+        seminars = self.portal.objectValues('SPSeminar')
+        seminars_urls = ['/'.join(s.getPhysicalPath()) for s in seminars]
 
-        # Test random:
-        for count in random.sample(range(0, 10), 5):
-            assignment = seminar_portlet.Assignment(
-                                                speakers=[],
-                                                count=count,
-                                                random=1,
-                                                )
-
-            r = self.renderer(
-                        context=self.portal, 
-                        assignment=assignment,
-                        )
-
-            speakers = r.get_speakers()
-
-            self.assertEquals(len(speakers), count)
-            for speaker in speakers:
-                self.assertEquals(speaker.portal_type, 'SPSeminar')
-
-            speakers_paths = ['/'.join(s.getPhysicalPath()) for s in speakers]
-            for s in speakers_paths:
-                self.assertEquals(s in speakers_urls, True)
-
-        # Test with specified:
-        count = 5
-        assignment = seminar_portlet.Assignment(
-                                            speakers=speakers_urls[:5],
-                                            count=count,
-                                            random=0,
-                                            )
+        assignment = seminars_portlet.Assignment(**{
+                                    'count':5, 
+                                    'state':('published', ), 
+                                    'header':'Testing Seminars Portlet',
+                                    })
 
         r = self.renderer(
                     context=self.portal, 
                     assignment=assignment,
                     )
 
-        speakers = r.get_speakers()
-        # The speakers 
-        speakers_paths = ['/'.join(s.getPhysicalPath()) for s in speakers]
+        # Test that no seminars exist yet and that the portlet will not be
+        # available because of it.
+        seminars = r._data()
+        self.assertEquals(len(seminars), 0)
+        self.assertEquals(r.available, False)
 
-        self.assertEquals(len(speakers), count)
+        # Create test data.
+        create_test_seminars(self.portal, total_seminars)
 
-        for s in speakers_paths:
-            self.assertEquals(s in speakers_urls, True)
+        # Test that the portlet returns the correct amount of seminars
+        seminars = r._data()
+        self.assertEquals(len(seminars), 5)
+        self.assertEquals(r.available, True)
+
+        # Test that it's actually Seminars being returned.
+        for seminar in seminars:
+            self.assertEquals(seminar.portal_type, 'SPSeminar')
+
+        # Test with diffferent count values:
+        # FIXME: Must add code in _data to handle the case where count = 0
+        for count in range(0, 7):
+            assignment = seminars_portlet.Assignment(**{
+                                            'count': count, 
+                                            'state':('published', ), 
+                                            'subject':(), 
+                                            'header':'Testing Seminars Portlet',
+                                            })
+            r = self.renderer(
+                        context=self.portal, 
+                        assignment=assignment,
+                        )
+            seminars = r._data()
+            self.assertEquals(len(seminars), count <= total_seminars and count or total_seminars)
+
+            if count == 0:
+                self.assertEquals(r.available, False)
+            else:
+                self.assertEquals(r.available, True)
+
+        # Test that subject filtering works:
+        for cat in ['cat1', 'cat2', 'cat3']:
+            assignment = seminars_portlet.Assignment(**{
+                                            'count':count, 
+                                            'state':('published', ), 
+                                            'subject':('cat1'), 
+                                            'header':'Testing Seminars Portlet',
+                                            })
+            r = self.renderer(
+                        context=self.portal, 
+                        assignment=assignment,
+                        )
+            seminars = r._data()
+            for seminar in seminars:
+                self.assertEquals(seminar.subject, cat)
+
+        # TODO: Test the SeminarPortal correctness
+
+
+
 
 
 

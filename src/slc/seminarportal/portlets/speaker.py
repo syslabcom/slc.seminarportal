@@ -62,30 +62,35 @@ class Renderer(BaseRenderer):
                 catalog = getToolByName(self.context, 'portal_catalog')
                 brains = catalog(portal_type='SPSpeech', Language='all',
                     path="/".join(seminar.getPhysicalPath()))
+
                 speeches = [x.getObject() for x in brains]
-                speakers = set()
+                speakers = []
                 for speech in speeches:
-                    speakers.update(speech.getSpeakers())
-                speakers = list(speakers)
-                random_indexes = random.sample(range(0, len(speakers)),
-                   (len(speakers) >= data.count and data.count or len(speakers)))
+                    speakers.append(speech.getSpeakers())
+
+                limit = len(speakers) < data.count and len(speakers) or data.count
+                random_indexes = random.sample(range(0, len(speakers)), limit)
+                   
                 return [speakers[i] for i in random_indexes]
 
         elif data.random:
             catalog = getToolByName(self.context, 'portal_catalog')
             brains =  catalog(portal_type='SPSpeaker')
-            random_indexes = random.sample(range(0, len(brains)),
-               (len(brains) >= data.count and data.count or len(brains))) 
+            limit = len(brains) < data.count and len(brains) or data.count
+            random_indexes = random.sample(range(0, len(brains)), limit)
             return [brains[i].getObject() for i in random_indexes]
 
         elif len(data.featured_speakers) > data.count:
             featured_speakers = []
             for i in random.sample(range(0, len(data.featured_speakers)), data.count):
                 try:
-                    featured_speakers.append(self.portal.unrestrictedTraverse(data.featured_speakers[i]))
+                    featured_speakers.append(
+                            self.portal.unrestrictedTraverse(
+                                                    data.featured_speakers[i]))
                 except AttributeError:
                     log.warn('Could not find speaker: %s' % data.featured_speakers[i])
                     self.data.featured_speakers.remove(data.featured_speakers[i])
+
             return featured_speakers
 
         elif data.featured_speakers:
@@ -100,9 +105,11 @@ class Renderer(BaseRenderer):
 
         return []
 
+
     def get_current_seminar(self):
         """ Return the object of a particular type which is
-        the parent of the current object."""
+            the parent of the current object.
+        """
         obj = Acquisition.aq_inner(self.context)
         while not isinstance(obj, PloneSite):
             if obj.meta_type == 'SPSeminar':

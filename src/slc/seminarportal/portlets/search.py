@@ -1,13 +1,8 @@
 from Acquisition import aq_inner
-
-from zope.component import getMultiAdapter
 from zope.interface import implements
-
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from plone.app.portlets.portlets import base
 from plone.memoize.instance import memoize
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from slc.seminarportal.portlets.base import BaseRenderer
 from interfaces import ISearchPortlet
 

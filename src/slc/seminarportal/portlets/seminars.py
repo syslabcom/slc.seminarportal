@@ -7,6 +7,7 @@ from zope.formlib import form
 from plone.memoize.instance import memoize
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
+from Products.Archetypes.utils import shasattr
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from slc.seminarportal import _
@@ -55,16 +56,23 @@ class Renderer(BaseRenderer):
     """ """
     _template = ViewPageTemplateFile('seminars.pt')
 
+    def _render_cachekey(method, self):
+        portal_languages = getToolByName(self.context, 'portal_languages')
+        preflang = portal_languages.getPreferredLanguage()
+        subject = self.data.subject
+        navigation_root_path = self.navigation_root_path
+        return (preflang, subject, navigation_root_path)
+
     @property
     def available(self):
         """ The portlet will not appear if there aren't any seminars to display.
         """
-        return len(self._data())
+        return len(self._data()) > 0
 
+    @memoize
     def seminars(self):
         return self._data()
 
-    @memoize
     def _data(self):
         """ Get all SPSeminar objects that conform to the workflow state and
             category specified on the portlet.
@@ -75,9 +83,10 @@ class Renderer(BaseRenderer):
         paths = [self.navigation_root_path]
         if self.navigation_root:
             # Also search in its canonical
-            canonical = self.navigation_root.getCanonical()
-            if canonical is not None:
-                paths.append('/'.join(canonical.getPhysicalPath()))
+            if shasattr(self.navigation_root, 'getCanonical'):
+                canonical = self.navigation_root.getCanonical()
+                if canonical is not None:
+                    paths.append('/'.join(canonical.getPhysicalPath()))
 
         # Search: Language = preferredLanguage or neutral
         preflang = getToolByName(self.context, 'portal_languages').getPreferredLanguage()
@@ -88,8 +97,12 @@ class Renderer(BaseRenderer):
                     portal_type='SPSeminar',
                     review_state=self.data.state,
                     sort_limit=self.data.count,
+                    limit=self.data.count,
                     sort_on='start',
                     )
+
+        if self.data.subject:
+            query.update('subject', self.data.subject)
 
         if is_osha_installed:
             # Include OSHA SEP keywords if available
@@ -102,7 +115,7 @@ class Renderer(BaseRenderer):
                 query.update(Subject=kw)
 
         catalog = getToolByName(context, 'portal_catalog')
-        return catalog(query)[:self.data.count]
+        return catalog(query)
 
     @memoize
     def calendarLink(self):

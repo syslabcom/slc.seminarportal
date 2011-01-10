@@ -1,14 +1,16 @@
 from Products.Archetypes.interfaces import IObjectInitializedEvent
 from Products.Archetypes.utils import shasattr
 from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.WorkflowCore import WorkflowException
 
 from slc.seminarportal.content.speakersfolder import SPSpeakersFolder
 from slc.seminarportal.content.speechvenuefolder import SPSpeechVenueFolder
 from slc.seminarportal.interfaces import ISeminar
 
-ADDITIONAL_TYPES_INFO = (('speakers', 'Speakers', SPSpeakersFolder, 'SPSpeaker',), 
-                                 ('speech-venues', 'Speech Venues', SPSpeechVenueFolder, 'SPSpeechVenue',)
-                        )
+ADDITIONAL_TYPES_INFO = (
+                    ('speakers', 'Speakers', SPSpeakersFolder), 
+                    ('speech-venues', 'Speech Venues', SPSpeechVenueFolder)
+                    )
 
 class SeminarEvents:
     """ Event Subscriber for the SPSeminar object type """
@@ -23,7 +25,7 @@ class SeminarEvents:
         """ Create Speakers and Speeches folder inside the seminar after
             creation.
         """
-        for fid, title, type, subtype in ADDITIONAL_TYPES_INFO:
+        for fid, title, type in ADDITIONAL_TYPES_INFO:
             
             if shasattr(seminar, fid):
                 continue
@@ -31,9 +33,6 @@ class SeminarEvents:
             seminar._setObject(fid, type(fid))
             folder = getattr(seminar, fid)
             folder.setTitle(title)
-            folder.setConstrainTypesMode(1)
-            folder.setImmediatelyAddableTypes([subtype])
-            folder.setLocallyAllowedTypes([subtype])
             folder.setExcludeFromNav(1)
 
 
@@ -47,13 +46,12 @@ def handle_workflowChanged(object, event):
     if transition:
         wftool = getToolByName(object, 'portal_workflow')
 
-        for fid, title, type, subtype in ADDITIONAL_TYPES_INFO:
+        for fid, title, type in ADDITIONAL_TYPES_INFO:
             folder = getattr(object, fid, None)
             if not folder:
                 continue
             try:
-                # print "try to %s %s" %(transition.id, folder.id)
                 wftool.doActionFor(folder, transition.id)
-            except:
+            except WorkflowException:
                 pass
 
