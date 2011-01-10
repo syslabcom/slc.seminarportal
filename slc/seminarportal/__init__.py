@@ -1,23 +1,24 @@
-"""Main product initializer
-"""
-
 from zope.i18nmessageid import MessageFactory
-from slc.seminarportal import config
 
 from Products.Archetypes import atapi
 from Products.CMFCore.utils import ContentInit
 from Products.CMFCore import DirectoryView
 
-from config import product_globals
+from slc.seminarportal import config
 
-DirectoryView.registerDirectory('skins', product_globals)
+try:
+    import osha.policy
+    is_osha_installed = True
+except ImportError:
+    is_osha_installed = False
+
+DirectoryView.registerDirectory('skins', config.product_globals)
 
 # Define a message factory for when this product is internationalised.
 # This will be imported with the special name "_" in most modules. Strings
 # like _(u"message") will then be extracted by i18n tools for translation.
 
 seminarportalMessageFactory = MessageFactory('slc.seminarportal')
-
 _ = seminarportalMessageFactory
 
 # adding the days of the week here so that i18n extract will pick them up
@@ -28,6 +29,7 @@ thursday = _(u'Thursday', default=u'Thursday')
 friday = _(u'Friday', default=u'Friday')
 saturday = _(u'Saturday', default=u'Saturday')
 sunday = _(u'Sunday', default=u'Sunday')
+
 
 def initialize(context):
     """Initializer called when used as a Zope 2 product.
