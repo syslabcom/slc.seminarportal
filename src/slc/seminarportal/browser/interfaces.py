@@ -1,4 +1,10 @@
 from zope.app.publisher.interfaces.browser import IBrowserView
+from zope.viewlet.interfaces import IViewletManager
+
+class IAboveSeminarListing(IViewletManager):
+    """ A viewlet manager that allows the adding of viewlets above the seminar
+        listing.
+    """
 
 class ISeminarFolderView(IBrowserView):
     """
