@@ -1,16 +1,22 @@
 from types import UnicodeType
 from Acquisition import aq_inner, aq_parent
 from DateTime import DateTime
+
 from zope import schema
 from zope.interface import implements
 from zope.component import getMultiAdapter
 from zope.formlib import form
+
+from plone.app.vocabularies.catalog import SearchableTextSourceBinder
+from plone.app.portlets.portlets import base
 from plone.memoize.instance import memoize
 from plone.portlets.interfaces import IPortletDataProvider
-from plone.app.portlets.portlets import base
+
 from Products.Archetypes.utils import shasattr
+from Products.ATContentTypes.interface import folder
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
+
 from slc.seminarportal import _
 from slc.seminarportal import is_osha_installed
 from slc.seminarportal.portlets.base import BaseRenderer
@@ -52,13 +58,19 @@ class ISeminarsPortlet(IPortletDataProvider):
                     value_type=schema.Choice(
                         vocabulary="slc.seminarportal.vocabularies.categories")
                     )
-    seminarsfolder_path = schema.TextLine(
-                    title=_(u'Seminars folder path'),
+    seminarsfolder = schema.Choice(
+                    title=_(u'Header link'),
                     description=_(
-                            u"Enter a folder to which the 'more seminars' link will "
-                            "point to. This is optional"
+                            u"Enter a folder to which the portlet title link will "
+                            "point to. This is optional."
                             ),
                     required=False,
+                    source=SearchableTextSourceBinder(
+                        {'object_provides': [
+                                        folder.IATFolder.__identifier__,
+                                        folder.IATBTreeFolder.__identifier__,
+                                        ]},
+                        default_query='path:'),
                     )
 
 class Renderer(BaseRenderer):
@@ -73,10 +85,14 @@ class Renderer(BaseRenderer):
         return (preflang, subject, navigation_root_path)
 
     @property
+    def title(self):
+        return self.data.header
+
+    @property
     def available(self):
         """ The portlet will not appear if there aren't any seminars to display.
         """
-        return len(self._data()) > 0
+        return len(self.seminars()) > 0
 
     @memoize
     def seminars(self):
@@ -155,20 +171,20 @@ class Renderer(BaseRenderer):
     @memoize
     def all_seminars_link(self):
         context = aq_inner(self.context)
-        if not getattr(self.data, 'seminarsfolder_path'):
+        if not getattr(self.data, 'seminarsfolder', None):
             return None
 
-        seminarsfolder = self.data.seminarsfolder_path
+        seminarsfolder = self.data.seminarsfolder
         if seminarsfolder.startswith('/'):
             seminarsfolder = seminarsfolder[1:]
 
         if isinstance(seminarsfolder, UnicodeType):
             seminarsfolder = seminarsfolder.encode('utf-8')
 
-        target = self.root.restrictedTraverse(seminarsfolder, default=None)
+        target = self.portal.restrictedTraverse(seminarsfolder, default=None)
         if target is None:
             # try the canonical
-            canroot = self.root.getCanonical()
+            canroot = self.portal.getCanonical()
             target = canroot.restrictedTraverse(seminarsfolder, default=None)
 
         if target is not None:
@@ -195,12 +211,14 @@ class Assignment(base.Assignment):
                 count=5, 
                 state=('published', ), 
                 subject=tuple(), 
-                header=default_header):
+                header=default_header,
+                seminarsfolder=None):
 
         self.count = count
         self.state = state
         self.subject = subject
         self.header = header
+        self.seminarsfolder = seminarsfolder
 
     @property
     def title(self):

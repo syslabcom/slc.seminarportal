@@ -1,16 +1,18 @@
 <dl class="portlet portletSeminars"
     i18n:domain="slc.seminarportal">
 
-    <dt class="portletHeader">
+    <dt class="portletHeader"
+        tal:define="all_seminars_link view/all_seminars_link">
         <span class="portletTopLeft"></span>
         <a href=""
-           tal:define="all_seminars_link view/all_seminars_link"
            tal:condition="all_seminars_link"
            tal:attributes="href all_seminars_link"
            class="tile"
-           i18n:translate="upcoming_seminars">
-            View all Seminars
+           tal:content="view/title">
         </a>
+        <span class="title"
+           tal:condition="not: all_seminars_link"
+           tal:content="view/title" />
         <span class="portletTopRight"></span>
     </dt>
 
