@@ -138,7 +138,6 @@ class TestRenderer(SeminarPortalTestCase):
             self.assertEquals(seminar.portal_type, 'SPSeminar')
 
         # Test with diffferent count values:
-        # FIXME: Must add code in _data to handle the case where count = 0
         for count in range(0, 7):
             assignment = seminars_portlet.Assignment(**{
                                             'count': count, 
@@ -151,7 +150,7 @@ class TestRenderer(SeminarPortalTestCase):
                         assignment=assignment,
                         )
             seminars = r._data()
-            self.assertEquals(len(seminars), count <= total_seminars and count or total_seminars)
+            self.assertEquals(len(seminars), count > total_seminars and total_seminars or count)
 
             if count == 0:
                 self.assertEquals(r.available, False)
