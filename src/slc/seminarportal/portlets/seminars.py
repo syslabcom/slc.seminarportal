@@ -1,3 +1,4 @@
+from types import UnicodeType
 from Acquisition import aq_inner, aq_parent
 from DateTime import DateTime
 from zope import schema
@@ -15,16 +16,16 @@ from slc.seminarportal import is_osha_installed
 from slc.seminarportal.portlets.base import BaseRenderer
 
 if is_osha_installed:
-    default_portlet_header = _(u"Our Events")
+    default_header = _(u"Our Events")
 else:
-    default_portlet_header = _(u"Seminars")
+    default_header = _(u"Seminars")
 
 class ISeminarsPortlet(IPortletDataProvider):
     """ """
     header = schema.TextLine(
                     title=_(u"Portlet header"),
                     description=_(u"Title of the rendered portlet"),
-                    default=default_portlet_header,
+                    default=default_header,
                     required=True
                     )
     count = schema.Int(
@@ -50,6 +51,14 @@ class ISeminarsPortlet(IPortletDataProvider):
                     required=False,
                     value_type=schema.Choice(
                         vocabulary="slc.seminarportal.vocabularies.categories")
+                    )
+    seminarsfolder_path = schema.TextLine(
+                    title=_(u'Seminars folder path'),
+                    description=_(
+                            u"Enter a folder to which the 'more seminars' link will "
+                            "point to. This is optional"
+                            ),
+                    required=False,
                     )
 
 class Renderer(BaseRenderer):
@@ -77,8 +86,10 @@ class Renderer(BaseRenderer):
         """ Get all SPSeminar objects that conform to the workflow state and
             category specified on the portlet.
         """
-        context = aq_inner(self.context)
+        if self.data.count == 0:
+            return []
 
+        context = aq_inner(self.context)
         # search in the navigation root of the currently selected language 
         paths = [self.navigation_root_path]
         if self.navigation_root:
@@ -89,7 +100,7 @@ class Renderer(BaseRenderer):
                     paths.append('/'.join(canonical.getPhysicalPath()))
 
         # Search: Language = preferredLanguage or neutral
-        preflang = getToolByName(self.context, 'portal_languages').getPreferredLanguage()
+        preflang = getToolByName(context, 'portal_languages').getPreferredLanguage()
         query = dict(
                     Language=['', preflang],
                     end={'query': DateTime(), 'range': 'min'},
@@ -106,7 +117,7 @@ class Renderer(BaseRenderer):
 
         if is_osha_installed:
             # Include OSHA SEP keywords if available
-            oshaview = getMultiAdapter((self.context, self.request), name=u'oshaview')
+            oshaview = getMultiAdapter((context, self.request), name=u'oshaview')
             mySEP = oshaview.getCurrentSingleEntryPoint()
             kw = ''
             if mySEP is not None:
@@ -143,14 +154,26 @@ class Renderer(BaseRenderer):
 
     @memoize
     def all_seminars_link(self):
-        calurl = self.calendarLink()
-        if calurl:
-            return '%s/seminars.html' % calurl
-        else:
-            context = aq_inner(self.context)
-            if not context.isPrincipiaFolderish:
-                context = aq_parent(context)
-            return '%s/seminars.html' % context.absolute_url()
+        context = aq_inner(self.context)
+        if not getattr(self.data, 'seminarsfolder_path'):
+            return None
+
+        seminarsfolder = self.data.seminarsfolder_path
+        if seminarsfolder.startswith('/'):
+            seminarsfolder = seminarsfolder[1:]
+
+        if isinstance(seminarsfolder, UnicodeType):
+            seminarsfolder = seminarsfolder.encode('utf-8')
+
+        target = self.root.restrictedTraverse(seminarsfolder, default=None)
+        if target is None:
+            # try the canonical
+            canroot = self.root.getCanonical()
+            target = canroot.restrictedTraverse(seminarsfolder, default=None)
+
+        if target is not None:
+            return target.absolute_url()
+
 
     @memoize
     def prev_seminars_link(self):
@@ -172,7 +195,7 @@ class Assignment(base.Assignment):
                 count=5, 
                 state=('published', ), 
                 subject=tuple(), 
-                header=default_portlet_header):
+                header=default_header):
 
         self.count = count
         self.state = state

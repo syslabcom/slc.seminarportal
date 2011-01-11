@@ -4,10 +4,12 @@
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
         <a href=""
-           tal:attributes="href view/all_seminars_link"
+           tal:define="all_seminars_link view/all_seminars_link"
+           tal:condition="all_seminars_link"
+           tal:attributes="href all_seminars_link"
            class="tile"
            i18n:translate="upcoming_seminars">
-            Upcoming Seminars
+            View all Seminars
         </a>
         <span class="portletTopRight"></span>
     </dt>
