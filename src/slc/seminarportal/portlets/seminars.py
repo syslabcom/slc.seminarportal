@@ -4,7 +4,6 @@ from DateTime import DateTime
 
 from zope import schema
 from zope.interface import implements
-from zope.component import getMultiAdapter
 from zope.formlib import form
 
 from plone.app.portlets.portlets import base
@@ -139,16 +138,6 @@ class Renderer(BaseRenderer):
                 query.update(Subject=(self.data.subject,))
             else:    
                 query.update(Subject=self.data.subject)
-
-        if is_osha_installed:
-            # Include OSHA SEP keywords if available
-            oshaview = getMultiAdapter((context, self.request), name=u'oshaview')
-            mySEP = oshaview.getCurrentSingleEntryPoint()
-            kw = ''
-            if mySEP is not None:
-                kw = mySEP.getProperty('keyword', '')
-            if kw !='':
-                query.update(Subject=kw)
 
         catalog = getToolByName(context, 'portal_catalog')
         return catalog(query)
