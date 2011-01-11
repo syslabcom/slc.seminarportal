@@ -7,8 +7,10 @@ from zope.interface import implements
 from zope.component import getMultiAdapter
 from zope.formlib import form
 
-from plone.app.vocabularies.catalog import SearchableTextSourceBinder
 from plone.app.portlets.portlets import base
+from plone.app.vocabularies.catalog import SearchableTextSourceBinder
+from plone.memoize import ram
+from plone.memoize.compress import xhtml_compress
 from plone.memoize.instance import memoize
 from plone.portlets.interfaces import IPortletDataProvider
 
@@ -83,6 +85,10 @@ class Renderer(BaseRenderer):
         subject = self.data.subject
         navigation_root_path = self.navigation_root_path
         return (preflang, subject, navigation_root_path)
+
+    @ram.cache(_render_cachekey)
+    def render(self):
+        return xhtml_compress(self._template())
 
     @property
     def title(self):

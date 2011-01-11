@@ -11,7 +11,7 @@
     <dd class="portletItem">
         <span class="portletTopRight"></span>
         <div style="padding:1em">
-            <div metal:use-macro="context/@@seminar-search-simple/macros/simple-search" />
+            <div metal:use-macro="context/@@seminar-macros/macros/simple-search" />
         </div>
     </dd>
 </dl>

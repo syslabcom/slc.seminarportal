@@ -3,12 +3,17 @@ import random
 import Acquisition
 from zope.formlib import form
 from zope.interface import implements
+
+from plone.app.portlets.portlets import base
+from plone.memoize import ram
+from plone.memoize.compress import xhtml_compress
+
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone.Portal import PloneSite
-from plone.app.portlets.portlets import base
-from interfaces import ISpeakerPortlet
+
 from slc.seminarportal.portlets.base import BaseRenderer
+from interfaces import ISpeakerPortlet
 
 log = logging.getLogger('slc.seminarportal/portlets/speaker.py')
 
@@ -47,6 +52,16 @@ class Assignment(base.Assignment):
 
 class Renderer(BaseRenderer):
     _template = ViewPageTemplateFile('speaker.pt')
+
+    def _render_cachekey(method, self):
+        """ Renders a cachekey to be used by the portlets.
+        """
+        preflang = getToolByName(self.context, 'portal_languages').getPreferredLanguage()
+        return (preflang, self.navigation_root_path)
+
+    @ram.cache(_render_cachekey)
+    def render(self):
+        return xhtml_compress(self._template())
 
     @property
     def available(self):
