@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="slc.seminarportal">
+
+<head>
+    <metal:block metal:fill-slot="head_slot">
+        <link rel="alternate" title="RSS 1.0" type="application/rss+xml"
+            tal:condition="request/SearchableText|nothing"
+            tal:attributes="href string:$here_url/search_rss?${request/QUERY_STRING}"/>
+    </metal:block>
+
+    <metal:javascriptslot fill-slot="javascript_head_slot">
+        <!-- ECMAScript calendar -->
+        <style type="text/css" media="all"
+            tal:content="string:@import url($portal_url/jscalendar/calendar-blue.css);"></style>
+        <script type="text/javascript"
+            tal:attributes="src string:$portal_url/jscalendar/calendar_stripped.js"></script>
+        <script type="text/javascript" charset="iso-8859-1"
+            tal:condition="exists: portal/jscalendar/calendar-en.js"
+            tal:attributes="src string:$portal_url/jscalendar/calendar-en.js"></script>
+    </metal:javascriptslot>
+
+    <metal:fill fill-slot="header">
+        <div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+        </div>
+    </metal:fill>
+</head>
+
+<body>
+<div metal:fill-slot="main">
+    <br clear="all"/>
+
+    <tal:def define="template_id string:seminarfolder-view;
+                     livesearch_enabled python:False;">
+        <metal:macro use-macro="here/@@seminar-macros/macros/search"/>
+    </tal:def>
+
+    <h1 i18n:translate="heading_latest_seminars">Latest Seminars</h1>
+    <div id="SeminarFolder">
+    <tal:get define="Batch python:modules['Products.CMFPlone'].Batch;
+                    b_size python:10;
+                    b_start request/b_start | b_start | python:0;
+                    batch python:Batch(view.seminars(), b_size, int(b_start), orphan=1);">
+
+        <div metal:use-macro="here/batch_macros/macros/navigation" />
+        <dl id="db_results">
+            <tal:results repeat="result  batch">
+                <metal:macro use-macro="here/@@seminar-macros/macros/searchresults_seminars" />
+            </tal:results>
+        </dl>
+        <div tal:condition="python:not batch" i18n:translate="label_no_seminars_found">
+            No seminars matching your criteria were found
+        </div>
+        <div metal:use-macro="here/batch_macros/macros/navigation" /> 
+        <span tal:replace="structure provider:plone.belowcontentbody"></span>
+    </tal:get>
+    </div>
+</div>
+</body>
+</html>
+
