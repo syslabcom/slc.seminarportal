@@ -22,6 +22,8 @@
         class=".views.SeminarFolderView"
         permission="zope2.View"
         layer="slc.seminarportal.interfaces.IThemeLayer"
+        menu="plone_displayviews"
+        title="Seminars View"
         />
 
     <!-- left for backward compatibility -->
