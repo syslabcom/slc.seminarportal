@@ -20,10 +20,10 @@ class BaseView(BrowserView):
         anonymous = getToolByName(self, 'portal_membership').isAnonymousUser()
         return anonymous
 
-    def date(self):
+    def date(self, date=None):
         """Return the DateTime obj
         """
-        return DateTime()
+        return DateTime(date)
 
     def get_countries_dict(self):
         """Return the values from the index
@@ -114,7 +114,7 @@ class SeminarFolderView(BaseView):
     implements(ISeminarFolderView)
 
     def template_id(self):
-        return '@@seminarfolder-view'
+        return '@@seminars-view'
 
 
 class Search(BaseView):
@@ -125,7 +125,7 @@ class Search(BaseView):
         return '@@seminar-search'
 
 
-class SeminarView(BrowserView):
+class SeminarView(BaseView):
     """ Helper functionality for displaying a roster of speeches at a
         Seminar.
     """

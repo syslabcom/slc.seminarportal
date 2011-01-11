@@ -25,7 +25,7 @@
         <div class="eventlist">
             <div class="eventlist_month" tal:repeat="date summary/keys">
             <h2>
-                <tal:block content="python:view.get_datetime(date).strftime('%a %d %B %Y')"/> 
+                <tal:block content="python:view.date(date).strftime('%a %d %B %Y')"/> 
             </h2>
             <br/>
             <div class="event" tal:repeat="event_list python:sorted(summary[date])">
