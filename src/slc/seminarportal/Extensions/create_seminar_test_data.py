@@ -26,7 +26,12 @@ def run(self):
     create_test_seminars(self, 5)
 
 
-def create_test_seminars(self, count):
+def create_test_seminars(
+                    self, 
+                    count, 
+                    create_speakers=True, 
+                    create_speeches=True):
+
     wftool = getToolByName(self, 'portal_workflow')
     sf = create_seminar_folder(self)
     parent = getParent(self)
@@ -37,46 +42,51 @@ def create_test_seminars(self, count):
         sid = self.generateUniqueId('SPSeminar')
         seminar = create_seminar(self, sf, sid, t, desc, conclusions)
         speakers_folder = getattr(seminar, 'speakers')
-        log.info('Creating Speakers')
-        for surname, firstname in names:
-            speaker = create_speaker(
-                                speakers_folder, 
-                                surname, 
-                                firstname
-                                )
+        if create_speakers:
+            log.info('Creating Speakers')
+            for surname, firstname in names:
+                speaker = create_speaker(
+                                    speakers_folder, 
+                                    surname, 
+                                    firstname
+                                    )
 
         speakers = speakers_folder.objectValues()
         num_of_speakers = len(speakers)
 
-        speech_venues_folder = getattr(seminar, 'speech-venues')
-        for i in ['A', 'B']:
-            log.info('Creating venue: %s' % i)
-            speech_folder_id = 'speech_venue_%s' % i.lower()
-            speech_venues_folder.invokeFactory(
-                                        'SPSpeechVenue', 
-                                        speech_folder_id, 
-                                        title='Speech Venue %s' % i, 
-                                        description=short_desc
-                                        )
+    if not create_speeches:
+        return
 
-            speech_folder = getattr(speech_venues_folder, speech_folder_id)
-            wftool.doActionFor(speech_folder, 'publish')
-            for days in [0,1,2]:
-                for title in titles:
-                    speech_title = 'Speech: %s' % title
-                    start_hour = random.randint(6, 20)
-                    end_hour = start_hour + random.randint(0,3)
-                    start_date = DateTime('%s %s:%s ' % ((seminar_day+days).Date(), start_hour, random.randint(0,30)))
-                    end_date = DateTime('%s %s:%s' % ((seminar_day+days).Date(), end_hour, random.randint(30,59)))
+    speech_venues_folder = getattr(seminar, 'speech-venues')
+    for i in ['A', 'B']:
+        log.info('Creating venue: %s' % i)
+        speech_folder_id = 'speech_venue_%s' % i.lower()
+        speech_venues_folder.invokeFactory(
+                                    'SPSpeechVenue', 
+                                    speech_folder_id, 
+                                    title='Speech Venue %s' % i, 
+                                    description=short_desc,
+                                    )
 
-                    speech = create_speech(
-                                        speech_folder, 
-                                        speech_title, 
-                                        desc, 
-                                        start_date, 
-                                        end_date
-                                        )
+        speech_folder = getattr(speech_venues_folder, speech_folder_id)
+        wftool.doActionFor(speech_folder, 'publish')
+        for days in [0,1,2]:
+            for title in titles:
+                speech_title = 'Speech: %s' % title
+                start_hour = random.randint(6, 20)
+                end_hour = start_hour + random.randint(0,3)
+                start_date = DateTime('%s %s:%s ' % ((seminar_day+days).Date(), start_hour, random.randint(0,30)))
+                end_date = DateTime('%s %s:%s' % ((seminar_day+days).Date(), end_hour, random.randint(30,59)))
 
+                speech = create_speech(
+                                    speech_folder, 
+                                    speech_title, 
+                                    desc, 
+                                    start_date, 
+                                    end_date
+                                    )
+
+                if speakers:
                     speech_speakers = []
                     for i in range(0,2):
                         rand_index = random.randint(0, num_of_speakers-1)
