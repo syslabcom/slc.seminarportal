@@ -135,7 +135,10 @@ class Renderer(BaseRenderer):
                     )
 
         if self.data.subject:
-            query.update('subject', self.data.subject)
+            if type(self.data.subject) in [str, unicode]:
+                query.update(Subject=(self.data.subject,))
+            else:    
+                query.update(Subject=self.data.subject)
 
         if is_osha_installed:
             # Include OSHA SEP keywords if available

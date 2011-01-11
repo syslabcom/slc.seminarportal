@@ -126,12 +126,11 @@ class TestRenderer(SeminarPortalTestCase):
         self.assertEquals(r.available, False)
 
         # Create test data.
-        create_test_seminars(self.portal, total_seminars)
+        create_test_seminars(self.portal, total_seminars, False, False)
 
         # Test that the portlet returns the correct amount of seminars
         seminars = r._data()
         self.assertEquals(len(seminars), 5)
-        self.assertEquals(r.available, True)
 
         # Test that it's actually Seminars being returned.
         for seminar in seminars:
@@ -158,11 +157,11 @@ class TestRenderer(SeminarPortalTestCase):
                 self.assertEquals(r.available, True)
 
         # Test that subject filtering works:
-        for cat in ['cat1', 'cat2', 'cat3']:
+        for cat in ['cat1', 'cat2', 'cat3',]:
             assignment = seminars_portlet.Assignment(**{
                                             'count':count, 
                                             'state':('published', ), 
-                                            'subject':('cat1'), 
+                                            'subject':(cat,), 
                                             'header':'Testing Seminars Portlet',
                                             })
             r = self.renderer(
@@ -171,7 +170,7 @@ class TestRenderer(SeminarPortalTestCase):
                         )
             seminars = r._data()
             for seminar in seminars:
-                self.assertEquals(seminar.subject, cat)
+                self.assertEquals(seminar.Subject, (cat,))
 
         # TODO: Test the SeminarPortal correctness
 
