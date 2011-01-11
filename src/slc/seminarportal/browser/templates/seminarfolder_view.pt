@@ -15,7 +15,6 @@
     </metal:block>
 
     <metal:javascriptslot fill-slot="javascript_head_slot">
-        <script type="text/javascript" src="render_date_widget.js"></script>
         <!-- ECMAScript calendar -->
         <style type="text/css" media="all"
             tal:content="string:@import url($portal_url/jscalendar/calendar-blue.css);"></style>
@@ -48,18 +47,20 @@
 <body>
 <div metal:fill-slot="main">
     <br clear="all"/>
+
     <tal:def define="template_id string:seminarfolder-view;
                      livesearch_enabled python:False;">
         <metal:macro use-macro="here/@@seminar-search/macros/search"/>
     </tal:def>
-    <div id="SeminarFolder"
-              tal:define="Batch python:modules['Products.CMFPlone'].Batch;
-                          b_size python:3;
-                          b_start request/b_start | b_start | python:0;
-                          batch python:Batch(view.get_seminars(), b_size, int(b_start), orphan=2);">
-        <!-- Navigation -->
-        <br clear="all"/>
+
+    <div id="SeminarFolder">
+    <tal:get define="Batch python:modules['Products.CMFPlone'].Batch;
+                    b_size python:10;
+                    b_start request/b_start | b_start | python:0;
+                    batch python:Batch(view.get_seminars, b_size, int(b_start), orphan=1);">
+
         <div metal:use-macro="here/batch_macros/macros/navigation" />
+
         <div class="big-target" 
              tal:repeat="seminar batch">
             <tal:schema define="obj seminar/getObject;
@@ -71,8 +72,10 @@
                 <span tal:replace="obj/Title"/>
             </h2>
             </a>
-            <div style="float:left; padding:1em;">
-                <img tal:attributes="src string:${obj/get_path}/logo"/>
+            <div style="float:left; padding:1em;"
+                    tal:condition="obj/getLogo">
+                <img 
+                    tal:attributes="src string:${obj/get_path}/logo"/>
             </div>
             <div style="padding:1em" tal:content="obj/Description"/>
             <div style="padding:1em">
@@ -97,11 +100,12 @@
             </div>
             </tal:schema>
         </div>
-        <!-- Navigation -->
-        <div metal:use-macro="here/batch_macros/macros/navigation" /> 
         <div tal:condition="python:not batch" i18n:translate="label_no_seminars_found">
             No seminars matching your criteria were found
         </div>
+
+        <div metal:use-macro="here/batch_macros/macros/navigation" /> 
+        <span tal:replace="structure provider:plone.belowcontentbody"></span>
     </div>
 </div>
 </body>
