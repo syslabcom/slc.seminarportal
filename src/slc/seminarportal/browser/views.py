@@ -47,7 +47,7 @@ class BaseView(BrowserView):
     def advanced_search_headline(self):
         return _('Advanced Seminar Filtering Options')
 
-    def seminars(self):
+    def seminars(self, past=False):
         """ Return brains for SPSeminar objects in context 
         """
         context = Acquisition.aq_inner(self.context)
@@ -65,7 +65,7 @@ class BaseView(BrowserView):
             'sort_on': 'start',
             }
         now = DateTime()
-        if request.get('past'):
+        if past:
             query['end'] = {'query':now, 'range':'max'}
         else:
             query['start'] = {'query':now, 'range':'min'}

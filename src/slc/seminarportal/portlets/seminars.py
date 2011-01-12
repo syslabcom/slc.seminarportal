@@ -1,5 +1,4 @@
-from types import UnicodeType
-from Acquisition import aq_inner, aq_parent
+from Acquisition import aq_inner
 from DateTime import DateTime
 
 from zope import schema
@@ -60,10 +59,10 @@ class ISeminarsPortlet(IPortletDataProvider):
                         vocabulary="slc.seminarportal.vocabularies.categories")
                     )
     seminarsfolder = schema.Choice(
-                    title=_(u'Header link'),
+                    title=_(u'Seminars link'),
                     description=_(
-                            u"Enter a folder to which the portlet title link will "
-                            "point to. This is optional."
+                            u"Choose a folder which the portlet title and "
+                            u"'Upcoming Seminars' link will point to. This is optional."
                             ),
                     required=False,
                     source=SearchableTextSourceBinder(
@@ -143,62 +142,20 @@ class Renderer(BaseRenderer):
         return catalog(query)
 
     @memoize
-    def calendarLink(self):
-        """ Compute a link to the "closest" calendar
-        """
-        context = aq_inner(self.context)
-        query = dict(   
-                    portal_type="Folder",
-                    path=self.navigation_root_path,
-                    object_provides="p4a.calendar.interfaces.ICalendarEnhanced"
-                    )
+    def upcoming_seminars_link(self):
+        folder_link = getattr(self.data, 'seminarsfolder', None)
+        if folder_link:
+            return '%s/seminars-view' % folder_link
 
-        catalog = getToolByName(context, 'portal_catalog')
-        res = catalog(query)
-        if len(res):
-            calurl = None
-            pathelems = 0
-            for r in res:
-                pe = len(r.getPath().split('/'))
-                if pathelems==0 or pe < pathelems:
-                    calurl = r.getURL()
-                    pathelems = pe
-            return calurl
-        return ""
-
-    @memoize
-    def all_seminars_link(self):
-        context = aq_inner(self.context)
-        if not getattr(self.data, 'seminarsfolder', None):
-            return None
-
-        seminarsfolder = self.data.seminarsfolder
-        if seminarsfolder.startswith('/'):
-            seminarsfolder = seminarsfolder[1:]
-
-        if isinstance(seminarsfolder, UnicodeType):
-            seminarsfolder = seminarsfolder.encode('utf-8')
-
-        target = self.portal.restrictedTraverse(seminarsfolder, default=None)
-        if target is None:
-            # try the canonical
-            canroot = self.portal.getCanonical()
-            target = canroot.restrictedTraverse(seminarsfolder, default=None)
-
-        if target is not None:
-            return target.absolute_url()
-
+        return '%s/seminars-view' % self.context.absolute_url()
 
     @memoize
     def prev_seminars_link(self):
-        calurl = self.calendarLink()
-        if calurl:
-            return '%s/past_seminars.html' % calurl
-        else:
-            context = aq_inner(self.context)
-            if not context.isPrincipiaFolderish:
-                context = aq_parent(context)        
-            return '%s/past_seminars.html' % context.absolute_url()
+        folder_link = getattr(self.data, 'seminarsfolder', None)
+        if folder_link:
+            return '%s/seminars-view?past=1' % folder_link
+
+        return '%s/seminars-view?past=1' % self.context.absolute_url()
 
 
 class Assignment(base.Assignment):

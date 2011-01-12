@@ -1,17 +1,17 @@
 <dl class="portlet portletSeminars"
-    i18n:domain="slc.seminarportal">
+    i18n:domain="slc.seminarportal"
+    tal:define="upcoming_seminars_link view/upcoming_seminars_link">
 
-    <dt class="portletHeader"
-        tal:define="all_seminars_link view/all_seminars_link">
+    <dt class="portletHeader">
         <span class="portletTopLeft"></span>
         <a href=""
-           tal:condition="all_seminars_link"
-           tal:attributes="href all_seminars_link"
+           tal:condition="upcoming_seminars_link"
+           tal:attributes="href upcoming_seminars_link"
            class="tile"
            tal:content="view/title">
         </a>
         <span class="title"
-           tal:condition="not: all_seminars_link"
+           tal:condition="not: upcoming_seminars_link"
            tal:content="view/title" />
         <span class="portletTopRight"></span>
     </dt>
@@ -50,7 +50,7 @@
            tal:attributes="href view/prev_seminars_link"
            class="tile">
             <span i18n:translate="box_previous_seminars">
-                Previous seminars&hellip;
+                Previous seminars
             </span>
         </a>
     </dd>
@@ -58,9 +58,10 @@
     <dd class="portletFooter">
         <a href="" rel="nofollow"
            class="tile"
-           tal:attributes="href view/all_seminars_link"
+           tal:condition="upcoming_seminars_link"
+           tal:attributes="href upcoming_seminars_link"
            i18n:translate="box_upcoming_seminars">
-                Upcoming seminars&hellip;
+                Upcoming seminars
         </a>
         <span class="portletBottomLeft"></span>
         <span class="portletBottomRight"></span>
