@@ -81,7 +81,11 @@ class Renderer(BaseRenderer):
                 speeches = [x.getObject() for x in brains]
                 speakers = []
                 for speech in speeches:
-                    speakers.append(speech.getSpeakers())
+                    ss = speech.getSpeakers()
+                    if type(ss) in [list, tuple]:
+                        speakers += ss
+                    else:
+                        speakers.append(ss)
 
                 limit = len(speakers) < data.count and len(speakers) or data.count
                 random_indexes = random.sample(range(0, len(speakers)), limit)
