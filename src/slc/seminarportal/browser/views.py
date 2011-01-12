@@ -3,14 +3,15 @@ from zope.interface import implements
 import Acquisition
 from DateTime import DateTime
 
-from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.interfaces import IFolderish
+from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.PloneBatch import Batch
 from Products.Five import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
+from slc.seminarportal import is_osha_installed
 from interfaces import ISeminarView
 from interfaces import ISeminarFolderView
-from slc.seminarportal import _
 
 class BaseView(BrowserView):
     """" """
@@ -225,6 +226,19 @@ class SeminarView(BaseView):
         return batch
 
 
+class SpeakerView(SeminarView):
+    """ Override speech view so that we can hook our check for eliminating
+        translations of speeches
+    """
+    template = ViewPageTemplateFile('templates/speaker_view.pt')
 
+    def __call__(self, *args, **kw):
+        if is_osha_installed:
+            obj = self.context
+            speeches = obj.getSpeeches()
+            valid = list(set([x.getCanonical().UID() for x in speeches]))
+            obj.setSpeeches(valid)
+
+        return self.template()
 
 

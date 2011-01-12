@@ -72,8 +72,7 @@
     <browser:page
         for="slc.seminarportal.interfaces.ISpeaker"
         name="speaker-view"
-        class=".views.SeminarView"
-        template="templates/speaker_view.pt"
+        class=".views.SpeakerView"
         permission="zope.Public"
         />
 
