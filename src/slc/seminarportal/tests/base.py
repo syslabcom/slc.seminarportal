@@ -4,6 +4,8 @@ import random
 from DateTime import DateTime
 from Testing import ZopeTestCase as ztc
 
+from plone.browserlayer import utils as browserlayerutils
+
 from Products.CMFCore.utils import getToolByName
 from Products.Five import fiveconfigure
 from Products.Five import zcml
@@ -16,6 +18,7 @@ from slc.seminarportal.config import desc
 from slc.seminarportal.config import short_desc
 
 from slc.seminarportal.utils import create_speech
+from slc.seminarportal.interfaces import IThemeLayer
 
 log = logging.getLogger('tests/base.py')
 
@@ -40,6 +43,11 @@ class SeminarPortalTestCase(ptc.PloneTestCase):
             zcml.load_config('configure.zcml', slc.seminarportal)
             fiveconfigure.debug_mode = False
             ztc.installPackage('slc.seminarportal');
+
+            browserlayerutils.register_layer(
+                                    IThemeLayer,
+                                    name="slc.seminarportal.browserlayer" 
+                                    )
 
     def create_speakers(self, seminar):
         """ Create test speakers

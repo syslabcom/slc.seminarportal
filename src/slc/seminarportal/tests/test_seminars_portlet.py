@@ -1,5 +1,7 @@
 import logging
 
+from DateTime import DateTime
+
 from zope import component
 
 from plone.portlets.interfaces import IPortletAssignment
@@ -104,7 +106,7 @@ class TestRenderer(SeminarPortalTestCase):
 
     def test_portlet(self):
         """ """
-        total_seminars = 5
+        total_seminars = 10
         seminars = self.portal.objectValues('SPSeminar')
         seminars_urls = ['/'.join(s.getPhysicalPath()) for s in seminars]
 
@@ -137,7 +139,7 @@ class TestRenderer(SeminarPortalTestCase):
             self.assertEquals(seminar.portal_type, 'SPSeminar')
 
         # Test with diffferent count values:
-        for count in range(0, 7):
+        for count in range(0, 12):
             assignment = seminars_portlet.Assignment(**{
                                             'count': count, 
                                             'state':('published', ), 
@@ -172,12 +174,6 @@ class TestRenderer(SeminarPortalTestCase):
             for seminar in seminars:
                 self.assertEquals(seminar.Subject, (cat,))
 
-        # TODO: Test the SeminarPortal correctness
-
-
-
-
-
 
 def test_suite():
     from unittest import TestSuite, makeSuite
@@ -185,4 +181,3 @@ def test_suite():
     suite.addTest(makeSuite(TestPortlet))
     suite.addTest(makeSuite(TestRenderer))
     return suite
-

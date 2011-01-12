@@ -30,7 +30,8 @@ def create_test_seminars(
                     self, 
                     count, 
                     create_speakers=True, 
-                    create_speeches=True):
+                    create_speeches=True,
+                    past=False):
 
     wftool = getToolByName(self, 'portal_workflow')
     sf = create_seminar_folder(self)
@@ -38,10 +39,11 @@ def create_test_seminars(
     sf = getattr(parent, FOLDER_ID)
     for i in range(0, count):
         seminar_day = DateTime() + 10
-        t = titles[i]
+        t = titles[i%len(titles)]
         sid = self.generateUniqueId('SPSeminar')
-        seminar = create_seminar(self, sf, sid, t, desc, conclusions)
+        seminar = create_seminar(self, sf, sid, t, desc, conclusions, past)
         speakers_folder = getattr(seminar, 'speakers')
+
         if create_speakers:
             log.info('Creating Speakers')
             for surname, firstname in names:
@@ -121,11 +123,16 @@ def create_seminar_folder(self):
 
     return seminar_folder
 
-def create_seminar(self, parent, seminar_id, title, desc, conclusions):
+def create_seminar(self, parent, seminar_id, title, desc, conclusions, past):
     if not hasattr(parent, seminar_id):
         subject = random.sample(['cat1', 'cat2', 'cat3'], 1)[0]
-        start_date = DateTime() + random.randint(1,10)
-        end_date = start_date + random.randint(1,4)
+        if past:
+            end_date = DateTime() - random.randint(1,10)
+            start_date = end_date - random.randint(1,4)
+        else:
+            start_date = DateTime() + random.randint(0,10)
+            end_date = start_date + random.randint(1,4)
+
         parent.invokeFactory('SPSeminar', 
                              seminar_id, 
                              title=title, 
