@@ -50,7 +50,7 @@
                 <div metal:use-macro="context/batch_macros/macros/navigation" />
             </tal:if>
 
-            <div tal:condition="not batch"
+            <div tal:condition="not: batch"
                  i18n:translate="label_no_seminars_found">
                 No seminars matching your criteria were found
             </div>
