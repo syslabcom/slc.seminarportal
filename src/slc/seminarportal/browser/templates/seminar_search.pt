@@ -83,7 +83,7 @@
             </p>
         </div> 
 
-        <strong i18n:translate="batch_x_items_matching_your_criteria">
+        <strong i18n:domain="plone" i18n:translate="batch_x_items_matching_your_criteria">
             <span i18n:name="number" 
                 tal:omit-tag="" 
                 tal:content="python:len(results)">234</span> items matching your criteria.
