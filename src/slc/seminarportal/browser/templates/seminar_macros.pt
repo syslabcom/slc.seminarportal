@@ -99,7 +99,7 @@
 <!-- **************************************************************************************************************************** -->
 
 <metal:macro define-macro="simple-search">
-    <h1 i18n:translate="Search" i18n:domain="plone">Seminar Search</h1>
+    <h1 i18n:translate="Seminar Search" i18n:domain="slc.seminarportal">Seminar Search</h1>
     <div tal:define="
         here_url here_url|view/here_url|portal_url;
         template_id view/template_id">
@@ -151,7 +151,7 @@
 <!-- **************************************************************************************************************************** -->
 
 <metal:macro define-macro="advanced-search">
-    <h1 tal:content="view/advanced_search_headline|string:Advanced Search"> Advanced Seminar Search </h1>
+    <h1 i18n:translate="Advanced Seminar Search" i18n:domain="slc.seminarportal"> Advanced Seminar Search </h1>
     <br/>
 
     <div tal:define="
