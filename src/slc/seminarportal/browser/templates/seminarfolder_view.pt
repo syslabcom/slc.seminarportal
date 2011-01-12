@@ -34,7 +34,6 @@
                 View previous seminars
             </a>
         </tal:if>
-        <div class="visualClear"></div>
 
         <tal:get define="Batch python:modules['Products.CMFPlone'].Batch;
                         b_size python:10;
@@ -53,6 +52,7 @@
 
             <div tal:condition="not: batch"
                  i18n:translate="label_no_seminars_found">
+                <br clear="all"/>
                 No seminars matching your criteria were found
             </div>
         </tal:get>
