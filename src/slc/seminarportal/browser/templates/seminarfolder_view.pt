@@ -29,7 +29,7 @@
         <tal:if tal:condition="not: past_seminars">
             <h1 i18n:translate="heading_latest_seminars">Latest Seminars</h1>
 
-            <a tal:attributes="href string:${request/URL0}?past"
+            <a tal:attributes="href string:${request/URL0}?past=1"
                i18n:translate="heading_past_seminars">
                 View previous seminars
             </a>
