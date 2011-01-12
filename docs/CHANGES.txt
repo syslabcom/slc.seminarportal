@@ -1,10 +1,11 @@
 Changelog
 *********
 
-1.4b2 (unreleased)
+1.4b2 (2011-01-12)
 ------------------
 
-- Nothing changed yet.
+- Made the speaker portlet's strings i18n aware and updated the .po files [jcbrand]
+- Fixed bug in the speaker portlet's view code [jcbrand]
 
 
 1.4b1 (2011-01-12)
