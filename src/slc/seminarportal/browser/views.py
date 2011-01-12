@@ -41,12 +41,6 @@ class BaseView(BrowserView):
         text = portal_transforms.convert('html_to_text', text).getData()
         return context.restrictedTraverse('@@plone').cropText(text, length, ellipsis)
 
-    def simple_search_headline(self):
-        return _('Search for Seminars, Speakers or Speeches')
-
-    def advanced_search_headline(self):
-        return _('Advanced Seminar Filtering Options')
-
     def seminars(self, past=False):
         """ Return brains for SPSeminar objects in context 
         """
