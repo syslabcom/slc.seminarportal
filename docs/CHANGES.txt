@@ -1,7 +1,7 @@
 Changelog
 *********
 
-1.4b1 (unreleased)
+1.4b1 (2011-01-12)
 ------------------
 
 - Created a new portlet which shows upcoming seminars [jcbrand]
