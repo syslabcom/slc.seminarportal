@@ -1,10 +1,18 @@
 Changelog
 *********
 
-1.3.6 (unreleased)
+1.4b1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Created a new portlet which shows upcoming seminars [jcbrand]
+- Consolidated the browserviews into views.py [jcbrand]
+- Consolidated the different templates [jcbrand]
+- Backported changes from osha to templates/seminarfolder_view.pt and changed
+  its registered name to @@seminars-view [jcbrand]
+- Added a custom viewlet manager to allow header customizations for @@seminars-view [jcbrand]
+- Customized @@seminars-view to also be able to show past seminars. [jcbrand]
+- Updated the *.pot file and merged with all the *.po files. [jcbrand]
+- Wrote new tests [jcbrand]
 
 
 1.3.5 (2010-12-15)
