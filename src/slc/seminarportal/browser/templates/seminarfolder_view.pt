@@ -34,6 +34,7 @@
                 View previous seminars
             </a>
         </tal:if>
+        <div class="visualClear"></div>
 
         <tal:get define="Batch python:modules['Products.CMFPlone'].Batch;
                         b_size python:10;
