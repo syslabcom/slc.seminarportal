@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Wed Jan 12 16:54:51 2011\n"
+"POT-Creation-Date: Wed Jan 12 20:19:11 2011\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope3-dev@zope.org>\n"
@@ -183,7 +183,7 @@ msgstr "Seminários mais recentes"
 msgid "heading_past_seminars"
 msgstr ""
 
-#. Default: "No seminars matching your criteria were found"
+#. Default: "<br clear=\"all\" /> No seminars matching your criteria were found"
 #: slc.seminarportal:/browser/templates/seminarfolder_view.pt:53
 msgid "label_no_seminars_found"
 msgstr "Não foram encontrados seminários para os critérios da sua pesquisa"
@@ -403,6 +403,45 @@ msgstr "Conclusões"
 #: slc.seminarportal:/content/speech.py:49
 msgid "label_event_location"
 msgstr "Local"
+
+#: slc.seminarportal:/portlets/interfaces.py:12
+msgid "Choose a speaker"
+msgstr ""
+
+#: slc.seminarportal:/portlets/interfaces.py:14
+msgid ""
+"This field is not required if you choose to randomly display speakers or "
+"show only speakers from the current seminar."
+msgstr ""
+
+#: slc.seminarportal:/portlets/interfaces.py:23
+msgid "How many speakers should be displayed?"
+msgstr ""
+
+#: slc.seminarportal:/portlets/interfaces.py:25
+msgid ""
+"If you choose more speakers than should be displayed, the shown speakers "
+"will be chosen randomly from your specified list."
+msgstr ""
+
+#: slc.seminarportal:/portlets/interfaces.py:33
+msgid "Option: Click here to display random speakers"
+msgstr ""
+
+#: slc.seminarportal:/portlets/interfaces.py:39
+msgid "Option: Click here to display only speakers from the current Seminar."
+msgstr ""
+
+#: slc.seminarportal:/portlets/interfaces.py:41
+msgid ""
+"This option will only take effect if the portlet is displayed inside a "
+"Seminar. Selecting this option takes precedence over the \"random\" "
+"selection above."
+msgstr ""
+
+#: slc.seminarportal:/portlets/interfaces.py:56
+msgid "How many speeches should be displayed?"
+msgstr ""
 
 #. Default: "Search the seminars"
 #: slc.seminarportal:/portlets/search.pt:6
