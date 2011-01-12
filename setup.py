@@ -13,7 +13,7 @@ version = '1.4b1'
 long_description = (
     read('README.txt')
     + '\n' +
-    read('docs/HISTORY.txt')
+    read('docs/CHANGES.txt')
     + '\n' +
     read('CONTRIBUTORS.txt')
     + '\n' 

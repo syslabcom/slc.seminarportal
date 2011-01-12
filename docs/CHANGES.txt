@@ -11,7 +11,7 @@ Changelog
   its registered name to @@seminars-view [jcbrand]
 - Added a custom viewlet manager to allow header customizations for @@seminars-view [jcbrand]
 - Customized @@seminars-view to also be able to show past seminars. [jcbrand]
-- Updated the *.pot file and merged with all the *.po files. [jcbrand]
+- Updated the .pot file and merged with all the .po files. [jcbrand]
 - Wrote new tests [jcbrand]
 
 
