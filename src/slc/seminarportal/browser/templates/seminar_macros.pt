@@ -66,40 +66,40 @@
 
 <!-- **************************************************************************************************************************** -->
 
-<metal:macro define-macro="search">
-    <tal:get define="st request/st|string:spl;
-                    livesearch_enabled python:False;
-                    template_id view/template_id">
-    <a tal:attributes="href string:${template_id}?st=spl">
-        <span 
-            i18n:translate="label_simple_search"
-            tal:attributes="class python:st == 'spl' and 'search-tab-selected' or 'search-tab'">
-            Simple Search
-        </span>
-    </a>
-    &nbsp;
-    <a tal:attributes="href string:${template_id}?st=adv">
-        <span 
-            i18n:translate="label_advanced_search"
-            tal:attributes="class python:st == 'adv' and 'search-tab-selected' or 'search-tab'">
-            Advanced Search
-        </span>
-    </a>
-    <div style="background-color: #E6E8ED; padding:1em">
-        <tal:if condition="python:st == 'spl'">
-            <div metal:use-macro="context/@@seminar-macros/macros/simple-search" />
-        </tal:if>
-        <tal:if condition="python:st == 'adv'">
-            <div metal:use-macro="context/@@seminar-macros/macros/advanced-search" />
-        </tal:if>
-    </div>
-    </tal:get>
-</metal:macro>
+    <metal:macro define-macro="search">
+        <tal:get define="st request/st|string:spl;
+                        livesearch_enabled python:False;
+                        template_id view/template_id">
+        <a tal:attributes="href string:${template_id}?st=spl">
+            <span 
+                i18n:translate="heading_simple_seminars_search"
+                tal:attributes="class python:st == 'spl' and 'search-tab-selected' or 'search-tab'">
+                Simple Seminars Search
+            </span>
+        </a>
+        &nbsp;
+        <a tal:attributes="href string:${template_id}?st=adv">
+            <span 
+                i18n:translate="heading_advanced_seminars_search"
+                tal:attributes="class python:st == 'adv' and 'search-tab-selected' or 'search-tab'">
+                Advanced Seminars Search
+            </span>
+        </a>
+        <div style="background-color: #E6E8ED; padding:1em">
+            <tal:if condition="python:st == 'spl'">
+                <div metal:use-macro="context/@@seminar-macros/macros/simple-search" />
+            </tal:if>
+            <tal:if condition="python:st == 'adv'">
+                <div metal:use-macro="context/@@seminar-macros/macros/advanced-search" />
+            </tal:if>
+        </div>
+        </tal:get>
+    </metal:macro>
 
 <!-- **************************************************************************************************************************** -->
 
 <metal:macro define-macro="simple-search">
-    <h1 i18n:translate="Seminar Search" i18n:domain="slc.seminarportal">Seminar Search</h1>
+    <h1 i18n:translate="Seminar Search" i18n:domain="plone">Search</h1>
     <div tal:define="
         here_url here_url|view/here_url|portal_url;
         template_id view/template_id">
