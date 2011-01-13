@@ -1,10 +1,11 @@
 Changelog
 *********
 
-1.4b3 (unreleased)
+1.4b3 (2011-01-13)
 ------------------
 
-- Nothing changed yet.
+- Removed a superfluous template [jcbrand]
+- Changed some more string domains to plone where applicable [jcbrand]
 
 
 1.4b2 (2011-01-12)
