@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Wed Jan 12 20:19:11 2011\n"
+"POT-Creation-Date: Thu Jan 13 12:45:49 2011\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope-dev@zope.org>\n"
@@ -58,12 +58,8 @@ msgstr ""
 msgid "Sunday"
 msgstr ""
 
-#: slc.seminarportal:/browser/templates/seminar_macros.pt:102
-msgid "Seminar Search"
-msgstr ""
-
-#: slc.seminarportal:/browser/templates/seminar_macros.pt:154
-msgid "Advanced Seminar Search"
+#: slc.seminarportal:/browser/templates/seminar_macros.pt:187
+msgid "Date"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_roster.pt:2
@@ -73,16 +69,6 @@ msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_roster.pt:9
 msgid "${DYNAMIC_CONTENT}"
-msgstr ""
-
-#: slc.seminarportal:/browser/templates/seminar_search.pt:34
-#. Default: "Simple Seminars Search"
-msgid "heading_simple_seminars_search"
-msgstr ""
-
-#: slc.seminarportal:/browser/templates/seminar_search.pt:42
-#. Default: "Advanced Seminars Search"
-msgid "heading_advanced_seminars_search"
 msgstr ""
 
 #: slc.seminarportal:/browser/templates/seminar_view.pt:106
