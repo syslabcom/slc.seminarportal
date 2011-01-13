@@ -99,7 +99,6 @@
 <!-- **************************************************************************************************************************** -->
 
 <metal:macro define-macro="simple-search">
-    <h1 i18n:translate="Seminar Search" i18n:domain="plone">Search</h1>
     <div tal:define="
         here_url here_url|view/here_url|portal_url;
         template_id view/template_id">
@@ -111,8 +110,10 @@
                         onsubmit python:livesearch==True and 'return liveSearchSubmit()' or ''"
         style="white-space:nowrap">
 
-        <label for="searchGadget" class="hiddenStructure"
-                    i18n:translate="text_search">Search Site</label>
+        <label for="searchGadget" 
+                class="hiddenStructure"
+                i18n:domain="plone"
+                i18n:translate="text_search">Search Site</label>
 
         <input type="hidden" name="st" value="spl"/>
 
@@ -151,9 +152,7 @@
 <!-- **************************************************************************************************************************** -->
 
 <metal:macro define-macro="advanced-search">
-    <h1 i18n:translate="Advanced Seminar Search" i18n:domain="slc.seminarportal"> Advanced Seminar Search </h1>
     <br/>
-
     <div tal:define="
         use_types_blacklist request/use_types_blacklist | python:True;
         pts request/portal_type|python:[];
@@ -185,7 +184,9 @@
         <input type="hidden" name="portal_type:list" value="Seminar"/>
 
         <div>
-            <strong>Date</strong>
+            <strong
+                i18n:domain="slc.seminarportal"
+                i18n:translate="Date">Date</strong>
             <br/>
             <!-- XXX date should be in between start date and end date -->
             <tal:define define="id string:date;
@@ -204,10 +205,16 @@
             <br/>
         </div>
         <div>
-            <strong>Location</strong>
+            <strong
+                i18n:domain="plone"
+                i18n:translate="label_event_location">
+                Location
+            </strong>
             <br/>
-            <span class="formHelp">
-                Here you can specify street, province or country information
+            <span class="formHelp"
+                i18n:domain="plone"
+                i18n:translate="help_location_dc">
+                The geographical location associated with the item, if applicable.
             </span>
             <br/>
             <input id="searchGadget"
@@ -228,6 +235,7 @@
         <input class="searchButton"
             type="submit"
             tabindex=""
+            i18n:domain="plone"
             value="Search"
             tal:attributes="tabindex tabindex/next"
             i18n:attributes="value label_search;" />
