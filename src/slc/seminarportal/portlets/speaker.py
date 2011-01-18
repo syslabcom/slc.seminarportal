@@ -87,10 +87,12 @@ class Renderer(BaseRenderer):
                     else:
                         speakers.append(ss)
 
-                limit = len(speakers) < data.count and len(speakers) or data.count
-                random_indexes = random.sample(range(0, len(speakers)), limit)
-                   
-                return [speakers[i] for i in random_indexes]
+                if len(speakers) < data.count:
+                    speakers.sort(lambda x,y: cmp(x.getLastName(), y.getLastName()))
+                    return speakers
+                else:
+                    random_indexes = random.sample(range(0, len(speakers)), data.count)
+                    return [speakers[i] for i in random_indexes]
 
         elif data.random:
             catalog = getToolByName(self.context, 'portal_catalog')
