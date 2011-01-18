@@ -26,7 +26,7 @@ class AddForm(base.AddForm):
         return Assignment(featured_speakers=data.get('featured_speakers'),
                           count=data.get('count'),
                           random=data.get('random'),
-                          local=data.get('local')
+                          local=data.get('local'),
                           )
 
 
@@ -56,7 +56,8 @@ class Renderer(BaseRenderer):
     def _render_cachekey(method, self):
         """ Renders a cachekey to be used by the portlets.
         """
-        preflang = getToolByName(self.context, 'portal_languages').getPreferredLanguage()
+        preflang = getToolByName(self.context,
+            'portal_languages').getPreferredLanguage()
         return (preflang, self.navigation_root_path)
 
     @ram.cache(_render_cachekey)
@@ -66,7 +67,7 @@ class Renderer(BaseRenderer):
     @property
     def available(self):
         return self.get_speakers() and True or False
-        
+
     def get_speakers(self):
         """ Return the speaker objects as configured by the portlet.
         """
@@ -88,29 +89,34 @@ class Renderer(BaseRenderer):
                         speakers.append(ss)
 
                 if len(speakers) < data.count:
-                    speakers.sort(lambda x,y: cmp(x.getLastName(), y.getLastName()))
+                    speakers.sort(lambda x, y:
+                        cmp(x.getLastName(), y.getLastName()))
                     return speakers
                 else:
-                    random_indexes = random.sample(range(0, len(speakers)), data.count)
+                    random_indexes = random.sample(range(0,
+                        len(speakers)), data.count)
                     return [speakers[i] for i in random_indexes]
 
         elif data.random:
             catalog = getToolByName(self.context, 'portal_catalog')
-            brains =  catalog(portal_type='SPSpeaker')
+            brains = catalog(portal_type='SPSpeaker')
             limit = len(brains) < data.count and len(brains) or data.count
             random_indexes = random.sample(range(0, len(brains)), limit)
             return [brains[i].getObject() for i in random_indexes]
 
         elif len(data.featured_speakers) > data.count:
             featured_speakers = []
-            for i in random.sample(range(0, len(data.featured_speakers)), data.count):
+            for i in random.sample(range(0,
+                len(data.featured_speakers)), data.count):
                 try:
                     featured_speakers.append(
                             self.portal.unrestrictedTraverse(
                                                     data.featured_speakers[i]))
                 except AttributeError:
-                    log.warn('Could not find speaker: %s' % data.featured_speakers[i])
-                    self.data.featured_speakers.remove(data.featured_speakers[i])
+                    log.warn('Could not find speaker: %s' %
+                        data.featured_speakers[i])
+                    self.data.featured_speakers.remove(data. \
+                        featured_speakers[i])
 
             return featured_speakers
 
@@ -118,14 +124,14 @@ class Renderer(BaseRenderer):
             featured_speakers = []
             for speaker in data.featured_speakers:
                 try:
-                    featured_speakers.append(self.portal.unrestrictedTraverse(speaker))
+                    featured_speakers.append(self.portal. \
+                        unrestrictedTraverse(speaker))
                 except AttributeError:
                     log.warn('Could not find speaker: %s' % speaker)
                     self.data.featured_speakers.remove(speaker)
             return featured_speakers
 
         return []
-
 
     def get_current_seminar(self):
         """ Return the object of a particular type which is
@@ -137,4 +143,3 @@ class Renderer(BaseRenderer):
                 return obj
             obj = Acquisition.aq_parent(obj)
         return None
-
