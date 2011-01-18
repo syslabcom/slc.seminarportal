@@ -4,8 +4,9 @@ Changelog
 1.4b4 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Speakers portlet: if the "only speakers from current seminar" option is selected
+  and less speakers than the maximum number are found, display them in
+  alphabetical order rather than randomly [thomasw]
 
 1.4b3 (2011-01-13)
 ------------------
