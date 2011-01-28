@@ -7,6 +7,7 @@ from zope.schema.vocabulary import SimpleVocabulary
 from Products.CMFCore.utils import getToolByName
 from zope.i18n import translate
 
+
 class SpeakerVocabulary(object):
     """Vocabulary factory returning all available speakers.
     """
@@ -18,14 +19,14 @@ class SpeakerVocabulary(object):
         items = {}
         for speaker in catalog(portal_type='SPSpeaker'):
             items[speaker.getPath()] = SimpleTerm(
-                                            speaker.getPath(), 
-                                            speaker.getPath(), 
-                                            speaker.Title
-                                            )
+                                            speaker.getPath(),
+                                            speaker.getPath(),
+                                            speaker.Title)
 
         return SimpleVocabulary(items.values())
 
 SpeakerVocabularyFactory = SpeakerVocabulary()
+
 
 class CategoriesVocabulary(object):
     """ Vocabulary factory for Categories (Subject)
@@ -38,9 +39,9 @@ class CategoriesVocabulary(object):
         result = list(catalog.uniqueValuesFor("Subject"))
         result.sort()
 
-        terms = [SimpleTerm(k, title=translate(domain='plone', msgid=k, context=context)) for k in result]
+        terms = [SimpleTerm(k, title=translate(domain='plone', msgid=k,
+            context=context)) for k in result]
 
         return SimpleVocabulary(terms)
 
 CategoriesVocabularyFactory = CategoriesVocabulary()
-
