@@ -5,8 +5,7 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 from Products.CMFCore.utils import getToolByName
-from Products.PlacelessTranslationService import getTranslationService
-from slc.seminarportal import is_osha_installed
+from zope.i18n import translate
 
 class SpeakerVocabulary(object):
     """Vocabulary factory returning all available speakers.
@@ -39,13 +38,7 @@ class CategoriesVocabulary(object):
         result = list(catalog.uniqueValuesFor("Subject"))
         result.sort()
 
-        if is_osha_installed:
-            domain = 'osha'
-        else:
-            domain = 'plone'
-
-        pts = getTranslationService()
-        terms = [SimpleTerm(k, title=pts.translate(domain=domain, msgid=k, context=context)) for k in result]
+        terms = [SimpleTerm(k, title=translate(domain='plone', msgid=k, context=context)) for k in result]
 
         return SimpleVocabulary(terms)
 
