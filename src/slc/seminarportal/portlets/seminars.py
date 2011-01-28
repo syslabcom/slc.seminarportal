@@ -23,8 +23,10 @@ from slc.seminarportal.portlets.base import BaseRenderer
 
 if is_osha_installed:
     default_header = _(u"Our Events")
+    categories_vocabulary = "osha.policy.vocabularies.categories"
 else:
     default_header = _(u"Seminars")
+    categories_vocabulary = "slc.seminarportal.vocabularies.categories"
 
 class ISeminarsPortlet(IPortletDataProvider):
     """ """
@@ -56,7 +58,7 @@ class ISeminarsPortlet(IPortletDataProvider):
                     default=tuple(),
                     required=False,
                     value_type=schema.Choice(
-                        vocabulary="slc.seminarportal.vocabularies.categories")
+                        vocabulary=categories_vocabulary)
                     )
     seminarsfolder = schema.Choice(
                     title=_(u'Seminars link'),
