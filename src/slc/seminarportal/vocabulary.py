@@ -5,7 +5,6 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 from Products.CMFCore.utils import getToolByName
-from zope.i18n import translate
 
 
 class SpeakerVocabulary(object):
@@ -39,8 +38,7 @@ class CategoriesVocabulary(object):
         result = list(catalog.uniqueValuesFor("Subject"))
         result.sort()
 
-        terms = [SimpleTerm(k, title=translate(domain='plone', msgid=k,
-            context=context)) for k in result]
+        terms = [SimpleTerm(k, title=k) for k in result]
 
         return SimpleVocabulary(terms)
 
