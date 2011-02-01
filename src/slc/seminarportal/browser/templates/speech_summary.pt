@@ -18,7 +18,9 @@
 <body>
 
 <div metal:fill-slot="main">
-    <h1 tal:content="string:All Speeches for Seminar: '${context/title_or_id}'">Title</h1>
+    <h1 i18n:translate="heading_speech_summary">
+	All Speeches for Seminar: <span tal:content="string:'${context/title_or_id}'"/>Title
+    </h1>
     <tal:get define="venues view/get_venues;
                      venue_ids python:[v.id for v in venues];
                      summary python:view.get_event_summary(venues);">
@@ -33,8 +35,7 @@
                                  time python:event_list[0]">
                     <div class="event_details">
                         <abbr class="dtstart" 
-                            tal:attributes="title python:speech.start.strftime('%a %d %B %Y')" 
-                            i18n:translate="start_date">
+                            tal:attributes="title python:speech.start.strftime('%a %d %B %Y')">
                                 <tal:block content="speech/start/TimeMinutes"/>
                         </abbr>
                     </div>
