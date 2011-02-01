@@ -14,6 +14,7 @@ from plone.portlets.interfaces import IPortletDataProvider
 
 from Products.Archetypes.utils import shasattr
 from Products.ATContentTypes.interface import folder
+from Products.ATContentTypes.interface import document
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 
@@ -71,6 +72,7 @@ class ISeminarsPortlet(IPortletDataProvider):
                         {'object_provides': [
                                         folder.IATFolder.__identifier__,
                                         folder.IATBTreeFolder.__identifier__,
+                                        document.IATDocument.__identifier__,
                                         ]},
                         default_query='path:'),
                     )
