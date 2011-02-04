@@ -4,6 +4,7 @@ from DateTime import DateTime
 from zope import schema
 from zope.interface import implements
 from zope.formlib import form
+from zope.i18n import translate
 
 from plone.app.portlets.portlets import base
 from plone.app.vocabularies.catalog import SearchableTextSourceBinder
@@ -25,9 +26,11 @@ from slc.seminarportal.portlets.base import BaseRenderer
 if is_osha_installed:
     default_header = _(u"Our Events")
     categories_vocabulary = "osha.policy.vocabularies.categories"
+    domain = "osha"
 else:
     default_header = _(u"Seminars")
     categories_vocabulary = "slc.seminarportal.vocabularies.categories"
+    domain = "plone"
 
 class ISeminarsPortlet(IPortletDataProvider):
     """ """
@@ -94,7 +97,10 @@ class Renderer(BaseRenderer):
 
     @property
     def title(self):
-        return self.data.header
+        portal_languages = getToolByName(self.context, 'portal_languages')
+        preflang = portal_languages.getPreferredLanguage()
+        return translate(msgid=self.data.header, domain=domain,
+            target_language=preflang, context=self.context) 
 
     @property
     def available(self):
