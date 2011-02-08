@@ -42,7 +42,7 @@ class BaseView(BrowserView):
         text = portal_transforms.convert('html_to_text', text).getData()
         return context.restrictedTraverse('@@plone').cropText(text, length, ellipsis)
 
-    def seminars(self, past=False):
+    def seminars(self):
         """ Return brains for SPSeminar objects in context 
         """
         context = Acquisition.aq_inner(self.context)
@@ -58,13 +58,8 @@ class BaseView(BrowserView):
             'portal_type':'SPSeminar', 
             'path':'/'.join(folder.getPhysicalPath()),
             'sort_on': 'start',
+            'sort_order': 'reverse',
             }
-        now = DateTime()
-        if past:
-            query['end'] = {'query':now, 'range':'max'}
-        else:
-            query['start'] = {'query':now, 'range':'min'}
-
         return catalog(query)
 
     def search(self):

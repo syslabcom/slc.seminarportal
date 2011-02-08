@@ -10,35 +10,15 @@
 <metal:block tal:define="dummy python:request.RESPONSE.setHeader('Cache-control', 'max-age=0,s-maxage=3600')" />
 
 <body>
-<div metal:fill-slot="main"
-     tal:define="past_seminars request/past|nothing;">
+<div metal:fill-slot="main">
 
     <span tal:replace="structure provider:slc.seminarportal.aboveseminarlisting"></span>
 
     <span id="latest-additions" i18n:domain="slc.seminarportal">
-
-        <tal:if tal:condition="past_seminars">
-            <h1 i18n:translate="heading_previous_seminars">Previous Seminars</h1>
-
-            <a tal:attributes="href request/URL0"
-               i18n:translate="heading_upcoming_seminars">
-                View upcoming seminars
-            </a>
-        </tal:if>
-
-        <tal:if tal:condition="not: past_seminars">
-            <h1 i18n:translate="heading_latest_seminars">Latest Seminars</h1>
-
-            <a tal:attributes="href string:${request/URL0}?past=1"
-               i18n:translate="heading_past_seminars">
-                View previous seminars
-            </a>
-        </tal:if>
-
         <tal:get define="Batch python:modules['Products.CMFPlone'].Batch;
                         b_size python:10;
                         b_start request/b_start | python:0;
-                        batch python:Batch(view.seminars(past=past_seminars), b_size, int(b_start), orphan=1);">
+                        batch python:Batch(view.seminars(), b_size, int(b_start), orphan=1);">
 
             <tal:if condition="batch">
                 <div metal:use-macro="context/batch_macros/macros/navigation" />

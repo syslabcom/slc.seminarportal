@@ -1,5 +1,4 @@
 from Acquisition import aq_inner
-from DateTime import DateTime
 
 from zope import schema
 from zope.interface import implements
@@ -133,13 +132,13 @@ class Renderer(BaseRenderer):
         preflang = getToolByName(context, 'portal_languages').getPreferredLanguage()
         query = dict(
                     Language=['', preflang],
-                    end={'query': DateTime(), 'range': 'min'},
                     path=paths,
                     portal_type='SPSeminar',
                     review_state=self.data.state,
                     sort_limit=self.data.count,
                     limit=self.data.count,
                     sort_on='start',
+                    sort_order='reverse',
                     )
 
         if self.data.subject:
