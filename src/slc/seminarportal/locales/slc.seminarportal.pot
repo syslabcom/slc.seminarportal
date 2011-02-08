@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Thu Jan 13 12:45:49 2011\n"
+"POT-Creation-Date: Tue Feb  8 17:58:56 2011\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Zope 3 Developers <zope-dev@zope.org>\n"
@@ -148,27 +148,12 @@ msgstr ""
 msgid "label_resources_attachments"
 msgstr ""
 
-#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:21
-#. Default: "Previous Seminars"
-msgid "heading_previous_seminars"
-msgstr ""
-
-#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:23
-#. Default: "View upcoming seminars"
-msgid "heading_upcoming_seminars"
-msgstr ""
-
-#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:30
+#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:19
 #. Default: "Latest Seminars"
 msgid "heading_latest_seminars"
 msgstr ""
 
-#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:32
-#. Default: "View previous seminars"
-msgid "heading_past_seminars"
-msgstr ""
-
-#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:53
+#: slc.seminarportal:/browser/templates/seminarfolder_view.pt:35
 #. Default: "<br clear=\"all\" /> No seminars matching your criteria were found"
 msgid "label_no_seminars_found"
 msgstr ""
@@ -423,70 +408,60 @@ msgstr ""
 msgid "box_search_seminars"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.pt:52
-#. Default: "Previous seminars"
-msgid "box_previous_seminars"
-msgstr ""
-
-#: slc.seminarportal:/portlets/seminars.pt:59
-#. Default: "Upcoming seminars"
-msgid "box_upcoming_seminars"
-msgstr ""
-
-#: slc.seminarportal:/portlets/seminars.py:185
+#: slc.seminarportal:/portlets/seminars.py:194
 msgid "Adding the Seminars Portlet"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:186
 #: slc.seminarportal:/portlets/seminars.py:195
+#: slc.seminarportal:/portlets/seminars.py:204
 msgid "This portlet lists upcoming Seminars."
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:194
+#: slc.seminarportal:/portlets/seminars.py:203
 msgid "Editing the Seminars Portlet"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:25
+#: slc.seminarportal:/portlets/seminars.py:26
 msgid "Our Events"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:27
+#: slc.seminarportal:/portlets/seminars.py:30
 msgid "Seminars"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:32
+#: slc.seminarportal:/portlets/seminars.py:37
 msgid "Portlet header"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:33
+#: slc.seminarportal:/portlets/seminars.py:38
 msgid "Title of the rendered portlet"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:38
+#: slc.seminarportal:/portlets/seminars.py:43
 msgid "Number of Seminars to display"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:42
+#: slc.seminarportal:/portlets/seminars.py:47
 msgid "Workflow state"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:43
+#: slc.seminarportal:/portlets/seminars.py:48
 msgid "You may limit the displayed Seminars to a specific workflow state.."
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:52
+#: slc.seminarportal:/portlets/seminars.py:57
 msgid "Categories"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:53
+#: slc.seminarportal:/portlets/seminars.py:58
 msgid "Pick one or more categories with which you want to filter Seminars."
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:62
+#: slc.seminarportal:/portlets/seminars.py:67
 msgid "Seminars link"
 msgstr ""
 
-#: slc.seminarportal:/portlets/seminars.py:63
+#: slc.seminarportal:/portlets/seminars.py:68
 msgid "Choose a folder which the portlet title and 'Upcoming Seminars' link will point to. This is optional."
 msgstr ""
 
