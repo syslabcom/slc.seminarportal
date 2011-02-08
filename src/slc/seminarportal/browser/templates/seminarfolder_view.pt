@@ -5,7 +5,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="slc.seminarfolder">
+      i18n:domain="slc.seminarportal">
 
 <metal:block tal:define="dummy python:request.RESPONSE.setHeader('Cache-control', 'max-age=0,s-maxage=3600')" />
 
@@ -14,7 +14,9 @@
 
     <span tal:replace="structure provider:slc.seminarportal.aboveseminarlisting"></span>
 
+
     <span id="latest-additions" i18n:domain="slc.seminarportal">
+        <h1 i18n:translate="heading_latest_seminars">Latest Seminars</h1>
         <tal:get define="Batch python:modules['Products.CMFPlone'].Batch;
                         b_size python:10;
                         b_start request/b_start | python:0;
