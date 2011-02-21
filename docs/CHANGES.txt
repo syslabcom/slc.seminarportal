@@ -1,7 +1,7 @@
 Changelog
 *********
 
-1.4b4 (unreleased)
+1.4.0 (2011-02-21)
 ------------------
 
 - Speakers portlet: if the "only speakers from current seminar" option is selected
