@@ -32,6 +32,17 @@ def installAdditionalCatalogIndexes(context):
     if isNotSeminarPortalProfile(context): 
         return
 
+    try:
+        import Products.QueueCatalog
+    except ImportError:
+        HAS_QUEUECATALOG = False
+    else:
+        HAS_QUEUECATALOG = True
+        
+    if HAS_QUEUECATALOG:
+        # This step borks everything if QueueCatalog is installed.
+        return
+
     indexes = []
     site = context.getSite()
     catalogTool = getToolByName(site, 'portal_catalog')
