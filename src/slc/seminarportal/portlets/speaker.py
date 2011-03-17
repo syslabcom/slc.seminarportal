@@ -58,7 +58,8 @@ class Renderer(BaseRenderer):
         """
         preflang = getToolByName(self.context,
             'portal_languages').getPreferredLanguage()
-        return (preflang, self.navigation_root_path)
+        path = '/'.join(self.context.getPhysicalPath())
+        return (preflang, path)
 
     @ram.cache(_render_cachekey)
     def render(self):

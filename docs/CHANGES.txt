@@ -4,8 +4,9 @@ Changelog
 1.4.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Bugfix in the speakers portlet, re-added path as parameter for _render_cachekey,
+  otherwise it's impossible to show speakers from the current seminar only,
+  when there's more than one seminar; fixes #2889 [thomasw]
 
 1.4.0 (2011-02-21)
 ------------------
