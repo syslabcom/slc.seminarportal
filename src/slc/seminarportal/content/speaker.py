@@ -61,7 +61,6 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         searchable=True,
         validators=('isEmail',)
     ),
-    
     atapi.LinesField(
         name='jobTitles',
         widget=atapi.LinesField._properties['widget'](
@@ -71,7 +70,6 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         schemata="default",
         searchable=True
     ),
-    
     atapi.StringField(
         name='officeAddress',
         widget=atapi.TextAreaWidget(
@@ -80,7 +78,6 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         schemata="default",
         searchable=True
     ),
-    
     atapi.StringField(
         name='officeCity',
         widget=atapi.StringWidget(
@@ -89,7 +86,6 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         schemata="default",
         searchable=True
     ),
-    
     atapi.StringField(
         name='officeState',
         widget=atapi.StringWidget(
@@ -97,7 +93,6 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         ),
         schemata="default"
     ),
-    
     atapi.StringField(
         name='officePostalCode',
         widget=atapi.StringWidget(
@@ -105,7 +100,6 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         ),
         schemata="default"
     ),
-    
     atapi.StringField(
         name='officePhone',
         widget=atapi.StringWidget(
@@ -114,7 +108,6 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         schemata="default",
         searchable=True,
     ),
-    
     atapi.ImageField(
         name='image',
         schemata="default",
@@ -128,7 +121,6 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         default_output_type='image/jpeg',
         allowable_content_types=('image/gif','image/jpeg','image/png'),
     ),
-    
     atapi.TextField(
         name='biography',
         widget=atapi.RichWidget(
@@ -140,7 +132,6 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         default_output_type='text/x-html-safe',
         user_property='description'
     ),
-    
     atapi.LinesField(
         name='education',
         widget=atapi.LinesField._properties['widget'](
@@ -204,17 +195,28 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
 
 SpeakerSchema['title'].widget.label = 'Full Name' 
 SpeakerSchema['title'].widget.visible = {'edit': 'invisible', 'view': 'visible'}
+SpeakerSchema['description'].widget.label= _(
+                        u'seo_description_label', 
+                        default=u'SEO Description'
+                        )
+SpeakerSchema['description'].widget.description= _(u'seo_description_description',
+                    default= \
+                        u"Provide here a description that is purely for SEO "
+                        "(Search Engine Optimisation) purposes. It will "
+                        "appear in the <meta> tag in the "
+                        "<head> section of the HTML document, but nowhere "
+                        "in the actual website content."
+                        )
+
 
 class SPSpeaker(OrderedBaseFolder):
     """ Speakers are people who hold speeches at seminars
     """
     implements(ISpeaker)
-
     meta_type = portal_type = "SPSpeaker"
     schema = SpeakerSchema
     security = ClassSecurityInfo()
     _at_rename_after_creation = True
-
 
     security.declareProtected(permissions.View, 'Title')
     def Title(self):
@@ -246,11 +248,9 @@ class SPSpeaker(OrderedBaseFolder):
         """
         return (self.lastName.lower(), self.firstName.lower())
 
-
     def get_path(self):
         return '/'.join(self.getPhysicalPath()) 
 
 
 atapi.registerType(SPSpeaker, PROJECTNAME)
-
 
