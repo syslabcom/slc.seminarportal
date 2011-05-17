@@ -1,8 +1,11 @@
 import logging
 from DateTime import DateTime
+from zope.interface import directlyProvides
 from slc.seminarportal.tests.base import SeminarPortalTestCase
 from slc.seminarportal.Extensions.create_seminar_test_data import  \
                                                     create_test_seminars
+
+from slc.seminarportal.interfaces import IThemeLayer
 log = logging.getLogger('test_views.py')
 
 
@@ -16,13 +19,11 @@ class TestViews(SeminarPortalTestCase):
 
     def test_querying(self):
         """ """
-        # FIXME: This will fail unless the layer directive is removed for
-        # 'seminars-view' in slc.seminarportl.
-        #
-        # Still figuring out how to fix this...
+        directlyProvides(self.portal.REQUEST, IThemeLayer)
+
         views = self.portal.restrictedTraverse('@@seminars-view')
         create_test_seminars(self.portal, 5, False, past=True)
-        seminars = views.seminars(past=True)
+        seminars = views.seminars()
 
         self.assertEquals(len(seminars), 5)
 
@@ -31,7 +32,7 @@ class TestViews(SeminarPortalTestCase):
             self.assertEquals(seminar.end < now, True)
 
         create_test_seminars(self.portal, 5, False, past=True)
-        seminars = views.seminars(past=True)
+        seminars = views.seminars()
         self.assertEquals(len(seminars), 10)
 
         for seminar in seminars:

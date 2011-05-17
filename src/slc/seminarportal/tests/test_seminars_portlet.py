@@ -1,7 +1,5 @@
 import logging
 
-from DateTime import DateTime
-
 from zope import component
 
 from plone.portlets.interfaces import IPortletAssignment
