@@ -89,6 +89,8 @@ class Renderer(BaseRenderer):
                     else:
                         speakers.append(ss)
 
+                # eliminate duplicates
+                speakers = list(set(speakers))
                 if len(speakers) < data.count:
                     speakers.sort(lambda x, y:
                         cmp(x.getLastName(), y.getLastName()))
