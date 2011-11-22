@@ -59,15 +59,15 @@ class TestPortlet(SeminarPortalTestCase):
         view = self.folder.restrictedTraverse('@@plone')
 
         manager = component.getUtility(
-                                IPortletManager, 
-                                name='plone.rightcolumn', 
+                                IPortletManager,
+                                name='plone.rightcolumn',
                                 context=self.portal
                                 )
 
         assignment = speaker_portlet.Assignment()
 
         renderer = component.getMultiAdapter(
-                                (context, request, view, manager, assignment), 
+                                (context, request, view, manager, assignment),
                                 IPortletRenderer
                                 )
 
@@ -75,7 +75,7 @@ class TestPortlet(SeminarPortalTestCase):
 
 
 class TestRenderer(SeminarPortalTestCase):
-    
+
     def afterSetUp(self):
         """ Create a Seminar object, and call the relevant event to enable the
             auto-creation of the sub-objects ('speakers', 'speech venues').
@@ -95,11 +95,11 @@ class TestRenderer(SeminarPortalTestCase):
         context = context or self.folder
         request = request or self.folder.REQUEST
         view = view or self.folder.restrictedTraverse('@@plone')
-        manager = manager or component.getUtility(IPortletManager, 
-                                        name='plone.rightcolumn', 
+        manager = manager or component.getUtility(IPortletManager,
+                                        name='plone.rightcolumn',
                                         context=self.portal)
         assignment = assignment or speaker_portlet.Assignment()
-        return component.getMultiAdapter((context, request, view, manager, assignment), 
+        return component.getMultiAdapter((context, request, view, manager, assignment),
                                IPortletRenderer)
 
 
@@ -117,7 +117,7 @@ class TestRenderer(SeminarPortalTestCase):
                                                 )
 
             r = self.renderer(
-                        context=self.portal, 
+                        context=self.portal,
                         assignment=assignment,
                         )
 
@@ -140,12 +140,12 @@ class TestRenderer(SeminarPortalTestCase):
                                             )
 
         r = self.renderer(
-                    context=self.portal, 
+                    context=self.portal,
                     assignment=assignment,
                     )
 
         speakers = r.get_speakers()
-        # The speakers 
+        # The speakers
         speakers_paths = ['/'.join(s.getPhysicalPath()) for s in speakers]
 
         self.assertEquals(len(speakers), count)
