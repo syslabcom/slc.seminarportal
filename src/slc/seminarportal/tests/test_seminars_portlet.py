@@ -39,9 +39,9 @@ class TestPortlet(SeminarPortalTestCase):
         addview = mapping.restrictedTraverse('+/' + portlet.addview)
 
         addview.createAndAdd(data={
-                                'count':5, 
-                                'state':('published', ), 
-                                'subject':('category1', 'category2'), 
+                                'count':5,
+                                'state':('published', ),
+                                'subject':('category1', 'category2'),
                                 'header':'Testing Seminars Portlet',
                                 })
         self.assertEquals(len(mapping), 1)
@@ -66,15 +66,15 @@ class TestPortlet(SeminarPortalTestCase):
         view = self.folder.restrictedTraverse('@@plone')
 
         manager = component.getUtility(
-                                IPortletManager, 
-                                name='plone.rightcolumn', 
+                                IPortletManager,
+                                name='plone.rightcolumn',
                                 context=self.portal
                                 )
 
         assignment = seminars_portlet.Assignment()
 
         renderer = component.getMultiAdapter(
-                                (context, request, view, manager, assignment), 
+                                (context, request, view, manager, assignment),
                                 IPortletRenderer
                                 )
 
@@ -82,7 +82,7 @@ class TestPortlet(SeminarPortalTestCase):
 
 
 class TestRenderer(SeminarPortalTestCase):
-    
+
     def afterSetUp(self):
         """ Create a Seminar object, and call the relevant event to enable the
             auto-creation of the sub-objects ('speakers', 'speech venues').
@@ -94,12 +94,12 @@ class TestRenderer(SeminarPortalTestCase):
         context = context or self.folder
         request = request or self.folder.REQUEST
         view = view or self.folder.restrictedTraverse('@@plone')
-        manager = manager or component.getUtility(IPortletManager, 
-                                        name='plone.rightcolumn', 
+        manager = manager or component.getUtility(IPortletManager,
+                                        name='plone.rightcolumn',
                                         context=self.portal)
         assignment = assignment or seminars_portlet.Assignment()
         return component.getMultiAdapter(
-                                (context, request, view, manager, assignment), 
+                                (context, request, view, manager, assignment),
                                 IPortletRenderer)
 
     def test_portlet(self):
@@ -109,13 +109,13 @@ class TestRenderer(SeminarPortalTestCase):
         seminars_urls = ['/'.join(s.getPhysicalPath()) for s in seminars]
 
         assignment = seminars_portlet.Assignment(**{
-                                    'count':5, 
-                                    'state':('published', ), 
+                                    'count':5,
+                                    'state':('published', ),
                                     'header':'Testing Seminars Portlet',
                                     })
 
         r = self.renderer(
-                    context=self.portal, 
+                    context=self.portal,
                     assignment=assignment,
                     )
 
@@ -139,13 +139,13 @@ class TestRenderer(SeminarPortalTestCase):
         # Test with diffferent count values:
         for count in range(0, 12):
             assignment = seminars_portlet.Assignment(**{
-                                            'count': count, 
-                                            'state':('published', ), 
-                                            'subject':(), 
+                                            'count': count,
+                                            'state':('published', ),
+                                            'subject':(),
                                             'header':'Testing Seminars Portlet',
                                             })
             r = self.renderer(
-                        context=self.portal, 
+                        context=self.portal,
                         assignment=assignment,
                         )
             seminars = r._data()
@@ -157,20 +157,20 @@ class TestRenderer(SeminarPortalTestCase):
                 self.assertEquals(r.available, True)
 
         # Test that subject filtering works:
-        for cat in ['cat1', 'cat2', 'cat3',]:
+        for cat in [u'cat1', u'cat2', u'cat3',]:
             assignment = seminars_portlet.Assignment(**{
-                                            'count':count, 
-                                            'state':('published', ), 
-                                            'subject':(cat,), 
+                                            'count':count,
+                                            'state':('published', ),
+                                            'subject':(cat,),
                                             'header':'Testing Seminars Portlet',
                                             })
             r = self.renderer(
-                        context=self.portal, 
+                        context=self.portal,
                         assignment=assignment,
                         )
             seminars = r._data()
             for seminar in seminars:
-                self.assertEquals(seminar.Subject, (cat,))
+                self.assertEquals(seminar.Subject, [cat,])
 
 
 def test_suite():
