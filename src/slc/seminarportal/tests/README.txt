@@ -11,3 +11,4 @@ osha/parts/instance/etc/package-includes/017-osha.adaptation-configure.zcml ,
 osha/parts/instance/etc/site.zcml
 
 I can't find a way to run this test cleanly from within an osha buildout.
+

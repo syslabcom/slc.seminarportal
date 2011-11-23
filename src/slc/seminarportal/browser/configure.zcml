@@ -128,6 +128,11 @@
             />
     </configure>
 
+    <browser:resourceDirectory
+        name="slc.seminarportal.resources"
+        directory="resources"
+        />
+
     <browser:viewletManager
         name="slc.seminarportal.aboveseminarlisting"
         provides=".interfaces.IAboveSeminarListing"
