@@ -20,7 +20,7 @@
           tal:attributes="class python:oddrow and 'portletItem even' or 'portletItem odd'">
         <a rel="nofollow"
            class="tile speaker-fancybox"
-           tal:attributes="href speaker/get_path;">
+           tal:attributes="href speaker/absolute_url;">
           <tal:if define="image python:speaker.getImage()"
                   condition="image">
             <img style="float:left; padding-right:1em;"
