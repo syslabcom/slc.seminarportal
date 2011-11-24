@@ -17,7 +17,7 @@
 }
 
 .no_bullets ul {
-    list-style-type:none; 
+    list-style-type:none;
     list-style-image:none;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .search-tab-selected {
-  background-color: #E6E8ED; 
+  background-color: #E6E8ED;
   padding: 1em 1em 0.2em 1em;
 }
 
@@ -66,8 +66,8 @@
 }
 
 .search-tab:hover {
-  background-color: #E6E8ED; 
-  cursor: pointer !important; 
+  background-color: #E6E8ED;
+  cursor: pointer !important;
 }
 
 .big-target {
@@ -156,6 +156,10 @@
 
 div#add-speaker, div#add-speechvenue {
     float: right;
+}
+
+#speaker-overlay {
+   width: 500px;
 }
 
 /* </dtml-with> */

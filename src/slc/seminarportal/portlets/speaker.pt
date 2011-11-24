@@ -1,8 +1,8 @@
 <dl class="portlet portletSpeaker"
     i18n:domain="slc.seminarportal">
-
   <tal:speaker tal:define="speakers view/get_speakers"
                tal:condition="speakers">
+
     <dt class="portletHeader">
       <span class="portletTopLeft"></span>
       <span class="tile"
@@ -11,6 +11,7 @@
       </span>
       <span class="portletTopRight"></span>
     </dt>
+
     <tal:loop repeat="speaker speakers">
       <dd class="portletItem"
           tal:define="oddrow repeat/speaker/odd;
@@ -34,6 +35,11 @@
         </a>
       </dd>
     </tal:loop>
-    <div id="speaker-overlay"><span id="content"/></div>
+
+    <script type="text/javascript" charset="utf-8"
+            tal:attributes="src string:${context/portal_url}/++resource++slc.seminarportal.resources/portlets_speaker.js?v=0">
+    </script>
+    <div id="speaker-overlay" style="width:500px"><span id="content"/></div>
+
   </tal:speaker>
 </dl>
