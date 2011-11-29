@@ -236,4 +236,3 @@ class SpeakerView(SeminarView):
 
         return self.template()
 
-
