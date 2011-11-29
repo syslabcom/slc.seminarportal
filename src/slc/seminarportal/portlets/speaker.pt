@@ -39,7 +39,7 @@
     <script type="text/javascript" charset="utf-8"
             tal:attributes="src string:${context/portal_url}/++resource++slc.seminarportal.resources/portlets_speaker.js?v=0">
     </script>
-    <div id="speaker-overlay" style="width:500px"><span id="content"/></div>
+    <div id="speaker-overlay"><span id="content"/></div>
 
   </tal:speaker>
 </dl>

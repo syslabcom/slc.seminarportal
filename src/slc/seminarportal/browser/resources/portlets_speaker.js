@@ -1,16 +1,18 @@
 var SEMINAR = {}
 
 SEMINAR.loadSpeakerDetails = function () {
-    jQuery.fancybox.showActivity();
     jQuery.ajax({
-        async: false,
         type: 'GET',
         url: this.href,
+        beforeSend: function() {
+           setTimeout("jQuery.fancybox.showActivity()", 1)
+        },
         success: function(data) {
             jQuery("#speaker-overlay #content")
                 .replaceWith(jQuery(data)
                              .find("#content"));
-        }
+        },
+        complete: jQuery.fancybox.hideActivity,
     });
 };
 

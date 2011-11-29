@@ -159,7 +159,14 @@ div#add-speaker, div#add-speechvenue {
 }
 
 #speaker-overlay {
-   width: 500px;
+   width: 600px;
+   height: 500px;
+}
+
+#fancybox-inner #speaker-overlay {
+   /* Hack, to avoid scrollbars */
+   width: 580px;
+   height: 480px;
 }
 
 /* </dtml-with> */
