@@ -1,16 +1,16 @@
 Changelog
 *********
 
-1.4.3 (unreleased)
+1.4.3 (2011-12-05)
 ------------------
 
-- Nothing changed yet.
-
+- Adding jQuery/fancybox overlay for the speaker details [deroiste]
+  #2552
 
 1.4.2 (2011-11-09)
 ------------------
 
-- Bugfix for the speakers portlet: eliminate duplicates #3896 [thomasw] 
+- Bugfix for the speakers portlet: eliminate duplicates #3896 [thomasw]
 - Fixed the problem of testing views registered to a layer. We just let
   the request provide that layer's interface. [jcbrand]
 
@@ -76,7 +76,7 @@ Changelog
 
 - Give an id to the div that displays "Add to calendar" on the speech so that
   we can hide it via CSS [thomasw]
- 
+
 
 1.3.2 (2010-11-04)
 ------------------
@@ -119,7 +119,7 @@ WARNING: This release will probably break existing installations!
 1.2.15 (2010-08-25)
 -------------------
 
-- In "Featured speakers" portlet, I replaced field name "speakers" with 
+- In "Featured speakers" portlet, I replaced field name "speakers" with
   "featured_speakers". Reason: in a seminar, we also have a folder called
   "speakers". The code in zope.app.form.browser.itemswidget.OrderedMultiSelectWidget
   in selected() tries to get all values for the field by checking if self.context
@@ -130,7 +130,7 @@ WARNING: This release will probably break existing installations!
 - Hide "Add new XXX" buttons for anonymous on speeches, speakers and speech-
   venues folders [thomasw]
 - corrected a typo in the GS for Speech FTI, wrong view name [thomasw]
- 
+
 
 1.2.14 (2010-07-22)
 -------------------
@@ -202,7 +202,7 @@ WARNING: This release will probably break existing installations!
 - Add new view for @@speechvenuesfolder-view [jcbrand]
 - Don't show empty fields on the views [jcbrand]
 - Show the relatedItems widget on seminars and speakers [jcbrand]
-- Updated the test-framework and added tests [jcbrand] 
+- Updated the test-framework and added tests [jcbrand]
 - Removed the custom roles [jcbrand]
 - Let SPSpeechVenue subclass BaseFolder instead, to give us a description
   field. [jcbrand]
