@@ -1,4 +1,8 @@
-from zope.browser.interfaces import IBrowserView
+try:
+    from zope.publisher.interfaces.browser import IBrowserView
+except ImportError: # plone 3
+    from zope.app.publisher.interfaces.browser import IBrowserView
+
 from zope.viewlet.interfaces import IViewletManager
 
 class IAboveSeminarListing(IViewletManager):

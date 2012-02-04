@@ -4,6 +4,8 @@
                         item_enddate result/end;
                         item_startdate result/start;
                         item_creator result/Creator;
+                        isAnon context/@@plone_portal_state/anonymous;
+                        mtool context/portal_membership;
                         obj result/getObject">
 
     <div tal:condition="obj/getLogo" class="seminars-preview-img">
@@ -218,7 +220,6 @@
             </span>
             <br/>
             <input id="searchGadget"
-                tabindex=""
                 name="SearchableText"
                 type="text"
                 size="30"
@@ -226,18 +227,15 @@
                 title="Search Site"
                 accesskey="4"
                 i18n:attributes="title title_search_site;"
-                tal:attributes="value request/SearchableText|nothing;
-                                tabindex tabindex/next"
+                tal:attributes="value request/SearchableText|nothing;"
                 class="visibility:visible" />
             <br clear="all"/>
         </div>
         <br/>
         <input class="searchButton"
             type="submit"
-            tabindex=""
             i18n:domain="plone"
             value="Search"
-            tal:attributes="tabindex tabindex/next"
             i18n:attributes="value label_search;" />
     </form>
     </div> 

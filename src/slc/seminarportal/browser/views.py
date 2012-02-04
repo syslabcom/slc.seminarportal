@@ -46,7 +46,7 @@ class BaseView(BrowserView):
         """ Return brains for SPSeminar objects in context
         """
         context = Acquisition.aq_inner(self.context)
-        request = self.context.request
+        request = self.request
         catalog = getToolByName(self.context, 'portal_catalog')
         if not IFolderish.providedBy(context):
             # We might be on a index_html
@@ -65,7 +65,7 @@ class BaseView(BrowserView):
     def search(self):
         """ Return brains for all the seminar related objects
         """
-        request = self.context.request
+        request = self.request
         if not request.has_key('SearchableText'):
             return []
         catalog = getToolByName(self.context, 'portal_catalog')

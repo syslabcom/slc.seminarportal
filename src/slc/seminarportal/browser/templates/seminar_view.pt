@@ -22,9 +22,11 @@
     </metal:block>
 
     <metal:fill fill-slot="header">
-        <div metal:use-macro="here/document_actions/macros/document_actions">
-            Document actions (print, sendto etc)
-        </div>
+        <tal:cond tal:condition="exists:here/document_macros">
+            <div metal:use-macro="here/document_actions/macros/document_actions">
+                Document actions (print, sendto etc)
+            </div>
+        </tal:cond>
         <h1>
         <tal:block replace="structure python:getattr(here, here.getIcon(1))"/>
         <span tal:replace="here/Title"/>
@@ -34,7 +36,10 @@
 
 <body>
 
-<div metal:fill-slot="main" id="seminar-content">
+    <div metal:fill-slot="main" id="seminar-content"
+        tal:define="here_url here_url|view/here_url|portal_url;
+        toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+        ">
     <a  href=""
         class="link-parent"
         i18n:translate="label_more_seminars_link"

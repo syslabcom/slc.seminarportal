@@ -14,6 +14,7 @@
                           image_method       field/widget/image_method|string:;
                           show_path          field/widget/show_path|nothing;
                           portal_path        python: '/'.join(context.portal_url.getPortalObject().getPhysicalPath());
+                          portal             context/@@plone_portal_state/portal;
                           hide_inaccessible  field/widget/hide_inaccessible | nothing;"
                   condition="refs">
 

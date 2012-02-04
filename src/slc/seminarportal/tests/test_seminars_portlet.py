@@ -157,7 +157,7 @@ class TestRenderer(SeminarPortalTestCase):
                 self.assertEquals(r.available, True)
 
         # Test that subject filtering works:
-        for cat in [u'cat1', u'cat2', u'cat3',]:
+        for cat in ['cat1', 'cat2', 'cat3',]:
             assignment = seminars_portlet.Assignment(**{
                                             'count':count,
                                             'state':('published', ),
@@ -170,7 +170,7 @@ class TestRenderer(SeminarPortalTestCase):
                         )
             seminars = r._data()
             for seminar in seminars:
-                self.assertEquals(seminar.Subject, [cat,])
+                self.assertEquals(seminar.Subject, (cat,))
 
 
 def test_suite():
