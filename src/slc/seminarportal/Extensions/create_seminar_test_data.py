@@ -27,9 +27,9 @@ def run(self):
 
 
 def create_test_seminars(
-                    self, 
-                    count, 
-                    create_speakers=True, 
+                    self,
+                    count,
+                    create_speakers=True,
                     create_speeches=True,
                     past=False):
 
@@ -48,8 +48,8 @@ def create_test_seminars(
             log.info('Creating Speakers')
             for surname, firstname in names:
                 speaker = create_speaker(
-                                    speakers_folder, 
-                                    surname, 
+                                    speakers_folder,
+                                    surname,
                                     firstname
                                     )
 
@@ -64,9 +64,9 @@ def create_test_seminars(
         log.info('Creating venue: %s' % i)
         speech_folder_id = 'speech_venue_%s' % i.lower()
         speech_venues_folder.invokeFactory(
-                                    'SPSpeechVenue', 
-                                    speech_folder_id, 
-                                    title='Speech Venue %s' % i, 
+                                    'SPSpeechVenue',
+                                    speech_folder_id,
+                                    title='Speech Venue %s' % i,
                                     description=short_desc,
                                     )
 
@@ -77,14 +77,18 @@ def create_test_seminars(
                 speech_title = 'Speech: %s' % title
                 start_hour = random.randint(6, 20)
                 end_hour = start_hour + random.randint(0,3)
-                start_date = DateTime('%s %s:%s ' % ((seminar_day+days).Date(), start_hour, random.randint(0,30)))
-                end_date = DateTime('%s %s:%s' % ((seminar_day+days).Date(), end_hour, random.randint(30,59)))
+                start_date = DateTime(
+                    '%s %s:%s ' % ((seminar_day+days).Date(),
+                                   start_hour, random.randint(0,30)))
+                end_date = DateTime(
+                    '%s %s:%s' % ((seminar_day+days).Date(),
+                                  end_hour, random.randint(30,59)))
 
                 speech = create_speech(
-                                    speech_folder, 
-                                    speech_title, 
-                                    desc, 
-                                    start_date, 
+                                    speech_folder,
+                                    speech_title,
+                                    desc,
+                                    start_date,
                                     end_date
                                     )
 
@@ -96,7 +100,7 @@ def create_test_seminars(
                         speech_speakers.append(speaker)
                     speech.setSpeakers(speech_speakers)
                     speech.reindexObject()
-                
+
     return 'Finished'
 
 def getParent(self):
@@ -109,10 +113,9 @@ def getParent(self):
 def create_seminar_folder(self):
     parent = getParent(self)
     if not hasattr(parent, FOLDER_ID):
-        parent.invokeFactory('Folder', 
-                             FOLDER_ID, 
-                             title='Seminars TEST', 
-                             description='Folder containing a collection of Seminars')
+        parent.invokeFactory(
+            'Folder', FOLDER_ID, title='Seminars TEST',
+            description='Folder containing a collection of Seminars')
 
     seminar_folder = getattr(parent, FOLDER_ID)
     wftool = getToolByName(self, 'portal_workflow')
@@ -133,10 +136,10 @@ def create_seminar(self, parent, seminar_id, title, desc, conclusions, past):
             start_date = DateTime() + random.randint(0,10)
             end_date = start_date + random.randint(1,4)
 
-        parent.invokeFactory('SPSeminar', 
-                             seminar_id, 
-                             title=title, 
-                             description=desc, 
+        parent.invokeFactory('SPSeminar',
+                             seminar_id,
+                             title=title,
+                             description=desc,
                              conclusions=conclusions,
                              )
         s = getattr(parent, seminar_id)
@@ -150,6 +153,6 @@ def create_seminar(self, parent, seminar_id, title, desc, conclusions, past):
         wftool = getToolByName(self, 'portal_workflow')
         wftool.doActionFor(s, 'publish')
         return s
-    
 
-    
+
+

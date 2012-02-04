@@ -43,7 +43,7 @@ class BaseView(BrowserView):
         return context.restrictedTraverse('@@plone').cropText(text, length, ellipsis)
 
     def seminars(self):
-        """ Return brains for SPSeminar objects in context 
+        """ Return brains for SPSeminar objects in context
         """
         context = Acquisition.aq_inner(self.context)
         request = self.context.request
@@ -55,7 +55,7 @@ class BaseView(BrowserView):
             folder = self.context
 
         query = {
-            'portal_type':'SPSeminar', 
+            'portal_type':'SPSeminar',
             'path':'/'.join(folder.getPhysicalPath()),
             'sort_on': 'start',
             'sort_order': 'reverse',
@@ -122,14 +122,14 @@ class SeminarView(BaseView):
     implements(ISeminarView)
 
     def get_venues(self):
-        """ Return brains for SpeechVenue objects in context 
+        """ Return brains for SpeechVenue objects in context
         """
         catalog = getToolByName(self.context, 'portal_catalog')
-        brains = catalog(portal_type='SPSpeechVenue', 
+        brains = catalog(portal_type='SPSpeechVenue',
                          path='/'.join(self.context.getPhysicalPath()),
                          sort_on='getObjPositionInParent',)
         return list(brains)
- 
+
     def get_roster(self, venues=[]):
         """ Return a dict of {date:{venue_id:{time:[speeches]}}}
         """
@@ -138,7 +138,7 @@ class SeminarView(BaseView):
         venues = venues or self.get_venues()
         for venue in venues:
             venue_id = venue.id
-            speeches = catalog(portal_type='SPSpeech', 
+            speeches = catalog(portal_type='SPSpeech',
                                path='%s/speech-venues/%s' % ('/'.join(self.context.getPhysicalPath()), venue_id))
             for speech in speeches:
                 date = speech.start.Date()
@@ -162,7 +162,7 @@ class SeminarView(BaseView):
         catalog = getToolByName(self.context, 'portal_catalog')
         venues = venues or self.get_venues()
         for venue in venues:
-            speeches = catalog(portal_type='SPSpeech', 
+            speeches = catalog(portal_type='SPSpeech',
                                path='%s/speech-venues/%s' % ('/'.join(self.context.getPhysicalPath()), venue.id))
             for speech in speeches:
                 date = speech.start.Date()
@@ -186,7 +186,7 @@ class SeminarView(BaseView):
                     d[t] = 'dummy'
 
             day_times[day] = sorted(d.keys())
-        return day_times 
+        return day_times
 
     def get_files_and_images(self):
         """ Return a list of files and images in current context
@@ -235,5 +235,4 @@ class SpeakerView(SeminarView):
             obj.setSpeeches(valid)
 
         return self.template()
-
 

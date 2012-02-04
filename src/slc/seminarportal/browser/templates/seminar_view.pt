@@ -15,14 +15,10 @@
     </metal:border>
 
     <metal:block fill-slot="javascript_head_slot">
-        <script>
-            var jq = jQuery.noConflict();
-            jq(document).ready(function(){
-                jq("div.big-target a").bigTarget({
-                    clickZone : 'div:eq(0)' // jQuery parent selector
-                });
-            });
-        </script>
+      <script type="text/javascript" charset="utf-8"
+              tal:attributes="src string:$portal_url/++resource++slc.seminarportal.resources/seminar_view.js"
+>
+      </script>
     </metal:block>
 
     <metal:fill fill-slot="header">
@@ -51,10 +47,10 @@
     <div id="fieldset">
     <br clear="all"/>
     <div>
-        <img border="0" style="padding:0 10px 0 0;" align="left" 
+        <img border="0" style="padding:0 10px 0 0;" align="left"
                 tal:condition="here/getLogo"
                 tal:attributes="src string:${here/absolute_url}/logo"/>
-        <div style="float:left" 
+        <div style="float:left"
              tal:replace="here/Description"/>
         <div tal:condition="python:here.portal_membership.checkPermission('Add portal content', here)"
              style="float:right; border:1px;">
@@ -73,10 +69,10 @@
     <br clear="all"/>
 
     <tal:get define="resources view/get_files_and_images">
-        <table 
+        <table
             tal:condition="resources"
-            id="sortable" 
-            class="listing" 
+            id="sortable"
+            class="listing"
             summary="Content listing"
             style="width:100%">
             <thead>
@@ -184,7 +180,7 @@
                 End Date
             </metal:field>
         </div>
-        
+
         <br clear="all"/>
 
         <tal:if condition="here/getSummary">
@@ -196,14 +192,14 @@
                 </metal:field>
             </div>
         </tal:if>
-                
+
         <tal:if condition="here/getConclusions">
             <div class="visualClear"></div>
             <div id="archetypes-field-conclusions">
                 <label class="eventbox-label" i18n:translate="label_seminar_conclusions">Conclusions</label>
                 <br clear="all"/>
                 <metal:field use-macro="python:here.widget('conclusions', mode='view')">
-                    Conclusions 
+                    Conclusions
                 </metal:field>
             </div>
         </tal:if>

@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '1.4.2dev'
+version = '1.4.5dev'
 
 long_description = (
     read('README.txt')
@@ -16,9 +16,9 @@ long_description = (
     read('docs/CHANGES.txt')
     + '\n' +
     read('CONTRIBUTORS.txt')
-    + '\n' 
+    + '\n'
     )
-    
+
 tests_require=['zope.testing']
 
 setup(name='slc.seminarportal',
@@ -46,7 +46,7 @@ setup(name='slc.seminarportal',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-            'setuptools',    
+            'setuptools',
             'Products.Relations',
             'Products.ATReferenceBrowserWidget',
             'Products.LinguaPlone',
@@ -59,5 +59,5 @@ setup(name='slc.seminarportal',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      )      
-      
+      )
+

@@ -6,11 +6,16 @@ from Products.CMFCore import DirectoryView
 
 from slc.seminarportal import config
 
+# See http://do3cc.blogspot.com/2010/08/dont-catch-import-errors-use.html
+# If osha.policy gets imported here it monkeypatches MembershipTool
+# which breaks Products.PlonePAS and causes the tests to fail
+import pkg_resources
 try:
-    import osha.policy
-    is_osha_installed = True
-except ImportError:
+    pkg_resources.get_distribution('osha.policy')
+except pkg_resources.DistributionNotFound:
     is_osha_installed = False
+else:
+    is_osha_installed = True
 
 DirectoryView.registerDirectory('skins', config.product_globals)
 
