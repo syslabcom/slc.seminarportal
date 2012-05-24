@@ -8,7 +8,7 @@ WARNING: Plone4 fixes which attemps to keep Plone3 compatibility,
   but without testing done on plone3, please test before trying to
   use this version in a plone3 environment, or stick to the previous
   versions since all of the changes in this version are only to fix
-  the package for Plone4
+  the package for Plone4.
 
 - Updated Plone4 branch with the changes to 1.4.4 plus the following changes
   marked with [ichimdav]
