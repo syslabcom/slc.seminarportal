@@ -15,23 +15,28 @@ from slc.seminarportal.interfaces import ISeminar
 from slc.seminarportal.config import PROJECTNAME, ALLOWABLE_TEXT_TYPES
 from slc.seminarportal import seminarportalMessageFactory as _
 
-SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Schema((
+
+SeminarSchema = atapi.BaseFolderSchema.copy() + \
+    ATEventSchema.copy() + atapi.Schema((
+
     atapi.ImageField(
         name='logo',
         widget=atapi.ImageWidget(
-            label=_(u"label_seminar_logo", default=u"Graphic or Logo for the event"),
+            label=_(u"label_seminar_logo",
+                    default=u"Graphic or Logo for the event"),
         ),
         languageIndependent=True,
-        original_size=(200,200),
+        original_size=(200, 200),
         sizes={'thumb': (100, 125), 'normal': (200, 200)},
         default_output_type='image/jpeg',
-        allowable_content_types=('image/gif','image/jpeg','image/png'),
+        allowable_content_types=('image/gif', 'image/jpeg', 'image/png'),
     ),
     atapi.TextField(
         name='summary',
         allowable_content_types=ALLOWABLE_TEXT_TYPES,
         widget=atapi.RichWidget(
-            label=_(u"label_seminar_summary", default=u"General Description/Summary of the event"),
+            label=_(u"label_seminar_summary",
+                    default=u"General Description/Summary of the event"),
             macro='seminar_textarea',
         ),
         default_output_type="text/x-html-safe",
@@ -42,7 +47,8 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
         name='conclusions',
         allowable_content_types=ALLOWABLE_TEXT_TYPES,
         widget=atapi.RichWidget(
-            label=_(u"label_seminar_conclusions", default=u"General Conclusions"),
+            label=_(u"label_seminar_conclusions",
+                    default=u"General Conclusions"),
             macro='seminar_textarea',
         ),
         default_output_type="text/x-html-safe",
@@ -53,7 +59,8 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
         name='furtherActions',
         allowable_content_types=ALLOWABLE_TEXT_TYPES,
         widget=atapi.RichWidget(
-            label=_(u"label_seminar_further_actions", default=u"Further Actions"),
+            label=_(u"label_seminar_further_actions",
+                    default=u"Further Actions"),
             macro='seminar_textarea',
         ),
         default_output_type="text/x-html-safe",
@@ -63,7 +70,8 @@ SeminarSchema = atapi.BaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Sch
     atapi.BooleanField(
         name='showRosterHour',
         widget=atapi.BooleanWidget(
-            label=_(u"label_seminar_show_hour_column", default=u"Show the hour column in the speech roster?"),
+            label=_(u"label_seminar_show_hour_column",
+                    default=u"Show the hour column in the speech roster?"),
         ),
         languageIndependent=True,
     ),
@@ -78,7 +86,7 @@ SeminarSchema['description'].widget.description = \
     'A short abstract, introduction or description of the event'
 
 SeminarSchema['contactName'].schemata = 'Organiser'
-SeminarSchema['contactName'].widget.label= \
+SeminarSchema['contactName'].widget.label = \
     _(u'label_seminar_organiser', default='Organiser')
 SeminarSchema['contactName'].widget.description = \
         "Please provide the name of the event organiser."
@@ -102,6 +110,7 @@ SeminarSchema.moveField('location', after='description')
 SeminarSchema['startDate'].widget.format = '%A %d %B %Y %H:%M'
 SeminarSchema['endDate'].widget.format = '%A %d %B %Y %H:%M'
 
+
 class SPSeminar(I18NBaseFolder, ATEvent):
     """Description of the Example Type"""
     security = ClassSecurityInfo()
@@ -115,7 +124,7 @@ class SPSeminar(I18NBaseFolder, ATEvent):
         return self.Title()
 
     def get_path(self):
-        return '/'.join(self.getPhysicalPath()) 
+        return '/'.join(self.getPhysicalPath())
 
     def get_seminar_start_date(self):
         return self.startDate
@@ -127,9 +136,9 @@ class SPSeminar(I18NBaseFolder, ATEvent):
     def setLanguage(self, value, **kwargs):
         """ For some crazy reason, setLanguage failed with an
             AlreadyTranslated error.
-            
+
             This bug occurs in LinguaPlone 2.2, and is fixed in 2.3
-            
+
             The code that fails is Products/LinguaPlone/I18NBaseObject.py:332
 
             Here is a pdb trace showing the problem:
@@ -155,7 +164,7 @@ class SPSeminar(I18NBaseFolder, ATEvent):
                 True
 
             We override the if statement here and use aq_base to fix the
-            problem and if necessary then call the original setLanguage 
+            problem and if necessary then call the original setLanguage
             method.
         """
         translation = self.getTranslation(value)
@@ -166,7 +175,6 @@ class SPSeminar(I18NBaseFolder, ATEvent):
                 raise AlreadyTranslated, translation.absolute_url()
 
         super(SPSeminar, self).setLanguage(value)
-         
+
+
 atapi.registerType(SPSeminar, PROJECTNAME)
-
-

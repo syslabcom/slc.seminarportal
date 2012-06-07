@@ -1,13 +1,12 @@
 """Definition of the SPSpeechVenueFolder content type
 """
 
-from zope.interface import implements, directlyProvides
+from zope.interface import implements
 
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
 
-from slc.seminarportal import seminarportalMessageFactory as _
 from slc.seminarportal.interfaces import ISpeechVenueFolder
 from slc.seminarportal.config import PROJECTNAME
 
@@ -23,7 +22,9 @@ SPSpeechVenueFolderSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 SPSpeechVenueFolderSchema['title'].storage = atapi.AnnotationStorage()
 SPSpeechVenueFolderSchema['description'].storage = atapi.AnnotationStorage()
 
-schemata.finalizeATCTSchema(SPSpeechVenueFolderSchema, folderish=True, moveDiscussion=False)
+schemata.finalizeATCTSchema(SPSpeechVenueFolderSchema, folderish=True,
+                            moveDiscussion=False)
+
 
 class SPSpeechVenueFolder(folder.ATFolder):
     """Folder containing Speech Venues"""

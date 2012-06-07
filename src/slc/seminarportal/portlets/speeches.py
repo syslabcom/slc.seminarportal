@@ -11,9 +11,10 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from interfaces import ISpeechesPortlet
 from slc.seminarportal.portlets.base import BaseRenderer
 
+
 class AddForm(base.AddForm):
     form_fields = form.Fields(ISpeechesPortlet)
-    
+
     label = u"Add a Speeches Portlet"
 
     def create(self, data):
@@ -42,7 +43,8 @@ class Renderer(BaseRenderer):
     def _render_cachekey(method, self):
         """ Renders a cachekey to be used by the portlets.
         """
-        preflang = getToolByName(self.context, 'portal_languages').getPreferredLanguage()
+        preflang = getToolByName(
+            self.context, 'portal_languages').getPreferredLanguage()
         return (preflang, self.navigation_root_path)
 
     @ram.cache(_render_cachekey)
@@ -56,11 +58,10 @@ class Renderer(BaseRenderer):
         except AttributeError:
             count = 5
         if count > 0:
-            return catalog(portal_type='SPSpeech', 
-                        sort_limit=count, 
-                        sort_on='modified', 
-                        sort_order='reverse')[:count]
+            return catalog(
+                portal_type='SPSpeech',
+                sort_limit=count,
+                sort_on='modified',
+                sort_order='reverse')[:count]
         else:
             return []
-
-

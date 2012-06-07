@@ -31,53 +31,56 @@ else:
     categories_vocabulary = "slc.seminarportal.vocabularies.categories"
     domain = "plone"
 
+
 class ISeminarsPortlet(IPortletDataProvider):
     """ """
     header = schema.TextLine(
-                    title=_(u"Portlet header"),
-                    description=_(u"Title of the rendered portlet"),
-                    default=default_header,
-                    required=True
-                    )
+        title=_(u"Portlet header"),
+        description=_(u"Title of the rendered portlet"),
+        default=default_header,
+        required=True
+    )
     count = schema.Int(
-                    title=_(u'Number of Seminars to display'),
-                    required=True,
-                    default=5
-                    )
-    state = schema.Tuple(title=_(u"Workflow state"),
-                    description=_(
-                            u"You may limit the displayed Seminars to a "
-                            u"specific workflow state.."),
-                    default=('published', ),
-                    required=True,
-                    value_type=schema.Choice(
-                        vocabulary="plone.app.vocabularies.WorkflowStates")
-                    )
+        title=_(u'Number of Seminars to display'),
+        required=True,
+        default=5
+    )
+    state = schema.Tuple(
+        title=_(u"Workflow state"),
+        description=_(
+            u"You may limit the displayed Seminars to a "
+            u"specific workflow state.."),
+        default=('published', ),
+        required=True,
+        value_type=schema.Choice(
+            vocabulary="plone.app.vocabularies.WorkflowStates")
+    )
     subject = schema.Tuple(
-                    title=_(u"Categories"),
-                    description=_(
-                            u"Pick one or more categories with which you want to filter "
-                            u"Seminars."),
-                    default=tuple(),
-                    required=False,
-                    value_type=schema.Choice(
-                        vocabulary=categories_vocabulary)
-                    )
+        title=_(u"Categories"),
+        description=_(
+            u"Pick one or more categories with which you want to filter "
+            u"Seminars."),
+        default=tuple(),
+        required=False,
+        value_type=schema.Choice(
+            vocabulary=categories_vocabulary)
+    )
     seminarsfolder = schema.Choice(
-                    title=_(u'Seminars link'),
-                    description=_(
-                            u"Choose a folder which the portlet title and "
-                            u"'Upcoming Seminars' link will point to. This is optional."
-                            ),
-                    required=False,
-                    source=SearchableTextSourceBinder(
-                        {'object_provides': [
-                                        folder.IATFolder.__identifier__,
-                                        folder.IATBTreeFolder.__identifier__,
-                                        document.IATDocument.__identifier__,
-                                        ]},
-                        default_query='path:'),
-                    )
+        title=_(u'Seminars link'),
+        description=_(
+            u"Choose a folder which the portlet title and "
+            u"'Upcoming Seminars' link will point to. This is optional."
+        ),
+        required=False,
+        source=SearchableTextSourceBinder(
+            {'object_provides': [
+                folder.IATFolder.__identifier__,
+                folder.IATBTreeFolder.__identifier__,
+                document.IATDocument.__identifier__,
+            ]},
+            default_query='path:'),
+    )
+
 
 class Renderer(BaseRenderer):
     """ """
@@ -99,11 +102,12 @@ class Renderer(BaseRenderer):
         portal_languages = getToolByName(self.context, 'portal_languages')
         preflang = portal_languages.getPreferredLanguage()
         return translate(msgid=self.data.header, domain=domain,
-            target_language=preflang, context=self.context) 
+            target_language=preflang, context=self.context)
 
     @property
     def available(self):
-        """ The portlet will not appear if there aren't any seminars to display.
+        """ The portlet will not appear if there aren't any seminars
+        to display.
         """
         return len(self.seminars()) > 0
 
@@ -119,7 +123,7 @@ class Renderer(BaseRenderer):
             return []
 
         context = aq_inner(self.context)
-        # search in the navigation root of the currently selected language 
+        # search in the navigation root of the currently selected language
         paths = [self.navigation_root_path]
         if self.navigation_root:
             # Also search in its canonical
@@ -129,7 +133,8 @@ class Renderer(BaseRenderer):
                     paths.append('/'.join(canonical.getPhysicalPath()))
 
         # Search: Language = preferredLanguage or neutral
-        preflang = getToolByName(context, 'portal_languages').getPreferredLanguage()
+        preflang = getToolByName(
+            context, 'portal_languages').getPreferredLanguage()
         query = dict(
                     Language=['', preflang],
                     path=paths,
@@ -144,7 +149,7 @@ class Renderer(BaseRenderer):
         if self.data.subject:
             if type(self.data.subject) in [str, unicode]:
                 query.update(Subject=(self.data.subject,))
-            else:    
+            else:
                 query.update(Subject=self.data.subject)
 
         catalog = getToolByName(context, 'portal_catalog')
@@ -170,11 +175,11 @@ class Renderer(BaseRenderer):
 class Assignment(base.Assignment):
     implements(ISeminarsPortlet)
 
-    def __init__(       
-                self, 
-                count=5, 
-                state=('published', ), 
-                subject=tuple(), 
+    def __init__(
+                self,
+                count=5,
+                state=('published', ),
+                subject=tuple(),
                 header=default_header,
                 seminarsfolder=None):
 
@@ -193,7 +198,7 @@ class AddForm(base.AddForm):
     form_fields = form.Fields(ISeminarsPortlet)
     label = _(u"Adding the Seminars Portlet")
     description = _(u"This portlet lists upcoming Seminars.")
-        
+
     def create(self, data):
         return Assignment(**data)
 
@@ -202,4 +207,3 @@ class EditForm(base.EditForm):
     form_fields = form.Fields(ISeminarsPortlet)
     label = _(u"Editing the Seminars Portlet")
     description = _(u"This portlet lists upcoming Seminars.")
-

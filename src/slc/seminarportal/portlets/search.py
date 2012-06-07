@@ -12,10 +12,12 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from slc.seminarportal.portlets.base import BaseRenderer
 from interfaces import ISearchPortlet
 
+
 class AddForm(base.NullAddForm):
 
     def create(self):
         return Assignment()
+
 
 class Assignment(base.Assignment):
     implements(ISearchPortlet)
@@ -31,7 +33,8 @@ class Renderer(BaseRenderer):
     def _render_cachekey(method, self):
         """ Renders a cachekey to be used by the portlets.
         """
-        preflang = getToolByName(self.context, 'portal_languages').getPreferredLanguage()
+        preflang = getToolByName(
+            self.context, 'portal_languages').getPreferredLanguage()
         return (preflang, self.navigation_root_path)
 
     @ram.cache(_render_cachekey)
@@ -45,8 +48,7 @@ class Renderer(BaseRenderer):
 
     @memoize
     def template_id(self):
-       return '@@seminar-search'
-        
+        return '@@seminar-search'
+
     def results(self):
         return self._data()
-

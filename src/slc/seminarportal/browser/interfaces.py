@@ -1,21 +1,24 @@
 try:
     from zope.publisher.interfaces.browser import IBrowserView
-except ImportError: # plone 3
+except ImportError:  # plone 3
     from zope.app.publisher.interfaces.browser import IBrowserView
 
 from zope.viewlet.interfaces import IViewletManager
+
 
 class IAboveSeminarListing(IViewletManager):
     """ A viewlet manager that allows the adding of viewlets above the seminar
         listing.
     """
 
+
 class ISeminarFolderView(IBrowserView):
     """
     """
     def get_seminars(self):
-        """ Return brains for SPSeminar objects in context 
+        """ Return brains for SPSeminar objects in context
         """
+
 
 class ISeminarView(IBrowserView):
     """
@@ -25,7 +28,7 @@ class ISeminarView(IBrowserView):
         """
 
     def get_venues(self):
-        """ Return brains for SPSpeechVenue objects in context 
+        """ Return brains for SPSpeechVenue objects in context
         """
 
     def get_roster(self, venues=[]):
@@ -51,4 +54,3 @@ class ISeminarView(IBrowserView):
     def get_speeches(self):
         """ Return speeches in current context
         """
-

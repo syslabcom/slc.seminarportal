@@ -8,9 +8,10 @@ from slc.seminarportal.content.speechvenuefolder import SPSpeechVenueFolder
 from slc.seminarportal.interfaces import ISeminar
 
 ADDITIONAL_TYPES_INFO = (
-                    ('speakers', 'Speakers', SPSpeakersFolder), 
-                    ('speech-venues', 'Speech Venues', SPSpeechVenueFolder)
-                    )
+    ('speakers', 'Speakers', SPSpeakersFolder),
+    ('speech-venues', 'Speech Venues', SPSpeechVenueFolder)
+)
+
 
 class SeminarEvents:
     """ Event Subscriber for the SPSeminar object type """
@@ -20,13 +21,13 @@ class SeminarEvents:
         if ISeminar.providedBy(obj):
             if IObjectInitializedEvent.providedBy(event):
                 self.objectInitialized(obj, **kw)
-    
+
     def objectInitialized(self, seminar, **kw):
         """ Create Speakers and Speeches folder inside the seminar after
             creation.
         """
         for fid, title, type in ADDITIONAL_TYPES_INFO:
-            
+
             if shasattr(seminar, fid):
                 continue
 
@@ -39,9 +40,9 @@ class SeminarEvents:
 event_subscriber = SeminarEvents()
 
 
-
 def handle_workflowChanged(object, event):
-    """ make sure the additional folders of the seminar have the same WF state as the seminar itself"""
+    """ make sure the additional folders of the seminar have the same WF state
+    as the seminar itself"""
     transition = event.transition
     if transition:
         wftool = getToolByName(object, 'portal_workflow')
@@ -54,4 +55,3 @@ def handle_workflowChanged(object, event):
                 wftool.doActionFor(folder, transition.id)
             except WorkflowException:
                 pass
-
