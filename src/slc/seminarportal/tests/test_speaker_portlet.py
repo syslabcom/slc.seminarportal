@@ -1,9 +1,13 @@
 import logging
-import random
+import unittest2 as unittest
 
 from zope import event
 from zope import component
 
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.app.testing import TEST_USER_NAME
+from plone.app.testing import login
 from plone.portlets.interfaces import IPortletAssignment
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.portlets.interfaces import IPortletManager
@@ -19,10 +23,14 @@ from slc.seminarportal.portlets import speaker as speaker_portlet
 
 log = logging.getLogger('test_speaker_portlet.py')
 
+
 class TestPortlet(SeminarPortalTestCase):
 
-    def afterSetUp(self):
-        self.loginAsPortalOwner()
+    def setUp(self):
+        self.portal = self.layer['portal']
+        self.folder = self.portal['folder']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        login(self.portal, TEST_USER_NAME)
 
     def test_portlet_registered(self):
         portlet = component.getUtility(IPortletType, name="slc.SpeakerPortlet")
@@ -35,7 +43,8 @@ class TestPortlet(SeminarPortalTestCase):
 
     def test_invoke_addview(self):
         portlet = component.getUtility(IPortletType, name='slc.SpeakerPortlet')
-        mapping = self.portal.restrictedTraverse('++contextportlets++plone.leftcolumn')
+        mapping = self.portal.restrictedTraverse(
+            '++contextportlets++plone.leftcolumn')
         for m in mapping.keys():
             del mapping[m]
         addview = mapping.restrictedTraverse('+/' + portlet.addview)
@@ -43,14 +52,16 @@ class TestPortlet(SeminarPortalTestCase):
         addview.createAndAdd(data={})
 
         self.assertEquals(len(mapping), 1)
-        self.failUnless(isinstance(mapping.values()[0], speaker_portlet.Assignment))
+        self.failUnless(isinstance(mapping.values()[0],
+                                   speaker_portlet.Assignment))
 
     def test_invoke_edit_view(self):
         mapping = PortletAssignmentMapping()
         request = self.folder.REQUEST
 
         mapping['foo'] = speaker_portlet.Assignment()
-        editview = component.getMultiAdapter((mapping['foo'], request), name='edit')
+        editview = component.getMultiAdapter((mapping['foo'], request),
+                                             name='edit')
         self.failUnless(isinstance(editview, speaker_portlet.EditForm))
 
     def test_renderer(self):
@@ -76,22 +87,26 @@ class TestPortlet(SeminarPortalTestCase):
 
 class TestRenderer(SeminarPortalTestCase):
 
-    def afterSetUp(self):
+    def setUp(self):
         """ Create a Seminar object, and call the relevant event to enable the
             auto-creation of the sub-objects ('speakers', 'speech venues').
         """
-        self.loginAsPortalOwner()
-        portal = self.portal
-        qi = portal.portal_quickinstaller
-        portal.invokeFactory('SPSeminar', 'plone-conference', title="Seminar")
-        seminar = getattr(portal, 'plone-conference')
+        self.portal = self.layer['portal']
+        self.folder = self.portal['folder']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        login(self.portal, TEST_USER_NAME)
+
+        # qi = self.portal.portal_quickinstaller
+        self.portal.invokeFactory('SPSeminar', 'plone-conference',
+                                  title="Seminar")
+        seminar = getattr(self.portal, 'plone-conference')
         seminar._renameAfterCreation(check_auto_id=True)
         event.notify(ObjectInitializedEvent(seminar))
         self.create_speakers(seminar)
         self.seminar = seminar
 
-
-    def renderer(self, context=None, request=None, view=None, manager=None, assignment=None):
+    def renderer(self, context=None, request=None, view=None, manager=None,
+                 assignment=None):
         context = context or self.folder
         request = request or self.folder.REQUEST
         view = view or self.folder.restrictedTraverse('@@plone')
@@ -99,9 +114,9 @@ class TestRenderer(SeminarPortalTestCase):
                                         name='plone.rightcolumn',
                                         context=self.portal)
         assignment = assignment or speaker_portlet.Assignment()
-        return component.getMultiAdapter((context, request, view, manager, assignment),
-                               IPortletRenderer)
-
+        return component.getMultiAdapter((context, request, view, manager,
+                                          assignment),
+                                         IPortletRenderer)
 
     def test_get_speakers(self):
         """ """
@@ -134,10 +149,10 @@ class TestRenderer(SeminarPortalTestCase):
         # Test with specified:
         count = 5
         assignment = speaker_portlet.Assignment(
-                                            featured_speakers=speakers_urls[:5],
-                                            count=count,
-                                            random=0,
-                                            )
+            featured_speakers=speakers_urls[:5],
+            count=count,
+            random=0,
+        )
 
         r = self.renderer(
                     context=self.portal,
@@ -154,11 +169,8 @@ class TestRenderer(SeminarPortalTestCase):
             self.assertEquals(s in speakers_urls, True)
 
 
-
 def test_suite():
-    from unittest import TestSuite, makeSuite
-    suite = TestSuite()
-    suite.addTest(makeSuite(TestPortlet))
-    suite.addTest(makeSuite(TestRenderer))
-    return suite
-
+    """This sets up a test suite that actually runs the tests in
+    the class(es) above.
+    """
+    return unittest.defaultTestLoader.loadTestsFromName(__name__)

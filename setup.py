@@ -19,8 +19,6 @@ long_description = (
     + '\n'
     )
 
-tests_require=['zope.testing']
-
 setup(name='slc.seminarportal',
       version=version,
       description="A Seminar and Conference websites built on Plone",
@@ -52,12 +50,14 @@ setup(name='slc.seminarportal',
             'Products.LinguaPlone',
             'collective.orderedmultiselectwidget',
       ],
-      tests_require=tests_require,
-      extras_require=dict(tests=tests_require),
-      test_suite = 'slc.seminarportal.tests.test_docs.test_suite',
+      extras_require={
+          'test': [
+              'plone.app.testing',
+              'mock',
+          ],
+      },
       entry_points="""
       [z3c.autoinclude.plugin]
       target = plone
       """,
       )
-
