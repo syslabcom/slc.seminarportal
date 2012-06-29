@@ -6,6 +6,7 @@
                         item_creator result/Creator;
                         isAnon context/@@plone_portal_state/anonymous;
                         mtool context/portal_membership;
+                        toLocalizedTime nocall:plone_view/toLocalizedTime;
                         obj result/getObject">
 
     <div tal:condition="obj/getLogo" class="seminars-preview-img">
