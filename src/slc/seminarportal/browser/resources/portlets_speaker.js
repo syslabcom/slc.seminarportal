@@ -27,6 +27,8 @@ jQuery(document).ready(function() {
             'showNavArrows'  : false,
             'onStart'        : SEMINAR.loadSpeakerDetails,
             'content'        : jQuery('#speaker-overlay'),
+            'width'          : 607,
+            'autoDimensions' : false
         });
     }
 })
