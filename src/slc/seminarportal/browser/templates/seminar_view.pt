@@ -14,13 +14,6 @@
         </span>
     </metal:border>
 
-    <metal:block fill-slot="javascript_head_slot">
-      <script type="text/javascript" charset="utf-8"
-              tal:attributes="src string:$portal_url/++resource++slc.seminarportal.resources/seminar_view.js"
->
-      </script>
-    </metal:block>
-
     <metal:fill fill-slot="header">
         <tal:cond tal:condition="exists:here/document_macros">
             <div metal:use-macro="here/document_actions/macros/document_actions">

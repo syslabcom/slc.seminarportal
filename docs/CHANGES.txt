@@ -4,7 +4,7 @@ Changelog
 1.4.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- move javascript resources to jsregistry [jcerjak]
 
 
 1.4.5 (2012-09-17)
