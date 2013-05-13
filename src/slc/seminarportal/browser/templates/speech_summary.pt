@@ -5,16 +5,6 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="p4a.calendar">
 
-<head>
-  <metal:block metal:fill-slot="head_slot">
-  <style type="text/css" 
-         media="all"
-         tal:content=
-          "string: @import url(${context/seminarportal.css});">
-  </style>
-  </metal:block>
-</head>
-
 <body>
 
 <div metal:fill-slot="main">
