@@ -8,15 +8,15 @@
             <h3 tal:define="dt python:view.date(date)">
                 <span tal:content="dt/Day" i18n:translate="" i18n:domain="slc.seminarportal" />
             <span tal:content="python:toLocalizedTime(dt, long_format=0)"/></h3>
-            <table 
-                id="seminarportal-roster-table" 
-                class="listing" 
+            <table
+                id="seminarportal-roster-table"
+                class="listing"
                 summary="Content listing">
                 <tr>
                     <th tal:condition="here/getShowRosterHour" style="text-align:left">
                         Hour
                     </th>
-                    <th style="text-align:left" 
+                    <th style="text-align:left"
                         tal:repeat="venue_id venue_ids">
                         <tal:get define="venues_folder python:getattr(here, 'speech-venues');
                                          venue python:getattr(venues_folder, venue_id);
@@ -36,7 +36,7 @@
                         <td tal:condition="here/getShowRosterHour" style="text-align:left">
                             <tal:slot replace="string:${time/TimeMinutes}"/>
                         </td>
-                        <td style="text-align:left; padding:2px;" 
+                        <td style="text-align:left; padding:2px;"
                             tal:repeat="venue_id venue_ids">
                             <tal:if condition="python:roster[date].has_key(venue_id)">
                                 <tal:loop repeat="speech python:roster[date][venue_id].get(time)">
@@ -49,7 +49,7 @@
                                     </a>
                                     <br/>
                                     <br/>
-                                    <span class="help-desc" 
+                                    <span class="help-desc"
                                             tal:content="python:'%s...' % speech.Description[0:100]"/>
                                 </div>
                                 </tal:loop>
@@ -61,4 +61,3 @@
         </tal:loop>
     </tal:get>
 </metal:macro>
-

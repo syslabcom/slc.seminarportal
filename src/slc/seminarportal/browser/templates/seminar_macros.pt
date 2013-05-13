@@ -24,13 +24,13 @@
                 tal:on-error="nothing">
                 August 16, 2001 at 23:35:59
             </span>
-            - 
+            -
             <span tal:replace="python:toLocalizedTime(item_enddate, long_format=0)"
                 tal:on-error="nothing">
                 August 16, 2001 at 23:35:59
             </span>
         </em>
-    </p> 
+    </p>
     <div>
         <a href="#" tal:attributes="href result/getURL">
             <strong tal:content="result/Title">title</strong></a>
@@ -74,7 +74,7 @@
                         livesearch_enabled python:False;
                         template_id view/template_id">
         <a tal:attributes="href string:${template_id}?st=spl">
-            <span 
+            <span
                 i18n:translate="heading_simple_seminars_search"
                 tal:attributes="class python:st == 'spl' and 'search-tab-selected' or 'search-tab'">
                 Simple Seminars Search
@@ -82,7 +82,7 @@
         </a>
         &nbsp;
         <a tal:attributes="href string:${template_id}?st=adv">
-            <span 
+            <span
                 i18n:translate="heading_advanced_seminars_search"
                 tal:attributes="class python:st == 'adv' and 'search-tab-selected' or 'search-tab'">
                 Advanced Seminars Search
@@ -113,7 +113,7 @@
                         onsubmit python:livesearch==True and 'return liveSearchSubmit()' or ''"
         style="white-space:nowrap">
 
-        <label for="searchGadget" 
+        <label for="searchGadget"
                 class="hiddenStructure"
                 i18n:domain="plone"
                 i18n:translate="text_search">Search Site</label>
@@ -239,6 +239,5 @@
             value="Search"
             i18n:attributes="value label_search;" />
     </form>
-    </div> 
+    </div>
 </metal:macro>
-

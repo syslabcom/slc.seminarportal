@@ -73,7 +73,7 @@
                         <metal:field use-macro="python:here.widget('nationality',mode='view')">
                             Nationality
                         </metal:field>
-                    </div>        
+                    </div>
                 </div>
                 <br clear="all"/>
             </tal:if>
@@ -177,7 +177,7 @@
                 <br clear="all"/>
             </tal:if>
             <br clear="all"/>
-            <div id="archetypes-field-speakers" 
+            <div id="archetypes-field-speakers"
                  class="spfield"
                  tal:condition="here/getSpeeches">
                 <label class="eventbox-label" i18n:translate="label_speaker_speeches">Speeches</label>

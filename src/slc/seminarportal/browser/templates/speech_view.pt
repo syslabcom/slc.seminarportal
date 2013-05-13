@@ -17,7 +17,6 @@
 
 <body>
     <div metal:fill-slot="main"
-        
         tal:define="here_url here_url|view/here_url|portal_url;
         toLocalizedTime nocall: context/@@plone/toLocalizedTime;
         portal context/@@plone_portal_state/portal;
@@ -31,7 +30,7 @@
         <span i18n:translate="label_seminar_link">View the seminar:</span>
         <tal:text replace="string:${here/seminar_title}"/>
     </a>
-    <div id="Speech" 
+    <div id="Speech"
         tal:define="schema here/Schema">
         <br clear="all"/>
         <div class="spfield" tal:define="field python:schema['title']">
@@ -55,8 +54,8 @@
                 <span tal:replace="python:toLocalizedTime(here.end(), long_format=1)" />
             </div>
         </div>
-        <tal:loop repeat="fn python:['location', 
-                                     'contactName', 'contactEmail', 'contactPhone', 
+        <tal:loop repeat="fn python:['location',
+                                     'contactName', 'contactEmail', 'contactPhone',
                                      'eventUrl', 'subject',  'attendees']">
         <tal:if define="field python:schema[fn]"
                 condition="python:here[field.accessor]()">
@@ -65,11 +64,11 @@
             <label tal:condition="python:fn not in ('contactEmail')" class="eventbox-label" tal:content="field/widget/label">Start Date</label>
             <div class="eventbox-value-left-align">
                 <metal:field use-macro="python:here.widget(field.getName(), mode='view')">
-                    start date 
+                    start date
                 </metal:field>
             </div>
         </div>
-        <div class="visualClear"></div>	
+        <div class="visualClear"></div>
         <br/>
         </tal:if>
         </tal:loop>
@@ -91,7 +90,7 @@
                 <span i18n:translate="label_add_to_ical">iCal</span></a>
             </div>
         </div>
-        <div class="visualClear"></div>	
+        <div class="visualClear"></div>
         <br/>
         <div class="spfield">
             <label class="eventbox-label" i18n:translate="label_speech_speakers">Speaker(s)</label>
@@ -101,7 +100,7 @@
                 </metal:field>
             </div>
         </div>
-        <div class="visualClear"></div>	
+        <div class="visualClear"></div>
         <br/>
 
         <tal:if condition="here/Description"
@@ -110,11 +109,11 @@
                 <label class="eventbox-label" tal:content="field/widget/label">Start Date</label>
                 <div class="eventbox-value-left-align">
                     <metal:field use-macro="python:here.widget(field.getName(), mode='view')">
-                        start date 
+                        start date
                     </metal:field>
                 </div>
             </div>
-            <div class="visualClear"></div>	
+            <div class="visualClear"></div>
             <br/>
         </tal:if>
 
@@ -123,16 +122,16 @@
             <label class="eventbox-label" tal:content="field/widget/label">Start Date</label>
             <br/>
             <metal:field use-macro="python:here.widget(field.getName(), mode='view')">
-                start date 
+                start date
             </metal:field>
-            <div class="visualClear"></div>	
+            <div class="visualClear"></div>
         </tal:if>
 
         <tal:get define="resources view/get_files_and_images">
-            <table 
+            <table
                 tal:condition="resources"
-                id="sortable" 
-                class="listing" 
+                id="sortable"
+                class="listing"
                 summary="Content listing"
                 style="width:100%">
                 <thead>

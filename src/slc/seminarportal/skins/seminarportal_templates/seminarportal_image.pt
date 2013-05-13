@@ -5,7 +5,7 @@
       i18n:domain="plone">
   <head><title></title></head>
   <body>
- 
+
     <div class="field" metal:define-macro="image_display">
       <metal:block define-slot="widget_label">
       </metal:block>
@@ -20,7 +20,6 @@
                alt="image" />
       </tal:def>
     </div>
-
 
     <!-- Image Widgets -->
 
@@ -106,7 +105,7 @@
             <metal metal:use-macro="here/widgets/file/macros/file_upload"/>
           </div>
 
-	    </metal:fill>
+        </metal:fill>
       </metal:use>
     </metal:define>
 
