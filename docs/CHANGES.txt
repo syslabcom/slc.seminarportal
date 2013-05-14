@@ -4,6 +4,7 @@ Changelog
 1.4.6 (unreleased)
 ------------------
 
+- make speakers overlay narrower [jcerjak]
 - move javascript resources to jsregistry [jcerjak]
 
 
