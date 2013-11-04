@@ -123,7 +123,9 @@ SpeakerSchema = atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
             macro="seminarportal_image",
         ),
         original_size=(100, 125),
-        sizes={'small': (50, 50), 'thumb': (75, 75), 'normal': (200, 250)},
+        sizes={
+            'small': (50, 50), 'thumb': (75, 75), 'normal': (200, 250),
+            'icon': (32, 32)},
         default_output_type='image/jpeg',
         allowable_content_types=('image/gif', 'image/jpeg', 'image/png'),
     ),
