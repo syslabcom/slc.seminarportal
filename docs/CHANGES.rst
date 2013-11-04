@@ -1,7 +1,7 @@
 Changelog
 *********
 
-1.4.7 (unreleased)
+1.4.7 (2013-11-04)
 ------------------
 
 - Bugfix: add missing scale "icon" for image on speaker, which was referenced in
