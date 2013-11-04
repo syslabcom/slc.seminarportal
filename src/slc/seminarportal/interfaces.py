@@ -1,30 +1,36 @@
 from zope.interface import Interface
 
+
 class IThemeLayer(Interface):
     """Marker Interface used by BrowserLayer
     """
 
+
 class ISeminar(Interface):
-    """A Seminar 
+    """A Seminar
     """
+
 
 class ISpeechVenue(Interface):
-    """A Speech 
+    """A Speech
     """
+
 
 class ISpeech(Interface):
-    """A Speech 
+    """A Speech
     """
 
+
 class ISpeaker(Interface):
-    """A Speaker 
+    """A Speaker
     """
+
 
 class ISpeakersFolder(Interface):
     """A Speaker Folder
     """
 
+
 class ISpeechVenueFolder(Interface):
     """A Speech Venue Folder
     """
-

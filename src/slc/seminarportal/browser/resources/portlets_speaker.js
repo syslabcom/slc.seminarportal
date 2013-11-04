@@ -1,22 +1,26 @@
-var SEMINAR = {}
+var SEMINAR = {};
 
 SEMINAR.loadSpeakerDetails = function () {
+    "use strict";
+
     jQuery.ajax({
         type: 'GET',
         url: this.href,
         beforeSend: function() {
-           setTimeout("jQuery.fancybox.showActivity()", 1)
+            setTimeout(jQuery.fancybox.showActivity, 1);
         },
         success: function(data) {
             jQuery("#speaker-overlay #content")
                 .replaceWith(jQuery(data)
                              .find("#content"));
         },
-        complete: jQuery.fancybox.hideActivity,
+        complete: jQuery.fancybox.hideActivity
     });
 };
 
 jQuery(document).ready(function() {
+    "use strict";
+
     if (jQuery("a.speaker-fancybox").length>0) {
         jQuery("a.speaker-fancybox").fancybox({
             'transitionIn'   : 'elastic',
@@ -27,6 +31,8 @@ jQuery(document).ready(function() {
             'showNavArrows'  : false,
             'onStart'        : SEMINAR.loadSpeakerDetails,
             'content'        : jQuery('#speaker-overlay'),
+            'width'          : 607,
+            'autoDimensions' : false
         });
     }
-})
+});

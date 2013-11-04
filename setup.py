@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '1.4.5dev'
+version = '1.4.7.dev0'
 
 long_description = (
     read('README.txt')
@@ -18,8 +18,6 @@ long_description = (
     read('CONTRIBUTORS.txt')
     + '\n'
     )
-
-tests_require=['zope.testing']
 
 setup(name='slc.seminarportal',
       version=version,
@@ -52,12 +50,14 @@ setup(name='slc.seminarportal',
             'Products.LinguaPlone',
             'collective.orderedmultiselectwidget',
       ],
-      tests_require=tests_require,
-      extras_require=dict(tests=tests_require),
-      test_suite = 'slc.seminarportal.tests.test_docs.test_suite',
+      extras_require={
+          'test': [
+              'plone.app.testing',
+              'mock',
+          ],
+      },
       entry_points="""
       [z3c.autoinclude.plugin]
       target = plone
       """,
       )
-

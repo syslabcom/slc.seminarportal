@@ -19,7 +19,13 @@ ADD_PERMISSIONS = {
     'SPSeminar': 'slc.seminarportal: Add Seminar',
 }
 
-ALLOWABLE_TEXT_TYPES = ('text/plain', 'text/structured', 'text/html', 'application/msword', 'text/x-rst')
+ALLOWABLE_TEXT_TYPES = (
+    'text/plain',
+    'text/structured',
+    'text/html',
+    'application/msword',
+    'text/x-rst'
+)
 
 ADDITIONAL_CATALOG_INDEXES = [('getSortableName', 'FieldIndex')]
 

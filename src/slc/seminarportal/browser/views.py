@@ -13,6 +13,7 @@ from slc.seminarportal import is_osha_installed
 from interfaces import ISeminarView
 from interfaces import ISeminarFolderView
 
+
 class BaseView(BrowserView):
     """" """
 
@@ -33,20 +34,20 @@ class BaseView(BrowserView):
         return cutils.getCountryIsoDict()
 
     def increment_date(self, date):
-        return DateTime(date)+1
+        return DateTime(date) + 1
 
     def cropHtmlText(self, text, length, ellipsis='...'):
         """ First strip html, then crop """
         context = Acquisition.aq_inner(self.context)
         portal_transforms = getToolByName(context, 'portal_transforms')
         text = portal_transforms.convert('html_to_text', text).getData()
-        return context.restrictedTraverse('@@plone').cropText(text, length, ellipsis)
+        return context.restrictedTraverse('@@plone').cropText(
+            text, length, ellipsis)
 
     def seminars(self):
         """ Return brains for SPSeminar objects in context
         """
         context = Acquisition.aq_inner(self.context)
-        request = self.context.request
         catalog = getToolByName(self.context, 'portal_catalog')
         if not IFolderish.providedBy(context):
             # We might be on a index_html
@@ -55,8 +56,8 @@ class BaseView(BrowserView):
             folder = self.context
 
         query = {
-            'portal_type':'SPSeminar',
-            'path':'/'.join(folder.getPhysicalPath()),
+            'portal_type': 'SPSeminar',
+            'path': '/'.join(folder.getPhysicalPath()),
             'sort_on': 'start',
             'sort_order': 'reverse',
             }
@@ -65,13 +66,16 @@ class BaseView(BrowserView):
     def search(self):
         """ Return brains for all the seminar related objects
         """
-        request = self.context.request
-        if not request.has_key('SearchableText'):
+        request = self.request
+        if not 'SearchableText' in request:
             return []
         catalog = getToolByName(self.context, 'portal_catalog')
         query = {
-            'portal_type':['SPSeminar', 'SPSpeech', 'SPSpeaker', 'SPSpeechVenue']
-            }
+            'portal_type': ['SPSeminar',
+                            'SPSpeech',
+                            'SPSpeaker',
+                            'SPSpeechVenue']
+        }
 
         if request.get('st') == 'spl':
             # simple search
@@ -86,8 +90,9 @@ class BaseView(BrowserView):
             # advanced search
             date = request.get('date')
             if date:
-                query['end'] = {'query':date, 'range':'min'}
-                query['start'] = {'query':date.replace('00:00', '23:59'), 'range':'max'}
+                query['end'] = {'query': date, 'range': 'min'}
+                query['start'] = {'query': date.replace('00:00', '23:59'),
+                                  'range': 'max'}
 
             location = request.get('location')
             if location:
@@ -95,7 +100,6 @@ class BaseView(BrowserView):
 
         brains = catalog(query)
         return list(brains)
-
 
 
 class SeminarFolderView(BaseView):
@@ -138,21 +142,23 @@ class SeminarView(BaseView):
         venues = venues or self.get_venues()
         for venue in venues:
             venue_id = venue.id
-            speeches = catalog(portal_type='SPSpeech',
-                               path='%s/speech-venues/%s' % ('/'.join(self.context.getPhysicalPath()), venue_id))
+            speeches = catalog(
+                portal_type='SPSpeech',
+                path='%s/speech-venues/%s' % ('/'.join(
+                    self.context.getPhysicalPath()), venue_id))
             for speech in speeches:
                 date = speech.start.Date()
                 time = speech.start
-                if d.has_key(date):
-                    if d[date].has_key(venue_id):
-                        if d[date][venue_id].has_key(time):
+                if date in d:
+                    if venue_id in d[date]:
+                        if time in  d[date][venue_id]:
                             d[date][venue_id][time].append(speech)
                         else:
                             d[date][venue_id][time] = [speech]
                     else:
-                        d[date][venue_id] = {time:[speech]}
+                        d[date][venue_id] = {time: [speech]}
                 else:
-                    d[date] = {venue_id:{time:[speech]}}
+                    d[date] = {venue_id: {time: [speech]}}
         return d
 
     def get_event_summary(self, venues=[]):
@@ -162,12 +168,14 @@ class SeminarView(BaseView):
         catalog = getToolByName(self.context, 'portal_catalog')
         venues = venues or self.get_venues()
         for venue in venues:
-            speeches = catalog(portal_type='SPSpeech',
-                               path='%s/speech-venues/%s' % ('/'.join(self.context.getPhysicalPath()), venue.id))
+            speeches = catalog(
+                portal_type='SPSpeech',
+                path='%s/speech-venues/%s' % ('/'.join(
+                    self.context.getPhysicalPath()), venue.id))
             for speech in speeches:
                 date = speech.start.Date()
                 time = speech.start
-                if d.has_key(date):
+                if date in d:
                     d[date].append((time, speech.getPath(), speech))
                 else:
                     d[date] = [(time, speech.getPath(), speech)]
@@ -179,8 +187,7 @@ class SeminarView(BaseView):
         roster = roster or self.get_roster()
         day_times = {}
         for day in roster.keys():
-            times = []
-            d = {} # Dict used to enforece uniqueness
+            d = {}  # Dict used to enforece uniqueness
             for venue_id in roster[day].keys():
                 for t in roster[day][venue_id].keys():
                     d[t] = 'dummy'
@@ -235,4 +242,3 @@ class SpeakerView(SeminarView):
             obj.setSpeeches(valid)
 
         return self.template()
-

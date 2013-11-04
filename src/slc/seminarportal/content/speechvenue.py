@@ -12,6 +12,7 @@ SPSpeechVenueSchema['description'].widget.label = 'Venue Description'
 SPSpeechVenueSchema['description'].widget.description = \
     'Please provide a brief introduction or description of this venue.'
 
+
 class SPSpeechVenue(folder.ATFolder):
     """ Represents a venue, hall or room where speeches are held during
         a seminar.
@@ -22,8 +23,7 @@ class SPSpeechVenue(folder.ATFolder):
     _at_rename_after_creation = True
 
     def get_path(self):
-        return '/'.join(self.getPhysicalPath()) 
+        return '/'.join(self.getPhysicalPath())
 
 
 atapi.registerType(SPSpeechVenue, PROJECTNAME)
-

@@ -14,7 +14,8 @@ from slc.seminarportal.interfaces import ISpeaker
 from slc.seminarportal.permissions import ASSIGN_SPEAKERS_TO_SPEECHES
 from slc.seminarportal import seminarportalMessageFactory as _
 
-SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
+
+SpeakerSchema = atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='firstName',
         widget=atapi.StringWidget(
@@ -46,7 +47,9 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         name='suffix',
         widget=atapi.StringWidget(
             label=_(u"label_speaker_suffix", default=u"Suffix"),
-            description=_(u"description_speaker_suffix", default=u"Academic, professional, honorary, and social suffixes."),
+            description=_(u"description_speaker_suffix",
+                default=u"Academic, professional, honorary, and social "
+                        u"suffixes."),
         ),
         schemata="default",
         searchable=True
@@ -65,7 +68,8 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         name='jobTitles',
         widget=atapi.LinesField._properties['widget'](
             label=_(u"label_speaker_job_titles", default=u"Job titles"),
-            description=_(u"description_speaker_job_titles", default=u"One entry per line"),
+            description=_(u"description_speaker_job_titles",
+                          default=u"One entry per line"),
         ),
         schemata="default",
         searchable=True
@@ -73,7 +77,8 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeAddress',
         widget=atapi.TextAreaWidget(
-            label=_(u"label_speaker_office_address", default=u"Office address"),
+            label=_(u"label_speaker_office_address",
+                    default=u"Office address"),
         ),
         schemata="default",
         searchable=True
@@ -96,7 +101,8 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officePostalCode',
         widget=atapi.StringWidget(
-            label=_(u"label_speaker_office_postal_code", default=u"Office postal code"),
+            label=_(u"label_speaker_office_postal_code",
+                    default=u"Office postal code"),
         ),
         schemata="default"
     ),
@@ -117,9 +123,9 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
             macro="seminarportal_image",
         ),
         original_size=(100, 125),
-        sizes={'small': (50,50), 'thumb': (75, 75), 'normal': (200, 250)},
+        sizes={'small': (50, 50), 'thumb': (75, 75), 'normal': (200, 250)},
         default_output_type='image/jpeg',
-        allowable_content_types=('image/gif','image/jpeg','image/png'),
+        allowable_content_types=('image/gif', 'image/jpeg', 'image/png'),
     ),
     atapi.TextField(
         name='biography',
@@ -151,11 +157,13 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
         name='speeches',
         widget=ReferenceBrowserWidget(
             label=_(u"label_speaker_speeches", default=u'Speeches'),
-            description=_(u"description_speaker_speeches", default=u'Any speeches that this person '\
+            description=_(u"description_speaker_speeches",
+                          default=u'Any speeches that this person '\
             'held or contributed to, can be added here. Please note that ' \
             'speeches have to be created separately and for the seminar '\
             'at which they were held.'),
-            base_query={'portal_type': 'SPSpeech', 'sort_on': 'sortable_title'},
+            base_query={'portal_type': 'SPSpeech',
+                        'sort_on': 'sortable_title'},
             allow_browse=1,
             allow_search=1,
             show_results_without_query=1,
@@ -182,7 +190,8 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='socialPartnerGroup',
         widget=atapi.StringWidget(
-            name=_(u"label_speaker_social_partner_group", default=u"Social Partner Group"),
+            name=_(u"label_speaker_social_partner_group",
+                   default=u"Social Partner Group"),
         ),
     ),
     atapi.TextField(
@@ -193,20 +202,24 @@ SpeakerSchema =  atapi.OrderedBaseFolderSchema.copy() + atapi.Schema((
     ),
 ))
 
-SpeakerSchema['title'].widget.label = 'Full Name' 
-SpeakerSchema['title'].widget.visible = {'edit': 'invisible', 'view': 'visible'}
-SpeakerSchema['description'].widget.label= _(
-                        u'seo_description_label', 
-                        default=u'SEO Description'
-                        )
-SpeakerSchema['description'].widget.description= _(u'seo_description_description',
-                    default= \
-                        u"Provide here a description that is purely for SEO "
-                        "(Search Engine Optimisation) purposes. It will "
-                        "appear in the <meta> tag in the "
-                        "<head> section of the HTML document, but nowhere "
-                        "in the actual website content."
-                        )
+SpeakerSchema['title'].widget.label = 'Full Name'
+SpeakerSchema['title'].widget.visible = {
+    'edit': 'invisible',
+    'view': 'visible'
+}
+SpeakerSchema['description'].widget.label = _(
+    u'seo_description_label',
+    default=u'SEO Description'
+)
+SpeakerSchema['description'].widget.description = _(
+    u'seo_description_description',
+    default= \
+    u"Provide here a description that is purely for SEO "
+    "(Search Engine Optimisation) purposes. It will "
+    "appear in the <meta> tag in the "
+    "<head> section of the HTML document, but nowhere "
+    "in the actual website content."
+)
 
 
 class SPSpeaker(OrderedBaseFolder):
@@ -220,21 +233,25 @@ class SPSpeaker(OrderedBaseFolder):
 
     security.declareProtected(permissions.View, 'Title')
     def Title(self):
-        """Return the Title as firstName middleName(when available) lastName, suffix(when available)"""
+        """Return the Title as firstName middleName(when available) lastName,
+        suffix(when available)"""
         try:
-            # Get the fields using the accessors, so they're properly Unicode encoded.
-            # We also can't use the %s method of string concatentation for the same reason.
+            # Get the fields using the accessors, so they're properly Unicode
+            # encoded. We also can't use the %s method of string concatentation
+            # for the same reason.
             # Is there another way to manage this?
             fn = self.getFirstName()
             ln = self.getLastName()
         except AttributeError:
-            return u"new person" # YTF doesn't this display on the New Person page?  # Couldn't call superclass's Title() for some unknown reason
-        
+            # YTF doesn't this display on the New Person
+            # page? Couldn't call superclass's Title() for some unknown reason
+            return u"new person"
+
         if self.getMiddleName():
             mn = " " + self.getMiddleName() + " "
         else:
             mn = " "
-        
+
         t = fn + mn + ln
         if self.getSuffix():
             t = t + ", " + self.getSuffix()
@@ -242,15 +259,13 @@ class SPSpeaker(OrderedBaseFolder):
 
     security.declareProtected(permissions.View, 'getSortableName')
     def getSortableName(self):
-        """
-        Return a tuple of the person's name. For sorting purposes
-        Return them as lowercase so that names like 'von Whatever' sort properly
+        """Return a tuple of the person's name. For sorting purposes return
+        them as lowercase so that names like 'von Whatever' sort properly.
         """
         return (self.lastName.lower(), self.firstName.lower())
 
     def get_path(self):
-        return '/'.join(self.getPhysicalPath()) 
+        return '/'.join(self.getPhysicalPath())
 
 
 atapi.registerType(SPSpeaker, PROJECTNAME)
-

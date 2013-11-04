@@ -16,14 +16,14 @@
                               templateId='widgets/textarea', macro='textarea-field-view');"
             tal:attributes="class kss_class;
                             id string:parent-fieldname-$fieldName">
-            <metal:slot define-slot="inside" 
+            <metal:slot define-slot="inside"
                   tal:define="text python:accessor();
                               short python:'%s </p>' % text[:200];">
                 <div tal:attributes="id string:${fieldName}-short"
                       tal:condition="short">
                     <a style="cursor:pointer" i18n:translate="label_click_to_show_full_text"
                        tal:attributes="
-                            onclick string:jq('div#${fieldName}-short').hide();; 
+                            onclick string:jq('div#${fieldName}-short').hide();;
                                            jq('div#${fieldName}-long').show(400);;">
                            Click here to show the full text
                     </a>
@@ -35,7 +35,7 @@
                     <tal:text replace="structure text"/>
                     <a style="cursor:pointer" i18n:translate="label_click_to_hide_full_text"
                        tal:attributes="
-                            onclick string:jq('div#${fieldName}-long').hide(400);; 
+                            onclick string:jq('div#${fieldName}-long').hide(400);;
                                            jq('div#${fieldName}-short').show(500);;">
                             Click here to hide the full text
                     </a>

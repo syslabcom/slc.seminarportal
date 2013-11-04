@@ -1,11 +1,40 @@
 Changelog
 *********
 
-1.4.5 (unreleased)
+1.4.7 (unreleased)
 ------------------
 
 - Nothing changed yet.
 
+
+1.4.6 (2013-05-14)
+------------------
+
+- make speakers overlay narrower [jcerjak]
+- move javascript resources to jsregistry [jcerjak]
+
+
+1.4.5 (2012-09-17)
+------------------
+
+WARNING: Plone4 fixes which attemps to keep Plone3 compatibility, 
+  but without testing done on plone3, please test before trying to
+  use this version in a plone3 environment, or stick to the previous
+  versions since all of the changes in this version are only to fix
+  the package for Plone4.
+
+- Updated Plone4 branch with the changes to 1.4.4 plus the following changes
+  marked with [ichimdav]
+- Use subject field in session_view instead of Event Type since in 
+  plone 4 the archetype field for event Type is named subject [ichimdav]
+- Condition the use of document_actions since in Plone4 it is a viewlet
+  [ichimdav]
+- Defined lots of plone helpers that are no longer available in main_template
+  [ichimdav]
+- Used self.request instead of self.context.request to make it compatible 
+  with Plone4 and Plone3 [ichimdav]
+- Removed tab index since it is no longer present in Plone4 [ichimdav]
+- Fixed search portlets [ichimdav]
 
 1.4.4 (2011-12-05)
 ------------------

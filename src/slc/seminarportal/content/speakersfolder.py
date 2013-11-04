@@ -11,12 +11,14 @@ from Products.Archetypes.atapi import OrderedBaseFolder
 from slc.seminarportal.interfaces import ISpeakersFolder
 from slc.seminarportal.config import PROJECTNAME
 
-SPSpeakersFolderSchema = atapi.OrderedBaseFolderSchema.copy() 
+SPSpeakersFolderSchema = atapi.OrderedBaseFolderSchema.copy()
 
 # SPSpeakersFolderSchema['title'].storage = atapi.AnnotationStorage()
 # SPSpeakersFolderSchema['description'].storage = atapi.AnnotationStorage()
 
-# schemata.finalizeATCTSchema(SPSpeakersFolderSchema, folderish=True, moveDiscussion=False)
+# schemata.finalizeATCTSchema(SPSpeakersFolderSchema, folderish=True,
+# moveDiscussion=False)
+
 
 class SPSpeakersFolder(OrderedBaseFolder):
     """Folder containing Seminar Speakers"""

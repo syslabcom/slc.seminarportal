@@ -2,18 +2,18 @@
 /* <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either :) */
 
 .spfield {
-  float:left;
-  text-align: left;
-  width: 60%;
+    float:left;
+    text-align: left;
+    width: 60%;
 }
 .eventbox-value-left-align {
-  float:right;
-  text-align: left;
+    float:right;
+    text-align: left;
 }
 
 .speechsummary-speaker-right-align {
-  float:right;
-  text-align: right;
+    float:right;
+    text-align: right;
 }
 
 .no_bullets ul {
@@ -27,61 +27,61 @@
 }
 
 .eventbox-label {
-  float:left;
-  text-align:left;
-  max-width: 20%;
-  width: 20%;
+    float:left;
+    text-align:left;
+    max-width: 20%;
+    width: 20%;
 }
 
 .eventbox-value {
-  float:right;
-  text-align: left;
-  max-width: 30%;
-  width:30%;
+    float:right;
+    text-align: left;
+    max-width: 30%;
+    width:30%;
 }
 
 #archetypes-field-image .eventbox-label {
-  text-align: left;
-  max-width: 15%;
-  width: 15%;
-  margin-left: 5%;
+    text-align: left;
+    max-width: 15%;
+    width: 15%;
+    margin-left: 5%;
 }
 #archetypes-field-image .eventbox-value .spfield{
-  float:left;
-  text-align: left;
-  max-width: 10%;
-  width: 10%;
-  padding: 5px 0px;
-  margin-left: 5%;
+    float:left;
+    text-align: left;
+    max-width: 10%;
+    width: 10%;
+    padding: 5px 0px;
+    margin-left: 5%;
 }
 
 .search-tab-selected {
-  background-color: #E6E8ED;
-  padding: 1em 1em 0.2em 1em;
+    background-color: #E6E8ED;
+    padding: 1em 1em 0.2em 1em;
 }
 
 .search-tab {
-  background-color: #C5CBD8;
-  padding: 1em 1em 0.2em 1em;
+    background-color: #C5CBD8;
+    padding: 1em 1em 0.2em 1em;
 }
 
 .search-tab:hover {
-  background-color: #E6E8ED;
-  cursor: pointer !important;
+    background-color: #E6E8ED;
+    cursor: pointer !important;
 }
 
 .big-target {
-  background-color: #E6E8ED;
+    background-color: #E6E8ED;
 }
 
 .big-target:hover {
-  background-color: #FFFCCC;
-  cursor: pointer !important;
+    background-color: #FFFCCC;
+    cursor: pointer !important;
 }
 
 .help-desc {
-  font-size: 90%;
-  color: &dtml-discreetColor;;
+    font-size: 90%;
+    color: &dtml-discreetColor;;
 }
 
 .eventlist .eventlist_month {
@@ -89,42 +89,42 @@
 }
 
 .eventlist H2 {
-	font-size: 1.25em;
+    font-size: 1.25em;
 }
 
 .eventlist .event {
-	float: left;
-	width: 100%;
-	padding-bottom: 5px;
+    float: left;
+    width: 100%;
+    padding-bottom: 5px;
 }
 
 .eventlist .event .event_details {
     float: left;
     clear: right;
     text-align: right;
-	font-weight: bold;
+    font-weight: bold;
     width: 15%;
 }
 
 .eventlist .event .event_details ABBR {
-	border: none;
+    border: none;
 }
 
 .eventlist .event .event_details ABBR.dtend {
-	display: none;
+    display: none;
 }
 
 .event .location, .p4acalendar .day-event-popup .event .description {
-	font-size: 0.8em;
+    font-size: 0.8em;
 }
 
 .event .location {
-	color: #999;
+    color: #999;
 }
 
 .eventlist .event .location {
-	border-top: 1px dashed #ccc;
-	padding-top: 3px;
+    border-top: 1px dashed #ccc;
+    padding-top: 3px;
 }
 
 .eventlist .event .event_body {
@@ -135,12 +135,12 @@
 }
 
 .eventlist .event .event_title {
-	display: block;
+    display: block;
     text-decoration: none;
 }
 
 .eventlist .event .description {
-	padding-top: 3px;
+    padding-top: 3px;
 }
 
 .eventlist A {
@@ -151,7 +151,7 @@
     background-color: &dtml-evenRowBackgroundColor;;
 }
 #seminarportal-roster-table .odd {
-        background-color: &dtml-oddRowBackgroundColor;;
+    background-color: &dtml-oddRowBackgroundColor;;
 }
 
 div#add-speaker, div#add-speechvenue {
@@ -159,15 +159,14 @@ div#add-speaker, div#add-speechvenue {
 }
 
 #speaker-overlay {
-   width: 600px;
-   height: 500px;
+    width: 600px;
+    height: 500px;
 }
 
 #fancybox-inner #speaker-overlay {
-   /* Hack, to avoid scrollbars */
-   width: 580px;
-   height: 480px;
+    /* Hack, to avoid scrollbars */
+    width: 580px;
+    height: 480px;
 }
 
 /* </dtml-with> */
-

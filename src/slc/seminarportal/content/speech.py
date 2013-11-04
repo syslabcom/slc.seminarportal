@@ -16,15 +16,17 @@ from slc.seminarportal import seminarportalMessageFactory as _
 from slc.seminarportal.config import PROJECTNAME
 from slc.seminarportal.interfaces import ISpeech
 
-SpeechSchema = atapi.OrderedBaseFolderSchema.copy() + ATEventSchema.copy() + atapi.Schema((
+SpeechSchema = atapi.OrderedBaseFolderSchema.copy() + ATEventSchema.copy() + \
+               atapi.Schema((
     RelationField(
         name='speakers',
         widget=ReferenceBrowserWidget(
             label=_(u"label_speech_speakers", default=u'Speaker(s)'),
-            base_query={'portal_type':'SPSpeaker', 'sort_on':'getSortableName'},
+            base_query={'portal_type': 'SPSpeaker',
+                        'sort_on': 'getSortableName'},
             allow_browse=1,
             allow_search=1,
-            show_results_without_query=1,            
+            show_results_without_query=1,
             image_portal_types=('SPSpeaker',),
             image_method='image_icon',
             macro='seminarportal_referencebrowser',
@@ -52,9 +54,10 @@ SpeechSchema['startDate'].default_method = 'get_start_date'
 SpeechSchema['endDate'].widget.format = '%A %d %B %Y %H:%M'
 SpeechSchema['endDate'].default_method = 'get_end_date'
 
+
 class SPSpeech(I18NBaseFolder, ATEvent):
-    """ Represents a Speech held during a seminar. 
-    """ 
+    """ Represents a Speech held during a seminar.
+    """
     implements(ISpeech)
     security = ClassSecurityInfo()
 
@@ -64,7 +67,7 @@ class SPSpeech(I18NBaseFolder, ATEvent):
     _at_rename_after_creation = True
 
     def get_path(self):
-        return '/'.join(self.getPhysicalPath()) 
+        return '/'.join(self.getPhysicalPath())
 
     def get_start_date(self):
         """ Returns the default start date for this speech.
@@ -79,7 +82,7 @@ class SPSpeech(I18NBaseFolder, ATEvent):
     def get_end_date(self):
         """ Returns the default end date for this speech.
             The default date is the date of the seminar.
-        """ 
+        """
         try:
             return self.get_seminar_end_date()
         except AttributeError:
@@ -89,11 +92,11 @@ class SPSpeech(I18NBaseFolder, ATEvent):
     def setLanguage(self, value, **kwargs):
         """ For some crazy reason, setLanguage failed with an
             AlreadyTranslated error.
-            
+
             For explanation see setLanguage() of SPSeminar.
 
             We override the if statement here and use aq_base to fix the
-            problem and if necessary then call the original setLanguage 
+            problem and if necessary then call the original setLanguage
             method.
         """
         translation = self.getTranslation(value)
@@ -107,4 +110,3 @@ class SPSpeech(I18NBaseFolder, ATEvent):
 
 
 atapi.registerType(SPSpeech, PROJECTNAME)
-
