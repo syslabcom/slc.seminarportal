@@ -4,7 +4,10 @@ Changelog
 1.4.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Bugfix: add missing scale "icon" for image on speaker, which was referenced in
+  the speech view [pysailor]
+- Bugfix: in the speakersfolder view, we must reference images and create links
+  using the absolute_url [pysailor]
 
 
 1.4.6 (2013-05-14)
