@@ -1,7 +1,7 @@
 Changelog
 *********
 
-1.4.8 (unreleased)
+1.4.8 (2015-01-21)
 ------------------
 
 - Enable quickupload for seminars #10902 [reinhardt]
