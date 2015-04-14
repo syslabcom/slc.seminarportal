@@ -8,7 +8,7 @@ from Products.ATContentTypes.content.event import ATEventSchema
 from Products.ATReferenceBrowserWidget.ATReferenceBrowserWidget import ReferenceBrowserWidget
 from Products.Archetypes import atapi
 from Products.LinguaPlone.I18NBaseObject import AlreadyTranslated
-from Products.LinguaPlone.I18NBaseFolder import I18NBaseFolder
+from Products.LinguaPlone.I18NOrderedBaseFolder import I18NOrderedBaseFolder
 from Products.Relations.field import RelationField
 from Products.LinguaPlone import permissions
 
@@ -55,7 +55,7 @@ SpeechSchema['endDate'].widget.format = '%A %d %B %Y %H:%M'
 SpeechSchema['endDate'].default_method = 'get_end_date'
 
 
-class SPSpeech(I18NBaseFolder, ATEvent):
+class SPSpeech(I18NOrderedBaseFolder, ATEvent):
     """ Represents a Speech held during a seminar.
     """
     implements(ISpeech)

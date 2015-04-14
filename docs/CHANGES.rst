@@ -4,8 +4,7 @@ Changelog
 1.4.9 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Let Seminar and Speech be orderable folders #11604 [pysailor]
 
 1.4.8 (2015-01-21)
 ------------------

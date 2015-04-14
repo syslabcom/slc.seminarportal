@@ -8,7 +8,7 @@ from Products.ATContentTypes.content import schemata
 from Products.ATContentTypes.content.event import ATEvent
 from Products.ATContentTypes.content.event import ATEventSchema
 from Products.LinguaPlone.I18NBaseObject import AlreadyTranslated
-from Products.LinguaPlone.I18NBaseFolder import I18NBaseFolder
+from Products.LinguaPlone.I18NOrderedBaseFolder import I18NOrderedBaseFolder
 from Products.LinguaPlone import permissions
 
 from slc.seminarportal.interfaces import ISeminar
@@ -111,7 +111,7 @@ SeminarSchema['startDate'].widget.format = '%A %d %B %Y %H:%M'
 SeminarSchema['endDate'].widget.format = '%A %d %B %Y %H:%M'
 
 
-class SPSeminar(I18NBaseFolder, ATEvent):
+class SPSeminar(I18NOrderedBaseFolder, ATEvent):
     """Description of the Example Type"""
     security = ClassSecurityInfo()
     implements(ISeminar)
